@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  godot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Cache Godot import artifacts to speed up CI
+      - name: Cache Godot import
+        uses: actions/cache@v4
+        with:
+          path: |
+            .godot/imported
+            .godot/uid_cache
+          key: ${{ runner.os }}-godot-import-${{ hashFiles('**/*.tscn', '**/*.tres', '**/*.gd', 'project.godot') }}
+          restore-keys: |
+            ${{ runner.os }}-godot-import-
+
+      # Download Godot headless (no GUI) for Linux
+      - name: Download Godot headless
+        shell: bash
+        run: |
+          set -euo pipefail
+          GODOT_VERSION="4.6"
+          CHANNEL="stable"
+          FILE="Godot_v${GODOT_VERSION}-${CHANNEL}_linux.x86_64"
+          URL="https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/${FILE}.zip"
+          echo "Downloading $URL"
+          curl -L "$URL" -o godot.zip
+          unzip -q godot.zip
+          chmod +x "${FILE}"
+          echo "$PWD/${FILE}" >> $GITHUB_PATH
+
+      # 1) Import + sanity load. This will fail on script parse errors, missing resources, etc.
+      - name: Import project (headless)
+        shell: bash
+        run: |
+          set -euo pipefail
+          Godot_v4.6-stable_linux.x86_64 --headless --editor --quit --path .
+
+      # 2) Optional: run GUT tests if present (addons/gut exists)
+      - name: Run unit tests (GUT) if installed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d "addons/gut" ]; then
+            echo "GUT detected. Running tests..."
+            # Adjust dirs if you store tests elsewhere
+            Godot_v4.6-stable_linux.x86_64 --headless --path . -s res://addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
+          else
+            echo "GUT not found (addons/gut). Skipping unit tests."
+          fi

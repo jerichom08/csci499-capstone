@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Nyarla’s Birthday Bash"
+run/main_scene="uid://hqf6rgm8wd2n"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

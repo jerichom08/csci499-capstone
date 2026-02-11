@@ -33,7 +33,7 @@ jobs:
         run: |
           if [ -d "addons/gut" ]; then
             godot --headless --path . \
-              -s res://addons/gut/addons/gut/gut_cmdln.gd \
+              -s res://addons/gut/gut_cmdln.gd \
               -gdir=res://tests \
               -gexit
           else

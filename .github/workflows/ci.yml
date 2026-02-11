@@ -12,63 +12,18 @@ concurrency:
 jobs:
   godot:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    container:
+      image: barichello/godot-ci:4.6
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Cache Godot import artifacts to speed up CI
-      - name: Cache Godot import
-        uses: actions/cache@v4
-        with:
-          path: |
-            .godot/imported
-            .godot/uid_cache
-          key: ${{ runner.os }}-godot-import-${{ hashFiles('**/*.tscn', '**/*.tres', '**/*.gd', 'project.godot') }}
-          restore-keys: |
-            ${{ runner.os }}-godot-import-
+      - name: Import project
+        run: godot --headless --editor --quit --path .
 
-      # Download Godot headless (no GUI) for Linux
-      - name: Download Godot headless
-        shell: bash
+      - name: Run GUT tests
         run: |
-          set -euo pipefail
-
-          GODOT_VERSION="4.6"
-          CHANNEL="stable"
-          FILE="Godot_v${GODOT_VERSION}-${CHANNEL}_linux.x86_64"
-          URL="https://godot-releases.nbg1.your-objectstorage.com/${GODOT_VERSION}-${CHANNEL}/${FILE}.zip"
-
-          echo "Downloading $URL"
-
-          curl -fL \
-            --retry 5 \
-            --retry-all-errors \
-            --retry-delay 10 \
-            --connect-timeout 20 \
-            --max-time 300 \
-            "$URL" -o godot.zip
-
-          unzip -q godot.zip
-          chmod +x "${FILE}"
-          echo "$PWD/${FILE}" >> "$GITHUB_PATH"
-          
-
-      - name: Import project (headless)
-        shell: bash
-        run: |
-          set -euo pipefail
-          Godot_v4.6-stable_linux.x86_64 --headless --editor --quit --path .
-
-      - name: Run unit tests (GUT) if installed
-        shell: bash
-        run: |
-          set -euo pipefail
           if [ -d "addons/gut" ]; then
-            echo "GUT detected. Running tests..."
-            # Adjust dirs if you store tests elsewhere
-            Godot_v4.6-stable_linux.x86_64 --headless --path . -s res://addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
-          else
-            echo "GUT not found (addons/gut). Skipping unit tests."
+            godot --headless --path . -s res://addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
           fi

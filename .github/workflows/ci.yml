@@ -34,24 +34,33 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+
           GODOT_VERSION="4.6"
           CHANNEL="stable"
           FILE="Godot_v${GODOT_VERSION}-${CHANNEL}_linux.x86_64"
-          URL="https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/${FILE}.zip"
+          URL="https://godot-releases.nbg1.your-objectstorage.com/${GODOT_VERSION}-${CHANNEL}/${FILE}.zip"
+
           echo "Downloading $URL"
-          curl -L "$URL" -o godot.zip
+
+          curl -fL \
+            --retry 5 \
+            --retry-all-errors \
+            --retry-delay 10 \
+            --connect-timeout 20 \
+            --max-time 300 \
+            "$URL" -o godot.zip
+
           unzip -q godot.zip
           chmod +x "${FILE}"
-          echo "$PWD/${FILE}" >> $GITHUB_PATH
+          echo "$PWD/${FILE}" >> "$GITHUB_PATH"
+          
 
-      # 1) Import + sanity load. This will fail on script parse errors, missing resources, etc.
       - name: Import project (headless)
         shell: bash
         run: |
           set -euo pipefail
           Godot_v4.6-stable_linux.x86_64 --headless --editor --quit --path .
 
-      # 2) Optional: run GUT tests if present (addons/gut exists)
       - name: Run unit tests (GUT) if installed
         shell: bash
         run: |

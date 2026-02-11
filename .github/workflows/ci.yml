@@ -18,6 +18,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install runtime deps
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends libfontconfig1
 
       - name: Import project
         run: godot --headless --editor --quit --path .
@@ -25,5 +32,10 @@ jobs:
       - name: Run GUT tests
         run: |
           if [ -d "addons/gut" ]; then
-            godot --headless --path . -s res://addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
+            godot --headless --path . \
+              -s res://addons/gut/addons/gut/gut_cmdln.gd \
+              -gdir=res://tests \
+              -gexit
+          else
+            echo "GUT not found, skipping tests."
           fi

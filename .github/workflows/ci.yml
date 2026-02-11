@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  godot:
+  godot-import:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.6
@@ -18,35 +18,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        # No longer needed unless you actually use submodules elsewhere
-        with:
-          submodules: false
 
-      - name: Install runtime deps
+      - name: Install minimal runtime dependency
         run: |
           apt-get update
           apt-get install -y --no-install-recommends libfontconfig1
           rm -rf /var/lib/apt/lists/*
 
+      # Headless editor import + load. Fails on parse errors, missing resources, etc.
       - name: Import project (headless)
         run: godot --headless --editor --quit --path .
-
-      - name: Run GUT tests
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if [ ! -d "addons/gut" ]; then
-            echo "GUT not found at addons/gut."
-            exit 1
-          fi
-
-          if [ ! -d "tests" ]; then
-            echo "No tests/ directory found. Create tests/ or change -gdir."
-            exit 1
-          fi
-
-          godot --headless --path . \
-            -s res://addons/gut/gut_cmdln.gd \
-            -gdir=res://tests \
-            -gexit

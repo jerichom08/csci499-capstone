@@ -15,7 +15,7 @@
 ```
 
 ## How to run locally
-1. Ensure **Godot 4.6** is installed.
+1. Ensure **Godot 4.6.1** is installed.
 2. Clone the repository:
 
    ```bash
@@ -32,7 +32,7 @@
 Alternatively, the project can be launched directly from the command line:
 
 ```bash
-Godot_v4.6-stable_win64.exe --path .
+Godot_v4.6.1-stable_win64.exe --path .
 ```
 
 If the project fails to run, verify that the correct Godot version is being used and that all files are up to date.

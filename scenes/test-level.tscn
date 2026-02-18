@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://choystunvgoem"]
+
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="1_tny1j"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qlq2q"]
+
+[node name="TestLevel" type="Node2D" unique_id=1774236187]
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_tny1j")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1359601901]
+zoom = Vector2(4, 4)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=306388270]
+position = Vector2(0, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2022255984]
+shape = SubResource("WorldBoundaryShape2D_qlq2q")

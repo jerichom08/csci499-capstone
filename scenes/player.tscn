@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pg6ytaryk6y"]
 
-[ext_resource type="Script" uid="uid://bn5ve5hp5krhl" path="res://scenes/character_body_2d.gd" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://bn5ve5hp5krhl" path="res://scripts/character_body_2d.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b4smr642vgqbq" path="res://assets/images/player/B_witch_idle.png" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b80i5h1w4mojg" path="res://assets/images/player/B_witch_run.png" id="2_qhqgy"]
@@ -188,7 +188,7 @@ animations = [{
 radius = 4.0
 height = 24.0
 
-[node name="Player" type="CharacterBody2D" unique_id=2085610372]
+[node name="Player" type="CharacterBody2D" unique_id=2085610372 groups=["player"]]
 script = ExtResource("1_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1186379679]

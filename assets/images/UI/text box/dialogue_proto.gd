@@ -4,6 +4,7 @@ extends Control
 @onready var label: Label = $Label
 @onready var timer: Timer = $Timer
 @onready var button: Button =$Button
+@onready var tilemap: TileMap = $TileMap
 #variables
 
 var dialogue_array : Array = [
@@ -28,6 +29,7 @@ func animate_label() -> void:
 	if dialogue_index >=  dialogue_array.size():
 		label.hide()
 		button.hide()
+		tilemap.hide()
 		return
 		#hide button and text
 		

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1hvx3ulb5rp5"
-path="res://.godot/imported/Meow-Knight_Attack_1.png-b439518211b47124ec1d159f0f0ce5ed.ctex"
+uid="uid://b1n5ipkqp2fj8"
+path="res://.godot/imported/tilemap1-backgrounds.png-4dc7f3c859878db441886f6119c9129c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cat/Meow-Knight_Attack_1.png"
-dest_files=["res://.godot/imported/Meow-Knight_Attack_1.png-b439518211b47124ec1d159f0f0ce5ed.ctex"]
+source_file="res://assets/images/tilemaps/tilemap1-backgrounds.png"
+dest_files=["res://.godot/imported/tilemap1-backgrounds.png-4dc7f3c859878db441886f6119c9129c.ctex"]
 
 [params]
 

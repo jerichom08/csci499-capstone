@@ -1,22 +1,23 @@
 [gd_scene format=4 uid="uid://b4o6hhbxoewgk"]
 
-[ext_resource type="Texture2D" uid="uid://b5ib7i60j856d" path="res://assets/images/bedroom/interior.png" id="1_v4a08"]
-[ext_resource type="Texture2D" uid="uid://elo3ewm150x1" path="res://assets/images/bedroom/texture_1.png" id="2_cfce6"]
-[ext_resource type="Texture2D" uid="uid://bxvfurx86rxx6" path="res://assets/images/bedroom/paintings.png" id="2_r4yf7"]
-[ext_resource type="Texture2D" uid="uid://dqkyhsdkurqwy" path="res://assets/images/bedroom/texture_7.png" id="2_tbmxi"]
-[ext_resource type="Texture2D" uid="uid://c0balssim2yw" path="res://assets/images/bedroom/cbinet.png" id="3_r4yf7"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="4_tt8ib"]
-[ext_resource type="Texture2D" uid="uid://cf0k43ygihcyd" path="res://assets/images/bedroom/dresser.png" id="5_b8vau"]
-[ext_resource type="Texture2D" uid="uid://dtuwn12wg1u7b" path="res://assets/images/bedroom/texture_9.png" id="5_grb1i"]
-[ext_resource type="Texture2D" uid="uid://buqldvbi830a4" path="res://assets/images/bedroom/table.png" id="5_k23yp"]
-[ext_resource type="Texture2D" uid="uid://cvqx6aep4xcnk" path="res://assets/images/bedroom/broom.png" id="7_wxuxo"]
-[ext_resource type="Texture2D" uid="uid://vwnhi8pclt33" path="res://assets/images/bedroom/texture_8.png" id="9_b8vau"]
-[ext_resource type="Texture2D" uid="uid://cd4fn4n8fev4p" path="res://assets/images/bedroom/wall.png" id="10_k23yp"]
-[ext_resource type="Texture2D" uid="uid://b53btw62uvv6n" path="res://assets/images/bedroom/texture_0.png" id="13_6l2ly"]
-[ext_resource type="PackedScene" uid="uid://d03pbptyxehk3" path="res://assets/images/UI/text box/DialogueProto.tscn" id="14_k23yp"]
+[ext_resource type="Texture2D" uid="uid://b5ib7i60j856d" path="res://assets/images/bedroom/interior.png" id="1_fsvde"]
+[ext_resource type="Texture2D" uid="uid://bxvfurx86rxx6" path="res://assets/images/bedroom/paintings.png" id="2_tdxxn"]
+[ext_resource type="Texture2D" uid="uid://c0balssim2yw" path="res://assets/images/bedroom/cbinet.png" id="3_s5xga"]
+[ext_resource type="Texture2D" uid="uid://cf0k43ygihcyd" path="res://assets/images/bedroom/dresser.png" id="4_37ogj"]
+[ext_resource type="Texture2D" uid="uid://buqldvbi830a4" path="res://assets/images/bedroom/table.png" id="5_a0xew"]
+[ext_resource type="Texture2D" uid="uid://elo3ewm150x1" path="res://assets/images/bedroom/texture_1.png" id="6_4jf77"]
+[ext_resource type="Texture2D" uid="uid://dqkyhsdkurqwy" path="res://assets/images/bedroom/texture_7.png" id="7_2en4a"]
+[ext_resource type="Texture2D" uid="uid://dtuwn12wg1u7b" path="res://assets/images/bedroom/texture_9.png" id="8_0f0hi"]
+[ext_resource type="Texture2D" uid="uid://cvqx6aep4xcnk" path="res://assets/images/bedroom/broom.png" id="9_umbcw"]
+[ext_resource type="Texture2D" uid="uid://vwnhi8pclt33" path="res://assets/images/bedroom/texture_8.png" id="10_nxuhh"]
+[ext_resource type="Texture2D" uid="uid://cd4fn4n8fev4p" path="res://assets/images/bedroom/wall.png" id="11_pgu07"]
+[ext_resource type="Texture2D" uid="uid://b53btw62uvv6n" path="res://assets/images/bedroom/texture_0.png" id="12_5w1cf"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="13_ahukg"]
+[ext_resource type="PackedScene" uid="uid://d03pbptyxehk3" path="res://assets/images/UI/text box/DialogueProto.tscn" id="14_hj841"]
+[ext_resource type="PackedScene" uid="uid://bqdkc7b8d61bq" path="res://scenes/levels/next_level/NextLevel.tscn" id="15_5qedx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k23yp"]
-texture = ExtResource("1_v4a08")
+texture = ExtResource("1_fsvde")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -133,14 +134,14 @@ texture = ExtResource("1_v4a08")
 10:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6l2ly"]
-texture = ExtResource("2_r4yf7")
+texture = ExtResource("2_tdxxn")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3k6p"]
-texture = ExtResource("3_r4yf7")
+texture = ExtResource("3_s5xga")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -152,7 +153,7 @@ texture = ExtResource("3_r4yf7")
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_by6bu"]
-texture = ExtResource("5_b8vau")
+texture = ExtResource("4_37ogj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -166,7 +167,7 @@ texture = ExtResource("5_b8vau")
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nl40l"]
-texture = ExtResource("5_k23yp")
+texture = ExtResource("5_a0xew")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -175,14 +176,14 @@ texture = ExtResource("5_k23yp")
 1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgimr"]
-texture = ExtResource("2_cfce6")
+texture = ExtResource("6_4jf77")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3evo"]
-texture = ExtResource("2_tbmxi")
+texture = ExtResource("7_2en4a")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.639411, -0.7927656, 6.5403166, -6.5403156, -3.5674458, -4.558402, 1.4864359, -0.7927656)
 1:0/0 = 0
@@ -190,28 +191,28 @@ texture = ExtResource("2_tbmxi")
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3ajx"]
-texture = ExtResource("5_grb1i")
+texture = ExtResource("8_0f0hi")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdibe"]
-texture = ExtResource("7_wxuxo")
+texture = ExtResource("9_umbcw")
 separation = Vector2i(1, 0)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2ec3"]
-texture = ExtResource("9_b8vau")
+texture = ExtResource("10_nxuhh")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6r63d"]
-texture = ExtResource("10_k23yp")
+texture = ExtResource("11_pgu07")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -232,7 +233,7 @@ sources/16 = SubResource("TileSetAtlasSource_by6bu")
 sources/17 = SubResource("TileSetAtlasSource_nl40l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xbuc"]
-texture = ExtResource("5_k23yp")
+texture = ExtResource("5_a0xew")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -241,7 +242,7 @@ texture = ExtResource("5_k23yp")
 1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0t4o3"]
-texture = ExtResource("13_6l2ly")
+texture = ExtResource("12_5w1cf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -254,13 +255,13 @@ sources/0 = SubResource("TileSetAtlasSource_8xbuc")
 sources/1 = SubResource("TileSetAtlasSource_0t4o3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk4a3"]
-texture = ExtResource("7_wxuxo")
+texture = ExtResource("9_umbcw")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul5ke"]
-texture = ExtResource("5_k23yp")
+texture = ExtResource("5_a0xew")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -297,14 +298,17 @@ scale = Vector2(0.7999999, 0.7999999)
 tile_map_data = PackedByteArray("AAAFAP3/AQAAAAAAAAAFAP7/AQAAAAEAAAAFAP//AQAAAAIAAAD4/wAAAwAAAAAAAAD4/wEAAwAAAAEAAAD4/wIAAwAAAAIAAAD5/wAAAwABAAAAAAD5/wEAAwABAAEAAAD5/wIAAwABAAIAAAA=")
 tile_set = SubResource("TileSet_tk4a3")
 
-[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("4_tt8ib")]
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_ahukg")]
 position = Vector2(-143, 156.99997)
 scale = Vector2(5, 5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=658766121]
 
-[node name="DialogueProto" parent="." unique_id=1092022285 instance=ExtResource("14_k23yp")]
+[node name="DialogueProto" parent="." unique_id=1092022285 instance=ExtResource("14_hj841")]
 offset_left = -19.0
 offset_top = -7.0
 offset_right = -19.0
 offset_bottom = -7.0
+
+[node name="NextLevel" parent="." unique_id=1020165941 instance=ExtResource("15_5qedx")]
+position = Vector2(539, 118)

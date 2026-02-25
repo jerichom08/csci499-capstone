@@ -299,6 +299,7 @@ tile_set = SubResource("TileSet_tk4a3")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("4_tt8ib")]
 position = Vector2(-143, 156.99997)
+scale = Vector2(5, 5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=658766121]
 

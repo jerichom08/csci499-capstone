@@ -2,16 +2,16 @@ extends CharacterBody2D
 
 @export var attack_scene: PackedScene
 
-const maxSpeed = 150.0 * 5
-const jumpVelocity = -200.0 * 5
-const gravity = 400.0 * 5
+const maxSpeed = 150.0
+const jumpVelocity = -200.0
+const gravity = 400.0
 
 # 1500 2000 800 tight
 # 500 600 300 floaty
 # 600 800 600 perfect
-const acceleration = 600.0 * 5
-const deceleration = 800.0 * 5
-const airAcceleration = 600.0 * 5
+const acceleration = 600.0
+const deceleration = 800.0
+const airAcceleration = 600.0
 
 @onready var sprite = $AnimatedSprite2D
 var is_attacking := false
@@ -57,10 +57,8 @@ func _physics_process(delta: float) -> void:
 func spawn_attack():
 	var attack = attack_scene.instantiate()
 	add_child(attack)
-	attack.scale.x *= 5
-	attack.scale.y *= 5
 	attack.global_position = $AttackSpawn.global_position
-	attack.scale.x *= -1 if sprite.flip_h else 1
+	attack.scale.x = -1 if sprite.flip_h else 1
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "attack":

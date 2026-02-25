@@ -2,18 +2,6 @@
 
 *Main Story* : Witch Lilith tries to bake a cake for her cat, Nyarlathotep’s birthday, however she is missing some ingredients. Help Lilith find them. 
 
-## File Structure
-```
-/csci499-capstone
-├─ assets/
-├─ scenes/
-├─ scripts/
-├─ project.godot
-├─ .godot/
-├─ .editorconfig
-└─ README.md
-```
-
 ## How to run locally
 1. Ensure **Godot 4.6.1** is installed.
 2. Clone the repository:
@@ -36,4 +24,3 @@ Godot_v4.6.1-stable_win64.exe --path .
 ```
 
 If the project fails to run, verify that the correct Godot version is being used and that all files are up to date.
-

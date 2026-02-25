@@ -189,7 +189,7 @@ animations = [{
 radius = 4.0
 height = 24.0
 
-[node name="Player" type="CharacterBody2D" unique_id=2085610372]
+[node name="Player" type="CharacterBody2D" unique_id=2085610372 groups=["player"]]
 script = ExtResource("1_dqkch")
 attack_scene = ExtResource("2_qlg0r")
 

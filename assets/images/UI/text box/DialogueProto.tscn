@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d03pbptyxehk3"]
 
-[ext_resource type="Script" uid="uid://ci3qg5unwue8y" path="res://assets/images/UI/text box/dialogue_proto.gd" id="1_u6ovb"]
+[ext_resource type="Script" uid="uid://cwwf0vyidgraq" path="res://assets/images/UI/text box/dialogue_proto.gd" id="1_u6ovb"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="2_11dwa"]
 [ext_resource type="Texture2D" uid="uid://bjot3cb5bu58g" path="res://assets/images/UI/text box/UI_grey_buttons_1.png" id="3_yp4bp"]
+[ext_resource type="Texture2D" uid="uid://b4smr642vgqbq" path="res://assets/images/player/B_witch_idle.png" id="4_flyeq"]
 
 [sub_resource type="Theme" id="Theme_flyeq"]
 
@@ -19,6 +20,48 @@ modulate_color = Color(0.9137255, 0.9137255, 1, 1)
 texture = ExtResource("3_yp4bp")
 region_rect = Rect2(32, 0, 16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flyeq"]
+texture = ExtResource("4_flyeq")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6n3rb"]
+sources/0 = SubResource("TileSetAtlasSource_flyeq")
+
 [node name="DialogueProto" type="Control" unique_id=1092022285]
 layout_mode = 3
 anchors_preset = 15
@@ -30,9 +73,9 @@ script = ExtResource("1_u6ovb")
 
 [node name="Label" type="Label" parent="." unique_id=1021202116]
 layout_mode = 0
-offset_left = -539.0
+offset_left = -481.0
 offset_top = 226.0
-offset_right = 396.0
+offset_right = 454.0
 offset_bottom = 351.0
 theme_override_fonts/font = ExtResource("2_11dwa")
 theme_override_font_sizes/font_size = 45
@@ -56,5 +99,12 @@ theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxTexture_flyeq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yp4bp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6n3rb")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=420061756]
+position = Vector2(10.000002, -122)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_6n3rb")
+format = 2
+layer_0/tile_data = PackedInt32Array(458740, 0, 0, 524276, 0, 1, 458741, 65536, 0, 524277, 65536, 1, 1179614, 0, 0, 1245150, 0, 1, 1179615, 65536, 0, 1245151, 65536, 1)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

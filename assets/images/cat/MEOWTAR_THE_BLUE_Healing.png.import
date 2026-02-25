@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pl46yba2h1w"
-path="res://.godot/imported/Meow-Knight_Idle.png-74462468016ed017f0a40fca7da11f1c.ctex"
+uid="uid://bix0mhlvcihyu"
+path="res://.godot/imported/MEOWTAR_THE_BLUE_Healing.png-c1f3e6f2ffb7f677218677d93b9fb1ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cat/Meow-Knight_Idle.png"
-dest_files=["res://.godot/imported/Meow-Knight_Idle.png-74462468016ed017f0a40fca7da11f1c.ctex"]
+source_file="res://assets/images/cat/MEOWTAR_THE_BLUE_Healing.png"
+dest_files=["res://.godot/imported/MEOWTAR_THE_BLUE_Healing.png-c1f3e6f2ffb7f677218677d93b9fb1ec.ctex"]
 
 [params]
 

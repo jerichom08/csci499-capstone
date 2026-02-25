@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b83ywgy2f52e8"
-path="res://.godot/imported/Meow-Knight_Run.png-5282bc9a4eb72273da8d8bd45453d5ee.ctex"
+uid="uid://c5c4k7p5g2qgp"
+path="res://.godot/imported/MEOWTAR_THE_BLUE_Run.png-76829842433a26ab7b28a91bfc772bdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cat/Meow-Knight_Run.png"
-dest_files=["res://.godot/imported/Meow-Knight_Run.png-5282bc9a4eb72273da8d8bd45453d5ee.ctex"]
+source_file="res://assets/images/cat/MEOWTAR_THE_BLUE_Run.png"
+dest_files=["res://.godot/imported/MEOWTAR_THE_BLUE_Run.png-76829842433a26ab7b28a91bfc772bdc.ctex"]
 
 [params]
 

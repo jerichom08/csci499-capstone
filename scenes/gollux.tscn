@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcm1s1ie20jcq"]
 
-[ext_resource type="Script" uid="uid://cp81nfsg1svb2" path="res://scripts/gollux.gd" id="1_5hjri"]
+[ext_resource type="Script" uid="uid://cp81nfsg1svb2" path="res://scripts/enemy/gollux.gd" id="1_5hjri"]
 [ext_resource type="Texture2D" uid="uid://c6dd436c5kr8j" path="res://assets/images/gollux/gollux_attack_A.png" id="1_n4dab"]
 [ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scenes/palette_swap.tres" id="1_sctfj"]
 [ext_resource type="Texture2D" uid="uid://c3gu37voporkc" path="res://assets/images/gollux/gollux_attack_B.png" id="2_sctfj"]

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b4xxm61rqmfyu"]
+
+[ext_resource type="Script" uid="uid://ddwbvnu4418vr" path="res://scripts/attack.gd" id="1_jy1op"]
+[ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="2_6fs0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8out"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 0, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gqiv"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 46, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0rgg"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 92, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2shtu"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 138, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40vx7"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 184, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skmhp"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 230, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1mqd"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 276, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4miox"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 322, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55pl6"]
+atlas = ExtResource("2_6fs0s")
+region = Rect2(36, 368, 68, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_td8ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8out")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gqiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0rgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2shtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40vx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skmhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1mqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4miox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55pl6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}]
+
+[node name="Attack" type="Node2D" unique_id=1324257449]
+script = ExtResource("1_jy1op")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1703848889]
+sprite_frames = SubResource("SpriteFrames_td8ue")
+animation = &"attack"
+frame = 8
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=230600985]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1883538977]

@@ -4,42 +4,43 @@
 [ext_resource type="Texture2D" uid="uid://b4smr642vgqbq" path="res://assets/images/player/B_witch_idle.png" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b80i5h1w4mojg" path="res://assets/images/player/B_witch_run.png" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://b4xxm61rqmfyu" path="res://scenes/attack.tscn" id="2_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 0, 104, 46)
+region = Rect2(2, 0, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 46, 104, 46)
+region = Rect2(2, 46, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 92, 104, 46)
+region = Rect2(2, 92, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 138, 104, 46)
+region = Rect2(2, 138, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 184, 104, 46)
+region = Rect2(2, 184, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 230, 104, 46)
+region = Rect2(2, 230, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 276, 104, 46)
+region = Rect2(2, 276, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 322, 104, 46)
+region = Rect2(2, 322, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
 atlas = ExtResource("1_qhqgy")
-region = Rect2(0, 368, 104, 46)
+region = Rect2(2, 368, 34, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_g2els")
@@ -190,17 +191,19 @@ height = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2085610372 groups=["player"]]
 script = ExtResource("1_dqkch")
+attack_scene = ExtResource("2_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1186379679]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"attack"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_smehm")
+
+[node name="AttackSpawn" type="Marker2D" parent="." unique_id=590516098]
+position = Vector2(51, -16)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

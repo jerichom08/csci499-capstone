@@ -344,10 +344,10 @@ script = ExtResource("16_n52d5")
 position = Vector2(545, 109)
 shape = SubResource("CapsuleShape2D_fvk1x")
 
-[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("17_aqgwb")]
-
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_usau2")]
 position = Vector2(-163, 130)
+
+[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("17_aqgwb")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://cmgqo7r2hjk03" path="res://scripts/disappearing_platform.gd" id="1_o04vk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o04vk"]
-size = Vector2(34, 9)
+size = Vector2(38, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyhri"]
-size = Vector2(18, 4.5)
+size = Vector2(17.5, 4)
 
 [node name="DisappearingPlatforn" type="StaticBody2D" unique_id=1325980132]
 script = ExtResource("1_o04vk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580125014]
-position = Vector2(0, 4.5)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_o04vk")
 one_way_collision = true
 
@@ -28,11 +28,11 @@ texture = ExtResource("1_evq1y")
 [node name="Area2D" type="Area2D" parent="." unique_id=1745132538]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2030985123]
-position = Vector2(1, 0.75)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_lyhri")
 
 [node name="Timer" type="Timer" parent="." unique_id=1182830732]
-wait_time = 5.0
+wait_time = 3.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

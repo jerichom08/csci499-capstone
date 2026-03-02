@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bxowxihwx7iin"]
+
+[ext_resource type="Script" uid="uid://cl0xev1a506ta" path="res://scenes/levels/tutorial/next_scene.gd" id="1_6rg2b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7g516"]
+height = 96.0
+
+[node name="NextScene" type="Area2D" unique_id=1836429099]
+script = ExtResource("1_6rg2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=307620373]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309340742]
+shape = SubResource("CapsuleShape2D_7g516")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

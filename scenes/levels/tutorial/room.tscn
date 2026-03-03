@@ -323,9 +323,6 @@ scale = Vector2(0.79999983, 0.79999983)
 tile_map_data = PackedByteArray("AAAFAP3/AQAAAAAAAAAFAP7/AQAAAAEAAAAFAP//AQAAAAIAAAD4/wAAAwAAAAAAAAD4/wEAAwAAAAEAAAD4/wIAAwAAAAIAAAD5/wAAAwABAAAAAAD5/wEAAwABAAEAAAD5/wIAAwABAAIAAAA=")
 tile_set = SubResource("TileSet_tk4a3")
 
-[node name="Player" parent="TileMap" unique_id=2085610372 instance=ExtResource("13_usau2")]
-position = Vector2(-56.8, 41.199997)
-
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMap" unique_id=368044992]
 position = Vector2(5.9999995, 9)
 scale = Vector2(0.7999998, 0.7999998)
@@ -348,6 +345,9 @@ position = Vector2(545, 109)
 shape = SubResource("CapsuleShape2D_fvk1x")
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("17_aqgwb")]
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_usau2")]
+position = Vector2(-285, 166)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_h2t7e"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_jxrpg"]
+[ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="3_jxrpg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2t7e"]
 texture = ExtResource("1_h2t7e")
@@ -306,11 +307,13 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0)
 tile_set = SubResource("TileSet_pr0mc")
 
-[node name="Moving Platform2" type="TileMapLayer" parent="AnimatableBody2D" unique_id=1315494428]
-position = Vector2(-269, -79)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray(0, 0, 255, 255, 1, 0, 2, 0, 8, 0, 3, 0, 0, 32, 0, 0, 1, 0, 2, 0, 8, 0, 3, 0, 0, 32)
-tile_set = SubResource("TileSet_pr0mc")
+[node name="Spikes" parent="AnimatableBody2D" unique_id=529623262 instance=ExtResource("3_jxrpg")]
+position = Vector2(-296, -3.0000038)
+rotation = 3.1415927
+
+[node name="Spikes2" parent="AnimatableBody2D" unique_id=1830114971 instance=ExtResource("3_jxrpg")]
+position = Vector2(-242, -3.0000002)
+rotation = 3.1415927
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1450619115]
 position = Vector2(-267, -37.375)

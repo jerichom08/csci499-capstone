@@ -1,12 +1,6 @@
 [gd_scene format=3 uid="uid://78vmthw5e2f2"]
 
-[sub_resource type="GDScript" id="GDScript_wjjyg"]
-script/source = "extends PuzzleBase
-
-func _ready():
-	start_puzzle()
-	complete_puzzle()
-"
+[ext_resource type="Script" uid="uid://dcvk7hetnwt73" path="res://scenes/puzzles/puzzle_test.gd" id="1_jachm"]
 
 [node name="PuzzleTest" type="Node2D" unique_id=1932119850]
-script = SubResource("GDScript_wjjyg")
+script = ExtResource("1_jachm")

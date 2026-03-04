@@ -1,10 +1,14 @@
 extends Node
 
-var current_puzzle: PuzzleBase
-
-func register_puzzle(puzzle: PuzzleBase):
-	current_puzzle = puzzle
-	puzzle.connect("puzzle_completed", Callable(self, "_on_puzzle_completed"))
+func register_puzzle(puzzle: PuzzleBase) -> void:
+	if puzzle == null:
+		return
+	#fail case
+	if not puzzle.puzzle_completed.is_connected(_on_puzzle_completed):
+		puzzle.puzzle_completed.connect(_on_puzzle_completed)
+		
+	print("Manager registered puzzle:", puzzle.name)
 	
-func _on_puzzle_completed():
+
+func _on_puzzle_completed() -> void:
 	print("Manager detected puzzle completion")

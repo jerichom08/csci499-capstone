@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bka1obh3dlwo"]
+
+[ext_resource type="Script" uid="uid://dlgw0do28tl14" path="res://scenes/puzzles/puzzle_1/puzzle_1.gd" id="1_nyrnx"]
+[ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="2_ahp8l"]
+
+[node name="Puzzle1" type="Node2D" unique_id=219482314]
+script = ExtResource("1_nyrnx")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=860154274]
+
+[node name="Doors" type="Node2D" parent="." unique_id=2043533311]
+
+[node name="Door_A" parent="Doors" unique_id=485091926 instance=ExtResource("2_ahp8l")]
+
+[node name="Door_B" parent="Doors" unique_id=1445323477 instance=ExtResource("2_ahp8l")]
+
+[node name="Door_C" parent="Doors" unique_id=8372383 instance=ExtResource("2_ahp8l")]
+
+[node name="Goal" type="Area2D" parent="." unique_id=2008315122]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=2123797296]

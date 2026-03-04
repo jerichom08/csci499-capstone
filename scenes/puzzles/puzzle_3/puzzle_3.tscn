@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbtpiu35ixl18"]
+
+[ext_resource type="Script" uid="uid://ck2vmvsbyy17d" path="res://scenes/puzzles/puzzle_3/puzzle_3.gd" id="1_al8ij"]
+
+[node name="Puzzle3" type="Node2D" unique_id=171418506]
+script = ExtResource("1_al8ij")

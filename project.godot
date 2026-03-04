@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Nyarla’s Birthday Bash"
-run/main_scene="uid://78vmthw5e2f2"
+run/main_scene="uid://dad8n45up7s3i"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PuzzleManager="*uid://c8iupug2hqyf1"
 
 [display]
 

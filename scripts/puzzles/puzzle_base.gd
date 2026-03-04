@@ -5,11 +5,12 @@ signal puzzle_completed
 
 var is_completed = false
 
-func start_puzzle():
-	print("Puzzle started")
-	
-func complete_puzzle():
-	if not is_completed:
-		is_completed = true
-		emit_signal("puzzle_completed")
-		print("Puzzle completed")
+func start_puzzle() -> void:
+	print("Puzzle started:", name)
+
+func complete_puzzle() -> void:
+	if is_completed:
+		return
+	is_completed = true
+	print("Puzzle completed:", name)
+	emit_signal("puzzle_completed")

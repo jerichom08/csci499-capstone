@@ -3,56 +3,122 @@
 [ext_resource type="Script" uid="uid://dlgw0do28tl14" path="res://scenes/puzzles/puzzle_1/puzzle_1.gd" id="1_nyrnx"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="2_ahp8l"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="3_m058v"]
+[ext_resource type="Texture2D" uid="uid://q4ife8hqm6fg" path="res://assets/images/doors/Door 4.png" id="4_r34od"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="4_udpfl"]
+[ext_resource type="Texture2D" uid="uid://cf0k43ygihcyd" path="res://assets/images/bedroom/dresser.png" id="5_xkl8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahp8l"]
-size = Vector2(35, 36.5)
+size = Vector2(26.5, 36.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udpfl"]
+size = Vector2(166, 30.5)
 
 [node name="Puzzle1" type="Node2D" unique_id=219482314]
+position = Vector2(148, 47)
 script = ExtResource("1_nyrnx")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=860154274]
-position = Vector2(-57, 231)
+position = Vector2(-61, 27)
 
 [node name="Doors" type="Node2D" parent="." unique_id=2043533311]
 position = Vector2(245, -39)
 
 [node name="Door_A" parent="Doors" unique_id=1522837388 instance=ExtResource("2_ahp8l")]
-position = Vector2(-2, 42)
+position = Vector2(89, 18)
 script = ExtResource("3_m058v")
 target_path = NodePath("../../DoorTargets/Target_A")
 spawn_path = NodePath("../../SpawnPoint")
 
 [node name="Door_B" parent="Doors" unique_id=678242648 instance=ExtResource("2_ahp8l")]
-position = Vector2(3, 261)
+position = Vector2(93, 291)
 script = ExtResource("3_m058v")
-target_path = NodePath("../../ExitPoint")
+target_path = NodePath("../../SpawnPoint")
 spawn_path = NodePath("../../SpawnPoint")
 
 [node name="Door_C" parent="Doors" unique_id=1928337231 instance=ExtResource("2_ahp8l")]
-position = Vector2(1, 150)
+position = Vector2(93, 138)
 script = ExtResource("3_m058v")
 target_path = NodePath("../../DoorTargets/Target_B")
 spawn_path = NodePath("../../SpawnPoint")
 send_to_spawn = true
 
 [node name="Goal" type="Area2D" parent="." unique_id=2008315122]
-position = Vector2(996, 235)
+position = Vector2(731, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=2123797296]
-position = Vector2(2, 1)
+position = Vector2(-15, 9)
 shape = SubResource("RectangleShape2D_ahp8l")
 
+[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=884583062]
+position = Vector2(-25, -1.9999981)
+scale = Vector2(0.85087717, 0.685567)
+texture = ExtResource("4_r34od")
+
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1594944350]
-position = Vector2(925, 150)
+position = Vector2(684, 29)
 
 [node name="DoorTargets" type="Marker2D" parent="." unique_id=1246462783]
 position = Vector2(516, 238)
 
 [node name="Target_A" type="Marker2D" parent="DoorTargets" unique_id=1726919451]
-position = Vector2(-580, -57)
+position = Vector2(73, -176)
 
 [node name="Target_B" type="Marker2D" parent="DoorTargets" unique_id=1457889728]
-position = Vector2(-582, -108)
+position = Vector2(-560, -198)
 
 [node name="Target_C" type="Marker2D" parent="DoorTargets" unique_id=1704285296]
-position = Vector2(282, -56)
+position = Vector2(-645, -223)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("4_udpfl")]
+position = Vector2(-80, 0)
+
+[node name="Platform_1" type="StaticBody2D" parent="." unique_id=1420938843]
+position = Vector2(46, 61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_1" unique_id=398502129]
+position = Vector2(-142, 51)
+shape = SubResource("RectangleShape2D_udpfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform_1/CollisionShape2D" unique_id=139894986]
+position = Vector2(-3, -5)
+scale = Vector2(2.025, 1)
+texture = ExtResource("5_xkl8u")
+
+[node name="Platform_2" type="StaticBody2D" parent="Platform_1" unique_id=511050535]
+position = Vector2(46, 61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_1/Platform_2" unique_id=1008394236]
+position = Vector2(568, -13)
+shape = SubResource("RectangleShape2D_udpfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform_1/Platform_2/CollisionShape2D" unique_id=1626266881]
+position = Vector2(4.000004, 5)
+scale = Vector2(2.025, 1)
+texture = ExtResource("5_xkl8u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform_1" unique_id=1037935461]
+position = Vector2(105, 89)
+shape = SubResource("RectangleShape2D_udpfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform_1/CollisionShape2D2" unique_id=1314083165]
+position = Vector2(3, 2)
+scale = Vector2(2.025, 1)
+texture = ExtResource("5_xkl8u")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platform_1" unique_id=1615641097]
+position = Vector2(107, 11)
+shape = SubResource("RectangleShape2D_udpfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform_1/CollisionShape2D3" unique_id=1257497818]
+position = Vector2(-2, -3)
+scale = Vector2(2.025, 1)
+texture = ExtResource("5_xkl8u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platform_1" unique_id=1866582581]
+position = Vector2(101, 219)
+shape = SubResource("RectangleShape2D_udpfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform_1/CollisionShape2D4" unique_id=293116921]
+position = Vector2(-1, 2)
+scale = Vector2(2.025, 1)
+texture = ExtResource("5_xkl8u")

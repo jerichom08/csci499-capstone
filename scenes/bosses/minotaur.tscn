@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cry1cqpxqni6h"]
+
+[ext_resource type="Texture2D" uid="uid://cc5n7nigdvwq3" path="res://assets/images/minotaur/mino_idle.png" id="1_em423"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umvy0"]
+atlas = ExtResource("1_em423")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4agob"]
+atlas = ExtResource("1_em423")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8fdv"]
+atlas = ExtResource("1_em423")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvx2w"]
+atlas = ExtResource("1_em423")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nv7t"]
+atlas = ExtResource("1_em423")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_an5vr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umvy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4agob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8fdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvx2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nv7t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_800qi"]
+height = 38.0
+
+[node name="minotaur" type="CharacterBody2D" unique_id=503455755]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1568472986]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_an5vr")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471408029]
+position = Vector2(-2, 4)
+shape = SubResource("CapsuleShape2D_800qi")

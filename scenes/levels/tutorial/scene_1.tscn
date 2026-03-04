@@ -309,7 +309,7 @@ position = Vector2(-148, 80)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("9_xp1wc")]
-position = Vector2(130, -185)
+position = Vector2(-569, 218)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
 scale = Vector2(3, 3)

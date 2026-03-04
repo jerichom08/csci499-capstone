@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_u1pfj"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_elgew"]
+[ext_resource type="Script" uid="uid://tdj5k2w4mdqm" path="res://scenes/lvInterface/lava.gd" id="3_elgew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("1_u1pfj")
@@ -265,6 +266,7 @@ size = Vector2(89.31035, 17.241379)
 scale = Vector2(2.32, 2.32)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 14, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 13, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 13, 0, 0, 0, 0, 0, 3, 0, 0, 0, 2, 0, 13, 0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 0, 15, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_alrbv")
+script = ExtResource("3_elgew")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=870201359]
 
@@ -272,3 +274,5 @@ tile_set = SubResource("TileSet_alrbv")
 position = Vector2(45.000027, 9.482762)
 scale = Vector2(1.0000004, 1.0000004)
 shape = SubResource("RectangleShape2D_lv6c1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

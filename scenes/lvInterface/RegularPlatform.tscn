@@ -267,6 +267,7 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0, 1, 0, 
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=166929438]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=444699931]
 position = Vector2(18, 5)

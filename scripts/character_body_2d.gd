@@ -54,12 +54,6 @@ func _physics_process(delta: float) -> void:
 		$AttackSpawn.position.x = abs($AttackSpawn.position.x) * (-1 if sprite.flip_h else 1)
 		
 	move_and_slide()
-		
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		
-	#if collision.get_collider().collision_layer & (3):
-			#die()
 
 func spawn_attack():
 	var attack = attack_scene.instantiate()
@@ -72,6 +66,3 @@ func spawn_attack():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "attack":
 		is_attacking = false
-
-func die():
-	global_position = Vector2(100, 100)

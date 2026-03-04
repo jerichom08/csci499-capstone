@@ -74,6 +74,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy1op"]
+size = Vector2(65, 27)
+
 [node name="Attack" type="Node2D" unique_id=1324257449]
 script = ExtResource("1_jy1op")
 
@@ -86,3 +89,5 @@ frame_progress = 1.0
 [node name="Area2D" type="Area2D" parent="." unique_id=230600985]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1883538977]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_jy1op")

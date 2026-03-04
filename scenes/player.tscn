@@ -197,11 +197,11 @@ attack_scene = ExtResource("2_qlg0r")
 position = Vector2(0, -16)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
-position = Vector2(0, -12)
+position = Vector2(0, -4)
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_smehm")
 

@@ -194,6 +194,7 @@ radius = 4.0
 height = 24.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2085610372 groups=["player"]]
+collision_mask = 2
 script = ExtResource("1_dqkch")
 attack_scene = ExtResource("2_qlg0r")
 
@@ -213,6 +214,7 @@ shape = SubResource("CapsuleShape2D_smehm")
 position = Vector2(153, -16)
 
 [node name="HazardDetector" type="Area2D" parent="." unique_id=2037037194]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector" unique_id=520016305]
 position = Vector2(0, -12)

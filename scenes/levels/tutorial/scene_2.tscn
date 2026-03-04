@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_2se54"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="4_sagyo"]
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="5_utuh5"]
+[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="5_vb3gq"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="6_jr5wo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
@@ -296,11 +297,15 @@ position = Vector2(-81, 333)
 [node name="Spikes6" parent="." unique_id=1939870823 instance=ExtResource("4_sagyo")]
 position = Vector2(-27.000002, 333)
 
+[node name="lava" parent="." unique_id=319135582 instance=ExtResource("5_vb3gq")]
+position = Vector2(106.99999, 330)
+scale = Vector2(2.42, 2.42)
+
 [node name="RegularPlatform" parent="." unique_id=649759663 instance=ExtResource("5_utuh5")]
 position = Vector2(165, 269)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_jr5wo")]
-position = Vector2(-603, -162)
+position = Vector2(-624, -128)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
 scale = Vector2(3, 3)

@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://wrvyahwv456v"]
+[gd_scene format=3 uid="uid://d4m0cam7e12l1"]
 
-[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_cq0tu"]
-[ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_pi4im"]
+[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_unypf"]
+[ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_x8qqy"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
-texture = ExtResource("1_cq0tu")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8qqy"]
+texture = ExtResource("1_unypf")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -208,8 +208,8 @@ texture_region_size = Vector2i(18, 18)
 18:8/0 = 0
 19:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15x7e"]
-texture = ExtResource("2_pi4im")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q80c2"]
+texture = ExtResource("2_x8qqy")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -252,22 +252,22 @@ texture_region_size = Vector2i(18, 18)
 8:3/0 = 0
 9:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_alrbv"]
+[sub_resource type="TileSet" id="TileSet_gygnk"]
 tile_size = Vector2i(18, 18)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_8yd8u")
-sources/3 = SubResource("TileSetAtlasSource_15x7e")
+sources/2 = SubResource("TileSetAtlasSource_x8qqy")
+sources/3 = SubResource("TileSetAtlasSource_q80c2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hxna"]
-size = Vector2(36, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unypf"]
+size = Vector2(14, 36)
 
-[node name="RegularPlatform" type="TileMapLayer" unique_id=649759663]
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0, 1, 0, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0)
-tile_set = SubResource("TileSet_alrbv")
+[node name="StaticBody2D" type="StaticBody2D" unique_id=550434994]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=166929438]
+[node name="basic tiles" type="TileMapLayer" parent="." unique_id=1093994256]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 9, 0, 5, 0, 0, 0, 255, 255, 254, 255, 2, 0, 9, 0, 3, 0, 0, 0)
+tile_set = SubResource("TileSet_gygnk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=444699931]
-position = Vector2(18, 5)
-shape = SubResource("RectangleShape2D_8hxna")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=653256632]
+position = Vector2(-9, -18)
+shape = SubResource("RectangleShape2D_unypf")

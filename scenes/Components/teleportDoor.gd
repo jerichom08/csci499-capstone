@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	#teleports player
-	if not body.is_in_group("Player"):
+	if not body.is_in_group("player"):
 		return
 		
 	var destination_node: Node2D = null

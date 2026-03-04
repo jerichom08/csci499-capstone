@@ -2,20 +2,57 @@
 
 [ext_resource type="Script" uid="uid://dlgw0do28tl14" path="res://scenes/puzzles/puzzle_1/puzzle_1.gd" id="1_nyrnx"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="2_ahp8l"]
+[ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="3_m058v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahp8l"]
+size = Vector2(35, 36.5)
 
 [node name="Puzzle1" type="Node2D" unique_id=219482314]
 script = ExtResource("1_nyrnx")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=860154274]
+position = Vector2(-57, 231)
 
 [node name="Doors" type="Node2D" parent="." unique_id=2043533311]
+position = Vector2(245, -39)
 
-[node name="Door_A" parent="Doors" unique_id=485091926 instance=ExtResource("2_ahp8l")]
+[node name="Door_A" parent="Doors" unique_id=1522837388 instance=ExtResource("2_ahp8l")]
+position = Vector2(-2, 42)
+script = ExtResource("3_m058v")
+target_path = NodePath("../../DoorTargets/Target_A")
+spawn_path = NodePath("../../SpawnPoint")
 
-[node name="Door_B" parent="Doors" unique_id=1445323477 instance=ExtResource("2_ahp8l")]
+[node name="Door_B" parent="Doors" unique_id=678242648 instance=ExtResource("2_ahp8l")]
+position = Vector2(3, 261)
+script = ExtResource("3_m058v")
+target_path = NodePath("../../ExitPoint")
+spawn_path = NodePath("../../SpawnPoint")
 
-[node name="Door_C" parent="Doors" unique_id=8372383 instance=ExtResource("2_ahp8l")]
+[node name="Door_C" parent="Doors" unique_id=1928337231 instance=ExtResource("2_ahp8l")]
+position = Vector2(1, 150)
+script = ExtResource("3_m058v")
+target_path = NodePath("../../DoorTargets/Target_B")
+spawn_path = NodePath("../../SpawnPoint")
+send_to_spawn = true
 
 [node name="Goal" type="Area2D" parent="." unique_id=2008315122]
+position = Vector2(996, 235)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=2123797296]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_ahp8l")
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=1594944350]
+position = Vector2(925, 150)
+
+[node name="DoorTargets" type="Marker2D" parent="." unique_id=1246462783]
+position = Vector2(516, 238)
+
+[node name="Target_A" type="Marker2D" parent="DoorTargets" unique_id=1726919451]
+position = Vector2(-580, -57)
+
+[node name="Target_B" type="Marker2D" parent="DoorTargets" unique_id=1457889728]
+position = Vector2(-582, -108)
+
+[node name="Target_C" type="Marker2D" parent="DoorTargets" unique_id=1704285296]
+position = Vector2(282, -56)

@@ -1,284 +1,150 @@
-# File: scripts/enemy/EnemyBase.gd
+# EnemyBase.gd
+# Minimal base class for mobs/bosses to inherit from.
+# Assumes a scene structure like:
+# Enemy (CharacterBody2D)
+# ├─ AnimatedSprite2D
+# └─ CollisionShape2D
+
 extends CharacterBody2D
 class_name EnemyBase
 
-enum State { IDLE, PATROL, CHASE, ATTACK, HURT, DEAD }
+enum State { IDLE, RUN, HURT, ATTACK, DEFEAT}
 
-@export_category("Core")
+# --- Core stats ---
 @export var max_health: int = 3
 @export var move_speed: float = 50.0
-@export var gravity: float = 1200.0
+@export var gravity: float = 900.0
 
-@export_category("AI")
-@export var detection_range: float = 160.0
-@export var attack_range: float = 32.0
-@export var attack_cooldown: float = 1.25
-@export var lose_target_after: float = 1.0
+# Optional: child enemies can set these per-mob
+@export var can_run: bool = true
+@export var can_attack: bool = true
 
-@export_category("Patrol")
-@export var patrol_enabled: bool = true
-@export var patrol_left_x: float = -64.0   # local-space relative bounds
-@export var patrol_right_x: float = 64.0   # local-space relative bounds
-@export var patrol_pause_time: float = 0.2
-
-@export_category("Combat")
-@export var contact_damage: int = 1
-@export var knockback_strength: float = 220.0
-@export var hurt_lock_time: float = 0.25
-
-@export_category("Nodes")
-@export var sprite_path: NodePath
-@export var anim_path: NodePath
-
+# --- Runtime state ---
 var health: int
-var state: State = State.PATROL
-var facing: int = 1  # 1 right, -1 left
+var state: State = State.IDLE
+var facing_dir: int = 1 # 1 = right, -1 = left
+var is_dead: bool = false
 
-var target: Node2D = null
-var _home_x: float
-var _patrol_dir: int = 1
-
-var _attack_timer: float = 0.0
-var _lost_timer: float = 0.0
-var _patrol_pause: float = 0.0
-var _hurt_timer: float = 0.0
-
-@onready var sprite := (get_node_or_null(sprite_path) as Node)
-@onready var anim := (get_node_or_null(anim_path) as AnimationPlayer)
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hitbox: CollisionShape2D = $CollisionShape2D
 
 func _ready() -> void:
 	health = max_health
-	_home_x = global_position.x
-	_find_player()
-	_enter_state(State.PATROL if patrol_enabled else State.IDLE)
+	_enter_state(State.IDLE)
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+
 	_apply_gravity(delta)
-
-	_attack_timer = maxf(_attack_timer - delta, 0.0)
-
-	if state == State.DEAD:
-		return
-
-	_update_target(delta)
-
-	match state:
-		State.IDLE:
-			_do_idle(delta)
-		State.PATROL:
-			_do_patrol(delta)
-		State.CHASE:
-			_do_chase(delta)
-		State.ATTACK:
-			_do_attack(delta)
-		State.HURT:
-			_do_hurt(delta)
-
+	_state_tick(delta)
 	move_and_slide()
-	_update_visuals()
 
-# --------------------------
-# Public API (for children)
-# --------------------------
-
-func take_damage(amount: int, source_global_pos: Vector2 = global_position) -> void:
-	if state == State.DEAD:
+# -------------------------
+# Public API (common calls)
+# -------------------------
+func take_damage(amount: int, knockback: Vector2 = Vector2.ZERO) -> void:
+	if is_dead:
 		return
 
-	health -= amount
+	health = max(health - amount, 0)
+
+	if knockback != Vector2.ZERO:
+		velocity += knockback
+
 	if health <= 0:
 		die()
+	else:
+		_enter_state(State.HURT)
+		on_hurt() # override hook
+
+func heal(amount: int) -> void:
+	if is_dead:
 		return
-
-	# Knockback away from source
-	var dir := signf(global_position.x - source_global_pos.x)
-	if dir == 0.0:
-		dir = float(-facing)
-	velocity.x = dir * knockback_strength
-
-	_enter_state(State.HURT)
+	health = min(health + amount, max_health)
 
 func die() -> void:
-	_enter_state(State.DEAD)
-	velocity = Vector2.ZERO
-	_play_anim("dead")
-	set_collision_layer_value(1, false)
-	set_collision_mask_value(1, false)
+	if is_dead:
+		return
+	is_dead = true
+	_enter_state(State.DEFEAT)
+	on_defeat() # override hook
 
-# Child classes can override these to customize behavior without rewriting base logic.
-func wants_to_attack() -> bool:
-	return target != null and _dist_to_target() <= attack_range and _attack_timer <= 0.0
+func set_facing_from_x(target_x: float) -> void:
+	var dir := signf(target_x - global_position.x)
+	if dir != 0:
+		facing_dir = int(dir)
+		sprite.flip_h = facing_dir < 0
 
-func perform_attack() -> void:
-	# Override in child: spawn hitbox, shoot, etc.
-	# Base just plays animation and starts cooldown.
-	_play_anim("attack")
-	_attack_timer = attack_cooldown
-
-func on_target_acquired() -> void:
-	pass
-
-func on_target_lost() -> void:
-	pass
-
-# --------------------------
-# State machine
-# --------------------------
-
+# -------------------------
+# State machine (minimal)
+# -------------------------
 func _enter_state(new_state: State) -> void:
 	if state == new_state:
 		return
 	state = new_state
+	_play_state_anim(new_state)
+	on_state_enter(new_state) # override hook
 
+func _state_tick(delta: float) -> void:
 	match state:
 		State.IDLE:
-			_play_anim("idle")
-		State.PATROL:
-			_play_anim("run")
-		State.CHASE:
-			_play_anim("run")
-		State.ATTACK:
-			# Let _do_attack trigger the actual attack.
-			pass
+			on_idle(delta)   # override hook
+		State.RUN:
+			on_run(delta)    # override hook
 		State.HURT:
-			_hurt_timer = hurt_lock_time
-			_play_anim("hurt")
-		State.DEAD:
-			# die() handles visuals/collision
+			on_hurt_tick(delta) # override hook (e.g., timed stun)
+		State.ATTACK:
+			on_attack(delta) # override hook
+		State.DEFEAT:
 			pass
 
-func _do_idle(_delta: float) -> void:
-	velocity.x = move_toward(velocity.x, 0.0, move_speed * 6.0)
+func _play_state_anim(s: State) -> void:
+	# Child classes decide which animations exist; this is just a safe default.
+	match s:
+		State.IDLE:
+			_try_play("idle")
+		State.RUN:
+			_try_play("run")
+		State.HURT:
+			_try_play("hurt")
+		State.ATTACK:
+			_try_play("attack")
+		State.DEFEAT:
+			_try_play("defeat")
 
-	if wants_to_attack():
-		_enter_state(State.ATTACK)
-	elif target != null:
-		_enter_state(State.CHASE)
-	elif patrol_enabled:
-		_enter_state(State.PATROL)
-
-func _do_patrol(delta: float) -> void:
-	if _patrol_pause > 0.0:
-		_patrol_pause -= delta
-		velocity.x = move_toward(velocity.x, 0.0, move_speed * 6.0)
-		return
-
-	var left_bound := _home_x + patrol_left_x
-	var right_bound := _home_x + patrol_right_x
-
-	if global_position.x <= left_bound:
-		_patrol_dir = 1
-		_patrol_pause = patrol_pause_time
-	elif global_position.x >= right_bound:
-		_patrol_dir = -1
-		_patrol_pause = patrol_pause_time
-
-	velocity.x = _patrol_dir * move_speed
-
-	if wants_to_attack():
-		_enter_state(State.ATTACK)
-	elif target != null:
-		_enter_state(State.CHASE)
-
-func _do_chase(_delta: float) -> void:
-	if target == null:
-		_enter_state(State.PATROL if patrol_enabled else State.IDLE)
-		return
-
-	var dir := signf(target.global_position.x - global_position.x)
-	velocity.x = dir * move_speed
-
-	if wants_to_attack():
-		_enter_state(State.ATTACK)
-
-func _do_attack(_delta: float) -> void:
-	if target == null:
-		_enter_state(State.PATROL if patrol_enabled else State.IDLE)
-		return
-
-	# Stop to attack (common for melee); children can override perform_attack() for ranged.
-	velocity.x = move_toward(velocity.x, 0.0, move_speed * 10.0)
-	perform_attack()
-
-	# After performing attack, transition based on whether target still valid.
-	if target != null:
-		_enter_state(State.CHASE if _dist_to_target() > attack_range else State.IDLE)
-	else:
-		_enter_state(State.PATROL if patrol_enabled else State.IDLE)
-
-func _do_hurt(delta: float) -> void:
-	_hurt_timer -= delta
-	if _hurt_timer <= 0.0:
-		_enter_state(State.CHASE if target != null else (State.PATROL if patrol_enabled else State.IDLE))
-
-# --------------------------
-# Targeting / sensing
-# --------------------------
-
-func _find_player() -> void:
-	# Assumes the player is in group "player"
-	target = get_tree().get_first_node_in_group("player") as Node2D
-
-func _update_target(delta: float) -> void:
-	if target == null or !is_instance_valid(target):
-		target = null
-		_lost_timer = 0.0
-		return
-
-	var d := _dist_to_target()
-
-	if d <= detection_range:
-		if _lost_timer > 0.0:
-			_lost_timer = 0.0
-		# acquired
-		if state in [State.IDLE, State.PATROL] and !wants_to_attack():
-			on_target_acquired()
-	else:
-		# out of range: start "lose target" timer
-		_lost_timer += delta
-		if _lost_timer >= lose_target_after:
-			target = null
-			_lost_timer = 0.0
-			on_target_lost()
-
-func _dist_to_target() -> float:
-	if target == null:
-		return INF
-	return global_position.distance_to(target.global_position)
-
-# --------------------------
-# Movement / visuals
-# --------------------------
+func _try_play(anim: String) -> void:
+	if sprite != null and sprite.sprite_frames != null and sprite.sprite_frames.has_animation(anim):
+		sprite.play(anim)
 
 func _apply_gravity(delta: float) -> void:
-	if !is_on_floor():
+	if not is_on_floor():
 		velocity.y += gravity * delta
-	else:
-		# prevent accumulation
-		velocity.y = minf(velocity.y, 0.0)
 
-func _update_visuals() -> void:
-	# Determine facing from movement/target
-	if target != null:
-		var dir := signf(target.global_position.x - global_position.x)
-		if dir != 0.0:
-			facing = int(dir)
-	elif absf(velocity.x) > 0.1:
-		facing = 1 if velocity.x > 0.0 else -1
+# -------------------------
+# Override hooks (children)
+# -------------------------
+func on_state_enter(_new_state: State) -> void:
+	pass
 
-	# Flip Sprite2D / AnimatedSprite2D if provided
-	if sprite == null:
-		return
+func on_idle(_delta: float) -> void:
+	# Example default: if can_run, child might decide to patrol/chase then call _enter_state(RUN)
+	pass
 
-	# Supports Sprite2D / AnimatedSprite2D
-	if sprite.has_method("set_flip_h"):
-		sprite.call("set_flip_h", facing < 0)
-	elif "flip_h" in sprite:
-		sprite.flip_h = (facing < 0)
+func on_run(_delta: float) -> void:
+	pass
 
-func _play_anim(name: String) -> void:
-	# If you use AnimatedSprite2D instead of AnimationPlayer, override this in child
-	if anim == null:
-		return
-	if anim.has_animation(name):
-		anim.play(name)
+func on_attack(_delta: float) -> void:
+	pass
+
+func on_hurt() -> void:
+	# Called once when damage taken and not dead
+	pass
+
+func on_hurt_tick(_delta: float) -> void:
+	# Child can implement hurt stun timing then return to idle/run.
+	pass
+
+func on_defeat() -> void:
+	# Child can disable collisions, drop loot, queue_free after animation, etc.
+	pass

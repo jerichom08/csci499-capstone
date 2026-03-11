@@ -1,6 +1,99 @@
 [gd_scene format=3 uid="uid://d4e6x036lofax"]
 
 [ext_resource type="Script" uid="uid://8sbnk07crufp" path="res://scenes/puzzles/puzzle_2/puzzle_2.gd" id="1_6fjad"]
+[ext_resource type="PackedScene" uid="uid://bxxay0en10aln" path="res://scenes/puzzles/puzzle_2/ingredient_station.tscn" id="2_lufmg"]
+[ext_resource type="Texture2D" uid="uid://c7ys41jtq1dub" path="res://assets/images/food/Bread.png" id="3_v37ne"]
+[ext_resource type="Texture2D" uid="uid://b45jt5o22xvwa" path="res://assets/images/food/Potato.png" id="5_13pu0"]
+[ext_resource type="Texture2D" uid="uid://choj3367pq3jt" path="res://assets/images/food/Tomato.png" id="6_m2k3y"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="6_v37ne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut5w6"]
+size = Vector2(7, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v37ne"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efsmh"]
+size = Vector2(10.5, 10.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13pu0"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v37ne"]
+a = Vector2(-84, -10)
+b = Vector2(287, -10)
 
 [node name="Puzzle2" type="Node2D" unique_id=319686756]
+position = Vector2(673, 304)
 script = ExtResource("1_6fjad")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1021150342]
+position = Vector2(-741, 2014)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=500192746]
+position = Vector2(12, 15)
+
+[node name="BreadStation" parent="Node2D" unique_id=1519206893 instance=ExtResource("2_lufmg")]
+position = Vector2(-121, -94)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/BreadStation" unique_id=738847778]
+position = Vector2(10, 7)
+texture = ExtResource("3_v37ne")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/BreadStation" unique_id=996023612]
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_ut5w6")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Node2D/BreadStation" unique_id=1778468145]
+position = Vector2(3, 3)
+
+[node name="TomatoStation" parent="Node2D" unique_id=64900405 instance=ExtResource("2_lufmg")]
+position = Vector2(29, -92)
+ingredient_name = "tomato"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/TomatoStation" unique_id=840835136]
+position = Vector2(46, -7)
+texture = ExtResource("6_m2k3y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/TomatoStation" unique_id=1688479350]
+position = Vector2(46, -7)
+shape = SubResource("RectangleShape2D_v37ne")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Node2D/TomatoStation" unique_id=797793946]
+position = Vector2(50, -9)
+
+[node name="AppleStation" parent="Node2D" unique_id=117465391 instance=ExtResource("2_lufmg")]
+position = Vector2(160, -67)
+ingredient_name = "apple"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/AppleStation" unique_id=501839380]
+position = Vector2(-1, -24)
+texture = ExtResource("6_m2k3y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/AppleStation" unique_id=587312550]
+position = Vector2(5, -27)
+shape = SubResource("RectangleShape2D_efsmh")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Node2D/AppleStation" unique_id=983119253]
+position = Vector2(-1, -40)
+
+[node name="PotatoStation" parent="Node2D" unique_id=597537310 instance=ExtResource("2_lufmg")]
+position = Vector2(-21, -116)
+ingredient_name = "potato"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/PotatoStation" unique_id=1481988995]
+position = Vector2(5, 30)
+texture = ExtResource("5_13pu0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/PotatoStation" unique_id=1013776688]
+position = Vector2(4, 29)
+shape = SubResource("RectangleShape2D_13pu0")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Node2D/PotatoStation" unique_id=1852676415]
+position = Vector2(10, 25)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_v37ne")]
+position = Vector2(-166, -61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1545971331]
+position = Vector2(-162, -45)
+shape = SubResource("SegmentShape2D_v37ne")

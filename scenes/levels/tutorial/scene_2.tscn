@@ -302,7 +302,8 @@ position = Vector2(106.99999, 330)
 scale = Vector2(2.42, 2.42)
 
 [node name="RegularPlatform" parent="." unique_id=649759663 instance=ExtResource("5_utuh5")]
-position = Vector2(165, 269)
+position = Vector2(234, 277)
+scale = Vector2(2.5, 2)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_jr5wo")]
 position = Vector2(-624, -128)

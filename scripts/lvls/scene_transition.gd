@@ -19,3 +19,7 @@ func change_scene_to(scene_path: String) -> void:
 func _load_new_scene() -> void:
 	get_tree().paused = false
 	get_tree().call_deferred("change_scene_to_file", scene_to_load) 
+
+
+func _on_to_tut_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

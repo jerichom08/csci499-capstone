@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b53btw62uvv6n" path="res://assets/images/bedroom/texture_0.png" id="12_banuo"]
 [ext_resource type="Texture2D" uid="uid://dhduh2wyryjrp" path="res://assets/images/cat/MEOWTAR_THE_BLUE_Idle.png" id="14_rwdm5"]
 [ext_resource type="PackedScene" uid="uid://d03pbptyxehk3" path="res://assets/images/UI/text box/DialogueProto.tscn" id="15_oppu3"]
-[ext_resource type="Script" uid="uid://bubhemlucstm8" path="res://scripts/lvls/area_2d.gd" id="16_n52d5"]
+[ext_resource type="Script" uid="uid://bubhemlucstm8" path="res://scripts/lvls/ToTut.gd" id="16_n52d5"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="17_aqgwb"]
 [ext_resource type="PackedScene" uid="uid://cqr3q5uem3bh" path="res://scenes/PlayerIntro.tscn" id="17_jpm5c"]
 
@@ -171,11 +171,17 @@ texture = ExtResource("4_jpm5c")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nl40l"]
 texture = ExtResource("5_u7c8q")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.0810108, 8, 1.9819145, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.0810108, 8, 2.0810108, 8, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgimr"]
 texture = ExtResource("6_ltss7")
@@ -187,10 +193,13 @@ texture = ExtResource("6_ltss7")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3evo"]
 texture = ExtResource("7_syca1")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.639411, -0.7927656, 6.5403166, -6.5403156, -3.5674458, -4.558402, 1.4864359, -0.7927656)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3ajx"]
 texture = ExtResource("8_i1hnc")
@@ -256,25 +265,6 @@ texture = ExtResource("12_banuo")
 sources/0 = SubResource("TileSetAtlasSource_8xbuc")
 sources/1 = SubResource("TileSetAtlasSource_0t4o3")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk4a3"]
-texture = ExtResource("9_m7vx7")
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul5ke"]
-texture = ExtResource("5_u7c8q")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_tk4a3"]
-sources/1 = SubResource("TileSetAtlasSource_tk4a3")
-sources/3 = SubResource("TileSetAtlasSource_ul5ke")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5xga"]
 texture = ExtResource("14_rwdm5")
 0:0/0 = 0
@@ -294,6 +284,32 @@ texture = ExtResource("14_rwdm5")
 
 [sub_resource type="TileSet" id="TileSet_37ogj"]
 sources/0 = SubResource("TileSetAtlasSource_s5xga")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk4a3"]
+texture = ExtResource("9_m7vx7")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul5ke"]
+texture = ExtResource("5_u7c8q")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.4864349, 8, 1.8828182, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.4864349, 8, 1.8828182, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tk4a3"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_tk4a3")
+sources/3 = SubResource("TileSetAtlasSource_ul5ke")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvk1x"]
 height = 156.0
@@ -317,17 +333,17 @@ scale = Vector2(0.79999995, 0.79999995)
 tile_map_data = PackedByteArray("AAD3/wEAAQABAAAAAAD3/wIAAQABAAEAAAD4/wAAAQAAAAAAAAD4/wEAAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_6r63d")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMap" unique_id=2075275908]
-position = Vector2(0, 9)
-scale = Vector2(0.79999983, 0.79999983)
-tile_map_data = PackedByteArray("AAAFAP3/AQAAAAAAAAAFAP7/AQAAAAEAAAAFAP//AQAAAAIAAAD4/wAAAwAAAAAAAAD4/wEAAwAAAAEAAAD4/wIAAwAAAAIAAAD5/wAAAwABAAAAAAD5/wEAAwABAAEAAAD5/wIAAwABAAIAAAA=")
-tile_set = SubResource("TileSet_tk4a3")
-
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMap" unique_id=368044992]
 position = Vector2(5.9999995, 9)
 scale = Vector2(0.7999998, 0.7999998)
 tile_map_data = PackedByteArray("AAD4////AAAAAAEAAAD4/wAAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_37ogj")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2075275908]
+position = Vector2(-0.9999999, 5.0000076)
+scale = Vector2(3.9999988, 3.9999988)
+tile_map_data = PackedByteArray("AAAFAP3/AQAAAAAAAAAFAP7/AQAAAAEAAAAFAP//AQAAAAIAAAD4/wAAAwAAAAAAAAD4/wEAAwAAAAEAAAD4/wIAAwAAAAIAAAD5/wAAAwABAAAAAAD5/wEAAwABAAEAAAD5/wIAAwABAAIAAAA=")
+tile_set = SubResource("TileSet_tk4a3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=658766121]
 
@@ -337,10 +353,10 @@ offset_top = -7.0
 offset_right = -19.0
 offset_bottom = -7.0
 
-[node name="Area2D" type="Area2D" parent="." unique_id=806496023]
+[node name="ToTut" type="Area2D" parent="." unique_id=806496023]
 script = ExtResource("16_n52d5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1512165772]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToTut" unique_id=1512165772]
 position = Vector2(545, 109)
 shape = SubResource("CapsuleShape2D_fvk1x")
 
@@ -350,5 +366,4 @@ shape = SubResource("CapsuleShape2D_fvk1x")
 position = Vector2(-256, 97)
 scale = Vector2(4, 4)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="ToTut" to="ToTut" method="_on_body_entered"]

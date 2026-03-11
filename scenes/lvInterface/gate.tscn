@@ -262,7 +262,7 @@ sources/3 = SubResource("TileSetAtlasSource_q80c2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unypf"]
 size = Vector2(14, 36)
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=550434994]
+[node name="Gate" type="StaticBody2D" unique_id=550434994]
 
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1093994256]
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 9, 0, 5, 0, 0, 0, 255, 255, 254, 255, 2, 0, 9, 0, 3, 0, 0, 0)

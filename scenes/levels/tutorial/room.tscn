@@ -12,11 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://vwnhi8pclt33" path="res://assets/images/bedroom/texture_8.png" id="10_8m4mg"]
 [ext_resource type="Texture2D" uid="uid://cd4fn4n8fev4p" path="res://assets/images/bedroom/wall.png" id="11_kf4l2"]
 [ext_resource type="Texture2D" uid="uid://b53btw62uvv6n" path="res://assets/images/bedroom/texture_0.png" id="12_banuo"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="13_usau2"]
 [ext_resource type="Texture2D" uid="uid://dhduh2wyryjrp" path="res://assets/images/cat/MEOWTAR_THE_BLUE_Idle.png" id="14_rwdm5"]
 [ext_resource type="PackedScene" uid="uid://d03pbptyxehk3" path="res://assets/images/UI/text box/DialogueProto.tscn" id="15_oppu3"]
 [ext_resource type="Script" uid="uid://bubhemlucstm8" path="res://scripts/lvls/area_2d.gd" id="16_n52d5"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="17_aqgwb"]
+[ext_resource type="PackedScene" uid="uid://cqr3q5uem3bh" path="res://scenes/PlayerIntro.tscn" id="17_jpm5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k23yp"]
 texture = ExtResource("1_dnbsw")
@@ -344,10 +344,11 @@ script = ExtResource("16_n52d5")
 position = Vector2(545, 109)
 shape = SubResource("CapsuleShape2D_fvk1x")
 
-[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_usau2")]
-position = Vector2(-163, 130)
-
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("17_aqgwb")]
+
+[node name="PlayerIntro" parent="." unique_id=1656014910 instance=ExtResource("17_jpm5c")]
+position = Vector2(-256, 97)
+scale = Vector2(4, 4)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

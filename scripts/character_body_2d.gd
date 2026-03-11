@@ -66,3 +66,7 @@ func spawn_attack():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "attack":
 		is_attacking = false
+
+
+func _on_canvas_triangle_drawn() -> void:
+	spawn_attack()

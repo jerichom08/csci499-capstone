@@ -20,3 +20,7 @@ func update_animation(direction: Vector2):
 		
 		if direction.x != 0:
 			sprite.flip_h = direction.x < 0	
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

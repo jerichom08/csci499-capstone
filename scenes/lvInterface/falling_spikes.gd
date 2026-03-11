@@ -7,21 +7,25 @@ var is_falling: bool = false
 func _physics_process(delta: float) -> void:
 	if is_falling:
 		position.y += current_speed * delta
-
-
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.name != "Player":
+		
+		if $RayCast2D.is_colliding():
+			is_falling = false
+			
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
 		return
 		
 	get_tree().call_deferred("reload_current_scene")
 
-func _on_player_detect_area_entered(area: Area2D) -> void:
-	print("PlayerDetect triggered")
-	if area.name != "Player":
+func _on_player_detect_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("player"):
 		return
 		
+		
 	$AnimationPlayer.play("Shake")
+	get_tree().call_group("warning_label", "show")
 	fall()
+
 
 func fall() -> void:
 	if is_falling:
@@ -30,5 +34,6 @@ func fall() -> void:
 	is_falling = true
 	current_speed = speed
 	
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(2.5).timeout
 	queue_free()
+	

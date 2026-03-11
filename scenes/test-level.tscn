@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://choystunvgoem"]
 
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="1_tny1j"]
+[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/canvas.tscn" id="2_qlq2q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qlq2q"]
 
@@ -15,3 +16,9 @@ position = Vector2(0, 36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2022255984]
 shape = SubResource("WorldBoundaryShape2D_qlq2q")
+
+[node name="Canvas" parent="." unique_id=1135155385 instance=ExtResource("2_qlq2q")]
+offset_left = 300.0
+offset_right = 300.0
+
+[connection signal="triangle_drawn" from="Canvas" to="Player" method="_on_canvas_triangle_drawn"]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bbwkf3di5h7r6"]
 
+[ext_resource type="Script" uid="uid://cs4s8so4j0o7u" path="res://scripts/enemy/hand.gd" id="1_45kcu"]
 [ext_resource type="Texture2D" uid="uid://cpploch0n22ub" path="res://assets/images/hand/spr_enemy_mud_hurt_strip4.png" id="1_cmdsa"]
 [ext_resource type="Texture2D" uid="uid://dtr4736wlsdcc" path="res://assets/images/hand/spr_enemy_mud_strip8.png" id="1_eyfoh"]
 [ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scenes/palette_swap.tres" id="1_uvhw8"]
@@ -110,18 +111,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyfoh"]
-size = Vector2(38, 53)
+size = Vector2(6, 8.5)
 
 [node name="hand" type="CharacterBody2D" unique_id=126375272]
+script = ExtResource("1_45kcu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=523929594]
 texture_filter = 1
 material = SubResource("ShaderMaterial_j00ee")
 sprite_frames = SubResource("SpriteFrames_1gd3j")
 animation = &"idle"
-frame_progress = 0.78599167
+autoplay = "idle"
+frame_progress = 0.007239017
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1875925000]
-visible = false
-position = Vector2(1, 6.5)
+position = Vector2(-5, 28)
 shape = SubResource("RectangleShape2D_eyfoh")

@@ -597,8 +597,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uy4t1"]
-radius = 12.0
-height = 40.0
+radius = 17.0
+height = 60.0
 
 [node name="gollux" type="CharacterBody2D" unique_id=1147398116]
 script = ExtResource("1_5hjri")
@@ -612,5 +612,13 @@ autoplay = "idle"
 frame_progress = 0.41181237
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194886645]
-position = Vector2(2, 44)
+position = Vector2(3, 35)
 shape = SubResource("CapsuleShape2D_uy4t1")
+
+[node name="VisionRay" type="RayCast2D" parent="." unique_id=82881602]
+position = Vector2(2, 30)
+target_position = Vector2(120, 0)
+
+[node name="WallRay" type="RayCast2D" parent="." unique_id=1125196860]
+position = Vector2(0, 42)
+target_position = Vector2(60, 25)

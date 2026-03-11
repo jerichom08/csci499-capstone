@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c1dqxq5otys68"]
+
+[ext_resource type="Script" uid="uid://db3qi0u7dhv2s" path="res://scenes/lvInterface/jump_pad.gd" id="1_1bbfk"]
+[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_jjgvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bbfk"]
+size = Vector2(16, 7)
+
+[node name="JumpPad" type="Node2D" unique_id=148337869]
+script = ExtResource("1_1bbfk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=878582218]
+texture = ExtResource("1_jjgvv")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(126, 94, 36, 14)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1991324510]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1823052690]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1bbfk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

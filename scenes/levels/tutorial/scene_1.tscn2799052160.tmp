@@ -14,7 +14,6 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="10_uxqix"]
 [ext_resource type="PackedScene" uid="uid://bxowxihwx7iin" path="res://scenes/levels/tutorial/NextScene.tscn" id="11_cpv0e"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="13_aasmi"]
-[ext_resource type="Script" uid="uid://dih57jjafda87" path="res://scripts/lvls/scene1script.gd" id="14_v3rwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("1_va4an")
@@ -309,19 +308,6 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAD0//n/AgACAAYAAFD0//r/AgACAAYAAAD0//v/AgACAAYAAFD0//z/AgACAAYAAFD0//3/AgAEAAUAAAD0//7/AgAFAAEAAAD0////AgACAAYAAAD0/wAAAgACAAYAAFD0/wEAAgACAAYAAAD0/wUAAgACAAEAAAD0/wYAAgACAAYAAED1//n/AgACAAYAAAD1//r/AgADAAYAAAD1//v/AgADAAYAAAD1//z/AgACAAYAAAD1//3/AgADAAYAAAD1//7/AgADAAYAAAD1////AgADAAYAAAD1/wAAAgACAAYAAAD1/wEAAgADAAYAAAD1/wUAAgACAAEAAAD1/wYAAgAEAAUAAAD0/wIAAgACAAcAAAD1/wIAAgADAAcAAAD2/wUAAgACAAEAAAD3/wUAAgACAAEAAAD8/wUAAgACAAEAAAD9/wUAAgACAAEAAAD+/wUAAgACAAEAAAD//wUAAgACAAEAAAAAAAUAAgACAAEAAAABAAUAAgACAAYAAAABAAQAAgABAAEAAAACAAQAAgACAAEAAAADAAQAAgACAAEAAAAEAAQAAgACAAEAAAAFAAQAAgACAAEAAAAGAAQAAgACAAEAAAAHAAQAAgACAAEAAAAIAAQAAgACAAEAAAACAAUAAgACAAYAAAACAAYAAgACAAYAAAADAAUAAgACAAYAAAADAAYAAgABAAEAAAD2/wYAAgACAAYAAED3/wYAAgACAAYAAAD4/wYAAgACAAYAAED5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgAEAAUAAAD9/wYAAgACAAYAAED+/wYAAgACAAYAAAD//wYAAgACAAYAAAAAAAYAAgAEAAUAAAABAAYAAgACAAYAAAAEAAUAAgACAAYAAAAEAAYAAgACAAEAAAAFAAUAAgACAAYAAAAFAAYAAgADAAEAAAAGAAUAAgACAAYAAAAGAAYAAgACAAYAAAAHAAUAAgACAAYAAAAHAAYAAgAEAAUAAAAIAAUAAgACAAYAAAAIAAYAAgACAAYAABALAAYAAgACAAYAAEALAAUAAgACAAYAAEALAAQAAgAEAAUAAAALAAMAAgACAAYAAEALAAIAAgACAAYAAEALAAEAAgACAAYAAEALAAAAAgAEAAUAAAALAP//AgACAAYAAEALAP7/AgACAAEAAAD2/wAAAgACAAAAAAAKAP7/AgACAAEAAAAKAP//AgABAAYAAAAKAAAAAgABAAYAAAAKAAEAAgABAAYAAAAKAAIAAgABAAYAAAAKAAMAAgABAAYAAAAKAAQAAgACAAYAAAAJAAQAAgACAAEAAAAJAAUAAgACAAYAAAAJAAYAAgACAAYAAAAKAAUAAgAEAAUAAAAKAAYAAgAEAAUAAAAJAP7/AgACAAAAAAAIAP7/AgACAAAAAAAHAP7/AgACAAAAAAAGAP7/AgACAAAAAAAFAP7/AgACAAAAAAAEAP7/AgACAAAAAAADAP7/AgACAAAAAAACAP7/AgACAAAAAAABAP7/AgACAAAAAAAAAP7/AgABAAAAAAALAPn/AgACAAYAAAAKAPn/AgACAAYAAAAJAPn/AgACAAYAAAAIAPn/AgACAAYAAAAHAPn/AgACAAYAAAAGAPn/AgACAAYAAAAFAPn/AgACAAYAAAAEAPn/AgACAAYAAAADAPn/AgACAAYAAAACAPn/AgACAAYAAAABAPn/AgACAAYAAAAAAPn/AgACAAYAAAD///n/AgACAAcAAAD+//n/AgACAAcAAAD9//n/AgACAAcAAAD8//n/AgACAAYAAAD7//n/AgACAAcAAAD6//n/AgACAAcAAAD5//n/AgACAAcAAAD4//n/AgACAAcAAAD3//n/AgACAAcAAAD2//n/AgACAAcAAAAIAPr/AgACAAcAAAD2//z/AgACAAAAAAD3//z/AgACAAAAAAD4//z/AgADAAAAAAD2//v/AgAHAAYAAAAEAPr/AgACAAcAAAAFAPr/AgACAAcAAAAGAPr/AgACAAcAAAAHAPr/AgACAAcAAAAJAPr/AgACAAcAAAAKAPr/AgACAAcAAAALAPr/AgACAAcAAAADAPr/AgACAAcAAAACAPr/AgACAAcAAAABAPr/AgACAAcAAAD8//r/AgAAAAYAAAD8//v/AgAAAAcAAAAAAPr/AgABAAcAAAAIAAEAAgARAAQAAAAIAAIAAgARAAUAAAAIAAMAAgARAAYAAAAHAAEAAgARAAIAAAAJAAEAAgATAAIAAAAHAP//AgARAAAAAAAHAAAAAgARAAEAAAAIAP//AgASAAAAAAAIAAAAAgASAAEAAAAJAP//AgATAAAAAAAJAAAAAgATAAEAAAAHAAIAAgASAAQAAAAJAAIAAgATAAQAAADz/wQAAgABAAYAAADz/wUAAgABAAYAAADz/wIAAgABAAYAAADz/wMAAgABAAYAAADz/wYAAgABAAYAAADz/wEAAgABAAYAAADz/wAAAgABAAYAAADz////AgABAAYAAADz//7/AgABAAYAAADz//3/AgABAAYAAADz//z/AgABAAYAAADz//v/AgABAAYAAADz//r/AgABAAYAAADz//n/AgABAAYAAAD4/wUAAgACAAEAAAD7/wUAAgACAAEAAAD6/wUAAgACAAEAAAD5/wUAAgACAAEAAAD3/wAAAgACAAAAAAD4/wAAAgACAAAAAAD5/wAAAgACAAAAAAD6/wAAAgACAAAAAAD7/wAAAgADAAAAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
-[node name="Label" type="Label" parent="." unique_id=1795807350]
-offset_left = -633.0
-offset_top = 234.0
-offset_right = -203.0
-offset_bottom = 301.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = ExtResource("10_uxqix")
-theme_override_font_sizes/font_size = 27
-text = "1.0 ) \"Press ↑ to Jump on Platforms\"
-"
-
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("3_e8ji1")]
 position = Vector2(-513, -27)
 
@@ -340,6 +326,10 @@ position = Vector2(559, -104)
 scale = Vector2(4.7, 4.7)
 script = ExtResource("8_8u52i")
 
+[node name="FallingSpikes" parent="." unique_id=880855743 groups=["player"] instance=ExtResource("10_aasmi")]
+position = Vector2(-498, 117)
+speed = 160.0
+
 [node name="RegularPlatform" parent="." unique_id=649759663 instance=ExtResource("5_v3rwh")]
 position = Vector2(-88, -33)
 scale = Vector2(2.5, 2)
@@ -353,38 +343,28 @@ position = Vector2(-119, 102)
 scale = Vector2(2.5, 2)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("9_xp1wc")]
-position = Vector2(-615, 232)
+position = Vector2(-616, 250)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAD6/wYAAgARAAcAAAD1//7/AgARAAcAAAD0//z/AgARAAcAAAAKAP7/AgARAAcAAAD9/wUAAgARAAcAAAD2/wEAAgAFAAYAACAHAAMAAgAEAAYAAAAFAAUAAgAGAAYAAAAEAAMAAgAQAAMAAAAEAAQAAgARAAUAAAAEAAUAAgARAAYAAAAEAAIAAgAQAAEAAAADAAQAAgASAAQAAAAFAAQAAgASAAQAABAKAAUAAgAEAAAAAAAKAAYAAgAEAAEAAAALAAUAAgAFAAAAAAALAAYAAgAFAAEAAAADAAUAAgAIAAYAAAAAAP3/AgAEAAcAAAAJAAMAAgAJAAYAAAAKAP3/AgAJAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
-[node name="FallingSpikes" parent="." unique_id=880855743 groups=["player", "warning_label"] instance=ExtResource("10_aasmi")]
-position = Vector2(-135, -311)
-
-[node name="FallingSpikes2" parent="." unique_id=609824420 groups=["player", "warning_label"] instance=ExtResource("10_aasmi")]
-position = Vector2(-81, -311)
-
-[node name="FallingSpikes3" parent="." unique_id=1069760618 groups=["player", "warning_label"] instance=ExtResource("10_aasmi")]
-position = Vector2(-27, -311)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1987190099]
 scale = Vector2(3, 3)
 
-[node name="WarningLabel" type="Label" parent="." unique_id=1211516588 groups=["warning_label"]]
-offset_left = 6.0
-offset_top = -280.0
-offset_right = 455.0
-offset_bottom = -213.0
+[node name="Label" type="Label" parent="." unique_id=1795807350]
+offset_left = 13.0
+offset_top = -268.0
+offset_right = 372.0
+offset_bottom = -201.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
 theme_override_fonts/font = ExtResource("10_uxqix")
 theme_override_font_sizes/font_size = 27
-text = "1.5 ) \"Watch Out For the Falling Spikes\"
+text = "1.0 >> \"Press ↑ to Jump on Platforms\"
 "
-script = ExtResource("14_v3rwh")
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("13_aasmi")]
 position = Vector2(-32, 2)

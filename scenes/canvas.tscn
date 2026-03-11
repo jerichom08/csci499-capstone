@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cufs2bspg63px"]
+
+[ext_resource type="Script" uid="uid://chb87s1stgavx" path="res://scripts/image.gd" id="1_7axt1"]
+
+[node name="Canvas" type="TextureRect" unique_id=1377326731]
+mouse_filter = 0
+script = ExtResource("1_7axt1")

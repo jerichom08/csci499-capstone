@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
     visible = false
+    pause_mode = Node.PAUSE_MODE_PROCESS
 
 func pause():
     get_tree().paused = true

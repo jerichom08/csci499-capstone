@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://mq7xkryetq7u"]
+
+[ext_resource type="Script" uid="uid://b15ainqdn7mqx" path="res://scenes/Components/clue_sign.gd" id="1_vaqd5"]
+[ext_resource type="Texture2D" uid="uid://c2mfgjhewljfl" path="res://assets/images/signs/Banner_Vertical.png" id="2_xtmya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn0xl"]
+size = Vector2(35, 43.5)
+
+[node name="ClueSign" type="Area2D" unique_id=604565878]
+script = ExtResource("1_vaqd5")
+
+[node name="ClueText" type="Label" parent="." unique_id=2133767580]
+offset_left = 22.0
+offset_top = 65.0
+offset_right = 120.0
+offset_bottom = 166.0
+text = "Start at base
+then the red
+then sweet
+find the root"
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=319919491]
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 107.0
+offset_bottom = 8.0
+text = "Press E to read"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1139215073]
+position = Vector2(41, 34)
+scale = Vector2(0.32552084, 0.34895834)
+texture = ExtResource("2_xtmya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784989481]
+position = Vector2(41.5, 34.25)
+shape = SubResource("RectangleShape2D_sn0xl")

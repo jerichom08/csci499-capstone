@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bxxay0en10aln"]
+
+[ext_resource type="Script" uid="uid://yt17625lvla7" path="res://scenes/puzzles/puzzle_2/ingredient_station.gd" id="1_ao72y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gclkt"]
+size = Vector2(8.25, 4.875)
+
+[node name="IngredientStation" type="Area2D" unique_id=1519206893]
+script = ExtResource("1_ao72y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1313834768]
+position = Vector2(179.00003, 46.000008)
+scale = Vector2(2.9375, 3.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1826862868]
+position = Vector2(62, 41)
+shape = SubResource("RectangleShape2D_gclkt")
+
+[node name="Label" type="Label" parent="." unique_id=1462421146]
+offset_left = 104.0
+offset_top = -40.0
+offset_right = 144.0
+offset_bottom = -17.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=583710811]
+position = Vector2(62, 41)

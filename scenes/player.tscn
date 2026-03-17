@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b80i5h1w4mojg" path="res://assets/images/player/B_witch_run.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://b4xxm61rqmfyu" path="res://scenes/attack.tscn" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://b7vk25fjpy5ax" path="res://assets/images/player/witch_death.png" id="4_tuyoq"]
+[ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
 atlas = ExtResource("1_qhqgy")
@@ -276,10 +277,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
-radius = 4.0
-height = 24.0
+radius = 5.666667
+height = 28.666668
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
+size = Vector2(27, 66)
 
 [node name="Player" type="CharacterBody2D" unique_id=2085610372 groups=["player"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_dqkch")
 attack_scene = ExtResource("2_qlg0r")
 
@@ -289,14 +295,24 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"death"
 autoplay = "idle"
-frame_progress = 0.6527185
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
-position = Vector2(0, -4)
+position = Vector2(-2, -5)
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_smehm")
 
 [node name="AttackSpawn" type="Marker2D" parent="." unique_id=590516098]
 position = Vector2(153, -16)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1044826710]
+collision_layer = 8
+collision_mask = 64
+script = ExtResource("7_fjrip")
+metadata/_custom_type_script = "uid://bdex8w352e0k1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=709631333]
+position = Vector2(-2, -5)
+shape = SubResource("RectangleShape2D_smehm")
+debug_color = Color(0, 1, 0, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://choystunvgoem"]
 
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="1_tny1j"]
-[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/canvas.tscn" id="2_qlq2q"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_tny1j"]
+[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="2_qlq2q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qlq2q"]
 
 [node name="TestLevel" type="Node2D" unique_id=1774236187]
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_tny1j")]
+max_health = 5
+damage_flash_time = 0.15
+invincibility_time = 0.6
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1359601901]
 
@@ -21,4 +24,6 @@ shape = SubResource("WorldBoundaryShape2D_qlq2q")
 offset_left = 300.0
 offset_right = 300.0
 
+[connection signal="circle_drawn" from="Canvas" to="Player" method="_on_canvas_circle_drawn"]
+[connection signal="line_drawn" from="Canvas" to="Player" method="_on_canvas_line_drawn"]
 [connection signal="triangle_drawn" from="Canvas" to="Player" method="_on_canvas_triangle_drawn"]

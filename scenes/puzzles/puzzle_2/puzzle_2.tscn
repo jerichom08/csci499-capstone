@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b45jt5o22xvwa" path="res://assets/images/food/Potato.png" id="5_13pu0"]
 [ext_resource type="AudioStream" uid="uid://7tdqw0jyc5un" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C01.wav" id="6_g3y8l"]
 [ext_resource type="Texture2D" uid="uid://choj3367pq3jt" path="res://assets/images/food/Tomato.png" id="6_m2k3y"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="6_v37ne"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_v37ne"]
 [ext_resource type="AudioStream" uid="uid://basyt4fu3r8oc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C02.wav" id="7_a0e76"]
 [ext_resource type="Texture2D" uid="uid://1rl62nkrcgye" path="res://assets/images/UI/play_button.png" id="7_efsmh"]
 [ext_resource type="AudioStream" uid="uid://ceamjxp4qdmtc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C03.wav" id="9_n7xxv"]

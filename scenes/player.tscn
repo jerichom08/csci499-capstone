@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://pg6ytaryk6y"]
 
-[ext_resource type="Script" uid="uid://bn5ve5hp5krhl" path="res://scripts/character_body_2d.gd" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://bn5ve5hp5krhl" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b4smr642vgqbq" path="res://assets/images/player/B_witch_idle.png" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b80i5h1w4mojg" path="res://assets/images/player/B_witch_run.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://b4xxm61rqmfyu" path="res://scenes/attack.tscn" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://b7vk25fjpy5ax" path="res://assets/images/player/witch_death.png" id="4_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
 atlas = ExtResource("1_qhqgy")
@@ -41,6 +42,54 @@ region = Rect2(2, 322, 34, 46)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
 atlas = ExtResource("1_qhqgy")
 region = Rect2(2, 368, 34, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 192, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 240, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 288, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnwbv"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 384, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_487ah"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 480, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
+atlas = ExtResource("4_tuyoq")
+region = Rect2(0, 528, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_g2els")
@@ -134,6 +183,47 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujl30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31cv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf23h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqfne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnwbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl8cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_487ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md1ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3vyb7")
 }, {
 "duration": 1.0,
@@ -197,8 +287,9 @@ attack_scene = ExtResource("2_qlg0r")
 position = Vector2(0, -16)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
+frame_progress = 0.6527185
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
 position = Vector2(0, -4)

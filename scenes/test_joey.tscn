@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d3lepejtbsiph"]
 
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="2_vfjpy"]
+[ext_resource type="PackedScene" uid="uid://dcm1s1ie20jcq" path="res://scenes/bosses/gollux.tscn" id="3_gk5ml"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="3_vfjpy"]
-[ext_resource type="PackedScene" uid="uid://bbwkf3di5h7r6" path="res://scenes/bosses/hand.tscn" id="4_gk5ml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8dq4"]
 size = Vector2(1439, 150.5)
@@ -16,11 +16,11 @@ position = Vector2(610, 571.25)
 shape = SubResource("RectangleShape2D_m8dq4")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_vfjpy")]
-position = Vector2(691, 444)
+position = Vector2(768, 455)
 
 [node name="Camera2D" parent="." unique_id=2086834432 instance=ExtResource("3_vfjpy")]
 position = Vector2(640, 361)
 
-[node name="hand" parent="." unique_id=126375272 instance=ExtResource("4_gk5ml")]
-position = Vector2(441.00003, 334)
-scale = Vector2(5, 5)
+[node name="gollux" parent="." unique_id=1147398116 instance=ExtResource("3_gk5ml")]
+position = Vector2(317, 303)
+scale = Vector2(3, 3)

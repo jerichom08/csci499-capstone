@@ -311,7 +311,7 @@ tile_set = SubResource("TileSet_alrbv")
 position = Vector2(-276, -40)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_em7cu")]
-position = Vector2(598, -305)
+position = Vector2(19, -37)
 
 [node name="ToSpecial" type="Area2D" parent="." unique_id=1611859238]
 position = Vector2(804.00006, 1)

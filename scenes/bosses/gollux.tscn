@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cpp8dy7wwd74v" path="res://assets/images/gollux/gollux_idle.png" id="4_uy4t1"]
 [ext_resource type="Texture2D" uid="uid://b5he7qh05jf8b" path="res://assets/images/gollux/gollux_move.png" id="5_5hjri"]
 [ext_resource type="Texture2D" uid="uid://braiq1mla6010" path="res://assets/images/gollux/gollux_healing.png" id="7_uhltg"]
+[ext_resource type="Script" uid="uid://c8wclmxt0erwb" path="res://scripts/enemy/contact_damage.gd" id="11_gbdo1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwul7"]
 shader = ExtResource("1_sctfj")
@@ -600,6 +601,10 @@ animations = [{
 radius = 17.0
 height = 60.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71t0u"]
+radius = 17.0
+height = 58.0
+
 [node name="gollux" type="CharacterBody2D" unique_id=1147398116]
 script = ExtResource("1_5hjri")
 
@@ -607,18 +612,28 @@ script = ExtResource("1_5hjri")
 texture_filter = 1
 material = SubResource("ShaderMaterial_lwul7")
 sprite_frames = SubResource("SpriteFrames_4q3m1")
-animation = &"run"
+animation = &"attack_b"
 autoplay = "idle"
-frame_progress = 0.41181237
+frame_progress = 0.043098535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194886645]
-position = Vector2(3, 35)
+position = Vector2(3, 36)
 shape = SubResource("CapsuleShape2D_uy4t1")
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=82881602]
-position = Vector2(2, 30)
-target_position = Vector2(120, 0)
+position = Vector2(3, 37)
+target_position = Vector2(200, 0)
 
 [node name="WallRay" type="RayCast2D" parent="." unique_id=1125196860]
 position = Vector2(0, 42)
 target_position = Vector2(60, 25)
+
+[node name="ContactDamage" type="Area2D" parent="." unique_id=1584677436]
+script = ExtResource("11_gbdo1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage" unique_id=182169939]
+position = Vector2(20, 36)
+shape = SubResource("CapsuleShape2D_71t0u")
+debug_color = Color(0, 0.6464969, 0.2430414, 0.41960785)
+
+[connection signal="body_entered" from="ContactDamage" to="ContactDamage" method="_on_body_entered"]

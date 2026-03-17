@@ -1,5 +1,18 @@
 extends CharacterBody2D
 
+# HP System Variables
+#---------------------------
+@export var max_health: int = 5
+@export var damage_flash_time: float = 0.15
+@export var invincibility_time: float = 0.6
+
+var health: int
+var is_invincible := false
+var invincibility_timer := 0.0
+var flash_timer := 0.0
+var is_dead := false
+#-----------------------------
+
 @export var attack_scene: PackedScene
 @onready var sprite = $AnimatedSprite2D
 const WORLD_SCALE = 3.0
@@ -17,6 +30,26 @@ const airAcceleration = 600.0 * WORLD_SCALE
 
 var is_attacking := false
 
+func _ready() -> void:
+	health = max_health
+	
+func take_damage(amount: int) -> void:
+	print("player took damage")
+	if is_invincible:
+		return
+
+	health = max(health - amount, 0)
+
+	# flash red
+	sprite.modulate = Color(1, 0.4, 0.4, 1)
+	flash_timer = damage_flash_time
+
+	# temporary invincibility
+	is_invincible = true
+	invincibility_timer = invincibility_time
+
+	if health <= 0:
+		queue_free() # or handle death here
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -53,6 +86,22 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = direction < 0
 		$AttackSpawn.position.x = abs($AttackSpawn.position.x) * (-1 if sprite.flip_h else 1)
 		
+	# Update Timers
+	#------------------------------------
+	# damage flash timer
+	if flash_timer > 0.0:
+		flash_timer -= delta
+		if flash_timer <= 0.0:
+			sprite.modulate = Color(1, 1, 1, 1)
+
+	# invincibility timer
+	if is_invincible:
+		invincibility_timer -= delta
+		if invincibility_timer <= 0.0:
+			is_invincible = false
+			
+	#--------------------------------------
+	
 	move_and_slide()
 
 func spawn_attack():

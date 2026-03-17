@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dad8n45up7s3i"]
+
+[ext_resource type="Texture2D" uid="uid://bu33olrgcqp3h" path="res://assets/images/doors/Door 12.png" id="1_w6x3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6x3a"]
+size = Vector2(62.5, 86)
+
+[node name="TeleportDoor" type="Area2D" unique_id=1522837388]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1744511186]
+position = Vector2(0, 5)
+texture = ExtResource("1_w6x3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2060263877]
+position = Vector2(-0.25, 6)
+shape = SubResource("RectangleShape2D_w6x3a")

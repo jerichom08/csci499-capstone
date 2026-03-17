@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dae5acdqkc7c5"]
+
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/mobs/bat.tscn" id="1_e86fk"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="2_33eld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeqw0"]
+size = Vector2(1276, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4abqv"]
+size = Vector2(661, 20)
+
+[node name="test-bat" type="Node2D" unique_id=1281306259]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1282643477]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1483277584]
+position = Vector2(641, 630)
+shape = SubResource("RectangleShape2D_aeqw0")
+
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("1_e86fk")]
+position = Vector2(669, 394.00003)
+scale = Vector2(3, 3)
+
+[node name="Ledge" type="StaticBody2D" parent="." unique_id=514815378]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge" unique_id=1678565286]
+position = Vector2(484.5, 476)
+shape = SubResource("RectangleShape2D_4abqv")
+debug_color = Color(0, 0, 1, 0.41960785)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_33eld")]
+position = Vector2(189, 428)

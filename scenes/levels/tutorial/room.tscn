@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d03pbptyxehk3" path="res://assets/images/UI/text box/DialogueProto.tscn" id="15_oppu3"]
 [ext_resource type="Script" uid="uid://bubhemlucstm8" path="res://scripts/lvls/ToTut.gd" id="16_n52d5"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="17_aqgwb"]
-[ext_resource type="PackedScene" uid="uid://cqr3q5uem3bh" path="res://scenes/PlayerIntro.tscn" id="17_jpm5c"]
+[ext_resource type="PackedScene" uid="uid://cqr3q5uem3bh" path="res://scenes/player/PlayerIntro.tscn" id="17_jpm5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k23yp"]
 texture = ExtResource("1_dnbsw")

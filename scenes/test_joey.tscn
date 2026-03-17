@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3lepejtbsiph"]
 
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="2_vfjpy"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_vfjpy"]
 [ext_resource type="PackedScene" uid="uid://dcm1s1ie20jcq" path="res://scenes/bosses/gollux.tscn" id="3_gk5ml"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="3_vfjpy"]
 

@@ -1,42 +1,42 @@
 [gd_scene format=3 uid="uid://b4xxm61rqmfyu"]
 
-[ext_resource type="Script" uid="uid://ddwbvnu4418vr" path="res://scripts/attack.gd" id="1_jy1op"]
-[ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="2_6fs0s"]
+[ext_resource type="Script" uid="uid://ddwbvnu4418vr" path="res://scripts/player/triangle_attack.gd" id="1_aecsh"]
+[ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="2_kee6l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8out"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 0, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gqiv"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 46, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0rgg"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 92, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2shtu"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 138, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40vx7"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 184, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_skmhp"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 230, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1mqd"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 276, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4miox"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 322, 68, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55pl6"]
-atlas = ExtResource("2_6fs0s")
+atlas = ExtResource("2_kee6l")
 region = Rect2(36, 368, 68, 46)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_td8ue"]
@@ -77,8 +77,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy1op"]
 size = Vector2(65, 27)
 
-[node name="Attack" type="Node2D" unique_id=1324257449 groups=["attack"]]
-script = ExtResource("1_jy1op")
+[node name="TriangleAttack" type="Node2D" unique_id=1324257449 groups=["attack"]]
+script = ExtResource("1_aecsh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1703848889]
 sprite_frames = SubResource("SpriteFrames_td8ue")

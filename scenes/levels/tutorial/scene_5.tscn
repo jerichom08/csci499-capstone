@@ -323,7 +323,7 @@ text = "3.0 ) \"The Jump Boost Can Be Pretty Fun..\"
 "
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_8e2ux")]
-position = Vector2(618, -81)
+position = Vector2(628, -90)
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("6_pbgsm")]
 position = Vector2(453.00003, -80)

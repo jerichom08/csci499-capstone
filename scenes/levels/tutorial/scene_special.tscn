@@ -461,7 +461,7 @@ tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("7_72ixo")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_grxxe")]
-position = Vector2(280, 187)
+position = Vector2(-615, 129)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1987190099]
 scale = Vector2(3, 3)

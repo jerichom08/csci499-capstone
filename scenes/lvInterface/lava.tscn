@@ -265,11 +265,18 @@ size = Vector2(89.31035, 17.241379)
 
 [node name="lava" type="TileMapLayer" unique_id=319135582]
 scale = Vector2(2.32, 2.32)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 14, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 13, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 13, 0, 0, 0, 0, 0, 3, 0, 0, 0, 2, 0, 13, 0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 0, 15, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("3_elgew")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552370270]
+position = Vector2(46.103443, 6.465517)
+scale = Vector2(2.3148818, 1.0000001)
+texture = ExtResource("1_u1pfj")
+region_enabled = true
+region_rect = Rect2(215, 0, 38, 13)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=870201359]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1207139844]
 position = Vector2(45.000027, 9.482762)

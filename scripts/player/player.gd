@@ -146,7 +146,15 @@ func spawn_attack(type: String):
 				spawn_triangle_attack()
 	
 func spawn_line_attack():
-	pass
+	var attack = line_attack_scene.instantiate()
+	get_parent().add_child(attack)
+	attack.z_index = 10
+	
+	attack.scale *= WORLD_SCALE
+	attack.global_position.x = $AttackSpawn.global_position.x + 120 if sprite.flip_h else $AttackSpawn.global_position.x - 120
+	attack.global_position.y = $AttackSpawn.global_position.y - 100
+	
+	attack.scale.x *= -1 if sprite.flip_h else 1
 	
 func spawn_circle_attack():
 	var proj = circle_attack_scene.instantiate()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bn5ve5hp5krhl" path="res://scripts/player/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b4smr642vgqbq" path="res://assets/images/player/B_witch_idle.png" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="1_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bi7pynhxsgs0b" path="res://scenes/player/line_attack.tscn" id="2_h17s1"]
 [ext_resource type="PackedScene" uid="uid://d2mrlfq08kdhh" path="res://scenes/player/circle_attack.tscn" id="2_qek5x"]
 [ext_resource type="Texture2D" uid="uid://b80i5h1w4mojg" path="res://assets/images/player/B_witch_run.png" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://b4xxm61rqmfyu" path="res://scenes/player/triangle_attack.tscn" id="2_qlg0r"]
@@ -334,6 +335,7 @@ size = Vector2(27, 66)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_dqkch")
+line_attack_scene = ExtResource("2_h17s1")
 circle_attack_scene = ExtResource("2_qek5x")
 triangle_attack_scene = ExtResource("2_qlg0r")
 

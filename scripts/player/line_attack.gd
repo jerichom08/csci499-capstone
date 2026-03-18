@@ -18,4 +18,4 @@ func _on_animation_finished():
 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if sprite.animation == "attack":
-		hitbox.disabled = sprite.frame < 5
+		hitbox.disabled = sprite.frame < 1 or sprite.frame > 4

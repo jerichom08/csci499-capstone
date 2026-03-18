@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="4_6m3w6"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="5_yai30"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="6_dqwuc"]
-[ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="8_xi178"]
 [ext_resource type="Script" uid="uid://dfbpljufpmlsu" path="res://scenes/lvInterface/falling_spikes.gd" id="9_ogj8n"]
-[ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="10_jr3mn"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="11_vr3g0"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="12_vto8y"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="13_jlbhy"]
@@ -304,58 +302,38 @@ script = ExtResource("5_yai30")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD8//3/AgABAAAAAAD9//3/AgACAAAAAAD9//z/AgACAAAAAAD9//v/AgACAAAAAAD9//r/AgACAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//3/AgACAAAAAAD9//z/AgACAAAAAAD9//v/AgACAAAAAAD9//r/AgACAAAAAAD8//3/AgACAAEAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
+visible = false
 position = Vector2(804, 4)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("9_ogj8n")
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=262893072]
+visible = false
 position = Vector2(804, 4)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("9_ogj8n")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_dqwuc")]
-position = Vector2(623, -197)
-
-[node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("8_xi178")]
-visible = false
-position = Vector2(453.00003, -80)
-
-[node name="Spikes2" parent="." unique_id=2129760759 instance=ExtResource("8_xi178")]
-visible = false
-position = Vector2(345, -80)
-
-[node name="Spikes3" parent="." unique_id=1906401172 instance=ExtResource("8_xi178")]
-visible = false
-position = Vector2(237, -80)
+position = Vector2(626, -202)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1987190099]
 scale = Vector2(3, 3)
-
-[node name="FallingSpikes" parent="." unique_id=880855743 instance=ExtResource("10_jr3mn")]
-visible = false
-position = Vector2(-33, -310)
-
-[node name="FallingSpikes2" parent="." unique_id=1886011697 instance=ExtResource("10_jr3mn")]
-visible = false
-position = Vector2(-141, -310)
-
-[node name="FallingSpikes3" parent="." unique_id=1631867330 instance=ExtResource("10_jr3mn")]
-visible = false
-position = Vector2(-249, -310)
 
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("11_vr3g0")]
 visible = false
 position = Vector2(-646, 271)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("12_vto8y")]
+visible = false
 position = Vector2(-224, 216)
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("13_jlbhy")]
-position = Vector2(333, 250)
+visible = false
+position = Vector2(-289, 196)
 scale = Vector2(3, 3)

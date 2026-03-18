@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cvrdao8y6881"]
+
+[sub_resource type="Curve2D" id="Curve2D_5ap7b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 0)
+}
+point_count = 1
+
+[node name="CircularPlatform" type="Path2D" unique_id=273014845]
+curve = SubResource("Curve2D_5ap7b")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1110951227]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=1048629282]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=599637462]

@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://booobnb32nw8v" path="res://assets/images/bat/SimpleEnemies Bat_Death Spritesheet.png" id="2_xqj71"]
 [ext_resource type="Texture2D" uid="uid://chf1leylx5l6v" path="res://assets/images/bat/SimpleEnemies Bat_Hit Spritesheet.png" id="3_tt7xo"]
 [ext_resource type="Texture2D" uid="uid://dqot6xbkt5tal" path="res://assets/images/bat/SimpleEnemies Bat_Idle Spritesheet.png" id="4_np3d4"]
-[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="5_xqj71"]
 [ext_resource type="Script" uid="uid://bjb0pu8ow2gwh" path="res://scripts/enemy/ledge_ray.gd" id="6_iq4o1"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="6_tt7xo"]
 
 [sub_resource type="Resource" id="Resource_ilyyt"]
 script = ExtResource("2_tsaai")
+max_hp = 5
+hp = 5
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iq4o1"]
@@ -147,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lci2e")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -164,7 +165,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uym83")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 8.0
 }, {
@@ -186,15 +187,10 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt7xo"]
-size = Vector2(14, 15)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_np3d4"]
 size = Vector2(12, 13.5)
 
 [node name="bat" type="CharacterBody2D" unique_id=789512219]
-collision_layer = 4
-collision_mask = 3
 script = ExtResource("1_np3d4")
 stats = SubResource("Resource_ilyyt")
 
@@ -203,9 +199,8 @@ shape = SubResource("CircleShape2D_iq4o1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=932740806]
 sprite_frames = SubResource("SpriteFrames_bl7p3")
-animation = &"attack"
+animation = &"hurt"
 autoplay = "idle"
-frame_progress = 0.14864899
 
 [node name="LedgeRay" type="RayCast2D" parent="." unique_id=1565008922]
 target_position = Vector2(10, 25)
@@ -215,20 +210,7 @@ script = ExtResource("6_iq4o1")
 target_position = Vector2(100, 0)
 collision_mask = 2
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1667109395]
-collision_layer = 64
-collision_mask = 8
-script = ExtResource("5_xqj71")
-metadata/_custom_type_script = "uid://bfqavi17nvck4"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=852523815]
-position = Vector2(4, -1)
-shape = SubResource("RectangleShape2D_tt7xo")
-debug_color = Color(1, 0, 0, 0.41960785)
-
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1456916793]
-collision_layer = 16
-collision_mask = 32
 script = ExtResource("6_tt7xo")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"
 

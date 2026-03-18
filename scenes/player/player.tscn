@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://b7vk25fjpy5ax" path="res://assets/images/player/witch_death.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="7_fjrip"]
+[ext_resource type="Texture2D" uid="uid://yx1cs677bc8x" path="res://assets/images/player/B_witch_take_damage.png" id="7_je7p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
 atlas = ExtResource("4_5gtgg")
@@ -78,6 +79,18 @@ region = Rect2(0, 480, 32, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
 atlas = ExtResource("4_tuyoq")
 region = Rect2(0, 528, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ydkj"]
+atlas = ExtResource("7_je7p5")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j4b4"]
+atlas = ExtResource("7_je7p5")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj68g"]
+atlas = ExtResource("7_je7p5")
+region = Rect2(0, 96, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
 atlas = ExtResource("1_g2els")
@@ -250,8 +263,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bj30b")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ydkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j4b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj68g")
+}],
+"loop": false,
+"name": &"hurt",
 "speed": 8.0
 }, {
 "frames": [{
@@ -376,8 +403,10 @@ triangle_attack_scene = ExtResource("2_qlg0r")
 position = Vector2(0, -16)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"circle_attack"
+animation = &"hurt"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
 position = Vector2(-2, -5)
@@ -388,8 +417,6 @@ shape = SubResource("CapsuleShape2D_smehm")
 position = Vector2(153, -16)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1044826710]
-collision_layer = 8
-collision_mask = 64
 script = ExtResource("7_fjrip")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"
 

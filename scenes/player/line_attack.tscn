@@ -64,25 +64,27 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekgiq"]
-size = Vector2(12, 56)
+size = Vector2(22, 77)
 
 [node name="LineAttack" type="Node2D" unique_id=1855632990]
 script = ExtResource("1_gbkoe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1032544351]
+position = Vector2(-7.1543064e-07, -16.367146)
 rotation = -1.5707964
+scale = Vector2(1.5, 2)
 sprite_frames = SubResource("SpriteFrames_af2tl")
 animation = &"attack"
-frame = 7
-frame_progress = 1.0
+frame = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1911930669]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1676791071]
+position = Vector2(-1, -7)
 shape = SubResource("RectangleShape2D_ekgiq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

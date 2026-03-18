@@ -27,7 +27,7 @@ offset_right = 300.0
 [node name="Area2D" type="Area2D" parent="." unique_id=1616625673]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=59432273]
-position = Vector2(387, -72)
+position = Vector2(-293, -12)
 shape = SubResource("RectangleShape2D_qlq2q")
 
 [connection signal="circle_drawn" from="Canvas" to="Player" method="_on_canvas_circle_drawn"]

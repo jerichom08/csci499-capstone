@@ -148,14 +148,19 @@ func spawn_attack(type: String):
 func spawn_line_attack():
 	var attack = line_attack_scene.instantiate()
 	get_parent().add_child(attack)
-	attack.z_index = 10
+	attack.z_index = -10
 	
 	attack.scale *= WORLD_SCALE
-	attack.global_position.x = $AttackSpawn.global_position.x + 120 if sprite.flip_h else $AttackSpawn.global_position.x - 120
+	attack.global_position.x = $AttackSpawn.global_position.x + 151 if sprite.flip_h else $AttackSpawn.global_position.x - 155
 	attack.global_position.y = $AttackSpawn.global_position.y - 100
 	
 	attack.scale.x *= -1 if sprite.flip_h else 1
 	
+	attack.attack_finished.connect(_on_line_attack_finished)
+	
+func _on_line_attack_finished():
+	is_attacking = false
+
 func spawn_circle_attack():
 	var proj = circle_attack_scene.instantiate()
 	get_parent().add_child(proj)
@@ -179,7 +184,7 @@ func spawn_circle_attack():
 func end_projectile_control():
 	controlling_projectile = false
 	current_projectile = null
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.2).timeout
 	is_attacking = false
 	
 func spawn_triangle_attack():

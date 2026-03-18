@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://njay8gleimpd" path="res://assets/images/tilemaps/house.png" id="2_7r1v3"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_byuw4"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_ogghk"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="5_grxxe"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_grxxe"]
 [ext_resource type="Texture2D" uid="uid://bwhb00t3bkgoe" path="res://assets/images/celes/Idle1.png" id="7_0hqbq"]
 [ext_resource type="Script" uid="uid://dfbpljufpmlsu" path="res://scenes/lvInterface/falling_spikes.gd" id="7_72ixo"]
 

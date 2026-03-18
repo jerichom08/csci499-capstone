@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://choystunvgoem"]
 
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="1_tny1j"]
-[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/canvas.tscn" id="2_qlq2q"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_tny1j"]
+[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="2_qlq2q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qlq2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlq2q"]
+size = Vector2(61, 154)
 
 [node name="TestLevel" type="Node2D" unique_id=1774236187]
 
@@ -21,4 +24,12 @@ shape = SubResource("WorldBoundaryShape2D_qlq2q")
 offset_left = 300.0
 offset_right = 300.0
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1616625673]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=59432273]
+position = Vector2(-293, -12)
+shape = SubResource("RectangleShape2D_qlq2q")
+
+[connection signal="circle_drawn" from="Canvas" to="Player" method="_on_canvas_circle_drawn"]
+[connection signal="line_drawn" from="Canvas" to="Player" method="_on_canvas_line_drawn"]
 [connection signal="triangle_drawn" from="Canvas" to="Player" method="_on_canvas_triangle_drawn"]

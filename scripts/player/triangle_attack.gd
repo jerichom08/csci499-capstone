@@ -9,7 +9,6 @@ func _ready() -> void:
 	sprite.play("attack")
 	sprite.animation_finished.connect(_on_animation_finished)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

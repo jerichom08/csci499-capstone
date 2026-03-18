@@ -1,5 +1,7 @@
 extends TextureRect
 
+signal line_drawn
+signal circle_drawn
 signal triangle_drawn
 
 @export var paint_color : Color = Color.RED
@@ -85,9 +87,11 @@ func _detect_shape() -> void:
 	
 	if fill_ratio < 0.15:
 		print("Line")
+		emit_signal("line_drawn")
 		
 	elif aspect_ratio > 0.8 and aspect_ratio < 1.2:
 		print("Circle")
+		emit_signal("circle_drawn")
 	
 	else:
 		print("Triangle")

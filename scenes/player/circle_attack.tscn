@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://d2mrlfq08kdhh"]
+
+[ext_resource type="Script" uid="uid://cjq5pvuuhk5f3" path="res://scripts/player/circle_attack.gd" id="1_3enw3"]
+[ext_resource type="Texture2D" uid="uid://bvjijhtqe46y3" path="res://assets/images/player/Bullet 24x24 Free  Part 1B.png" id="1_l8xif"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3enw3"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8736"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qvo6"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nft0s"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl4qb"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up2xp"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfscq"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vagw1"]
+atlas = ExtResource("1_l8xif")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hthyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3enw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8736")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qvo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nft0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl4qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up2xp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfscq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vagw1")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0noh"]
+radius = 8.0
+
+[node name="CircleAttack" type="CharacterBody2D" unique_id=1139904312]
+scale = Vector2(2, 2)
+script = ExtResource("1_3enw3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1586097640]
+sprite_frames = SubResource("SpriteFrames_hthyy")
+animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=788287211]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=140536047]
+shape = SubResource("CircleShape2D_t0noh")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

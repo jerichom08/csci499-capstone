@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="2_ahp8l"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="3_m058v"]
 [ext_resource type="Texture2D" uid="uid://q4ife8hqm6fg" path="res://assets/images/doors/Door 4.png" id="4_r34od"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="4_udpfl"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="4_udpfl"]
 [ext_resource type="Texture2D" uid="uid://cf0k43ygihcyd" path="res://assets/images/bedroom/dresser.png" id="5_xkl8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahp8l"]

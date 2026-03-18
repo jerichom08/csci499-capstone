@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="4_sagyo"]
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="5_utuh5"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="5_vb3gq"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player.tscn" id="6_jr5wo"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_jr5wo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("2_thefa")

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bi7pynhxsgs0b"]
+
+[ext_resource type="Script" uid="uid://dpjywxcnjevuf" path="res://scripts/player/line_attack.gd" id="1_gbkoe"]
+[ext_resource type="Texture2D" uid="uid://dt4eysxltwgmi" path="res://assets/images/player/375.png" id="2_igyu8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q5hq"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur2u7"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jni0l"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag06a"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8sl3"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w12k"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqerd"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw1od"]
+atlas = ExtResource("2_igyu8")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af2tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q5hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur2u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jni0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag06a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8sl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w12k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqerd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw1od")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekgiq"]
+size = Vector2(22, 77)
+
+[node name="LineAttack" type="Node2D" unique_id=1855632990]
+script = ExtResource("1_gbkoe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1032544351]
+position = Vector2(-7.1543064e-07, -16.367146)
+rotation = -1.5707964
+scale = Vector2(1.5, 2)
+sprite_frames = SubResource("SpriteFrames_af2tl")
+animation = &"attack"
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1911930669]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1676791071]
+position = Vector2(-1, -7)
+shape = SubResource("RectangleShape2D_ekgiq")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

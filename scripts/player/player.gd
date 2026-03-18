@@ -146,8 +146,21 @@ func spawn_attack(type: String):
 				spawn_triangle_attack()
 	
 func spawn_line_attack():
-	pass
+	var attack = line_attack_scene.instantiate()
+	get_parent().add_child(attack)
+	attack.z_index = -10
 	
+	attack.scale *= WORLD_SCALE
+	attack.global_position.x = $AttackSpawn.global_position.x + 151 if sprite.flip_h else $AttackSpawn.global_position.x - 155
+	attack.global_position.y = $AttackSpawn.global_position.y - 100
+	
+	attack.scale.x *= -1 if sprite.flip_h else 1
+	
+	attack.attack_finished.connect(_on_line_attack_finished)
+	
+func _on_line_attack_finished():
+	is_attacking = false
+
 func spawn_circle_attack():
 	var proj = circle_attack_scene.instantiate()
 	get_parent().add_child(proj)
@@ -162,7 +175,7 @@ func spawn_circle_attack():
 	controlling_projectile = true
 	current_projectile = proj
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.5).timeout
 	end_projectile_control()
 	
 	if is_instance_valid(proj):
@@ -171,6 +184,7 @@ func spawn_circle_attack():
 func end_projectile_control():
 	controlling_projectile = false
 	current_projectile = null
+	await get_tree().create_timer(0.2).timeout
 	is_attacking = false
 	
 func spawn_triangle_attack():
@@ -186,7 +200,7 @@ func spawn_triangle_attack():
 func perform_attack(type: String):
 	if is_attacking or not is_on_floor():
 		return
-		
+	
 	is_attacking = true
 	
 	sprite.play(attack_animations[type])
@@ -194,6 +208,6 @@ func perform_attack(type: String):
 	spawn_attack(type)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if sprite.animation.ends_with("_attack"):
+	if sprite.animation.ends_with("_attack") and sprite.animation != "circle_attack":
 		is_attacking = false
 		

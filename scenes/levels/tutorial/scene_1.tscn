@@ -14,7 +14,7 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="10_uxqix"]
 [ext_resource type="PackedScene" uid="uid://bxowxihwx7iin" path="res://scenes/levels/tutorial/NextScene.tscn" id="11_cpv0e"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="13_aasmi"]
-[ext_resource type="Script" uid="uid://dih57jjafda87" path="res://scripts/lvls/scene1script.gd" id="14_v3rwh"]
+[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="16_eje0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("1_va4an")
@@ -294,6 +294,7 @@ sources/2 = SubResource("TileSetAtlasSource_8yd8u")
 sources/3 = SubResource("TileSetAtlasSource_15x7e")
 
 [node name="Tut" type="Node2D" unique_id=1440666369]
+position = Vector2(188, 108)
 script = ExtResource("1_8u52i")
 
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("11_cpv0e")]
@@ -308,19 +309,6 @@ tile_set = SubResource("TileSet_alrbv")
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAD0//n/AgACAAYAAFD0//r/AgACAAYAAAD0//v/AgACAAYAAFD0//z/AgACAAYAAFD0//3/AgAEAAUAAAD0//7/AgAFAAEAAAD0////AgACAAYAAAD0/wAAAgACAAYAAFD0/wEAAgACAAYAAAD0/wUAAgACAAEAAAD0/wYAAgACAAYAAED1//n/AgACAAYAAAD1//r/AgADAAYAAAD1//v/AgADAAYAAAD1//z/AgACAAYAAAD1//3/AgADAAYAAAD1//7/AgADAAYAAAD1////AgADAAYAAAD1/wAAAgACAAYAAAD1/wEAAgADAAYAAAD1/wUAAgACAAEAAAD1/wYAAgAEAAUAAAD0/wIAAgACAAcAAAD1/wIAAgADAAcAAAD2/wUAAgACAAEAAAD3/wUAAgACAAEAAAD8/wUAAgACAAEAAAD9/wUAAgACAAEAAAD+/wUAAgACAAEAAAD//wUAAgACAAEAAAAAAAUAAgACAAEAAAABAAUAAgACAAYAAAABAAQAAgABAAEAAAACAAQAAgACAAEAAAADAAQAAgACAAEAAAAEAAQAAgACAAEAAAAFAAQAAgACAAEAAAAGAAQAAgACAAEAAAAHAAQAAgACAAEAAAAIAAQAAgACAAEAAAACAAUAAgACAAYAAAACAAYAAgACAAYAAAADAAUAAgACAAYAAAADAAYAAgABAAEAAAD2/wYAAgACAAYAAED3/wYAAgACAAYAAAD4/wYAAgACAAYAAED5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgAEAAUAAAD9/wYAAgACAAYAAED+/wYAAgACAAYAAAD//wYAAgACAAYAAAAAAAYAAgAEAAUAAAABAAYAAgACAAYAAAAEAAUAAgACAAYAAAAEAAYAAgACAAEAAAAFAAUAAgACAAYAAAAFAAYAAgADAAEAAAAGAAUAAgACAAYAAAAGAAYAAgACAAYAAAAHAAUAAgACAAYAAAAHAAYAAgAEAAUAAAAIAAUAAgACAAYAAAAIAAYAAgACAAYAABALAAYAAgACAAYAAEALAAUAAgACAAYAAEALAAQAAgAEAAUAAAALAAMAAgACAAYAAEALAAIAAgACAAYAAEALAAEAAgACAAYAAEALAAAAAgAEAAUAAAALAP//AgACAAYAAEALAP7/AgACAAEAAAD2/wAAAgACAAAAAAAKAP7/AgACAAEAAAAKAP//AgABAAYAAAAKAAAAAgABAAYAAAAKAAEAAgABAAYAAAAKAAIAAgABAAYAAAAKAAMAAgABAAYAAAAKAAQAAgACAAYAAAAJAAQAAgACAAEAAAAJAAUAAgACAAYAAAAJAAYAAgACAAYAAAAKAAUAAgAEAAUAAAAKAAYAAgAEAAUAAAAJAP7/AgACAAAAAAAIAP7/AgACAAAAAAAHAP7/AgACAAAAAAAGAP7/AgACAAAAAAAFAP7/AgACAAAAAAAEAP7/AgACAAAAAAADAP7/AgACAAAAAAACAP7/AgACAAAAAAABAP7/AgACAAAAAAAAAP7/AgABAAAAAAALAPn/AgACAAYAAAAKAPn/AgACAAYAAAAJAPn/AgACAAYAAAAIAPn/AgACAAYAAAAHAPn/AgACAAYAAAAGAPn/AgACAAYAAAAFAPn/AgACAAYAAAAEAPn/AgACAAYAAAADAPn/AgACAAYAAAACAPn/AgACAAYAAAABAPn/AgACAAYAAAAAAPn/AgACAAYAAAD///n/AgACAAcAAAD+//n/AgACAAcAAAD9//n/AgACAAcAAAD8//n/AgACAAYAAAD7//n/AgACAAcAAAD6//n/AgACAAcAAAD5//n/AgACAAcAAAD4//n/AgACAAcAAAD3//n/AgACAAcAAAD2//n/AgACAAcAAAAIAPr/AgACAAcAAAD2//z/AgACAAAAAAD3//z/AgACAAAAAAD4//z/AgADAAAAAAD2//v/AgAHAAYAAAAEAPr/AgACAAcAAAAFAPr/AgACAAcAAAAGAPr/AgACAAcAAAAHAPr/AgACAAcAAAAJAPr/AgACAAcAAAAKAPr/AgACAAcAAAALAPr/AgACAAcAAAADAPr/AgACAAcAAAACAPr/AgACAAcAAAABAPr/AgACAAcAAAD8//r/AgAAAAYAAAD8//v/AgAAAAcAAAAAAPr/AgABAAcAAAAIAAEAAgARAAQAAAAIAAIAAgARAAUAAAAIAAMAAgARAAYAAAAHAAEAAgARAAIAAAAJAAEAAgATAAIAAAAHAP//AgARAAAAAAAHAAAAAgARAAEAAAAIAP//AgASAAAAAAAIAAAAAgASAAEAAAAJAP//AgATAAAAAAAJAAAAAgATAAEAAAAHAAIAAgASAAQAAAAJAAIAAgATAAQAAADz/wQAAgABAAYAAADz/wUAAgABAAYAAADz/wIAAgABAAYAAADz/wMAAgABAAYAAADz/wYAAgABAAYAAADz/wEAAgABAAYAAADz/wAAAgABAAYAAADz////AgABAAYAAADz//7/AgABAAYAAADz//3/AgABAAYAAADz//z/AgABAAYAAADz//v/AgABAAYAAADz//r/AgABAAYAAADz//n/AgABAAYAAAD4/wUAAgACAAEAAAD7/wUAAgACAAEAAAD6/wUAAgACAAEAAAD5/wUAAgACAAEAAAD3/wAAAgACAAAAAAD4/wAAAgACAAAAAAD5/wAAAgACAAAAAAD6/wAAAgACAAAAAAD7/wAAAgADAAAAAAA=")
 tile_set = SubResource("TileSet_alrbv")
-
-[node name="Label" type="Label" parent="." unique_id=1795807350]
-offset_left = -633.0
-offset_top = 234.0
-offset_right = -203.0
-offset_bottom = 301.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = ExtResource("10_uxqix")
-theme_override_font_sizes/font_size = 27
-text = "1.0 ) \"Press ↑ to Jump on Platforms\"
-"
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("3_e8ji1")]
 position = Vector2(-513, -27)
@@ -372,21 +360,38 @@ position = Vector2(-27, -311)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1987190099]
 scale = Vector2(3, 3)
 
-[node name="WarningLabel" type="Label" parent="." unique_id=1211516588 groups=["warning_label"]]
-offset_left = 6.0
-offset_top = -280.0
-offset_right = 455.0
-offset_bottom = -213.0
+[node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("13_aasmi")]
+position = Vector2(-32, 2)
+
+[node name="ClueSign" parent="." unique_id=604565878 instance=ExtResource("16_eje0s")]
+position = Vector2(-502, 207)
+
+[node name="InteractionLabel" type="Label" parent="ClueSign" unique_id=236226324]
+offset_left = 54.0
+offset_top = 13.0
+offset_right = 494.0
+offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
 theme_override_fonts/font = ExtResource("10_uxqix")
 theme_override_font_sizes/font_size = 27
-text = "1.5 ) \"Watch Out For the Falling Spikes\"
+text = "1.0 ) \"Press ↑ to Jump on Platforms\" 
 "
-script = ExtResource("14_v3rwh")
 
-[node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("13_aasmi")]
-position = Vector2(-32, 2)
+[node name="Area2D" parent="." unique_id=122987432 instance=ExtResource("16_eje0s")]
+position = Vector2(76, 157)
+
+[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=962626234]
+offset_left = -57.0
+offset_top = -394.0
+offset_right = 408.0
+offset_bottom = -337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("10_uxqix")
+theme_override_font_sizes/font_size = 27
+text = "1.5 ) \"Watch Out For the Falling Spikes\""
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

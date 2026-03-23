@@ -7,6 +7,9 @@ func _ready():
 func pause():
 	get_tree().paused = true
 	visible = true
+	
+	modulate.a = 0
+	create_tween().tween_property(self, "modulate:a", 1, 0.2)
 
 func resume():
 	get_tree().paused = false

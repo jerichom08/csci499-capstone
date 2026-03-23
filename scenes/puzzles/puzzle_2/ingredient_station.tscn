@@ -6,6 +6,7 @@
 size = Vector2(8.25, 4.875)
 
 [node name="IngredientStation" type="Area2D" unique_id=1519206893]
+collision_mask = 15
 script = ExtResource("1_ao72y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1313834768]

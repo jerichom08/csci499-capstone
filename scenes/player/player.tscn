@@ -361,7 +361,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smehm"]
 radius = 5.666667
-height = 28.666668
+height = 24.666668
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
 size = Vector2(27, 66)
@@ -376,8 +376,9 @@ triangle_attack_scene = ExtResource("2_qlg0r")
 position = Vector2(0, -16)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
-animation = &"circle_attack"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.79281443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
 position = Vector2(-2, -5)

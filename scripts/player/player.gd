@@ -21,7 +21,7 @@ const WORLD_SCALE = 3.0
 
 const maxSpeed = 120.0 * WORLD_SCALE
 const jumpVelocity = -170.0 * WORLD_SCALE
-const jumpMultiplier = 0.4
+const jumpMultiplier = 0.7
 const gravity = 400.0 * WORLD_SCALE
 
 # 1500 2000 800 tight
@@ -127,13 +127,16 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _on_canvas_line_drawn() -> void:
+func _on_hud_line_drawn() -> void:
+	print("Signal recieved")
 	perform_attack("line")
 	
-func _on_canvas_circle_drawn() -> void:
+func _on_hud_circle_drawn() -> void:
+	print("Signal recieved")
 	perform_attack("circle")
 	
-func _on_canvas_triangle_drawn() -> void:
+func _on_hud_triangle_drawn() -> void:
+	print("Signal recieved")
 	perform_attack("triangle")
 
 func spawn_attack(type: String):
@@ -148,7 +151,7 @@ func spawn_attack(type: String):
 func spawn_line_attack():
 	var attack = line_attack_scene.instantiate()
 	get_parent().add_child(attack)
-	attack.z_index = -10
+	attack.z_index = 0
 	
 	attack.scale *= WORLD_SCALE
 	attack.global_position.x = $AttackSpawn.global_position.x + 151 if sprite.flip_h else $AttackSpawn.global_position.x - 155

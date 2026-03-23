@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://dq6plgrbyepev"]
 
-[ext_resource type="Script" uid="uid://b1dtjpelv3jtj" path="res://scripts/camera.gd" id="1_cvpoc"]
+[ext_resource type="Script" uid="uid://b1dtjpelv3jtj" path="res://scripts/hud.gd" id="1_cvpoc"]
 [ext_resource type="Texture2D" uid="uid://b5ib7i60j856d" path="res://assets/images/bedroom/interior.png" id="2_tmlye"]
 [ext_resource type="Texture2D" uid="uid://bhl2v8nsj64pj" path="res://assets/images/UI/UI Pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="3_b05li"]
 [ext_resource type="PackedScene" uid="uid://diruyewfe185g" path="res://scenes/lvInterface/PlayerIcon.tscn" id="3_gtx3x"]
 [ext_resource type="Texture2D" uid="uid://yv3x0gb5nooq" path="res://assets/images/UI/scroll.png" id="5_b05li"]
+[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="6_p8nh0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b05li"]
 texture = ExtResource("2_tmlye")
@@ -972,3 +973,13 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(660, 253)
 scale = Vector2(0.46, 0.46)
 texture = ExtResource("5_b05li")
+
+[node name="Canvas" parent="." unique_id=1377326731 instance=ExtResource("6_p8nh0")]
+offset_left = 597.0
+offset_top = 190.0
+offset_right = 597.0
+offset_bottom = 190.0
+
+[connection signal="circle_drawn" from="Canvas" to="." method="_on_canvas_circle_drawn"]
+[connection signal="line_drawn" from="Canvas" to="." method="_on_canvas_line_drawn"]
+[connection signal="triangle_drawn" from="Canvas" to="." method="_on_canvas_triangle_drawn"]

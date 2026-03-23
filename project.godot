@@ -21,7 +21,7 @@ PuzzleManager="*uid://c8iupug2hqyf1"
 
 [display]
 
-window/size/viewport_width=1280
+window/size/viewport_width=1500
 window/size/viewport_height=720
 
 [editor_plugins]

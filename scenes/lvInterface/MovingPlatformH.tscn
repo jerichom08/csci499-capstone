@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://b2y5y1pl1m0sc"]
+[gd_scene format=3 uid="uid://bevijo67l4rn0"]
 
-[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_u1pfj"]
-[ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_elgew"]
-[ext_resource type="Script" uid="uid://tdj5k2w4mdqm" path="res://scenes/lvInterface/lava.gd" id="3_elgew"]
+[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_7ub5m"]
+[ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_2afnu"]
+[ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="3_2mr66"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
-texture = ExtResource("1_u1pfj")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2t7e"]
+texture = ExtResource("1_7ub5m")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -24,11 +24,8 @@ texture_region_size = Vector2i(18, 18)
 11:0/0 = 0
 12:0/0 = 0
 13:0/0 = 0
-13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -6.846612, 9, -6.846611, 9, 9, -9, 9)
 14:0/0 = 0
-14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -6.846612, 9, -6.846611, 9, 9, -9, 9)
 15:0/0 = 0
-15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -6.846612, 9, -6.846611, 9, 9, -9, 9)
 16:0/0 = 0
 17:0/0 = 0
 18:0/0 = 0
@@ -209,8 +206,8 @@ texture_region_size = Vector2i(18, 18)
 18:8/0 = 0
 19:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15x7e"]
-texture = ExtResource("2_elgew")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxrpg"]
+texture = ExtResource("2_2afnu")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -253,34 +250,76 @@ texture_region_size = Vector2i(18, 18)
 8:3/0 = 0
 9:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_alrbv"]
+[sub_resource type="TileSet" id="TileSet_pr0mc"]
 tile_size = Vector2i(18, 18)
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 0
-sources/2 = SubResource("TileSetAtlasSource_8yd8u")
-sources/3 = SubResource("TileSetAtlasSource_15x7e")
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_h2t7e")
+sources/3 = SubResource("TileSetAtlasSource_jxrpg")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv6c1"]
-size = Vector2(89.31035, 17.241379)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2t7e"]
+size = Vector2(105, 12.75)
 
-[node name="lava" type="TileMapLayer" unique_id=319135582]
-scale = Vector2(2.32, 2.32)
-tile_set = SubResource("TileSet_alrbv")
-script = ExtResource("3_elgew")
+[sub_resource type="Animation" id="Animation_h2t7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552370270]
-position = Vector2(46.103443, 6.465517)
-scale = Vector2(2.3148818, 1.0000001)
-texture = ExtResource("1_u1pfj")
-region_enabled = true
-region_rect = Rect2(215, 0, 38, 13)
+[sub_resource type="Animation" id="Animation_jxrpg"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(190, 0), Vector2(0, 0)]
+}
 
-[node name="Area2D" type="Area2D" parent="." unique_id=870201359]
-visible = false
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pr0mc"]
+_data = {
+&"RESET": SubResource("Animation_h2t7e"),
+&"move": SubResource("Animation_jxrpg")
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1207139844]
-position = Vector2(45.000027, 9.482762)
-scale = Vector2(1.0000004, 1.0000004)
-shape = SubResource("RectangleShape2D_lv6c1")
+[node name="MovingPlatformH" type="Node2D" unique_id=1031293233]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1458404677]
+
+[node name="Moving Platform" type="TileMapLayer" parent="AnimatableBody2D" unique_id=317074486]
+position = Vector2(-269, -43)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 2, 0, 7, 0, 7, 0, 0, 0)
+tile_set = SubResource("TileSet_pr0mc")
+
+[node name="Spikes" parent="AnimatableBody2D" unique_id=529623262 instance=ExtResource("3_2mr66")]
+position = Vector2(-296, -3.0000038)
+rotation = 3.1415927
+
+[node name="Spikes2" parent="AnimatableBody2D" unique_id=1830114971 instance=ExtResource("3_2mr66")]
+position = Vector2(-242, -3.0000002)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1450619115]
+position = Vector2(-267, -37.375)
+shape = SubResource("RectangleShape2D_h2t7e")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=1181565367]
+libraries/ = SubResource("AnimationLibrary_pr0mc")
+autoplay = &"move"

@@ -14,7 +14,7 @@ size = Vector2(26.5, 36.5)
 size = Vector2(166, 30.5)
 
 [node name="Puzzle1" type="Node2D" unique_id=219482314]
-position = Vector2(148, 47)
+position = Vector2(149, 44)
 script = ExtResource("1_nyrnx")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=860154274]
@@ -24,7 +24,7 @@ position = Vector2(-61, 27)
 position = Vector2(245, -39)
 
 [node name="Door_A" parent="Doors" unique_id=1522837388 instance=ExtResource("2_ahp8l")]
-position = Vector2(89, 18)
+position = Vector2(91, 16)
 script = ExtResource("3_m058v")
 target_path = NodePath("../../DoorTargets/Target_A")
 spawn_path = NodePath("../../SpawnPoint")

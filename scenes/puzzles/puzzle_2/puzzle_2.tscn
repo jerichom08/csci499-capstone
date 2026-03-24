@@ -160,5 +160,19 @@ stream = ExtResource("13_hnf5k")
 position = Vector2(-146, -62)
 stream = ExtResource("14_8ymgr")
 
-[node name="ClueSign" parent="." unique_id=86942286 instance=ExtResource("15_hnf5k")]
-position = Vector2(-278, -119)
+[node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("15_hnf5k")]
+position = Vector2(-273, -112)
+
+[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1690754103]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press E to read"
+
+[node name="ClueText" type="Label" parent="Area2D" unique_id=773366296]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "order
+2
+4
+1
+3"

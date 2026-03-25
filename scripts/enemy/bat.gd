@@ -1,5 +1,5 @@
+@tool
 extends CharacterBody2D
-
 @export var stats: Stats
 @export var move_speed: float = 70.0
 @export var stop_distance: float = 150.0
@@ -7,6 +7,9 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var vision_ray: RayCast2D = $VisionRay
+@export var vision_ray_target: Vector2 = Vector2(75, 75)
+@export_tool_button("Flip Vision Ray (X)")
+var flip_vision_ray_button := _flip_vision_ray
 @onready var wall_ray: RayCast2D = $WallRay
 
 var has_detected_player := false
@@ -14,6 +17,7 @@ var target_player: Node2D = null
 var is_dead : bool = false
 
 func _ready() -> void:
+	vision_ray.target_position = vision_ray_target
 	sprite.play("rest")
 	sprite.animation_finished.connect(_on_animation_finished)
 
@@ -95,3 +99,16 @@ func die() -> void:
 func _on_animation_finished() -> void:
 	if is_dead and sprite.animation == "death":
 		queue_free()  # OR: visible = false
+		
+func _flip_vision_ray() -> void:
+	if not vision_ray:
+		return
+
+	vision_ray.target_position.x *= -1
+
+	# ensure editor updates visually
+	vision_ray.force_raycast_update()
+
+	# mark scene as changed (important in editor)
+	if Engine.is_editor_hint():
+		notify_property_list_changed()

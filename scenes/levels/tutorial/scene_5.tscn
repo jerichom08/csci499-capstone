@@ -315,13 +315,13 @@ tile_set = SubResource("TileSet_alrbv")
 position = Vector2(-375, 209)
 
 [node name="InteractionLabel" type="Label" parent="Area2D" unique_id=818326447]
-offset_left = 51.0
-offset_top = 16.0
-offset_right = 593.0
-offset_bottom = 83.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 49.0
+offset_top = 31.0
+offset_right = 591.0
+offset_bottom = 98.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("7_1nwqk")
 theme_override_font_sizes/font_size = 27
 text = "3.0 ) \"The Jump Boost Can Be Pretty Fun..\"

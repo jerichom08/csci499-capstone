@@ -263,10 +263,10 @@ sprite_frames = SubResource("SpriteFrames_bl7p3")
 animation = &"death"
 
 [node name="WallRay" type="RayCast2D" parent="." unique_id=1565008922]
-target_position = Vector2(-25, 0)
+target_position = Vector2(0, 49)
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=1855764398]
-target_position = Vector2(-100, 50)
+target_position = Vector2(22, 16)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1456916793]
 script = ExtResource("6_tt7xo")

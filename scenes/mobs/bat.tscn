@@ -152,7 +152,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a2fph")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -260,8 +260,7 @@ shape = SubResource("CircleShape2D_iq4o1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=932740806]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_bl7p3")
-animation = &"rest"
-frame_progress = 1.0
+animation = &"death"
 
 [node name="WallRay" type="RayCast2D" parent="." unique_id=1565008922]
 target_position = Vector2(-25, 0)

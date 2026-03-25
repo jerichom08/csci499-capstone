@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddwbvnu4418vr" path="res://scripts/player/triangle_attack.gd" id="1_aecsh"]
 [ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="2_kee6l"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="3_kee6l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8out"]
 atlas = ExtResource("2_kee6l")
@@ -74,7 +75,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy1op"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kee6l"]
 size = Vector2(65, 27)
 
 [node name="TriangleAttack" type="Node2D" unique_id=1324257449 groups=["attack"]]
@@ -86,10 +87,13 @@ animation = &"attack"
 frame = 8
 frame_progress = 1.0
 
-[node name="Area2D" type="Area2D" parent="." unique_id=230600985]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1906681728]
+script = ExtResource("3_kee6l")
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1883538977]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1814156869]
 position = Vector2(-0.5, 6.5)
-shape = SubResource("RectangleShape2D_jy1op")
+shape = SubResource("RectangleShape2D_kee6l")
+debug_color = Color(1, 0, 0, 0.41960785)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

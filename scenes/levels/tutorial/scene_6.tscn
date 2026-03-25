@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://br1s7ppvov2yd"]
+[gd_scene format=4 uid="uid://2k3bfjf84xg3"]
 
 [ext_resource type="PackedScene" uid="uid://bxowxihwx7iin" path="res://scenes/levels/tutorial/NextScene.tscn" id="1_nxowx"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_fr20m"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="10_dhej2"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="10_nro7e"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="11_fs0gx"]
+[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_nro7e"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_obqkb"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_vpfj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
@@ -377,7 +379,50 @@ flip_v = true
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_vpfj8")]
 position = Vector2(84, -5)
 
+[node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_nro7e")]
+position = Vector2(168, -225)
+
+[node name="InteractionLabel" type="Label" parent="sign1" unique_id=1558879513]
+offset_left = -120.0
+offset_top = 93.0
+offset_right = 422.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_obqkb")
+theme_override_font_sizes/font_size = 19
+text = "press x or draw a circle on lilith's scroll and 
+control the ball using arrow keys/wasd"
+
+[node name="sign2" parent="." unique_id=43103880 instance=ExtResource("14_nro7e")]
+position = Vector2(489, -222)
+
+[node name="InteractionLabel" type="Label" parent="sign2" unique_id=1060464001]
+offset_left = -232.0
+offset_top = -1.0
+offset_right = 259.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_obqkb")
+theme_override_font_sizes/font_size = 21
+text = "press c or draw a triangle on lilith's scroll"
+
+[node name="sign3" parent="." unique_id=169349999 instance=ExtResource("14_nro7e")]
+position = Vector2(221, 206)
+
+[node name="InteractionLabel" type="Label" parent="sign3" unique_id=957034915]
+offset_left = -113.0
+offset_top = 66.0
+offset_right = 429.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_obqkb")
+theme_override_font_sizes/font_size = 24
+text = "press z or draw a line on lilith's scroll"
+
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
-[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
-[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
-[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

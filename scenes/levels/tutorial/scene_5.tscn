@@ -290,7 +290,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[node name="Tut" type="Node2D" unique_id=1440666369]
+[node name="Tut3" type="Node2D" unique_id=1440666369]
 
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("1_1t55d")]
 position = Vector2(-628, -219)
@@ -314,7 +314,7 @@ tile_set = SubResource("TileSet_alrbv")
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("14_1nwqk")]
 position = Vector2(-375, 209)
 
-[node name="ClueText" type="Label" parent="Area2D" unique_id=818326447]
+[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=818326447]
 offset_left = 51.0
 offset_top = 16.0
 offset_right = 593.0
@@ -380,6 +380,3 @@ position = Vector2(628, -90)
 position = Vector2(84, -5)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
-[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
-[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
-[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

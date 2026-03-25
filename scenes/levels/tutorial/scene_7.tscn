@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://2k3bfjf84xg3"]
+[gd_scene format=4 uid="uid://de58m005atgwn"]
 
 [ext_resource type="PackedScene" uid="uid://bxowxihwx7iin" path="res://scenes/levels/tutorial/NextScene.tscn" id="1_vst4a"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_nro7e"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="13_6hne2"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="13_7mqk0"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="13_jlbhy"]
+[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_qyiaw"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_08fn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_nro7e")
@@ -645,7 +647,7 @@ texture = ExtResource("5_dhej2")
 [sub_resource type="TileSet" id="TileSet_vst4a"]
 sources/0 = SubResource("TileSetAtlasSource_7mqk0")
 
-[node name="Tut" type="Node2D" unique_id=1440666369]
+[node name="Tut2" type="Node2D" unique_id=1440666369]
 
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("1_vst4a")]
 position = Vector2(-628, -219)
@@ -725,6 +727,33 @@ position = Vector2(-509.00003, -188)
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("13_7mqk0")]
 position = Vector2(98, -6)
 
-[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
-[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
-[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
+[node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_qyiaw")]
+position = Vector2(-589, -219)
+
+[node name="InteractionLabel" type="Label" parent="sign1" unique_id=68225554]
+offset_left = -92.0
+offset_top = -10.0
+offset_right = 357.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_08fn7")
+theme_override_font_sizes/font_size = 27
+text = "Pretty spikey spikes
+"
+
+[node name="sign2" parent="." unique_id=1493722316 instance=ExtResource("14_qyiaw")]
+position = Vector2(505, -222)
+
+[node name="InteractionLabel" type="Label" parent="sign2" unique_id=812339522]
+offset_left = -310.0
+offset_top = 23.0
+offset_right = 139.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_08fn7")
+theme_override_font_sizes/font_size = 27
+text = "Falling platfroms below!"

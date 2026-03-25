@@ -396,3 +396,6 @@ text = "1.5 ) \"Watch Out For the Falling Spikes\""
 position = Vector2(48, -6)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

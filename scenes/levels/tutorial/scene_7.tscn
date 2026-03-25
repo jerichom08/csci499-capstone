@@ -724,3 +724,7 @@ position = Vector2(-509.00003, -188)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("13_7mqk0")]
 position = Vector2(98, -6)
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

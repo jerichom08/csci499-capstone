@@ -329,3 +329,6 @@ shape = SubResource("CapsuleShape2D_4kj4s")
 position = Vector2(78, -6)
 
 [connection signal="body_entered" from="ToSpecial" to="ToSpecial" method="_on_body_entered"]
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

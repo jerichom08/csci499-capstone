@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
-@onready var hitbox = $Area2D/CollisionShape2D
+@onready var hitbox = $Hitbox/CollisionShape2D
 
 signal attack_finished
 

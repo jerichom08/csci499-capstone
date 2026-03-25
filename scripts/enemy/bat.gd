@@ -101,14 +101,8 @@ func _on_animation_finished() -> void:
 		queue_free()  # OR: visible = false
 		
 func _flip_vision_ray() -> void:
-	if not vision_ray:
-		return
+	vision_ray_target.x = -vision_ray_target.x
+	vision_ray.target_position = vision_ray_target
 
-	vision_ray.target_position.x *= -1
-
-	# ensure editor updates visually
-	vision_ray.force_raycast_update()
-
-	# mark scene as changed (important in editor)
 	if Engine.is_editor_hint():
 		notify_property_list_changed()

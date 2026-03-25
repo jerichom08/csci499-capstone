@@ -389,8 +389,6 @@ shape = SubResource("CapsuleShape2D_smehm")
 position = Vector2(153, -16)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1044826710]
-collision_layer = 8
-collision_mask = 64
 script = ExtResource("7_fjrip")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"
 

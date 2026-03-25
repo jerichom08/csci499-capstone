@@ -165,7 +165,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uym83")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
 "speed": 8.0
 }, {
@@ -201,6 +201,7 @@ shape = SubResource("CircleShape2D_iq4o1")
 sprite_frames = SubResource("SpriteFrames_bl7p3")
 animation = &"hurt"
 autoplay = "idle"
+frame_progress = 0.49760938
 
 [node name="LedgeRay" type="RayCast2D" parent="." unique_id=1565008922]
 target_position = Vector2(10, 25)

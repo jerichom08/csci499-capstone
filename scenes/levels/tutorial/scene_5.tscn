@@ -363,7 +363,7 @@ scale = Vector2(3, 3)
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("14_1nwqk")]
 position = Vector2(-375, 209)
 
-[node name="ClueText" type="Label" parent="Area2D" unique_id=818326447]
+[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=818326447]
 offset_left = 51.0
 offset_top = 16.0
 offset_right = 593.0

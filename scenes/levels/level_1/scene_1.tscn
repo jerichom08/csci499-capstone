@@ -562,7 +562,7 @@ tile_map_data = PackedByteArray("AAD8//r/AgARAAQAAAD8//v/AgARAAUAAAD8//z/AgARAAY
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("7_oj4i0")]
-position = Vector2(-612, 162)
+position = Vector2(-566, 168)
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("10_arr50")]
 position = Vector2(-289, 196)

@@ -758,3 +758,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("15_08fn7")
 theme_override_font_sizes/font_size = 27
 text = "\"Falling platfroms below!\""
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

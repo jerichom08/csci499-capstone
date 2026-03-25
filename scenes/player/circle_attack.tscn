@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cjq5pvuuhk5f3" path="res://scripts/player/circle_attack.gd" id="1_3enw3"]
 [ext_resource type="Texture2D" uid="uid://bvjijhtqe46y3" path="res://assets/images/player/Bullet 24x24 Free  Part 1B.png" id="1_l8xif"]
-[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="3_h8736"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3enw3"]
 atlas = ExtResource("1_l8xif")
@@ -68,7 +67,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0qvo6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0noh"]
 radius = 8.0
 
 [node name="CircleAttack" type="CharacterBody2D" unique_id=1139904312]
@@ -79,10 +78,9 @@ script = ExtResource("1_3enw3")
 sprite_frames = SubResource("SpriteFrames_hthyy")
 animation = &"attack"
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1822548261]
-script = ExtResource("3_h8736")
-metadata/_custom_type_script = "uid://bfqavi17nvck4"
+[node name="Area2D" type="Area2D" parent="." unique_id=788287211]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=245787200]
-shape = SubResource("CircleShape2D_0qvo6")
-debug_color = Color(1, 0, 0, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=140536047]
+shape = SubResource("CircleShape2D_t0noh")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

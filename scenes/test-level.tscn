@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://choystunvgoem"]
 
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_tny1j"]
-[ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="2_qlq2q"]
+[ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="3_5klk1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qlq2q"]
 
@@ -12,17 +12,11 @@ size = Vector2(61, 154)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_tny1j")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1359601901]
-
 [node name="Floor" type="StaticBody2D" parent="." unique_id=306388270]
 position = Vector2(0, 36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2022255984]
 shape = SubResource("WorldBoundaryShape2D_qlq2q")
-
-[node name="Canvas" parent="." unique_id=1135155385 instance=ExtResource("2_qlq2q")]
-offset_left = 300.0
-offset_right = 300.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1616625673]
 
@@ -30,6 +24,8 @@ offset_right = 300.0
 position = Vector2(-293, -12)
 shape = SubResource("RectangleShape2D_qlq2q")
 
-[connection signal="circle_drawn" from="Canvas" to="Player" method="_on_canvas_circle_drawn"]
-[connection signal="line_drawn" from="Canvas" to="Player" method="_on_canvas_line_drawn"]
-[connection signal="triangle_drawn" from="Canvas" to="Player" method="_on_canvas_triangle_drawn"]
+[node name="hud" parent="." unique_id=2086834432 instance=ExtResource("3_5klk1")]
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

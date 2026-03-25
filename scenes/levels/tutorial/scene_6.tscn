@@ -426,3 +426,6 @@ text = "4.2) \"press z or draw a line on lilith's scroll\""
 position = Vector2(609, -200)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

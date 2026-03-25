@@ -27,9 +27,9 @@ const gravity = 400.0 * WORLD_SCALE
 # 1500 2000 800 tight
 # 500 600 300 floaty
 # 600 800 600 perfect
-const acceleration = 600.0 * WORLD_SCALE
+const acceleration = 800.0 * WORLD_SCALE
 const deceleration = 800.0 * WORLD_SCALE
-const airAcceleration = 600.0 * WORLD_SCALE
+const airAcceleration = 800.0 * WORLD_SCALE
 
 var is_attacking := false
 var attack_animations = {
@@ -155,7 +155,7 @@ func spawn_line_attack():
 	
 	attack.scale *= WORLD_SCALE
 	attack.global_position.x = $AttackSpawn.global_position.x + 151 if sprite.flip_h else $AttackSpawn.global_position.x - 155
-	attack.global_position.y = $AttackSpawn.global_position.y - 100
+	attack.global_position.y = $AttackSpawn.global_position.y - 60
 	
 	attack.scale.x *= -1 if sprite.flip_h else 1
 	

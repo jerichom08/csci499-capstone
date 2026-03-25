@@ -76,12 +76,13 @@ script = ExtResource("1_gbkoe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1032544351]
 position = Vector2(-7.1543064e-07, -16.367146)
 rotation = -1.5707964
-scale = Vector2(1.5, 2)
+scale = Vector2(1, 1.333)
 sprite_frames = SubResource("SpriteFrames_af2tl")
 animation = &"attack"
 frame = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1911930669]
+scale = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1676791071]
 position = Vector2(-1, -7)

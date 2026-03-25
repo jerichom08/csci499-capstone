@@ -317,3 +317,7 @@ tile_set = SubResource("TileSet_alrbv")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_xmhdb")]
 position = Vector2(96, 1)
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

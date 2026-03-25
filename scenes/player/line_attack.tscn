@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dpjywxcnjevuf" path="res://scripts/player/line_attack.gd" id="1_gbkoe"]
 [ext_resource type="Texture2D" uid="uid://dt4eysxltwgmi" path="res://assets/images/player/375.png" id="2_igyu8"]
-[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="3_338ia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q5hq"]
 atlas = ExtResource("2_igyu8")
@@ -68,8 +67,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmfwb"]
-size = Vector2(22, 61)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekgiq"]
+size = Vector2(22, 77)
 
 [node name="LineAttack" type="Node2D" unique_id=1855632990]
 script = ExtResource("1_gbkoe")
@@ -82,14 +81,11 @@ sprite_frames = SubResource("SpriteFrames_af2tl")
 animation = &"attack"
 frame = 1
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=2095196258]
-script = ExtResource("3_338ia")
-metadata/_custom_type_script = "uid://bfqavi17nvck4"
+[node name="Area2D" type="Area2D" parent="." unique_id=1911930669]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=821666232]
-position = Vector2(-1, -14.5)
-shape = SubResource("RectangleShape2D_kmfwb")
-debug_color = Color(1, 0, 0, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1676791071]
+position = Vector2(-1, -7)
+shape = SubResource("RectangleShape2D_ekgiq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

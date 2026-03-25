@@ -12,6 +12,10 @@ func _on_area_entered(area: Area2D) -> void:
 	print("script: ", area.get_script())
 
 	if area is Hurtbox:
+		if area.owner == owner:
+			print("ignoring my own hurtbox")
+			return
+
 		print("detected a Hurtbox")
 		area.take_hit(damage)
 	else:

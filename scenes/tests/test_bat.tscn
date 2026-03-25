@@ -18,15 +18,15 @@ position = Vector2(641, 630)
 shape = SubResource("RectangleShape2D_aeqw0")
 
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("1_e86fk")]
-position = Vector2(553, 339)
+position = Vector2(771, 283)
 scale = Vector2(3, 3)
 
 [node name="Ledge" type="StaticBody2D" parent="." unique_id=514815378]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge" unique_id=1678565286]
-position = Vector2(554, 419)
+position = Vector2(557, 454)
 shape = SubResource("RectangleShape2D_4abqv")
 debug_color = Color(0, 0, 1, 0.41960785)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_33eld")]
-position = Vector2(454, 353)
+position = Vector2(408, 401)

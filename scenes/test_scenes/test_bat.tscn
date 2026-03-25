@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dae5acdqkc7c5"]
+[gd_scene format=3 uid="uid://bqjms010x4v87"]
 
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/mobs/bat.tscn" id="1_e86fk"]
-[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_33eld"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/mobs/bat.tscn" id="1_q215g"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_yggys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeqw0"]
 size = Vector2(1276, 176)
@@ -17,7 +17,7 @@ size = Vector2(661, 20)
 position = Vector2(641, 630)
 shape = SubResource("RectangleShape2D_aeqw0")
 
-[node name="bat" parent="." unique_id=789512219 instance=ExtResource("1_e86fk")]
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("1_q215g")]
 position = Vector2(771, 283)
 scale = Vector2(3, 3)
 
@@ -28,5 +28,5 @@ position = Vector2(557, 454)
 shape = SubResource("RectangleShape2D_4abqv")
 debug_color = Color(0, 0, 1, 0.41960785)
 
-[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_33eld")]
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_yggys")]
 position = Vector2(408, 401)

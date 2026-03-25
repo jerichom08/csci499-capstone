@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="12_7mqk0"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="13_7mqk0"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="13_jlbhy"]
+[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_nro7e"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_obqkb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_nro7e")
@@ -727,3 +729,33 @@ position = Vector2(357, 158)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("13_7mqk0")]
 position = Vector2(98, -6)
+
+[node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_nro7e")]
+position = Vector2(502, -223)
+
+[node name="InteractionLabel" type="Label" parent="sign1" unique_id=1169027249]
+offset_left = -262.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_obqkb")
+theme_override_font_sizes/font_size = 27
+text = "Falling platfroms!?"
+
+[node name="sign2" parent="." unique_id=1408200697 instance=ExtResource("14_nro7e")]
+position = Vector2(-629, -224)
+
+[node name="InteractionLabel" type="Label" parent="sign2" unique_id=88903928]
+offset_left = 40.0
+offset_top = 7.0
+offset_right = 582.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("15_obqkb")
+theme_override_font_sizes/font_size = 27
+text = "Avoid those spikes!!"

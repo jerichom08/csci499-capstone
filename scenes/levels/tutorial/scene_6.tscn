@@ -303,32 +303,29 @@ tile_set = SubResource("TileSet_alrbv")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
 position = Vector2(804.00006, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD8//n/AgACAAYAAAD8//r/AgACAAcAAAD8//3/AgACAAEAAAD7//n/AgACAAYAAAD7//r/AgABAAcAAAD7//3/AgACAAEAAAD6//3/AgACAAEAAAD5//3/AgACAAEAAAD4//3/AgACAAEAAAD3//3/AgACAAEAAAD2//3/AgACAAEAAAD1//3/AgACAAEAAAD5//n/AgABAAcAAAD6//n/AgACAAcAAAD7//z/AgAEAAcAAAD8//v/AgAGAAUAACD6//z/AgAGAAQAAADz//3/AgACAAEAAAD0//3/AgACAAEAAADy//3/AgACAAYAAADy//z/AgADAAEAAADx//z/AgACAAEAAAD0//z/AgAGAAQAAADx//3/AgACAAYAAAD9/wEAAgACAAEAAAD+/wEAAgADAAEAAAD8/wAAAgABAAcAAAD6/wUAAgACAAEAAAD7/wUAAgACAAEAAAD8/wUAAgACAAEAAAD3/wUAAgACAAEAAAD4/wUAAgACAAEAAAD5/wUAAgACAAEAAAD0/wUAAgACAAEAAAD1/wUAAgACAAEAAAD2/wUAAgACAAEAAADz/wUAAgABAAEAAADw//z/AgACAAEAAADw//3/AgACAAYAAADv//z/AgABAAEAAADv//3/AgABAAYAAADs//r/AgADAAYAAADs//v/AgAAAAYAAADs//z/AgAAAAYAAADs//3/AgAAAAYAAADs//7/AgAAAAYAAADs////AgAAAAcAAADz/wYAAgABAAYAAAD0/wYAAgACAAYAAAD1/wYAAgACAAYAAAD2/wYAAgACAAYAAAD3/wYAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgACAAYAAAD8//7/AgACAAYAAAD8////AgACAAYAAAD8/wIAAgARAAQAAAD8/wMAAgARAAUAAAD8/wQAAgARAAYAAAD7/wIAAgARAAIAAAD7/wEAAgARAAAAAAD8/wEAAgASAAAAAAD7/wMAAgATAAYAABD9//3/AgACAAEAAAD+//3/AgADAAEAAADz//7/AgACAAcAAAD0//7/AgACAAYAAAD1//7/AgACAAYAAAD2//7/AgACAAYAAAD3//7/AgACAAYAAAD4//7/AgACAAYAAAD5//7/AgACAAYAAAD6//7/AgACAAYAAAD7//7/AgACAAYAAAD0////AgABAAcAAAD1////AgACAAcAAAD2////AgACAAcAAAD3////AgACAAcAAAD4////AgACAAcAAAD5////AgACAAcAAAD6////AgACAAcAAAD7////AgACAAcAAAD7/wQAAgAJAAYAAAD0/wQAAgAFAAYAAADz/wQAAgAEAAYAAAD1/wQAAgAGAAQAAADo/wUAAgACAAEAABDp/wUAAgACAAEAABDq/wUAAgABAAEAABDl/wUAAgACAAEAABDm/wUAAgACAAEAABDn/wUAAgACAAEAABDk/wUAAgACAAYAAADk/wYAAgACAAYAABDl/wYAAgACAAYAABDm/wYAAgACAAYAABDn/wYAAgACAAYAABDo/wYAAgACAAYAABDp/wYAAgACAAYAABDq/wYAAgABAAYAABDk//n/AgACAAYAAADk//r/AgACAAcAAADk//3/AgACAAEAAADl//n/AgACAAYAAADl//r/AgACAAcAAADl//z/AgAEAAcAAADl//3/AgACAAEAAADm//n/AgACAAYAAADm//r/AgADAAcAAADm//3/AgADAAAAAADn//n/AgACAAcAAADo//n/AgACAAcAAADp//n/AgACAAcAAADq//n/AgACAAcAAADr//n/AgACAAYAAADr//r/AgABAAcAAADs//n/AgADAAYAAADk//7/AgACAAYAAADk////AgADAAYAAADk/wAAAgADAAYAAADk/wEAAgADAAYAAADk/wIAAgADAAYAAADk/wMAAgADAAYAAADk/wQAAgADAAYAAADl//7/AgADAAcAAADn/wQAAgAEAAYAAADq//r/AgAKAAMAAADy//7/AgACAAcAAADx//7/AgACAAcAAADw//7/AgACAAcAAADv//7/AgABAAcAAADw/wEAAgACAAAAAADx/wEAAgADAAAAAADv/wEAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8//n/AgACAAYAAAD8//r/AgACAAcAAAD8//3/AgACAAEAAAD7//n/AgACAAYAAAD7//r/AgABAAcAAAD7//3/AgACAAEAAAD6//3/AgACAAEAAAD5//3/AgACAAEAAAD4//3/AgACAAEAAAD3//3/AgACAAEAAAD2//3/AgACAAEAAAD1//3/AgACAAEAAAD5//n/AgABAAcAAAD6//n/AgACAAcAAAD7//z/AgAEAAcAAAD8//v/AgAGAAUAACD6//z/AgAGAAQAAADz//3/AgACAAEAAAD0//3/AgACAAEAAADy//3/AgACAAYAAADy//z/AgADAAEAAADx//z/AgACAAEAAADx//3/AgACAAYAAAD9/wEAAgACAAEAAAD+/wEAAgADAAEAAAD8/wAAAgABAAcAAAD6/wUAAgACAAEAAAD7/wUAAgACAAEAAAD8/wUAAgACAAEAAAD3/wUAAgACAAEAAAD4/wUAAgACAAEAAAD5/wUAAgACAAEAAAD0/wUAAgACAAEAAAD1/wUAAgACAAEAAAD2/wUAAgACAAEAAADz/wUAAgABAAEAAADw//z/AgACAAEAAADw//3/AgACAAYAAADv//z/AgABAAEAAADv//3/AgABAAYAAADs//r/AgADAAYAAADs//v/AgAAAAYAAADs//z/AgAAAAYAAADs//3/AgAAAAYAAADs//7/AgAAAAYAAADs////AgAAAAcAAADz/wYAAgABAAYAAAD0/wYAAgACAAYAAAD1/wYAAgACAAYAAAD2/wYAAgACAAYAAAD3/wYAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgACAAYAAAD8//7/AgACAAYAAAD8////AgACAAYAAAD8/wIAAgARAAQAAAD8/wMAAgARAAUAAAD8/wQAAgARAAYAAAD7/wIAAgARAAIAAAD7/wEAAgARAAAAAAD8/wEAAgASAAAAAAD7/wMAAgATAAYAABD9//3/AgACAAEAAAD+//3/AgADAAEAAADz//7/AgACAAcAAAD0//7/AgACAAYAAAD1//7/AgACAAYAAAD2//7/AgACAAYAAAD3//7/AgACAAYAAAD4//7/AgACAAYAAAD5//7/AgACAAYAAAD6//7/AgACAAYAAAD7//7/AgACAAYAAAD0////AgABAAcAAAD1////AgACAAcAAAD2////AgACAAcAAAD3////AgACAAcAAAD4////AgACAAcAAAD5////AgACAAcAAAD6////AgACAAcAAAD7////AgACAAcAAAD7/wQAAgAJAAYAAAD0/wQAAgAFAAYAAADz/wQAAgAEAAYAAAD1/wQAAgAGAAQAAADo/wUAAgACAAEAABDp/wUAAgACAAEAABDq/wUAAgABAAEAABDl/wUAAgACAAEAABDm/wUAAgACAAEAABDn/wUAAgACAAEAABDk/wUAAgACAAYAAADk/wYAAgACAAYAABDl/wYAAgACAAYAABDm/wYAAgACAAYAABDn/wYAAgACAAYAABDo/wYAAgACAAYAABDp/wYAAgACAAYAABDq/wYAAgABAAYAABDk//n/AgACAAYAAADk//r/AgACAAcAAADk//3/AgACAAEAAADl//n/AgACAAYAAADl//r/AgACAAcAAADl//z/AgAEAAcAAADl//3/AgACAAEAAADm//n/AgACAAYAAADm//r/AgADAAcAAADm//3/AgADAAAAAADn//n/AgACAAcAAADo//n/AgACAAcAAADp//n/AgACAAcAAADq//n/AgACAAcAAADr//n/AgACAAYAAADr//r/AgABAAcAAADs//n/AgADAAYAAADk//7/AgACAAYAAADk////AgADAAYAAADk/wAAAgADAAYAAADk/wEAAgADAAYAAADk/wIAAgADAAYAAADk/wMAAgADAAYAAADk/wQAAgADAAYAAADl//7/AgADAAcAAADn/wQAAgAEAAYAAADq//r/AgAKAAMAAADy//7/AgACAAcAAADx//7/AgACAAcAAADw//7/AgACAAcAAADv//7/AgABAAcAAADw/wEAAgACAAAAAADx/wEAAgADAAAAAADv/wEAAgABAAAAAADx//n/AgARAAIAAADy//n/AgARAAQAAADz//n/AgATAAIAAADx//j/AgARAAAAAADy//j/AgASAAAAAADz//j/AgATAAAAAADx//r/AgASAAQAAADy//r/AgARAAUAAADz//r/AgATAAYAAADy//v/AgARAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=262893072]
 position = Vector2(804, 4)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD0//j/AgARAAAAAAD0//n/AgARAAEAAAD0//r/AgARAAIAAAD0//v/AgASAAQAAAD1//j/AgASAAAAAAD1//n/AgASAAEAAAD1//r/AgARAAQAAAD1//v/AgARAAUAAAD1//z/AgARAAYAAAD2//j/AgATAAAAAAD2//n/AgATAAEAAAD2//r/AgATAAIAAAD2//v/AgATAAYAAAD9//3/AgABAAEAAAD+//3/AgABAAEAAAD+//z/AgABAAEAAAD+//v/AgABAAEAAAD+//r/AgABAAEAAAD+//n/AgABAAEAAAD9//n/AgABAAEAAADk/wEAAgARAAAAAADk/wIAAgARAAIAAADl/wAAAgARAAAAAADl/wEAAgATAAEAAADl/wIAAgATAAIAAADl/wMAAgASAAQAAADm/wAAAgASAAAAAADm/wEAAgASAAEAAADm/wIAAgARAAQAAADm/wMAAgARAAUAAADm/wQAAgARAAYAAADn/wAAAgATAAAAAADn/wEAAgARAAAAAADn/wIAAgARAAIAAADn/wMAAgATAAYAAADo/wEAAgATAAAAAADo/wIAAgATAAIAAAA=")
+tile_map_data = PackedByteArray("AAD9//3/AgABAAEAAAD+//3/AgABAAEAAAD+//z/AgABAAEAAAD+//v/AgABAAEAAAD+//r/AgABAAEAAAD+//n/AgABAAEAAAD9//n/AgABAAEAAADk/wEAAgARAAAAAADk/wIAAgARAAIAAADl/wAAAgARAAAAAADl/wEAAgATAAEAAADl/wIAAgATAAIAAADl/wMAAgASAAQAAADm/wAAAgASAAAAAADm/wEAAgASAAEAAADm/wIAAgARAAQAAADm/wMAAgARAAUAAADm/wQAAgARAAYAAADn/wAAAgATAAAAAADn/wEAAgARAAAAAADn/wIAAgARAAIAAADn/wMAAgATAAYAAADo/wEAAgATAAAAAADo/wIAAgATAAIAAAD2//j/AgARAAAAAAD2//n/AgARAAEAAAD2//r/AgARAAIAAAD2//v/AgASAAQAAAD3//j/AgASAAAAAAD3//n/AgASAAEAAAD3//r/AgARAAQAAAD3//v/AgARAAUAAAD3//z/AgARAAYAAAD4//j/AgATAAAAAAD4//n/AgATAAEAAAD4//r/AgATAAIAAAD4//v/AgATAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("8_ghafo")
-
-[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_ygc1o")]
-position = Vector2(617, -212)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("11_fs0gx")]
 position = Vector2(101, 98)
 
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("9_3uems")]
-position = Vector2(321, -195.00002)
+position = Vector2(366, -205.00002)
 scale = Vector2(3, 3)
 
 [node name="bat2" parent="." unique_id=1244850215 instance=ExtResource("9_3uems")]
-position = Vector2(3, -250.00002)
+position = Vector2(103, -284)
 scale = Vector2(3, 3)
 
 [node name="bat3" parent="." unique_id=1890526315 instance=ExtResource("9_3uems")]
-position = Vector2(374, 58.000004)
+position = Vector2(371, 40.000004)
 scale = Vector2(3, 3)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
@@ -380,49 +377,52 @@ flip_v = true
 position = Vector2(84, -5)
 
 [node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_nro7e")]
-position = Vector2(168, -225)
+position = Vector2(230, -223)
 
 [node name="InteractionLabel" type="Label" parent="sign1" unique_id=1558879513]
-offset_left = -120.0
-offset_top = 93.0
-offset_right = 422.0
-offset_bottom = 160.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = -272.0
+offset_top = 90.0
+offset_right = 270.0
+offset_bottom = 157.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("15_obqkb")
 theme_override_font_sizes/font_size = 19
-text = "press x or draw a circle on lilith's scroll and 
-control the ball using arrow keys/wasd"
+text = "4.1) \"press x or draw a circle on lilith's scroll and 
+control the ball using arrow keys/wasd\""
 
 [node name="sign2" parent="." unique_id=43103880 instance=ExtResource("14_nro7e")]
 position = Vector2(489, -222)
 
 [node name="InteractionLabel" type="Label" parent="sign2" unique_id=1060464001]
-offset_left = -232.0
-offset_top = -1.0
-offset_right = 259.0
-offset_bottom = 26.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = -312.0
+offset_top = 86.0
+offset_right = 179.0
+offset_bottom = 115.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("15_obqkb")
 theme_override_font_sizes/font_size = 21
-text = "press c or draw a triangle on lilith's scroll"
+text = "4.0) \"press c or draw a triangle on lilith's scroll\""
 
 [node name="sign3" parent="." unique_id=169349999 instance=ExtResource("14_nro7e")]
 position = Vector2(221, 206)
 
 [node name="InteractionLabel" type="Label" parent="sign3" unique_id=957034915]
-offset_left = -113.0
-offset_top = 66.0
-offset_right = 429.0
-offset_bottom = 133.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = -107.0
+offset_top = 92.0
+offset_right = 435.0
+offset_bottom = 159.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 19
 theme_override_fonts/font = ExtResource("15_obqkb")
 theme_override_font_sizes/font_size = 24
-text = "press z or draw a line on lilith's scroll"
+text = "4.2) \"press z or draw a line on lilith's scroll\""
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_ygc1o")]
+position = Vector2(609, -200)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

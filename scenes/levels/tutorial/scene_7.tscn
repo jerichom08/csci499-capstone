@@ -699,11 +699,11 @@ position = Vector2(-678.00006, 362)
 scale = Vector2(15, 2.32)
 
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("9_3uems")]
-position = Vector2(157, -202)
+position = Vector2(76, -307)
 scale = Vector2(3, 3)
 
 [node name="bat2" parent="." unique_id=593823926 instance=ExtResource("9_3uems")]
-position = Vector2(-143, 65)
+position = Vector2(-89, -33)
 scale = Vector2(3, 3)
 
 [node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("10_3uems")]
@@ -728,6 +728,7 @@ position = Vector2(-509.00003, -188)
 position = Vector2(98, -6)
 
 [node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_qyiaw")]
+visible = false
 position = Vector2(-589, -219)
 
 [node name="InteractionLabel" type="Label" parent="sign1" unique_id=68225554]
@@ -751,9 +752,9 @@ offset_left = -310.0
 offset_top = 23.0
 offset_right = 139.0
 offset_bottom = 86.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("15_08fn7")
 theme_override_font_sizes/font_size = 27
-text = "Falling platfroms below!"
+text = "\"Falling platfroms below!\""

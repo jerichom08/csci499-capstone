@@ -369,9 +369,9 @@ offset_left = 54.0
 offset_top = 13.0
 offset_right = 494.0
 offset_bottom = 76.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_uxqix")
 theme_override_font_sizes/font_size = 27
 text = "1.0 ) \"Press ↑ to Jump on Platforms\" 
@@ -380,14 +380,14 @@ text = "1.0 ) \"Press ↑ to Jump on Platforms\"
 [node name="Area2D" parent="." unique_id=122987432 instance=ExtResource("16_eje0s")]
 position = Vector2(76, 157)
 
-[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=962626234]
-offset_left = -57.0
-offset_top = -394.0
-offset_right = 408.0
-offset_bottom = -337.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1233834143]
+offset_left = -119.0
+offset_top = -46.0
+offset_right = 330.0
+offset_bottom = 21.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_uxqix")
 theme_override_font_sizes/font_size = 27
 text = "1.5 ) \"Watch Out For the Falling Spikes\""

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://gccjujw6ila0"]
+
+[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider.tscn" id="1_4qwix"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_rjs0u"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rjs0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjs0u"]
+size = Vector2(40, 103.5)
+
+[node name="test_spider" type="Node2D" unique_id=503512385]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=171942624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=213761297]
+position = Vector2(727, 663)
+shape = SubResource("WorldBoundaryShape2D_rjs0u")
+
+[node name="spider" parent="." unique_id=264598264 instance=ExtResource("1_4qwix")]
+position = Vector2(722, 612)
+scale = Vector2(5, 5)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_rjs0u")]
+position = Vector2(441, 620)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1125956477]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1616002166]
+position = Vector2(857, 620.75)
+shape = SubResource("RectangleShape2D_rjs0u")

@@ -580,10 +580,12 @@ tile_set = SubResource("TileSet_gond7")
 
 [node name="PuzzleStatusLabel" type="Label" parent="." unique_id=1209055447]
 modulate = Color(1, 0.14509805, 1, 1)
-offset_left = 5.0
-offset_top = -189.0
-offset_right = 45.0
-offset_bottom = -166.0
+offset_left = -67.0
+offset_top = -145.0
+offset_right = -27.0
+offset_bottom = -122.0
+theme_override_fonts/font = ExtResource("8_unksb")
+theme_override_font_sizes/font_size = 18
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_2lo5v")]
@@ -628,10 +630,10 @@ position = Vector2(197, 31)
 position = Vector2(-299, 155)
 
 [node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1710709711]
-offset_left = -15.0
-offset_top = -36.0
-offset_right = 425.0
-offset_bottom = 27.0
+offset_left = -8.0
+offset_top = -21.0
+offset_right = 432.0
+offset_bottom = 42.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
 theme_override_constants/outline_size = 10

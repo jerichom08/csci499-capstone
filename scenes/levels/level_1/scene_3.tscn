@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="5_rfl18"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="6_rfl18"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="6_xe66q"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/mobs/bat.tscn" id="7_atlen"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="7_atlen"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="7_avmw6"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="7_xe66q"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]

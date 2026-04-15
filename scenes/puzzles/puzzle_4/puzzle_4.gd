@@ -5,6 +5,7 @@ extends Node2D
 @onready var npc_3 = $NPC_3
 @onready var npc_4 = $NPC_4
 @onready var puzzle_status_label = $PuzzleStatusLabel
+@onready var reset_button = $Button
 
 var completed_npcs : Dictionary = {
 	"npc_1": false,
@@ -21,6 +22,8 @@ func _ready() -> void:
 	connect_npc(npc_2, "NPC_2")
 	connect_npc(npc_3, "NPC_3")
 	connect_npc(npc_4, "NPC_4")
+	if reset_button:
+		reset_button.button_pressed.connect(_on_reset_button_pressed)
 
 	update_status_label()
 
@@ -66,3 +69,31 @@ func update_status_label() -> void:
 
 	if puzzle_status_label and not puzzle_completed:
 		puzzle_status_label.text = "Talked to %d / 4 NPCs" % total_done
+
+func _on_reset_button_pressed() -> void:
+	reset_puzzle()
+
+
+func reset_puzzle() -> void:
+	completed_npcs["npc_1"] = false
+	completed_npcs["npc_2"] = false
+	completed_npcs["npc_3"] = false
+	completed_npcs["npc_4"] = false
+
+	puzzle_completed = false
+
+	if npc_1.has_method("reset_npc"):
+		npc_1.reset_npc()
+
+	if npc_2.has_method("reset_npc"):
+		npc_2.reset_npc()
+
+	if npc_3.has_method("reset_npc"):
+		npc_3.reset_npc()
+
+	if npc_4.has_method("reset_npc"):
+		npc_4.reset_npc()
+
+	update_status_label()
+
+	print("Puzzle reset!")

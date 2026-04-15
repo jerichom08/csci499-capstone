@@ -103,3 +103,14 @@ func _on_body_exited(body: Node) -> void:
 
 		if dialogue_label:
 			dialogue_label.visible = false
+
+func reset_npc() -> void:
+	has_been_completed = false
+	waiting_for_answer = false
+	dialogue_open = false
+
+	if dialogue_label:
+		dialogue_label.visible = false
+
+	if interaction_label:
+		interaction_label.visible = false

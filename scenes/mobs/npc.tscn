@@ -17,9 +17,11 @@ scale = Vector2(1.8515625, 1.796875)
 texture = ExtResource("1_k2w2r")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=1312370603]
+modulate = Color(1, 0, 0, 1)
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="DialogueLabel" type="Label" parent="." unique_id=485369143]
+modulate = Color(1, 0, 0, 1)
 offset_right = 40.0
 offset_bottom = 23.0

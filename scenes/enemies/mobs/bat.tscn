@@ -260,13 +260,14 @@ shape = SubResource("CircleShape2D_iq4o1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=932740806]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_bl7p3")
-animation = &"death"
+animation = &"rest"
+frame_progress = 1.0
 
 [node name="WallRay" type="RayCast2D" parent="." unique_id=1565008922]
 target_position = Vector2(0, 49)
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=1855764398]
-target_position = Vector2(22, 16)
+target_position = Vector2(75, 75)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1456916793]
 script = ExtResource("6_tt7xo")

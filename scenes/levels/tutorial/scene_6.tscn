@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_35jr6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_ygc1o"]
 [ext_resource type="Script" uid="uid://dfbpljufpmlsu" path="res://scenes/lvInterface/falling_spikes.gd" id="8_ghafo"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/mobs/bat.tscn" id="9_3uems"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="9_3uems"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="9_dhej2"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="9_vst4a"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="10_3uems"]

@@ -1,8 +1,8 @@
-[gd_scene format=4 uid="uid://bk3svtx1iq2t0"]
+[gd_scene format=4 uid="uid://domkl28v0t1je"]
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_avmw6"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_2tk6r"]
-[ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="4_5y2x0"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_avmw6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_gxgmc"]
@@ -661,8 +661,7 @@ position = Vector2(-19, -295)
 [node name="Door_1" parent="." unique_id=1522837388 instance=ExtResource("7_xe66q")]
 position = Vector2(-121, 294)
 script = ExtResource("8_3n03w")
-target_path = NodePath("../../Marker2D/Target_1")
-spawn_path = NodePath("../../SpawnPoint")
+target_path = NodePath("../Target_1")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_2tk6r")]
 position = Vector2(97, -17)

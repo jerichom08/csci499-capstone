@@ -83,6 +83,8 @@ animation = &"attack"
 frame = 1
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2095196258]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("3_338ia")
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 

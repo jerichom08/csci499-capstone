@@ -270,6 +270,8 @@ target_position = Vector2(0, 49)
 target_position = Vector2(75, 75)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1456916793]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("6_tt7xo")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"
 
@@ -279,6 +281,7 @@ shape = SubResource("RectangleShape2D_np3d4")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1381506633]
+collision_layer = 8
 script = ExtResource("6_np3d4")
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 

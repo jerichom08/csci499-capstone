@@ -26,5 +26,6 @@ position = Vector2(441, 620)
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1125956477]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1616002166]
-position = Vector2(857, 620.75)
+position = Vector2(203, 614)
 shape = SubResource("RectangleShape2D_rjs0u")
+debug_color = Color(0.59278554, 0.37502238, 1, 0.41960785)

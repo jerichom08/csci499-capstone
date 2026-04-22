@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://whunbwoakfj1"]
 
+[ext_resource type="Script" uid="uid://bb7bs5x80r836" path="res://scripts/enemy/frog.gd" id="1_11g75"]
 [ext_resource type="Texture2D" uid="uid://b7txuudkcjkme" path="res://assets/images/frogger/frogger_heal.png" id="1_jsi2e"]
 [ext_resource type="Texture2D" uid="uid://tewetwtrykr2" path="res://assets/images/frogger/frogger_hurt.png" id="2_7mvgd"]
 [ext_resource type="Texture2D" uid="uid://dxkj5hxffnh1v" path="res://assets/images/frogger/frogger_idle.png" id="3_cntog"]
 [ext_resource type="Texture2D" uid="uid://c7geg3ugv8v7m" path="res://assets/images/frogger/frogger_move.png" id="4_1w4ig"]
 [ext_resource type="Texture2D" uid="uid://c4bu02orm1nir" path="res://assets/images/frogger/frogger_spit.png" id="5_i5tgc"]
 [ext_resource type="Texture2D" uid="uid://b3ei7jg713kal" path="res://assets/images/frogger/frogger_tongue.png" id="6_v57dn"]
+[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider.tscn" id="8_dyhkr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymnba"]
 atlas = ExtResource("4_1w4ig")
@@ -319,7 +321,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mokc4")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 8.0
 }, {
@@ -416,14 +418,42 @@ radius = 26.0
 height = 52.0
 
 [node name="frog" type="CharacterBody2D" unique_id=1994586249]
+script = ExtResource("1_11g75")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=151658062]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i0clw")
-animation = &"chase"
+animation = &"heal"
 autoplay = "idle"
-frame_progress = 0.029413257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=131261888]
-position = Vector2(8, 37)
+position = Vector2(1, 123)
 shape = SubResource("CapsuleShape2D_6yuax")
+
+[node name="spider1" parent="." unique_id=264598264 instance=ExtResource("8_dyhkr")]
+position = Vector2(-3, 11)
+scale = Vector2(2, 2)
+
+[node name="spider2" parent="." unique_id=71825986 instance=ExtResource("8_dyhkr")]
+position = Vector2(-18, 29)
+scale = Vector2(2, 2)
+
+[node name="spider3" parent="." unique_id=1144801432 instance=ExtResource("8_dyhkr")]
+position = Vector2(-24, 50)
+scale = Vector2(2, 2)
+
+[node name="spider4" parent="." unique_id=838285515 instance=ExtResource("8_dyhkr")]
+position = Vector2(0, 53)
+scale = Vector2(2, 2)
+
+[node name="spider5" parent="." unique_id=1201456842 instance=ExtResource("8_dyhkr")]
+position = Vector2(24, 51)
+scale = Vector2(2, 2)
+
+[node name="spider6" parent="." unique_id=1107607218 instance=ExtResource("8_dyhkr")]
+position = Vector2(6, 35)
+scale = Vector2(2, 2)
+
+[node name="spider7" parent="." unique_id=1791744739 instance=ExtResource("8_dyhkr")]
+position = Vector2(25, 21)
+scale = Vector2(2, 2)

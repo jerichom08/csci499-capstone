@@ -268,7 +268,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j6ldo")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 8.0
 }, {
@@ -294,7 +294,7 @@ stats = SubResource("Resource_pe41j")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1764583320]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_2a56a")
-animation = &"rest"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=792860982]

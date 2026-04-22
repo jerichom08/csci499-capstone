@@ -88,6 +88,8 @@ frame = 8
 frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1906681728]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("3_kee6l")
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 

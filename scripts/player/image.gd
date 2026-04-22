@@ -60,6 +60,18 @@ func _get_drawn_pixels():
 	
 	return pixels
 
+func _get_edge_pixels():
+	var edges = []
+	for x in range(1, img_size.x - 1):
+		for y in range(1, img_size.y - 1):
+			if img.get_pixel(x, y) != Color.TRANSPARENT:
+				if img.get_pixel(x+1,y) == Color.TRANSPARENT \
+				or img.get_pixel(x-1,y) == Color.TRANSPARENT \
+				or img.get_pixel(x,y+1) == Color.TRANSPARENT \
+				or img.get_pixel(x,y-1) == Color.TRANSPARENT:
+					edges.append(Vector2(x,y))
+	return edges
+
 func _get_bounds(pixels):
 	var min_x = pixels[0].x
 	var max_x = pixels[0].x
@@ -74,32 +86,56 @@ func _get_bounds(pixels):
 		
 	return Rect2(min_x, min_y, max_x - min_x, max_y - min_y)
 
-func _detect_shape() -> void:
-	var pixels = _get_drawn_pixels()
+func _is_circle(points):
+	var center = Vector2.ZERO
+	for p in points:
+		center += p
+	center /= points.size()
 	
-	if pixels.size() < 50:
+	var distances = []
+	var avg = 0.0
+	for p in points:
+		var d = p.distance_to(center)
+		distances.append(d)
+		avg += d
+	avg /= distances.size()
+	
+	var variance = 0.0
+	for d in distances:
+		variance += pow(d - avg, 2)
+	variance /= distances.size()
+	
+	var stddev = sqrt(variance)
+	print(stddev)
+	return stddev < 6.5
+
+func _is_line(points):
+	var bounds = _get_bounds(points)
+	var w = bounds.size.x
+	var h = bounds.size.y
+	
+	if h == 0 or w == 0:
+		return false
+		
+	var ratio = max(w, h) / min(w, h)
+	return ratio > 4.0
+
+func _detect_shape() -> void:
+	var points = _get_edge_pixels()
+	
+	if points.size() < 30:
+		return
+		
+	if _is_line(points):
+		print("Line")
+		emit_signal("line_drawn")
+		return
+		
+	if _is_circle(points):
+		print("Circle")
+		emit_signal("circle_drawn")
 		return
 	
-	var bounds = _get_bounds(pixels)
-	var aspect_ratio = bounds.size.x / bounds.size.y
-	var area = bounds.size.x * bounds.size.y
-	var fill_ratio = pixels.size() / area
-	
-	if aspect_ratio > 2:
-		print("Line")
-		print(aspect_ratio)
-		print(fill_ratio)
-		emit_signal("line_drawn")
-		
-	elif aspect_ratio > 0.7 and aspect_ratio < 1.5:
-		print("Circle")
-		print(aspect_ratio)
-		print(fill_ratio)
-		emit_signal("circle_drawn")
-	
-	else:
-		print("Triangle")
-		print(aspect_ratio)
-		print(fill_ratio)
-		emit_signal("triangle_drawn")
+	print("Triangle")
+	emit_signal("triangle_drawn")
 	

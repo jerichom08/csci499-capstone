@@ -71,8 +71,11 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_attacking:
+	if is_on_floor():
+		$CoyoteTimer.start()
+	if Input.is_action_just_pressed("jump") and not $CoyoteTimer.is_stopped() and not is_attacking:
 		velocity.y = jumpVelocity
+		$CoyoteTimer.stop()
 		
 	# Variable jump height.
 	if Input.is_action_just_released("jump") and velocity.y < 0 and not is_attacking:

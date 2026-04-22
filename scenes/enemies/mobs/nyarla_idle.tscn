@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://d0wbk6fy0ftw2"]
 
+[ext_resource type="Texture2D" uid="uid://dhduh2wyryjrp" path="res://assets/images/cat/MEOWTAR_THE_BLUE_Idle.png" id="1_fxe2u"]
+[ext_resource type="Script" uid="uid://tybpjk3r8anf" path="res://scripts/lvls/cat.gd" id="2_1gtuh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arprk"]
+atlas = ExtResource("1_fxe2u")
+region = Rect2(0, 48, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5u3g"]
+atlas = ExtResource("1_fxe2u")
+region = Rect2(0, 72, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_024ef"]
+atlas = ExtResource("1_fxe2u")
+region = Rect2(0, 96, 32, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbw83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arprk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5u3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_024ef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="NyarlaIdle" type="Node2D" unique_id=435622663]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886086949]
+sprite_frames = SubResource("SpriteFrames_gbw83")
+frame_progress = 0.27982944
+script = ExtResource("2_1gtuh")

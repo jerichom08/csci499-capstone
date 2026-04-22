@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dddugsndvwv7o"]
+
+[ext_resource type="Texture2D" uid="uid://jnkiwn4luvvg" path="res://assets/images/frogger/heavy_attack.png" id="1_v0isu"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="2_c8cy2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mync1"]
+atlas = ExtResource("1_v0isu")
+region = Rect2(0, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6j8a"]
+atlas = ExtResource("1_v0isu")
+region = Rect2(96, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv53l"]
+atlas = ExtResource("1_v0isu")
+region = Rect2(192, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq4nx"]
+atlas = ExtResource("1_v0isu")
+region = Rect2(288, 0, 96, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcmq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mync1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6j8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv53l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq4nx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdvfp"]
+size = Vector2(92, 20)
+
+[node name="frog_tongue_attack" type="Node2D" unique_id=1007373374]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179729613]
+sprite_frames = SubResource("SpriteFrames_kcmq3")
+frame = 3
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=627383789]
+script = ExtResource("2_c8cy2")
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2145626933]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_qdvfp")
+debug_color = Color(1, 0, 0, 0.41960785)

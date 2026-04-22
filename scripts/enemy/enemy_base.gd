@@ -36,7 +36,8 @@ enum State {
 	CHASE, 
 	ATTACK, 
 	HURT, 
-	DEFEAT
+	DEFEAT,
+	HEAL
 }
 var state_animations := {
 	State.IDLE : "idle",
@@ -44,7 +45,8 @@ var state_animations := {
 	State.RETURN : "chase",
 	State.CHASE : "chase",
 	State.HURT : "hurt",
-	State.DEFEAT : "defeat"
+	State.DEFEAT : "defeat",
+	State.HEAL : "heal"
 }
 enum AttackType {
 	NONE,
@@ -96,6 +98,8 @@ func update_state_machine() -> void:
 			hurt()
 		State.DEFEAT:
 			defeat()
+		State.HEAL:
+			heal()
 		_:
 			push_warning("Unhandled state: %s" % current_state)
 
@@ -149,6 +153,10 @@ func defeat() -> void:
 	play_state_animation()
 	handle_defeat()
 
+func heal() -> void:
+	play_state_animation()
+	handle_heal()
+
 func handle_idle() -> void:
 	pass
 func handle_rest() -> void:
@@ -162,6 +170,8 @@ func handle_attack() -> void:
 func handle_hurt() -> void:
 	pass
 func handle_defeat() -> void:
+	pass
+func handle_heal() -> void:
 	pass
 
 func get_seen_player() -> Node2D:

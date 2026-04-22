@@ -62,6 +62,10 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		queue_free() # or handle death here
 
+func _input(event):
+	if event is InputEventKey and event.pressed and not event.echo:
+		print("Key pressed: ", event.as_text_key_label())
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -73,9 +77,12 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if is_on_floor():
 		$CoyoteTimer.start()
-	if Input.is_action_just_pressed("jump") and not $CoyoteTimer.is_stopped() and not is_attacking:
+	if Input.is_action_just_pressed("jump"):
+		$InputBufferTimer.start()
+	if not $InputBufferTimer.is_stopped() and not $CoyoteTimer.is_stopped() and not is_attacking:
 		velocity.y = jumpVelocity
 		$CoyoteTimer.stop()
+		$InputBufferTimer.stop()
 		
 	# Variable jump height.
 	if Input.is_action_just_released("jump") and velocity.y < 0 and not is_attacking:

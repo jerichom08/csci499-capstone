@@ -1,36 +1,23 @@
 extends CharacterBody2D
 
+@export var frog_spit_attack: PackedScene
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var spiders: Array[Node] = [
-	$spider1,
-	$spider2,
-	$spider3,
-	$spider4,
-	$spider5,
-	$spider6,
-	$spider7
-]
+
+var facing_direction = 1
 
 func _ready() -> void:
-	for spider in spiders:
-		spider.visible = false
-		
-func play_heal_sequence() -> void:
-	# Frog hurt animation
-	sprite.play("hurt")
-	await sprite.animation_finished
-
-	# Start frog healing animation
-	sprite.play("heal")
-
-	# Show spiders and start crawl animation at the same time
-	for spider in spiders:
-		spider.visible = true
-		spider.get_node("AnimatedSprite2D").play("chase")
-
-	# Wait until frog healing animation finishes
-	await sprite.animation_finished
-
-	# Hide spiders
-	for spider in spiders:
-		spider.visible = false
+	sprite.play("light_attack")
+	
+	var spit = $FrogSpit
+	var spit_sprite = spit.get_node("AnimatedSprite2D")
+	
+	spit.global_position = $SpitSpawn.global_position
+	spit.visible = true
+	
+	if facing_direction < 0:
+		spit.scale.x = -abs(spit.scale.x)
+	else:
+		spit.scale.x = abs(spit.scale.x)
+	
+	spit_sprite.play("spit")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iwu3wv5dig1y"]
 
 [ext_resource type="Texture2D" uid="uid://uf4iaujrfcxc" path="res://assets/images/spider/Spider Sprite Sheet.png" id="1_6ebn5"]
-[ext_resource type="Script" uid="uid://dhcxnherdca6j" path="res://scenes/enemies/mobs/spider.gd" id="1_y0urh"]
+[ext_resource type="Script" uid="uid://dhcxnherdca6j" path="res://scripts/enemy/spider.gd" id="1_y0urh"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemy/stats.gd" id="2_mwahm"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="4_pe41j"]
 

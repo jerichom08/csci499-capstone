@@ -28,15 +28,16 @@ func handle_rest() -> void:
 
 func handle_chase() -> void:
 	var seen_player := get_seen_player()
-	if seen_player != null:
-		target_player = seen_player
 
-	if target_player == null or not is_instance_valid(target_player):
-		set_state(State.RETURN)
+	if seen_player == null:
+		target_player = null
 		velocity.x = 0
+		set_state(State.RETURN)
 		return
 
-	var dir : int = sign(target_player.global_position.x - global_position.x)
+	target_player = seen_player
+
+	var dir: int = sign(target_player.global_position.x - global_position.x)
 
 	if dir != 0:
 		face_direction(dir)

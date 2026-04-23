@@ -2,16 +2,23 @@
 
 [ext_resource type="Script" uid="uid://bb7bs5x80r836" path="res://scripts/enemy/frog.gd" id="1_11g75"]
 [ext_resource type="Texture2D" uid="uid://b7txuudkcjkme" path="res://assets/images/frogger/frogger_heal.png" id="1_jsi2e"]
+[ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemy/stats.gd" id="2_2c1ct"]
 [ext_resource type="Texture2D" uid="uid://tewetwtrykr2" path="res://assets/images/frogger/frogger_hurt.png" id="2_7mvgd"]
 [ext_resource type="PackedScene" uid="uid://etipfvshoals" path="res://scenes/enemies/bosses/frog_spit_attack.tscn" id="2_r5l00"]
 [ext_resource type="Texture2D" uid="uid://dxkj5hxffnh1v" path="res://assets/images/frogger/frogger_idle.png" id="3_cntog"]
 [ext_resource type="Texture2D" uid="uid://c7geg3ugv8v7m" path="res://assets/images/frogger/frogger_move.png" id="4_1w4ig"]
+[ext_resource type="Texture2D" uid="uid://bfqjtr8fn3ae7" path="res://assets/images/frogger/frogger_defeat.png" id="4_sq8ai"]
 [ext_resource type="Texture2D" uid="uid://c4bu02orm1nir" path="res://assets/images/frogger/frogger_spit.png" id="5_i5tgc"]
 [ext_resource type="Texture2D" uid="uid://b3ei7jg713kal" path="res://assets/images/frogger/frogger_tongue.png" id="6_v57dn"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="8_dyhkr"]
+[ext_resource type="Texture2D" uid="uid://dnycvrpdbgljh" path="res://assets/images/frogger/frogger_rest.png" id="9_x6f5r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dyhkr"]
-radius = 17.117243
+[sub_resource type="Resource" id="Resource_x6f5r"]
+script = ExtResource("2_2c1ct")
+max_health = 10
+move_speed = 100.0
+gravity = 100.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymnba"]
 atlas = ExtResource("4_1w4ig")
@@ -44,6 +51,22 @@ region = Rect2(2304, 0, 384, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_gihr1"]
 atlas = ExtResource("4_1w4ig")
 region = Rect2(2688, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4x5s"]
+atlas = ExtResource("4_sq8ai")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28ec5"]
+atlas = ExtResource("4_sq8ai")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kjsf"]
+atlas = ExtResource("4_sq8ai")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gpb1"]
+atlas = ExtResource("4_sq8ai")
+region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lnpf3"]
 atlas = ExtResource("1_jsi2e")
@@ -225,6 +248,26 @@ region = Rect2(3456, 0, 384, 128)
 atlas = ExtResource("5_i5tgc")
 region = Rect2(3840, 0, 384, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq8ai"]
+atlas = ExtResource("9_x6f5r")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1aui"]
+atlas = ExtResource("9_x6f5r")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tekvl"]
+atlas = ExtResource("9_x6f5r")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgwjc"]
+atlas = ExtResource("9_x6f5r")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwht0"]
+atlas = ExtResource("9_x6f5r")
+region = Rect2(512, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0clw"]
 animations = [{
 "frames": [{
@@ -254,6 +297,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"chase",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4x5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28ec5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kjsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gpb1")
+}],
+"loop": false,
+"name": &"defeat",
 "speed": 8.0
 }, {
 "frames": [{
@@ -337,7 +397,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pvsv2")
 }],
-"loop": true,
+"loop": false,
 "name": &"heavy_attack",
 "speed": 8.0
 }, {
@@ -412,30 +472,54 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w0s31")
 }],
-"loop": true,
+"loop": false,
 "name": &"light_attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq8ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1aui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tekvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgwjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwht0")
+}],
+"loop": true,
+"name": &"rest",
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyhkr"]
+radius = 17.117243
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5l00"]
-radius = 28.01785
+radius = 22.0
 
 [node name="frog" type="CharacterBody2D" unique_id=1994586249]
 script = ExtResource("1_11g75")
-frog_spit_attack = ExtResource("2_r5l00")
+stats = SubResource("Resource_x6f5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=151658062]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i0clw")
+animation = &"heal"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427992727]
 position = Vector2(5, 48)
 shape = SubResource("CircleShape2D_dyhkr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=151658062]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_i0clw")
-animation = &"light_attack"
-autoplay = "idle"
-frame_progress = 0.28255162
-
 [node name="Hurtbox" type="Area2D" parent="." unique_id=481798493]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("8_dyhkr")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"
 
@@ -448,3 +532,8 @@ debug_color = Color(0, 1, 0, 0.41960785)
 position = Vector2(109, 34)
 
 [node name="FrogSpit" parent="." unique_id=559844603 instance=ExtResource("2_r5l00")]
+position = Vector2(-3, -247)
+
+[node name="VisionRay" type="RayCast2D" parent="." unique_id=1561059312]
+position = Vector2(0, 31)
+target_position = Vector2(150, 0)

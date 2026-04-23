@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://dpmpk0wus0gcu"]
 
-[ext_resource type="Script" uid="uid://ddoun2cw5ni8k" path="res://scenes/test_scenes/test_frog.gd" id="1_8i3ke"]
 [ext_resource type="PackedScene" uid="uid://whunbwoakfj1" path="res://scenes/enemies/bosses/frog.tscn" id="1_a486y"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_408xh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_glvd2"]
 
 [node name="test-frog" type="Node2D" unique_id=315107258]
-script = ExtResource("1_8i3ke")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1655590340]
 
@@ -17,3 +16,6 @@ shape = SubResource("WorldBoundaryShape2D_glvd2")
 [node name="frog" parent="." unique_id=1994586249 instance=ExtResource("1_a486y")]
 position = Vector2(695, 507)
 scale = Vector2(2, 2)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_408xh")]
+position = Vector2(137, 586)

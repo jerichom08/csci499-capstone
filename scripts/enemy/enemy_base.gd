@@ -22,7 +22,7 @@ class_name EnemyBase extends CharacterBody2D
 
 # --- Runtime Stats ---
 var health : int
-var facing_direction: int = -1 # 1 = right, -1 = left
+var facing_direction: int = 0 # 1 = right, -1 = left, 0 = default
 var is_dead: bool = false
 var spawn_position: Vector2
 
@@ -44,6 +44,7 @@ var state_animations := {
 	State.REST : "rest",
 	State.RETURN : "chase",
 	State.CHASE : "chase",
+	State.ATTACK : "attack",
 	State.HURT : "hurt",
 	State.DEFEAT : "defeat",
 	State.HEAL : "heal"
@@ -69,6 +70,7 @@ func _ready() -> void:
 	
 	health = stats.max_health
 	spawn_position = global_position
+	if stats.faces_left: face_direction(-1)
 
 func set_state(new_state: State) -> void:
 	if current_state == new_state:
@@ -95,11 +97,11 @@ func update_state_machine() -> void:
 		State.ATTACK:
 			attack()
 		State.HURT:
-			hurt()
+			hurt(0)
 		State.DEFEAT:
 			defeat()
 		State.HEAL:
-			heal()
+			heal(0)
 		_:
 			push_warning("Unhandled state: %s" % current_state)
 
@@ -145,17 +147,17 @@ func attack() -> void:
 			push_warning("Invalid Attack Type Selected")
 	handle_attack()
 
-func hurt() -> void:
+func hurt(damage : int) -> void:
 	play_state_animation()
-	handle_hurt()
+	handle_hurt(damage)
 
 func defeat() -> void:
 	play_state_animation()
 	handle_defeat()
 
-func heal() -> void:
+func heal(hp : int) -> void:
 	play_state_animation()
-	handle_heal()
+	handle_heal(hp)
 
 func handle_idle() -> void:
 	pass
@@ -167,12 +169,16 @@ func handle_chase() -> void:
 	pass
 func handle_attack() -> void:
 	pass
-func handle_hurt() -> void:
+func handle_hurt(damage : int) -> void:
 	pass
 func handle_defeat() -> void:
 	pass
-func handle_heal() -> void:
+func handle_heal(hp : int) -> void:
 	pass
+
+func get_player() -> Node2D:
+	var players := get_tree().get_nodes_in_group("player")
+	return players[0] if players.size() > 0 else null
 
 func get_seen_player() -> Node2D:
 	if vision_ray == null:
@@ -213,13 +219,10 @@ func face_direction(direction: float) -> void:
 	if direction == 0:
 		return
 	
-	facing_direction = sign(direction)
-	
-	var flip := facing_direction < 0
-
-	if stats and stats.faces_left:
-		flip = not flip
-	sprite.flip_h = flip
+	if facing_direction != direction:
+		facing_direction = direction
+		
+		sprite.flip_h = facing_direction < 0  
 	
 	# Update rays
 	if vision_ray:

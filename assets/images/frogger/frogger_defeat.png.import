@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1rl62nkrcgye"
-path="res://.godot/imported/play_button.png-95a429fcd64e7c52b25d268a8edd3b8b.ctex"
+uid="uid://bfqjtr8fn3ae7"
+path="res://.godot/imported/frogger_defeat.png-5b29dd18b4c3a14c8ad0f7481b599b22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/UI/play_button.png"
-dest_files=["res://.godot/imported/play_button.png-95a429fcd64e7c52b25d268a8edd3b8b.ctex"]
+source_file="res://assets/images/frogger/frogger_defeat.png"
+dest_files=["res://.godot/imported/frogger_defeat.png-5b29dd18b4c3a14c8ad0f7481b599b22.ctex"]
 
 [params]
 

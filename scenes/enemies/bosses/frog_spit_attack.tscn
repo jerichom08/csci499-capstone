@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://etipfvshoals"]
+
+[ext_resource type="Script" uid="uid://dqa3mj6o08ohq" path="res://scripts/enemy/frog_spit_attack.gd" id="1_10xrm"]
+[ext_resource type="Texture2D" uid="uid://bqlk8p860qiyx" path="res://assets/images/frogger/light_attack.png" id="1_pb6uj"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="2_10xrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nufie"]
+atlas = ExtResource("1_pb6uj")
+region = Rect2(0, 0, 120, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1n7y"]
+atlas = ExtResource("1_pb6uj")
+region = Rect2(120, 0, 120, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcs7x"]
+atlas = ExtResource("1_pb6uj")
+region = Rect2(240, 0, 120, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaop0"]
+atlas = ExtResource("1_pb6uj")
+region = Rect2(360, 0, 120, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcdtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nufie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1n7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcs7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kaop0")
+}],
+"loop": true,
+"name": &"spit",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ridfv"]
+size = Vector2(82, 20)
+
+[node name="Frog Spit Attack" type="Node2D" unique_id=559844603]
+script = ExtResource("1_10xrm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=674220901]
+sprite_frames = SubResource("SpriteFrames_gcdtr")
+animation = &"spit"
+frame = 1
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1786160461]
+script = ExtResource("2_10xrm")
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1165712557]
+position = Vector2(4, 9)
+shape = SubResource("RectangleShape2D_ridfv")
+debug_color = Color(1, 0, 0, 0.41960785)

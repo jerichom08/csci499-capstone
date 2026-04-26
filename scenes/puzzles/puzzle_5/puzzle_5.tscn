@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="4_dmhpr"]
 [ext_resource type="Script" uid="uid://cwidnjfq71kk6" path="res://scenes/puzzles/puzzle_5/loop_path.gd" id="4_wxfxh"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="5_1xcsg"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="7_wxfxh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s426x"]
 texture = ExtResource("2_dmhpr")
@@ -579,7 +580,7 @@ size = Vector2(56, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alnk2"]
 
-[node name="Puzzle5" type="Node2D" unique_id=1007530937]
+[node name="puzzle_5" type="Node2D" unique_id=1007530937]
 position = Vector2(700, 370)
 script = ExtResource("1_a4kng")
 
@@ -749,3 +750,15 @@ position = Vector2(-260, 280)
 
 [node name="MovingPlatform3" parent="." unique_id=227166052 instance=ExtResource("5_1xcsg")]
 position = Vector2(1326, 245)
+
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("7_wxfxh")]
+position = Vector2(967, 94)
+scale = Vector2(3, 3)
+
+[node name="bat2" parent="." unique_id=2127882501 instance=ExtResource("7_wxfxh")]
+position = Vector2(-621, 132)
+scale = Vector2(3, 3)
+
+[node name="bat3" parent="." unique_id=196951575 instance=ExtResource("7_wxfxh")]
+position = Vector2(-563, -164)
+scale = Vector2(3, 3)

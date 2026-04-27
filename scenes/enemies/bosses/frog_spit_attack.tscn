@@ -35,9 +35,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kaop0")
 }],
-"loop": true,
+"loop": false,
 "name": &"spit",
-"speed": 1.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ridfv"]
@@ -49,7 +49,6 @@ script = ExtResource("1_10xrm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=674220901]
 sprite_frames = SubResource("SpriteFrames_gcdtr")
 animation = &"spit"
-frame = 1
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1786160461]
 script = ExtResource("2_10xrm")

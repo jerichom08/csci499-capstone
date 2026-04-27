@@ -1,27 +1,31 @@
 [gd_scene format=3 uid="uid://dddugsndvwv7o"]
 
+[ext_resource type="Script" uid="uid://p0nqkywb6tfw" path="res://scripts/enemy/frog_tongue_attack.gd" id="1_c8cy2"]
 [ext_resource type="Texture2D" uid="uid://jnkiwn4luvvg" path="res://assets/images/frogger/heavy_attack.png" id="1_v0isu"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="2_c8cy2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mync1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8cy2"]
 atlas = ExtResource("1_v0isu")
 region = Rect2(0, 0, 96, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6j8a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mync1"]
 atlas = ExtResource("1_v0isu")
 region = Rect2(96, 0, 96, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sv53l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6j8a"]
 atlas = ExtResource("1_v0isu")
 region = Rect2(192, 0, 96, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aq4nx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv53l"]
 atlas = ExtResource("1_v0isu")
 region = Rect2(288, 0, 96, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcmq3"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8cy2")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mync1")
 }, {
@@ -30,12 +34,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sv53l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aq4nx")
 }],
 "loop": false,
-"name": &"default",
+"name": &"tongue",
 "speed": 8.0
 }]
 
@@ -43,11 +44,11 @@ animations = [{
 size = Vector2(92, 20)
 
 [node name="frog_tongue_attack" type="Node2D" unique_id=1007373374]
+script = ExtResource("1_c8cy2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179729613]
 sprite_frames = SubResource("SpriteFrames_kcmq3")
-frame = 3
-frame_progress = 1.0
+animation = &"tongue"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=627383789]
 script = ExtResource("2_c8cy2")

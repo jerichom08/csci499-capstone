@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://tewetwtrykr2" path="res://assets/images/frogger/frogger_hurt.png" id="2_7mvgd"]
 [ext_resource type="PackedScene" uid="uid://etipfvshoals" path="res://scenes/enemies/bosses/frog_spit_attack.tscn" id="2_r5l00"]
 [ext_resource type="Texture2D" uid="uid://dxkj5hxffnh1v" path="res://assets/images/frogger/frogger_idle.png" id="3_cntog"]
+[ext_resource type="PackedScene" uid="uid://dddugsndvwv7o" path="res://scenes/enemies/bosses/frog_tongue_attack.tscn" id="3_g1aui"]
 [ext_resource type="Texture2D" uid="uid://c7geg3ugv8v7m" path="res://assets/images/frogger/frogger_move.png" id="4_1w4ig"]
 [ext_resource type="Texture2D" uid="uid://bfqjtr8fn3ae7" path="res://assets/images/frogger/frogger_defeat.png" id="4_sq8ai"]
+[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider.tscn" id="4_tekvl"]
 [ext_resource type="Texture2D" uid="uid://c4bu02orm1nir" path="res://assets/images/frogger/frogger_spit.png" id="5_i5tgc"]
 [ext_resource type="Texture2D" uid="uid://b3ei7jg713kal" path="res://assets/images/frogger/frogger_tongue.png" id="6_v57dn"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="8_dyhkr"]
@@ -15,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_x6f5r"]
 script = ExtResource("2_2c1ct")
-max_health = 10
+max_health = 20
 move_speed = 100.0
 gravity = 100.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
@@ -136,35 +138,35 @@ region = Rect2(5760, 0, 384, 128)
 atlas = ExtResource("1_jsi2e")
 region = Rect2(6144, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_38uli"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3do7h"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(0, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewihy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iskih"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(384, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cgidj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hc16"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(768, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d25c4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bx83"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(1152, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihap6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqsh5"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(1536, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mv34o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_upxro"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(1920, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pkly0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybqul"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(2304, 0, 384, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvsv2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_glebc"]
 atlas = ExtResource("6_v57dn")
 region = Rect2(2688, 0, 384, 128)
 
@@ -368,34 +370,34 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h5ni1")
 }],
-"loop": true,
+"loop": false,
 "name": &"heal",
 "speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_38uli")
+"texture": SubResource("AtlasTexture_3do7h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ewihy")
+"texture": SubResource("AtlasTexture_iskih")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cgidj")
+"texture": SubResource("AtlasTexture_2hc16")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d25c4")
+"texture": SubResource("AtlasTexture_7bx83")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ihap6")
+"texture": SubResource("AtlasTexture_bqsh5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mv34o")
+"texture": SubResource("AtlasTexture_upxro")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pkly0")
+"texture": SubResource("AtlasTexture_ybqul")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pvsv2")
+"texture": SubResource("AtlasTexture_glebc")
 }],
 "loop": false,
 "name": &"heavy_attack",
@@ -415,7 +417,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mokc4")
 }],
 "loop": false,
-"name": &"hurt",
+"name": &"hit",
 "speed": 8.0
 }, {
 "frames": [{
@@ -505,6 +507,9 @@ radius = 22.0
 
 [node name="frog" type="CharacterBody2D" unique_id=1994586249]
 script = ExtResource("1_11g75")
+frog_spit_attack = ExtResource("2_r5l00")
+frog_tongue_attack = ExtResource("3_g1aui")
+spider_scene = ExtResource("4_tekvl")
 stats = SubResource("Resource_x6f5r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=151658062]
@@ -528,12 +533,12 @@ position = Vector2(6, 37)
 shape = SubResource("CircleShape2D_r5l00")
 debug_color = Color(0, 1, 0, 0.41960785)
 
-[node name="SpitSpawn" type="Marker2D" parent="." unique_id=1436060063]
-position = Vector2(109, 34)
-
-[node name="FrogSpit" parent="." unique_id=559844603 instance=ExtResource("2_r5l00")]
-position = Vector2(-3, -247)
-
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=1561059312]
 position = Vector2(0, 31)
-target_position = Vector2(150, 0)
+target_position = Vector2(150, 20)
+
+[node name="LightSpawn" type="Marker2D" parent="." unique_id=1436060063]
+position = Vector2(108, 40)
+
+[node name="HeavySpawn" type="Marker2D" parent="." unique_id=1255390812]
+position = Vector2(112, 39)

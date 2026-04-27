@@ -14,8 +14,8 @@ position = Vector2(700, 635)
 shape = SubResource("WorldBoundaryShape2D_glvd2")
 
 [node name="frog" parent="." unique_id=1994586249 instance=ExtResource("1_a486y")]
-position = Vector2(695, 507)
-scale = Vector2(2, 2)
+position = Vector2(696, 443)
+scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_408xh")]
 position = Vector2(137, 586)

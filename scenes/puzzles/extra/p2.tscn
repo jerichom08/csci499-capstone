@@ -561,6 +561,9 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxaab"]
+size = Vector2(45.875, 64)
+
 [node name="Lv2R" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 script = ExtResource("1_fxaab")
@@ -670,3 +673,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
 theme_override_fonts/font = ExtResource("8_q5hxr")
 theme_override_font_sizes/font_size = 27
 text = "Stay cool!"
+
+[node name="FinalDoorArea" type="Area2D" parent="." unique_id=783063176]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalDoorArea" unique_id=1290687865]
+position = Vector2(35.0625, -142)
+shape = SubResource("RectangleShape2D_fxaab")

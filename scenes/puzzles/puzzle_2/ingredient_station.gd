@@ -3,7 +3,7 @@ extends Area2D
 signal ingredient_selected(ingredient_name)
 
 @export var ingredient_name : String = "bread"
-@export var interact_action : String = "interact"
+@export var interact_action : String = "interaction"
 @export var show_debug_prints : bool = true
 
 var player_in_range : bool = false

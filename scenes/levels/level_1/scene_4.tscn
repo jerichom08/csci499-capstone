@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_t1nqa"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_5d1ty"]
-[ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_swsw1"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_swsw1"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="6_6taol"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="7_hgw45"]
 [ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="7_wagfe"]
@@ -889,3 +889,27 @@ target_path = NodePath("../Target_1")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_j1xhn")]
 position = Vector2(97, -17)
+
+[node name="Door_2" parent="." unique_id=1430838263 instance=ExtResource("14_cl6gn")]
+position = Vector2(637, 274)
+script = ExtResource("15_tn34t")
+target_path = NodePath("../Target_3")
+
+[node name="Door_3" parent="." unique_id=1905837902 instance=ExtResource("14_cl6gn")]
+position = Vector2(639, 55)
+script = ExtResource("15_tn34t")
+target_path = NodePath("../Target_2")
+
+[node name="Door_4" parent="." unique_id=1842218390 instance=ExtResource("14_cl6gn")]
+position = Vector2(116, 222)
+script = ExtResource("15_tn34t")
+target_path = NodePath("../Target_4")
+
+[node name="Target_2" type="Marker2D" parent="." unique_id=1616207137]
+position = Vector2(602, -142)
+
+[node name="Target_3" type="Marker2D" parent="." unique_id=891250054]
+position = Vector2(571, 68)
+
+[node name="Target_4" type="Marker2D" parent="." unique_id=2090073397]
+position = Vector2(-517, -304)

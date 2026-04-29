@@ -3,17 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_t1nqa"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_5d1ty"]
 [ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_swsw1"]
-[ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="4_q0w23"]
-[ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="5_0trp8"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="6_6taol"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="7_hgw45"]
-[ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="8_cyifn"]
-[ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="9_c3c8f"]
-[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="10_fhwxt"]
+[ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="7_wagfe"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="11_5ni64"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="12_dausi"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="13_fjqn5"]
+[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="13_t0qep"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="14_cl6gn"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="14_djex2"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="15_tn34t"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_j1xhn"]
 
@@ -297,6 +295,190 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_6iv2x")
 sources/3 = SubResource("TileSetAtlasSource_x75wb")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0qep"]
+texture = ExtResource("1_t1nqa")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("1_t1nqa")
 texture_region_size = Vector2i(18, 18)
@@ -569,8 +751,9 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
+sources/0 = SubResource("TileSetAtlasSource_t0qep")
 
-[node name="Lv1R" type="Node2D" unique_id=1440666369]
+[node name="Lv1R4" type="Node2D" unique_id=1440666369]
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1036639013]
 position = Vector2(118, -17)
@@ -579,89 +762,130 @@ tile_map_data = PackedByteArray("AADx//n/AwAAAAAAAADx//r/AwAAAAAAAADx//v/AwAAAAA
 tile_set = SubResource("TileSet_3a08y")
 
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("3_swsw1")]
-position = Vector2(-17, -366)
-rotation = -4.712389
+position = Vector2(-637, -312)
+
+[node name="foliage3" type="TileMapLayer" parent="." unique_id=1858457957]
+position = Vector2(818, 1)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AADk/wYAAgACAAEAAADl/wYAAgACAAEAAADm/wYAAgACAAEAAADp/wYAAgACAAEAAADq/wYAAgACAAEAAADr/wYAAgACAAEAAADs/wYAAgACAAEAAADt/wYAAgACAAEAAADu/wYAAgADAAEAAADn/wYAAgACAAEAAADo/wYAAgACAAEAAADk/wUAAgAAAAYAAADk/wQAAgAAAAYAAADk/wMAAgAAAAYAAADk/wIAAgAAAAYAAADk/wEAAgAAAAYAAADk/wAAAgACAAEAAADl/wAAAgADAAAAAADj////AgACAAYAAADj//7/AgACAAYAAADj//3/AgACAAYAAADj//z/AgACAAYAAADj//v/AgACAAYAAADy/wIAAgABAAYAAADz/wIAAgADAAYAAADy/wEAAgABAAYAAADz/wEAAgADAAYAAADy/wAAAgABAAYAAADz/wAAAgADAAYAAADy////AgABAAYAAADz////AgADAAYAAADy//7/AgABAAYAAADz//7/AgADAAYAAADy//3/AgABAAEAAADz//3/AgADAAEAAADy//z/AgAGAAQAAAD0/wUAAgACAAEAAAD1/wUAAgADAAEAAAD0/wYAAgACAAcAAAD1/wYAAgADAAcAAADl//v/AgACAAAAAADm//v/AgACAAAAAADn//v/AgADAAAAAADk//v/AgABAAAAAAD1//n/AgADAAcAABD2//n/AgACAAcAABD3//n/AgACAAcAABD4//n/AgACAAcAABD5//n/AgACAAYAABD5//r/AgADAAYAABD5//v/AgADAAcAABD6//n/AgAFAAAAABD6//r/AgAFAAEAABD6//v/AgACAAcAABD7//n/AgAEAAAAABD7//r/AgAEAAEAABD7//v/AgACAAcAABD8//n/AgADAAYAAAD8//r/AgADAAYAAAD8//v/AgABAAcAABD7//7/AgACAAAAAAD8//7/AgADAAAAAAD7/wIAAgACAAAAAAD8/wIAAgADAAAAAAD7/wYAAgACAAEAAAD8/wYAAgADAAEAAAD4/wYAAgABAAEAAAD5/wYAAgACAAEAAAD6/wYAAgACAAEAAAD6/wIAAgABAAAAAAD6//7/AgABAAAAAAD8/wQAAgAKAAUAAAD8/wUAAgAKAAYAAAD8/wAAAgAKAAUAAAD8/wEAAgAKAAYAAADy/wUAAAABAAYAAADy/wYAAgACAAEAAADz/wUAAgACAAEAAADz/wYAAgADAAEAAADx/wYAAgABAAEAAAD6//3/AgAJAAYAAADz/wMAAAADAAYAAADz/wQAAAADAAYAAAA=")
+tile_set = SubResource("TileSet_alrbv")
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_fjqn5")]
+position = Vector2(-122.00006, 276)
+scale = Vector2(0.9, 0.9)
+
+[node name="ClueSign" parent="." unique_id=604565878 instance=ExtResource("13_t0qep")]
+position = Vector2(73, -224)
+
+[node name="InteractionLabel" type="Label" parent="ClueSign" unique_id=2016678483]
+offset_left = -124.000015
+offset_top = -54.0
+offset_right = 374.0
+offset_bottom = 117.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("14_djex2")
+theme_override_font_sizes/font_size = 27
+text = "\" I vanish at dawn, but guide 
+  you at night. What am I?\""
+
+[node name="ClueSign2" parent="." unique_id=1102346981 instance=ExtResource("13_t0qep")]
+position = Vector2(186, 218)
+scale = Vector2(0.8000001, 0.8000001)
+
+[node name="InteractionLabel" type="Label" parent="ClueSign2" unique_id=1190722327]
+offset_left = -33.75
+offset_top = -25.0
+offset_right = 122.25
+offset_bottom = 12.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("14_djex2")
+theme_override_font_sizes/font_size = 29
+text = "The moon"
+
+[node name="ClueSign3" parent="." unique_id=937883440 instance=ExtResource("13_t0qep")]
+position = Vector2(542.99994, 274)
+scale = Vector2(0.64000005, 0.64000005)
+
+[node name="InteractionLabel" type="Label" parent="ClueSign3" unique_id=490888422]
+offset_left = -37.49994
+offset_top = -35.9375
+offset_right = 99.50006
+offset_bottom = 1.0625
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("14_djex2")
+theme_override_font_sizes/font_size = 38
+text = "A candle"
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=1473122245]
 position = Vector2(804.00006, 25.000002)
 scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AADn/wMAAgAQAAAAAADl/wEAAgAQAAAAAAD5/wIAAgAQAAAAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AADk/wYAAgACAAYAAADl/wYAAgACAAYAAADm/wYAAgACAAYAAADp/wYAAgACAAcAAADq/wYAAgACAAcAAADr/wYAAgACAAcAAADs/wYAAgACAAcAAADt/wYAAgACAAcAAADu/wYAAgADAAYAAADn/wYAAgACAAYAAADo/wYAAgACAAYAAAA=")
+tile_map_data = PackedByteArray("AADk/wYAAgACAAEAAADl/wYAAgACAAEAAADm/wYAAgACAAEAAADp/wYAAgACAAEAAADq/wYAAgACAAEAAADr/wYAAgACAAEAAADs/wYAAgACAAEAAADt/wYAAgACAAEAAADu/wYAAgADAAEAAADn/wYAAgACAAEAAADo/wYAAgACAAEAAADk/wUAAgAAAAYAAADk/wQAAgAAAAYAAADk/wMAAgAAAAYAAADk/wIAAgAAAAYAAADk/wEAAgAAAAYAAADk/wAAAgACAAEAAADl/wAAAgADAAAAAADj////AgACAAYAAADj//7/AgACAAYAAADj//3/AgACAAYAAADj//z/AgACAAYAAADj//v/AgACAAYAAADy/wIAAgABAAYAAADz/wIAAgADAAYAAADy/wEAAgABAAYAAADz/wEAAgADAAYAAADy/wAAAgABAAYAAADz/wAAAgADAAYAAADy////AgABAAYAAADz////AgADAAYAAADy//7/AgABAAYAAADz//7/AgADAAYAAADy//3/AgABAAEAAADz//3/AgADAAEAAADy//z/AgAGAAQAAAD0/wUAAgACAAEAAAD1/wUAAgADAAEAAAD0/wYAAgACAAcAAAD1/wYAAgADAAcAAADl//v/AgACAAAAAADm//v/AgACAAAAAADn//v/AgADAAAAAADk//v/AgABAAAAAAD1//n/AgADAAcAABD2//n/AgACAAcAABD3//n/AgACAAcAABD4//n/AgACAAcAABD5//n/AgACAAYAABD5//r/AgADAAYAABD5//v/AgADAAcAABD6//n/AgAFAAAAABD6//r/AgAFAAEAABD6//v/AgACAAcAABD7//n/AgAEAAAAABD7//r/AgAEAAEAABD7//v/AgACAAcAABD8//n/AgADAAYAAAD8//r/AgADAAYAAAD8//v/AgABAAcAABD7//7/AgACAAAAAAD8//7/AgACAAAAAAD7/wIAAgACAAAAAAD8/wIAAgACAAAAAAD7/wYAAgACAAEAAAD8/wYAAgADAAEAAAD4/wYAAgABAAEAAAD5/wYAAgACAAEAAAD6/wYAAgACAAEAAAD6/wIAAgABAAAAAAD6//7/AgABAAAAAAD8/wQAAgAKAAUAAAD8/wUAAgAKAAYAAAD8/wAAAgAKAAUAAAD8/wEAAgAKAAYAAADy/wUAAgABAAEAAADy/wYAAgACAAEAAADz/wUAAgACAAEAAADz/wYAAgADAAEAAADx/wYAAgABAAEAAAD6//3/AgAJAAYAAADy/wMAAgABAAYAAADy/wQAAgABAAYAAAD0/wQAAgAEAAQAAAD4/wMAAgARAAQAAAD4/wQAAgARAAUAAAD4/wUAAgARAAYAAAD3/wMAAgARAAIAAAD5/wMAAgATAAMAAAD3/wIAAgARAAAAAAD4/wIAAgATAAAAAAD3/wQAAgASAAQAAAD5/wQAAgASAAUAABDu//3/AgABAAAAAADu/wAAAgABAAAAAADu/wMAAgABAAAAAADv//3/AgACAAAAAADv/wAAAgACAAAAAADv/wMAAgACAAAAAADw//3/AgADAAAAAADw/wAAAgADAAAAAADw/wMAAgADAAAAAAD9//n/AgAAAAYAAAD9//r/AgAAAAYAAAD9//v/AgAAAAYAAAD9//z/AgAAAAYAAAD9//3/AgAAAAYAAAD9//7/AgAAAAYAAAD9////AgAAAAYAAAD9/wAAAgAAAAYAAAD9/wEAAgAAAAYAAAD9/wIAAgAAAAYAAAD9/wMAAgAAAAYAAAD9/wQAAgAAAAYAAAD9/wUAAgAAAAYAAAD9/wYAAgAAAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1214330077]
-position = Vector2(818, 1)
+position = Vector2(797.00006, 1)
 scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AADl//7/AgAKAAUAAADl////AgAKAAYAAADm/wQAAgARAAUAAADm/wUAAgARAAYAAADn/wQAAgATAAYAAADl/wQAAgASAAUAAADm/wMAAgARAAQAAADn/wMAAgATAAIAAADl/wMAAgARAAIAAADl/wIAAgARAAAAAADm/wIAAgASAAAAAADn/wIAAgATAAAAAADm//v/AgARAAcAAADn//n/AgARAAcAAADl/wUAAgAIAAYAAADr/wUAAgAEAAYAAAD7/wUAAgAEAAQAABD6/wUAAgAEAAcAAADz/wMAAgAKAAUAAADz/wQAAgAKAAYAAADy/wUAAgAFAAYAAADz/wUAAgAEAAcAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
-[node name="gate" parent="." unique_id=550434994 instance=ExtResource("4_q0w23")]
-position = Vector2(-157, 325)
-scale = Vector2(3, 3)
-script = ExtResource("5_0trp8")
-
 [node name="Spikes3" parent="." unique_id=2017255452 instance=ExtResource("6_6taol")]
-position = Vector2(-22, 299)
+visible = false
+position = Vector2(-736, -135)
 
 [node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("7_hgw45")]
-position = Vector2(-262, 109)
+position = Vector2(-258, 222)
 scale = Vector2(3, 3)
 
-[node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("8_cyifn")]
-position = Vector2(-559, 251)
+[node name="DisappearingPlatforn2" parent="." unique_id=1305918735 instance=ExtResource("7_hgw45")]
+position = Vector2(-498, 14)
 scale = Vector2(3, 3)
 
-[node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("9_c3c8f")]
-position = Vector2(492, 157.99998)
-
-[node name="Button" parent="." unique_id=954241513 instance=ExtResource("10_fhwxt")]
-position = Vector2(613, -119)
-rotation = -3.1415925
+[node name="DisappearingPlatforn3" parent="." unique_id=852900880 instance=ExtResource("7_hgw45")]
+position = Vector2(-378, 118)
 scale = Vector2(3, 3)
-flip_v = true
 
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("11_5ni64")]
 position = Vector2(-797, 381)
 scale = Vector2(20, 1)
 
-[node name="lava2" parent="." unique_id=156308085 instance=ExtResource("11_5ni64")]
-position = Vector2(366, -107)
+[node name="lava2" parent="." unique_id=636044289 instance=ExtResource("11_5ni64")]
+position = Vector2(-553, 325)
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("6_6taol")]
-position = Vector2(-73, 298)
+position = Vector2(525, 81)
 
-[node name="bat4" parent="." unique_id=789512219 instance=ExtResource("12_dausi")]
-position = Vector2(-559, -127.00001)
-scale = Vector2(3, 3)
+[node name="FallingSpikes2" parent="." unique_id=880855743 instance=ExtResource("7_wagfe")]
+position = Vector2(571, -202)
 
-[node name="bat3" parent="." unique_id=713067515 instance=ExtResource("12_dausi")]
-position = Vector2(506.43005, 146)
-scale = Vector2(3, 3)
-
-[node name="bat2" parent="." unique_id=1029999524 instance=ExtResource("12_dausi")]
-position = Vector2(575, -289)
-scale = Vector2(3, 3)
+[node name="FallingSpikes" parent="." unique_id=90328581 instance=ExtResource("7_wagfe")]
+position = Vector2(625, -202)
 
 [node name="bat" parent="." unique_id=413423160 instance=ExtResource("12_dausi")]
-position = Vector2(-28, 182)
+position = Vector2(-639, -196)
 scale = Vector2(3, 3)
 
-[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("13_fjqn5")]
-position = Vector2(-647, 243)
-scale = Vector2(0.9, 0.9)
-
 [node name="Target_1" type="Marker2D" parent="." unique_id=909036686]
-position = Vector2(-19, -295)
+position = Vector2(161, -249)
 
 [node name="Door_1" parent="." unique_id=1522837388 instance=ExtResource("14_cl6gn")]
-position = Vector2(-121, 294)
+position = Vector2(-632, -50)
 script = ExtResource("15_tn34t")
 target_path = NodePath("../Target_1")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_j1xhn")]
 position = Vector2(97, -17)
-
-[connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

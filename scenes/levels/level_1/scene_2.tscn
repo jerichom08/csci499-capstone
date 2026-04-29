@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_avmw6"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_2tk6r"]
-[ext_resource type="PackedScene" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
+[ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="4_5y2x0"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_avmw6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_gxgmc"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="6_rfl18"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/mobs/bat.tscn" id="7_atlen"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="7_atlen"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="7_avmw6"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="7_xe66q"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]
@@ -797,7 +797,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[node name="Lv1R" type="Node2D" unique_id=1440666369]
+[node name="Lv1R2" type="Node2D" unique_id=1440666369]
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1036639013]
 position = Vector2(118, -17)

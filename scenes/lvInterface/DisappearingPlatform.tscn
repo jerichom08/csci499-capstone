@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ckguwt8uap5es"]
 
 [ext_resource type="Texture2D" uid="uid://camquegclkfs8" path="res://assets/images/tilemaps/Tiles/tile_0156.png" id="1_evq1y"]
-[ext_resource type="Script" path="res://scripts/lvls/disappearing_platform.gd" id="1_o04vk"]
+[ext_resource type="Script" uid="uid://cmgqo7r2hjk03" path="res://scripts/lvls/disappearing_platform.gd" id="1_o04vk"]
+[ext_resource type="AudioStream" uid="uid://c5fgm6e7pwa25" path="res://assets/sounds temp/level sounds/air.mp3" id="3_lyhri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o04vk"]
 size = Vector2(38, 10)
@@ -33,6 +34,9 @@ shape = SubResource("RectangleShape2D_lyhri")
 
 [node name="Timer" type="Timer" parent="." unique_id=1182830732]
 wait_time = 3.0
+
+[node name="sound_player" type="AudioStreamPlayer2D" parent="." unique_id=197815461]
+stream = ExtResource("3_lyhri")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

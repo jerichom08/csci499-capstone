@@ -62,9 +62,16 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		queue_free() # or handle death here
 
+func die():
+	reset_room()
+
+func reset_room():
+	CoinManager.reset_room_coins()
+	get_tree().reload_current_scene()
+
 func _input(event):
-	if event is InputEventKey and event.pressed and not event.echo:
-		print("Key pressed: ", event.as_text_key_label())
+	if Input.is_action_just_pressed("reset_room"):
+		reset_room()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

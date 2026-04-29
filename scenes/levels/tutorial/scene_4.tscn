@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="9_hjvi6"]
 [ext_resource type="Script" uid="uid://3undegg347nd" path="res://scripts/lvls/ToSpecial.gd" id="9_s555q"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="11_4kj4s"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="12_o36op"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="12_v0pw5"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="13_em7cu"]
 
@@ -327,6 +328,12 @@ shape = SubResource("CapsuleShape2D_4kj4s")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("11_4kj4s")]
 position = Vector2(78, -6)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("12_o36op")]
+position = Vector2(421.99997, -44.000015)
+
+[node name="Coin2" parent="." unique_id=565803123 instance=ExtResource("12_o36op")]
+position = Vector2(-572, 50)
 
 [connection signal="body_entered" from="ToSpecial" to="ToSpecial" method="_on_body_entered"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

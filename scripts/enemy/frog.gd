@@ -3,32 +3,50 @@ extends EnemyBase
 @export var frog_spit_attack: PackedScene
 @export var frog_tongue_attack: PackedScene
 @export var spider_scene: PackedScene
+@export var egg_scene: PackedScene
+@onready var tongue_sfx : AudioStreamPlayer2D = $TongueSound
+@onready var spit_sfx: AudioStreamPlayer2D = $SpitSound
+@onready var snore_sfx: AudioStreamPlayer2D = $SnoreSound
+@onready var ribbit_sfx: AudioStreamPlayer2D = $RibbitSound
+@onready var slime_sfx: AudioStreamPlayer2D = $SlimeSound
+@onready var hit_sfx: AudioStreamPlayer2D = $HitSound
+@onready var heal_sfx: AudioStreamPlayer2D = $HealSound
+
 
 var active_spiders: Array[Node2D] = []
-var was_defeated: bool = false
+var defeat_count: int = 0
 var spiders_spawned : bool = false
 var attack_executed : bool = false
+var is_invincible: bool = false
+var ribbiting: bool = false
+var getting_hit: bool = false
 const WORLD_SCALE = 3.0
 
 func set_state(new_state: State) -> void:
 	if current_state == new_state:
 		return
-	
+
 	current_state = new_state
-	
+
+	match new_state:
+		State.HIT:
+			hit_sfx.play(1.1)
+
 	if new_state == State.ATTACK:
 		attack_executed = false
 	else:
 		current_attack = AttackType.NONE
-	
+
 	play_animation()
 
 func _ready() -> void:
 	super._ready()
 	set_state(State.REST)
+	snore_sfx.play(1)
 	sprite.frame_changed.connect(_on_sprite_frame_changed)
 
 func _physics_process(_delta: float) -> void:
+	print(state_animations[current_state])
 	update_state_machine()
 	move_and_slide()
 
@@ -38,11 +56,15 @@ func idle() -> void:
 		set_state(State.CHASE)
 
 func rest() -> void:
+	#snore_sfx.play(1)
 	set_state(State.REST)
 	if can_see_player():
+		snore_sfx.stop()
 		set_state(State.CHASE)
+		start_ribbit_loop()
 
 func chase() -> void:
+	
 	set_state(State.CHASE)
 	
 	var player: Node2D = get_player()
@@ -66,7 +88,6 @@ func chase() -> void:
 		velocity.x = dir * stats.move_speed
 
 func start_attack(dx: int) -> void:
-	print(dx)
 	can_attack = false
 	#attack_executed = false
 	
@@ -78,6 +99,9 @@ func start_attack(dx: int) -> void:
 	set_state(State.ATTACK)
 
 func hit(damage: int) -> void:
+	getting_hit = true
+	snore_sfx.stop()
+	
 	set_state(State.HIT)
 	
 	velocity.x = 0
@@ -87,14 +111,24 @@ func hit(damage: int) -> void:
 		defeat()
 
 func defeat() -> void:
-	if was_defeated:
-		set_state(State.DEFEAT)
-	else:
-		was_defeated = true
+	hitbox.monitoring = false
+	defeat_count += 1
+	is_invincible = true
+	if defeat_count == 1:
+		sprite.play("defeat")
+		await sprite.animation_finished
+		await get_tree().create_timer(1.0).timeout
 		heal(stats.max_health)
+	else:
+		set_state(State.DEFEAT)
+
+
 
 func heal(hp: int) -> void:
-	if was_defeated:
+	hitbox.monitoring = true
+	heal_sfx.play(3.5)
+	is_invincible = true
+	if defeat_count > 0:
 		spawn_spiders()
 	
 	health = min(stats.max_health, health + hp)
@@ -126,10 +160,13 @@ func clear_spiders() -> void:
 	active_spiders.clear()
 	spiders_spawned = false
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, _knockback: Vector2) -> void:
+	if is_invincible:
+		return
 	hit(damage)
 
 func spawn_light_attack() -> void:
+	spit_sfx.play(1)
 	var light_attack = frog_spit_attack.instantiate()
 	get_parent().add_child(light_attack)
 	
@@ -142,6 +179,7 @@ func spawn_light_attack() -> void:
 		light_attack.scale.x *= -1
 
 func spawn_heavy_attack() -> void:
+	tongue_sfx.play(1.1)
 	var heavy_attack = frog_tongue_attack.instantiate()
 	get_parent().add_child(heavy_attack)
 	
@@ -152,6 +190,7 @@ func spawn_heavy_attack() -> void:
 	
 	if facing_direction < 0:
 		heavy_attack.scale.x *= -1
+
 	
 func _on_animation_finished() -> void:
 	match current_state:
@@ -160,22 +199,34 @@ func _on_animation_finished() -> void:
 			set_state(State.CHASE)
 		
 		State.HIT:
+			getting_hit = false
 			set_state(State.CHASE)
 
 		State.HEAL:
 			clear_spiders()
+			is_invincible = false
 			set_state(State.CHASE)
 
 		State.DEFEAT:
-			pass
+			is_invincible = false
+			#print(defeat_count)
+			if defeat_count > 2:
+				#await get_tree().create_timer(5.0).timeout
+				#queue_free()
+				boss_defeated.emit()
+				fade_out_and_free()
 
 func _on_sprite_frame_changed() -> void:
-	if current_state != State.ATTACK:
-		return
-	
+	if sprite.animation == "chase" and !getting_hit:
+		
+		if sprite.frame == 1:
+			slime_sfx.play(1)
+
+		if sprite.frame == 5:
+			slime_sfx.play(2)
 	if attack_executed:
 		return
-	
+	slime_sfx.stop()
 	if current_attack == AttackType.LIGHT:
 		if sprite.animation == "light_attack" and sprite.frame == 7:
 			attack_executed = true
@@ -189,3 +240,34 @@ func _on_sprite_frame_changed() -> void:
 func reset_attack_cooldown() -> void:
 	await get_tree().create_timer(stats.attack_cooldown).timeout
 	can_attack = true
+
+func fade_out_and_free() -> void:
+	var tween := create_tween()
+
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.4)
+
+	await tween.finished
+
+	var egg = egg_scene.instantiate()
+	get_parent().add_child(egg)
+	#print("Frog Pos: ",global_position)
+	egg.global_position = global_position
+
+	#await get_tree().create_timer(1.0).timeout
+
+	queue_free()
+
+func start_ribbit_loop() -> void:
+	if ribbiting:
+		return
+
+	ribbiting = true
+
+	while current_state == State.CHASE:
+		ribbit_sfx.play()
+
+		await get_tree().create_timer(
+			randf_range(2.0, 5.0)
+		).timeout
+
+	ribbiting = false

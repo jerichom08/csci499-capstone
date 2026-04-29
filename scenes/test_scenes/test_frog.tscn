@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://dpmpk0wus0gcu"]
 
 [ext_resource type="PackedScene" uid="uid://whunbwoakfj1" path="res://scenes/enemies/bosses/frog.tscn" id="1_a486y"]
+[ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemy/stats.gd" id="2_8i3ke"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_408xh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_glvd2"]
+
+[sub_resource type="Resource" id="Resource_ft78a"]
+script = ExtResource("2_8i3ke")
+move_speed = 100.0
+gravity = 100.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [node name="test-frog" type="Node2D" unique_id=315107258]
 
@@ -14,8 +21,9 @@ position = Vector2(700, 635)
 shape = SubResource("WorldBoundaryShape2D_glvd2")
 
 [node name="frog" parent="." unique_id=1994586249 instance=ExtResource("1_a486y")]
-position = Vector2(696, 443)
+position = Vector2(1145, 430.00003)
 scale = Vector2(3, 3)
+stats = SubResource("Resource_ft78a")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_408xh")]
 position = Vector2(137, 586)

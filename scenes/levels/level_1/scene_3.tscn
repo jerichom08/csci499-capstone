@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_avmw6"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_2tk6r"]
-[ext_resource type="PackedScene" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
+[ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="4_5y2x0"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_avmw6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_gxgmc"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="10_rfl18"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="11_xe66q"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iv2x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjb2i"]
 texture = ExtResource("2_avmw6")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -239,7 +239,7 @@ texture_region_size = Vector2i(18, 18)
 18:8/0 = 0
 19:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x75wb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl5l0"]
 texture = ExtResource("3_2tk6r")
 texture_region_size = Vector2i(16, 18)
 0:0/0 = 0
@@ -294,8 +294,8 @@ texture_region_size = Vector2i(16, 18)
 [sub_resource type="TileSet" id="TileSet_3a08y"]
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_6iv2x")
-sources/3 = SubResource("TileSetAtlasSource_x75wb")
+sources/2 = SubResource("TileSetAtlasSource_xjb2i")
+sources/3 = SubResource("TileSetAtlasSource_jl5l0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_avmw6")
@@ -570,7 +570,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[node name="Lv1R" type="Node2D" unique_id=1440666369]
+[node name="Lv1R3" type="Node2D" unique_id=1440666369]
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1036639013]
 position = Vector2(118, -17)
@@ -652,7 +652,7 @@ position = Vector2(-28, 182)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_gxgmc")]
-position = Vector2(-647, 243)
+position = Vector2(-646, 228)
 scale = Vector2(0.9, 0.9)
 
 [node name="Target_1" type="Marker2D" parent="." unique_id=909036686]

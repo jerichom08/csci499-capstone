@@ -1,6 +1,5 @@
-[gd_scene format=4 uid="uid://vw2u2gtks6bx"]
+[gd_scene format=4 uid="uid://br526b1t5hfb7"]
 
-[ext_resource type="Script" uid="uid://b8e287dd6rp57" path="res://scenes/puzzles/extra/p2.gd" id="1_fxaab"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_gt3uq"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_f72cm"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="4_4jtx7"]
@@ -8,6 +7,20 @@
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="6_wa18q"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="7_dat3i"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="8_q5hxr"]
+
+[sub_resource type="GDScript" id="GDScript_n15qb"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1a0cp"]
 texture = ExtResource("2_gt3uq")
@@ -563,7 +576,7 @@ sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 
 [node name="Lv2R" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
-script = ExtResource("1_fxaab")
+script = SubResource("GDScript_n15qb")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=720747964]
 scale = Vector2(3, 3)

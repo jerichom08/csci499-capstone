@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="12_i74qv"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_1nwqk"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_4to3b"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_w2k8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_0fjc0")
@@ -378,6 +379,9 @@ position = Vector2(628, -90)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_4to3b")]
 position = Vector2(84, -5)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_w2k8u")]
+position = Vector2(74.99997, 45.999985)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

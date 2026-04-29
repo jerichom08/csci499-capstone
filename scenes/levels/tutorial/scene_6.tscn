@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_nro7e"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_obqkb"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_vpfj8"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_6m3w6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_fr20m")
@@ -424,6 +425,9 @@ text = "4.2) \"press z or draw a line on lilith's scroll\""
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_ygc1o")]
 position = Vector2(609, -200)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_6m3w6")]
+position = Vector2(-307.00003, -233.00002)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

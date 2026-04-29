@@ -65,6 +65,17 @@ func take_damage(amount: int, knockback: Vector2) -> void:
 	if health <= 0:
 		queue_free()
 
+func die():
+	reset_room()
+
+func reset_room():
+	CoinManager.reset_room_coins()
+	get_tree().reload_current_scene()
+
+func _input(event):
+	if Input.is_action_just_pressed("reset_room"):
+		reset_room()
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -74,8 +85,14 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_attacking:
+	if is_on_floor():
+		$CoyoteTimer.start()
+	if Input.is_action_just_pressed("jump"):
+		$InputBufferTimer.start()
+	if not $InputBufferTimer.is_stopped() and not $CoyoteTimer.is_stopped() and not is_attacking:
 		velocity.y = jumpVelocity
+		$CoyoteTimer.stop()
+		$InputBufferTimer.stop()
 		
 	# Variable jump height.
 	if Input.is_action_just_released("jump") and velocity.y < 0 and not is_attacking:

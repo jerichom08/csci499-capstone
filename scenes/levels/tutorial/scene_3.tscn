@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="4_ev67t"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_thefa"]
 [ext_resource type="Script" uid="uid://dkq1d5wm68bir" path="res://scripts/lvls/hiddenplatform.gd" id="5_utuh5"]
-[ext_resource type="Script" path="res://scripts/lvls/scene3script.gd" id="5_wpupo"]
+[ext_resource type="Script" uid="uid://fceqca1oq77t" path="res://scripts/lvls/scene3script.gd" id="5_wpupo"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_jr5wo"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="6_sagyo"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="7_utuh5"]
@@ -15,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="12_l1mia"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_45qdh"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="15_4gh6o"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="16_opgjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_thefa")
@@ -627,6 +628,12 @@ script = ExtResource("5_wpupo")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("15_4gh6o")]
 position = Vector2(48, 1)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("16_opgjy")]
+position = Vector2(-368.00003, -85.000015)
+
+[node name="Coin2" parent="." unique_id=896722567 instance=ExtResource("16_opgjy")]
+position = Vector2(578, -243.00002)
 
 [connection signal="visibility_changed" from="gate" to="hiddenplatform" method="_on_gate_visibility_changed"]
 [connection signal="button_pressed" from="Button" to="hiddenplatform" method="_on_button_button_pressed"]

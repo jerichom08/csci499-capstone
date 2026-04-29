@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="13_aasmi"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="16_eje0s"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_exam8"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_exam8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("1_va4an")
@@ -394,6 +395,9 @@ text = "1.5 ) \"Watch Out For the Falling Spikes\""
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_exam8")]
 position = Vector2(48, -6)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_exam8")]
+position = Vector2(-133.00003, -265)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

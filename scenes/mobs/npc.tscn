@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4h7ltbboiebj" path="res://scenes/mobs/npc.gd" id="1_fhyyv"]
 [ext_resource type="Texture2D" uid="uid://bwhb00t3bkgoe" path="res://assets/images/celes/Idle1.png" id="1_k2w2r"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="3_qy2sg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhyyv"]
 
@@ -18,10 +19,18 @@ texture = ExtResource("1_k2w2r")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=1312370603]
 modulate = Color(1, 0, 0, 1)
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 20.0
+offset_top = -54.0
+offset_right = 60.0
+offset_bottom = -31.0
+theme_override_fonts/font = ExtResource("3_qy2sg")
+theme_override_font_sizes/font_size = 18
 
 [node name="DialogueLabel" type="Label" parent="." unique_id=485369143]
-modulate = Color(1, 0, 0, 1)
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(0.14774385, 0.72103935, 0.75303876, 1)
+offset_left = 27.0
+offset_top = -48.0
+offset_right = 67.0
+offset_bottom = -25.0
+theme_override_fonts/font = ExtResource("3_qy2sg")
+theme_override_font_sizes/font_size = 18

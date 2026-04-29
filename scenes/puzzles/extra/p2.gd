@@ -1,11 +1,26 @@
 extends Node2D
 
+signal puzzle_completed_signal
 
-# Called when the node enters the scene tree for the first time.
+var is_completed: bool = false
+
+@onready var final_door_area: Area2D = $FinalDoorArea
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	PuzzleManager.register_puzzle(self)
+
+	final_door_area.body_entered.connect(_on_final_door_entered)
+
+	print("Puzzle 1 ready.")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_final_door_entered(body: Node2D) -> void:
+	if is_completed:
+		return
+
+	if body.is_in_group("player"):
+		is_completed = true
+		print("Puzzle 1 completed!")
+
+		puzzle_completed_signal.emit()

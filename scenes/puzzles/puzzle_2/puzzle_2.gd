@@ -1,4 +1,5 @@
 extends Node2D
+signal puzzle_completed_signal
 
 @export var correct_order : Array[String] = ["bread", "tomato", "apple", "potato"]
 
@@ -12,6 +13,7 @@ var puzzle_completed : bool = false
 
 
 func _ready() -> void:
+	PuzzleManager.register_puzzle(self)
 	for station in ingredient_stations.get_children():
 		if station.has_signal("ingredient_selected"):
 			station.ingredient_selected.connect(_on_ingredient_selected)
@@ -53,14 +55,11 @@ func _reset_puzzle() -> void:
 
 
 func _puzzle_completed() -> void:
+	puzzle_completed_signal.emit()
 	puzzle_completed = true
 	print("Puzzle completed!")
 	_play_complete_audio()
 
-	# Put reward / unlock logic here later
-	# Example:
-	# $ExitDoor.unlock()
-	# PuzzleManager.mark_puzzle_complete("puzzle_2")
 
 
 func _play_correct_audio() -> void:

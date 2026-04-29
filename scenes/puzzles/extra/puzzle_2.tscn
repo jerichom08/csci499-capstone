@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d4e6x036lofax"]
 
-[ext_resource type="Script" uid="uid://8sbnk07crufp" path="res://scenes/puzzles/extra/puzzle_2.gd" id="1_t5ui6"]
+[ext_resource type="Script" uid="uid://8sbnk07crufp" path="res://scenes/puzzles/puzzle_2/puzzle_2.gd" id="1_t5ui6"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_fo2if"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_63ulv"]
 [ext_resource type="PackedScene" uid="uid://bxxay0en10aln" path="res://scenes/puzzles/puzzle_2/ingredient_station.tscn" id="4_euvfl"]

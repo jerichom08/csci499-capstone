@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ikgw0n0vxauj"]
+
+[ext_resource type="Script" uid="uid://du4nteo1fmbnx" path="res://scripts/lvls/audio_player.gd" id="1_1qhh7"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer" unique_id=41000503]
+process_mode = 3
+autoplay = true
+script = ExtResource("1_1qhh7")

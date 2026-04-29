@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://8sbrqv2cxiec"]
+
+[ext_resource type="Script" uid="uid://brqlmhpet2dd7" path="res://scripts/lvls/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cyc0q6e6r8s8h" path="res://assets/images/UI/BG.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_8ln24"]
+[ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://0h2xfahuajo5" path="res://scripts/lvls/animated_sprite_2d.gd" id="5_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://d0wbk6fy0ftw2" path="res://scenes/enemies/mobs/nyarla_idle.tscn" id="6_oa1go"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = ExtResource("3_bqqt6")
+modulate_color = Color(0.34621716, 0.4803471, 0.5474121, 0.5921569)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("4_8ln24")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("4_8ln24")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("4_8ln24")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("4_8ln24")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("4_8ln24")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgwnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.15747333, 0.1288, 0.23, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 0.94509804)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.1292127, 0.10409229, 0.18877175, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.12941177, 0.105882354, 0.1882353, 1)
+border_width_top = 10
+border_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_8ln24"]
+Button/styles/hover = SubResource("StyleBoxFlat_wu84c")
+Button/styles/normal = SubResource("StyleBoxFlat_8ln24")
+Button/styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+
+[node name="Main Menu" type="Node2D" unique_id=2047207784]
+script = ExtResource("1_l6cm7")
+
+[node name="Panel" type="Panel" parent="." unique_id=1919025876]
+offset_left = -751.0
+offset_top = -183.0
+offset_right = 749.0
+offset_bottom = 537.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rtw2f")
+
+[node name="Label" type="Label" parent="." unique_id=730008650]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -489.5
+offset_top = -95.0
+offset_right = 489.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.12941177, 0.101960786, 0.1882353, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 100
+text = "Nyarla's Birthday Bash"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110530687]
+texture_filter = 1
+position = Vector2(-494, 259)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_lgwnu")
+frame_progress = 0.7874393
+script = ExtResource("5_rtw2f")
+
+[node name="NyarlaIdle" parent="." unique_id=435622663 instance=ExtResource("6_oa1go")]
+position = Vector2(463, 357)
+scale = Vector2(10, 10)
+
+[node name="Button Manager" type="Control" parent="." unique_id=921903922]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Start" type="Button" parent="Button Manager" unique_id=1302864906]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 35.0
+offset_right = 215.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8ln24")
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 80
+text = "Start"
+
+[node name="Options" type="Button" parent="Button Manager" unique_id=620540582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 160.0
+offset_right = 215.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8ln24")
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 80
+text = "Options"
+
+[node name="Quit" type="Button" parent="Button Manager" unique_id=1805338488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 285.0
+offset_right = 215.0
+offset_bottom = 381.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8ln24")
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 80
+text = "Quit"
+
+[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_wu84c")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=285807831]
+position = Vector2(-1, 177)
+
+[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]

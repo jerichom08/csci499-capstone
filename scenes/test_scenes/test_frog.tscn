@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://dpmpk0wus0gcu"]
 
-[ext_resource type="Script" uid="uid://ddoun2cw5ni8k" path="res://scenes/test_scenes/test_frog.gd" id="1_8i3ke"]
 [ext_resource type="PackedScene" uid="uid://whunbwoakfj1" path="res://scenes/enemies/bosses/frog.tscn" id="1_a486y"]
-[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider.tscn" id="2_408xh"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_408xh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_glvd2"]
 
 [node name="test-frog" type="Node2D" unique_id=315107258]
-script = ExtResource("1_8i3ke")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1655590340]
 
@@ -16,40 +14,8 @@ position = Vector2(700, 635)
 shape = SubResource("WorldBoundaryShape2D_glvd2")
 
 [node name="frog" parent="." unique_id=1994586249 instance=ExtResource("1_a486y")]
-position = Vector2(695, 507)
-scale = Vector2(2, 2)
+position = Vector2(696, 443)
+scale = Vector2(3, 3)
 
-[node name="spider" parent="." unique_id=264598264 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(736, 529)
-scale = Vector2(4, 4)
-
-[node name="spider2" parent="." unique_id=1363467076 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(683, 529)
-scale = Vector2(4, 4)
-
-[node name="spider3" parent="." unique_id=1361209933 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(674, 574)
-scale = Vector2(4, 4)
-
-[node name="spider4" parent="." unique_id=826435668 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(742, 569)
-scale = Vector2(4, 4)
-
-[node name="spider5" parent="." unique_id=340589532 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(709, 604)
-scale = Vector2(4, 4)
-
-[node name="spider6" parent="." unique_id=1620081308 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(641, 604)
-scale = Vector2(4, 4)
-
-[node name="spider7" parent="." unique_id=234455639 instance=ExtResource("2_408xh")]
-visible = false
-position = Vector2(768, 610)
-scale = Vector2(4, 4)
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_408xh")]
+position = Vector2(137, 586)

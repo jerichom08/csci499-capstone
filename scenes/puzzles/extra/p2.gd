@@ -19,7 +19,7 @@ func _on_final_door_entered(body: Node2D) -> void:
 	if is_completed:
 		return
 
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		is_completed = true
 		print("Puzzle 1 completed!")
 

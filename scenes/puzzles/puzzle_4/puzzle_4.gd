@@ -1,4 +1,5 @@
 extends Node2D
+signal puzzle_completed_signal
 
 @onready var npc_1 = $NPC_1
 @onready var npc_2 = $NPC_2
@@ -18,6 +19,7 @@ var puzzle_completed : bool = false
 
 
 func _ready() -> void:
+	PuzzleManager.register_puzzle(self)
 	connect_npc(npc_1, "NPC_1")
 	connect_npc(npc_2, "NPC_2")
 	connect_npc(npc_3, "NPC_3")
@@ -58,6 +60,7 @@ func check_puzzle_complete() -> void:
 		puzzle_status_label.text = "Puzzle Complete!"
 
 	print("Puzzle 4 completed!")
+	puzzle_completed_signal.emit()
 
 
 func update_status_label() -> void:

@@ -608,6 +608,7 @@ npc_text = "I saw the chef working with flour earlier..."
 
 [node name="NPC_3" parent="." unique_id=336925134 instance=ExtResource("4_7lewf")]
 position = Vector2(104, 9)
+npc_id = "npc_3"
 npc_text = "He also mentioned something about baking bread."
 
 [node name="NPC_4" parent="." unique_id=1307578718 instance=ExtResource("4_7lewf")]

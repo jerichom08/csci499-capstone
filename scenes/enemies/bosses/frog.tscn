@@ -29,6 +29,7 @@ script = ExtResource("2_2c1ct")
 max_health = 3
 move_speed = 100.0
 gravity = 100.0
+faces_left = false
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymnba"]

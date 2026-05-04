@@ -73,7 +73,7 @@ func handle_wall_turn() -> void:
 		wall_ray.target_position.x *= -1
 		vision_ray.target_position.x *= -1
 		
-func take_damage(amount: int = 1) -> void:
+func take_damage(amount: int = 1, knockback: Vector2 = Vector2.ZERO) -> void:
 	if is_dead:
 		return
 

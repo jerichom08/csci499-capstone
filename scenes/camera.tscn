@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://dq6plgrbyepev"]
 
-[ext_resource type="Script" uid="uid://b1dtjpelv3jtj" path="res://scripts/hud.gd" id="1_cvpoc"]
+[ext_resource type="Script" uid="uid://b1dtjpelv3jtj" path="res://scripts/UI/hud.gd" id="1_cvpoc"]
 [ext_resource type="Texture2D" uid="uid://b5ib7i60j856d" path="res://assets/images/bedroom/interior.png" id="2_tmlye"]
 [ext_resource type="Texture2D" uid="uid://bhl2v8nsj64pj" path="res://assets/images/UI/UI Pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="3_b05li"]
 [ext_resource type="PackedScene" uid="uid://diruyewfe185g" path="res://scenes/lvInterface/PlayerIcon.tscn" id="3_gtx3x"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="4_mq7sm"]
+[ext_resource type="Script" uid="uid://js7cul2xq70r" path="res://scripts/lvls/coin_label.gd" id="4_ys67x"]
 [ext_resource type="Texture2D" uid="uid://yv3x0gb5nooq" path="res://assets/images/UI/scroll.png" id="5_b05li"]
 [ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="6_p8nh0"]
 
@@ -952,6 +954,21 @@ position = Vector2(6, -6)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAMAPz/AAAiAAgAAAAMAP3/AAAiAAkAAAAMAP7/AAAiAAoAAAANAPz/AAAjAAgAAAANAP3/AAAjAAkAAAANAP7/AAAjAAoAAAAOAPz/AAAkAAgAAAAOAP3/AAAkAAkAAAAOAP7/AAAkAAoAAADx//n/AAAvAAwAAAA=")
 tile_set = SubResource("TileSet_ys67x")
+
+[node name="InteractionLabel" type="Label" parent="temp life + score" unique_id=286744738]
+texture_filter = 1
+offset_left = 215.0
+offset_top = -34.0
+offset_right = 246.0
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_mq7sm")
+theme_override_font_sizes/font_size = 12
+text = "00
+"
+script = ExtResource("4_ys67x")
 
 [node name="temp inventory" type="TileMapLayer" parent="." unique_id=597128812]
 position = Vector2(35, 4)

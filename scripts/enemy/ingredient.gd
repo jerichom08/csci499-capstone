@@ -7,7 +7,7 @@ extends Area2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-var floor_y := 600
+var floor_y := 525
 var landed := false
 var hover_time := 0.0
 var collected := false

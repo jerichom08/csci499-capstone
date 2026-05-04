@@ -15,7 +15,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.name != "Player":
 		return
 		
-	get_tree().call_deferred("reload_current_scene")
+	body.die()
 
 func _on_player_detect_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("player"):

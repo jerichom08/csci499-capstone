@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bifstfqlcqwe4"]
+
+[ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="1_6hgkf"]
+[ext_resource type="Script" uid="uid://de3jnp0uqmmde" path="res://scripts/enemy/ingredient.gd" id="1_f0cn5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hgkf"]
+radius = 25.0
+height = 56.0
+
+[node name="Egg" type="Area2D" unique_id=1002910103]
+script = ExtResource("1_f0cn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=142318654]
+texture = ExtResource("1_6hgkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486905236]
+shape = SubResource("CapsuleShape2D_6hgkf")
+debug_color = Color(1, 1, 0, 0.41960785)

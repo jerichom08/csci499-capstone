@@ -10,14 +10,23 @@
 [ext_resource type="Texture2D" uid="uid://c7geg3ugv8v7m" path="res://assets/images/frogger/frogger_move.png" id="4_1w4ig"]
 [ext_resource type="Texture2D" uid="uid://bfqjtr8fn3ae7" path="res://assets/images/frogger/frogger_defeat.png" id="4_sq8ai"]
 [ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider.tscn" id="4_tekvl"]
+[ext_resource type="PackedScene" uid="uid://bifstfqlcqwe4" path="res://scenes/ingredients/egg.tscn" id="5_bwht0"]
 [ext_resource type="Texture2D" uid="uid://c4bu02orm1nir" path="res://assets/images/frogger/frogger_spit.png" id="5_i5tgc"]
 [ext_resource type="Texture2D" uid="uid://b3ei7jg713kal" path="res://assets/images/frogger/frogger_tongue.png" id="6_v57dn"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemy/hurtbox.gd" id="8_dyhkr"]
 [ext_resource type="Texture2D" uid="uid://dnycvrpdbgljh" path="res://assets/images/frogger/frogger_rest.png" id="9_x6f5r"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="15_bgwjc"]
+[ext_resource type="AudioStream" uid="uid://be0xmeoorupyc" path="res://assets/sounds temp/enemy sounds/frog/yoshi.wav" id="17_4gpb1"]
+[ext_resource type="AudioStream" uid="uid://dp537dml8fxf4" path="res://assets/sounds temp/enemy sounds/frog/spit.wav" id="18_28ec5"]
+[ext_resource type="AudioStream" uid="uid://1t6dlm8olyru" path="res://assets/sounds temp/enemy sounds/frog/snore.wav" id="19_1kjsf"]
+[ext_resource type="AudioStream" uid="uid://bnikjm4u6bn1w" path="res://assets/sounds temp/enemy sounds/frog/ribbit.wav" id="20_3do7h"]
+[ext_resource type="AudioStream" uid="uid://opbo08k2f2ug" path="res://assets/sounds temp/enemy sounds/frog/slime.wav" id="21_3do7h"]
+[ext_resource type="AudioStream" uid="uid://ciede2404git1" path="res://assets/sounds temp/enemy sounds/frog/hit.wav" id="22_iskih"]
+[ext_resource type="AudioStream" uid="uid://7rxffg4wqy0a" path="res://assets/sounds temp/enemy sounds/frog/heal.wav" id="23_2hc16"]
 
 [sub_resource type="Resource" id="Resource_x6f5r"]
 script = ExtResource("2_2c1ct")
-max_health = 20
+max_health = 3
 move_speed = 100.0
 gravity = 100.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
@@ -505,17 +514,22 @@ radius = 17.117243
 [sub_resource type="CircleShape2D" id="CircleShape2D_r5l00"]
 radius = 22.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgwjc"]
+size = Vector2(76, 48.25)
+
 [node name="frog" type="CharacterBody2D" unique_id=1994586249]
+texture_filter = 1
 script = ExtResource("1_11g75")
 frog_spit_attack = ExtResource("2_r5l00")
 frog_tongue_attack = ExtResource("3_g1aui")
 spider_scene = ExtResource("4_tekvl")
+egg_scene = ExtResource("5_bwht0")
 stats = SubResource("Resource_x6f5r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=151658062]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i0clw")
-animation = &"heal"
+animation = &"chase"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427992727]
@@ -542,3 +556,37 @@ position = Vector2(108, 40)
 
 [node name="HeavySpawn" type="Marker2D" parent="." unique_id=1255390812]
 position = Vector2(112, 39)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=102907647]
+collision_layer = 8
+script = ExtResource("15_bgwjc")
+apply_knockback = true
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=48709695]
+position = Vector2(1, 41.125)
+shape = SubResource("RectangleShape2D_bgwjc")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="TongueSound" type="AudioStreamPlayer2D" parent="." unique_id=1586476483]
+stream = ExtResource("17_4gpb1")
+
+[node name="SpitSound" type="AudioStreamPlayer2D" parent="." unique_id=1458945460]
+stream = ExtResource("18_28ec5")
+volume_db = 10.0
+
+[node name="SnoreSound" type="AudioStreamPlayer2D" parent="." unique_id=1058183618]
+stream = ExtResource("19_1kjsf")
+
+[node name="RibbitSound" type="AudioStreamPlayer2D" parent="." unique_id=1024424953]
+stream = ExtResource("20_3do7h")
+
+[node name="SlimeSound" type="AudioStreamPlayer2D" parent="." unique_id=910327398]
+stream = ExtResource("21_3do7h")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1290783722]
+stream = ExtResource("22_iskih")
+pitch_scale = 3.62
+
+[node name="HealSound" type="AudioStreamPlayer2D" parent="." unique_id=1467425475]
+stream = ExtResource("23_2hc16")

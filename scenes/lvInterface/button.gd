@@ -3,8 +3,10 @@ extends Sprite2D
 signal button_pressed
 signal button_released
 
+@onready var sound_player: AudioStreamPlayer2D = $sound_player
 func pressed():
 	frame = 1
+	sound_player.play()
 	emit_signal("button_pressed")
 
 func unpressed():

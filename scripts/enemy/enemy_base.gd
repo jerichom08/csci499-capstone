@@ -26,6 +26,8 @@ class_name EnemyBase extends CharacterBody2D
 @onready var light_spawn: Marker2D = get_node_or_null("LightSpawn")
 @onready var heavy_spawn: Marker2D = get_node_or_null("HeavySpawn")
 
+signal boss_defeated
+
 # --- Runtime Stats ---
 var health : int
 var facing_direction: int = 1 # 1 = right, -1 = left
@@ -102,9 +104,11 @@ func update_state_machine() -> void:
 		State.HIT:
 			hit(0)
 		State.DEFEAT:
-			defeat()
+			#defeat()
+			pass
 		State.HEAL:
-			heal(0)
+			#heal(0)
+			pass
 		_:
 			push_warning("Unhandled state: %s" % current_state)
 
@@ -213,3 +217,8 @@ func face_direction(direction: int) -> void:
 		wall_ray.target_position.x = abs(wall_ray.target_position.x) * facing_direction
 	if ledge_ray:
 		ledge_ray.position.x = abs(ledge_ray.position.x) * facing_direction
+
+func fade_out_and_free() -> void:
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.4)
+	tween.tween_callback(queue_free)

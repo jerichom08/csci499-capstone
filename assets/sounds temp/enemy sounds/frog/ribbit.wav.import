@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnikjm4u6bn1w"
+path="res://.godot/imported/ribbit.wav-fcc5ea18e2c07c732d6d108dc6522c7f.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/frog/ribbit.wav"
+dest_files=["res://.godot/imported/ribbit.wav-fcc5ea18e2c07c732d6d108dc6522c7f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

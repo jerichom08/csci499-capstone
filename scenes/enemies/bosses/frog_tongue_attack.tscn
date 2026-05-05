@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdvfp"]
-size = Vector2(92, 20)
+size = Vector2(56, 20)
 
 [node name="frog_tongue_attack" type="Node2D" unique_id=1007373374]
 script = ExtResource("1_c8cy2")
@@ -55,6 +55,6 @@ script = ExtResource("2_c8cy2")
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2145626933]
-position = Vector2(-2, 0)
+position = Vector2(-20, 0)
 shape = SubResource("RectangleShape2D_qdvfp")
 debug_color = Color(1, 0, 0, 0.41960785)

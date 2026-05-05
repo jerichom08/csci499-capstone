@@ -99,3 +99,6 @@ func fade_out_and_free() -> void:
 	var tween = create_tween()
 	tween.tween_property(sprite, "modulate:a", 0.0, 0.4)
 	tween.tween_callback(queue_free)
+	
+func take_damage(damage: int, knockback: Vector2) -> void:
+	pass

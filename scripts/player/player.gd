@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 # HP System Variables
 #---------------------------
-@export var max_health: int = 5
+@export var max_health: int = 10
 @export var damage_flash_time: float = 0.15
-@export var invincibility_time: float = 0.6
+@export var invincibility_time: float = 1
 
 var health: int
 var is_invincible := false
@@ -44,23 +44,37 @@ var current_projectile = null
 func _ready() -> void:
 	health = max_health
 	
-func take_damage(amount: int) -> void:
-	print("player took damage")
+func take_damage(amount: int, knockback: Vector2) -> void:
+	#print("player took damage")
+
 	if is_invincible:
 		return
 
 	health = max(health - amount, 0)
 
+	velocity = knockback
+
 	# flash red
 	sprite.modulate = Color(1, 0.4, 0.4, 1)
 	flash_timer = damage_flash_time
 
-	# temporary invincibility
+	# invincibility
 	is_invincible = true
 	invincibility_timer = invincibility_time
 
 	if health <= 0:
-		queue_free() # or handle death here
+		queue_free()
+
+func die():
+	reset_room()
+
+func reset_room():
+	CoinManager.reset_room_coins()
+	get_tree().reload_current_scene()
+
+func _input(event):
+	if Input.is_action_just_pressed("reset_room"):
+		reset_room()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -71,8 +85,14 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_attacking:
+	if is_on_floor():
+		$CoyoteTimer.start()
+	if Input.is_action_just_pressed("jump"):
+		$InputBufferTimer.start()
+	if not $InputBufferTimer.is_stopped() and not $CoyoteTimer.is_stopped() and not is_attacking:
 		velocity.y = jumpVelocity
+		$CoyoteTimer.stop()
+		$InputBufferTimer.stop()
 		
 	# Variable jump height.
 	if Input.is_action_just_released("jump") and velocity.y < 0 and not is_attacking:

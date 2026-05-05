@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="5_vb3gq"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_jr5wo"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="8_xmhdb"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="9_25ijo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("2_thefa")
@@ -317,6 +318,9 @@ tile_set = SubResource("TileSet_alrbv")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_xmhdb")]
 position = Vector2(96, 1)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("9_25ijo")]
+position = Vector2(217.99998, 106.99999)
 
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
 [connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]

@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="14_08fn7"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_qyiaw"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_08fn7"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="16_08fn7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08fn7"]
 radius = 14.0
@@ -754,6 +755,9 @@ theme_override_font_sizes/font_size = 27
 text = "\"Falling platfroms below!\""
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("16_08fn7")]
+position = Vector2(12.9999695, -246.00002)
+
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
 [connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
 [connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

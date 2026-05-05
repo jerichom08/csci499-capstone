@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_tny1j"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="3_5klk1"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="3_c5w8p"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qlq2q"]
 
@@ -25,6 +26,18 @@ position = Vector2(-293, -12)
 shape = SubResource("RectangleShape2D_qlq2q")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("3_5klk1")]
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("3_c5w8p")]
+position = Vector2(357, -12)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin2" parent="." unique_id=1474003184 instance=ExtResource("3_c5w8p")]
+position = Vector2(461, -15)
+scale = Vector2(0.1, 0.1)
+
+[node name="Coin3" parent="." unique_id=1692687214 instance=ExtResource("3_c5w8p")]
+position = Vector2(464.99997, -142)
+scale = Vector2(0.1, 0.1)
 
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
 [connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]

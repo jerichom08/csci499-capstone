@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PuzzleManager="*uid://c8iupug2hqyf1"
 AudioPlayer="*uid://ikgw0n0vxauj"
+SceneTransition="*uid://dq6i2a1c6n38w"
 CoinManager="*uid://bo1g3nyxyjgcx"
 
 [display]

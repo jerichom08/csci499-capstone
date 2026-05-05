@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://de58m005atgwn"]
 
-[ext_resource type="PackedScene" uid="uid://bxowxihwx7iin" path="res://scenes/levels/tutorial/NextScene.tscn" id="1_vst4a"]
+[ext_resource type="Script" uid="uid://42h137h76m4c" path="res://scenes/levels/tutorial/scene_7.gd" id="1_qyiaw"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_nro7e"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_obqkb"]
 [ext_resource type="Texture2D" uid="uid://u0mrmjnssanq" path="res://assets/images/UI/UI Pack/emojis-free/Emoji_Spritesheet_Free.png" id="5_dhej2"]
@@ -13,8 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="13_6hne2"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="13_7mqk0"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="13_jlbhy"]
+[ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="14_08fn7"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_qyiaw"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_08fn7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08fn7"]
+radius = 14.0
+height = 136.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_nro7e")
@@ -648,9 +653,13 @@ texture = ExtResource("5_dhej2")
 sources/0 = SubResource("TileSetAtlasSource_7mqk0")
 
 [node name="Tut2" type="Node2D" unique_id=1440666369]
+script = ExtResource("1_qyiaw")
 
-[node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("1_vst4a")]
-position = Vector2(-628, -219)
+[node name="Area2D" type="Area2D" parent="." unique_id=745302572]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1354608367]
+position = Vector2(-630, -228)
+shape = SubResource("CapsuleShape2D_08fn7")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=868071159]
 scale = Vector2(3, 3)
@@ -727,22 +736,7 @@ position = Vector2(-509.00003, -188)
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("13_7mqk0")]
 position = Vector2(98, -6)
 
-[node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_qyiaw")]
-visible = false
-position = Vector2(-589, -219)
-
-[node name="InteractionLabel" type="Label" parent="sign1" unique_id=68225554]
-offset_left = -92.0
-offset_top = -10.0
-offset_right = 357.0
-offset_bottom = 53.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = ExtResource("15_08fn7")
-theme_override_font_sizes/font_size = 27
-text = "Pretty spikey spikes
-"
+[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("14_08fn7")]
 
 [node name="sign2" parent="." unique_id=1493722316 instance=ExtResource("14_qyiaw")]
 position = Vector2(505, -222)
@@ -759,6 +753,7 @@ theme_override_fonts/font = ExtResource("15_08fn7")
 theme_override_font_sizes/font_size = 27
 text = "\"Falling platfroms below!\""
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
 [connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
 [connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

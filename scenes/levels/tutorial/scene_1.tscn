@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://drgo6e3icgmgg"]
 
-[ext_resource type="Script" uid="uid://dy1rbxqw4mhsy" path="res://scenes/levels/tutorial/scene_1.gd" id="1_8u52i"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_va4an"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_8u52i"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="3_e8ji1"]
@@ -296,7 +295,6 @@ sources/3 = SubResource("TileSetAtlasSource_15x7e")
 
 [node name="Tut" type="Node2D" unique_id=1440666369]
 position = Vector2(188, 108)
-script = ExtResource("1_8u52i")
 
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("11_cpv0e")]
 position = Vector2(603, -168)

@@ -17,10 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="14_m3ou3"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_n8pg6"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="17_0dnva"]
-[ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
 [ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="18_osl13"]
 [ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="20_0mndl"]
+[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="21_4onw6"]
+[ext_resource type="PackedScene" uid="uid://cwddpl64tmi1h" path="res://scenes/mobs/turnipNPCF.tscn" id="21_5oqnr"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="21_wiiqd"]
+[ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="23_1rjxj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1039,7 +1041,7 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1546364109]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD9/wUAAgACAAUAAAD9/wMAAgACAAUAAAD9/wIAAgACAAYAAAD9/wEAAgADAAQAAAD9/wAAAgACAAYAAAD9////AgACAAUAAADu//3/AgADAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAADr//3/AgACAAQAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADo/wUAAgACAAUAAADo/wYAAgACAAYAAADp/wUAAgACAAUAAADp/wYAAgACAAYAAADq/wUAAgACAAUAAADq/wYAAgACAAYAAADr/wUAAgACAAUAAADr/wYAAgACAAYAAADs/wUAAgACAAUAAADs/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADk/wUAAgABAAUAAADk/wYAAgABAAYAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wUAAgACAAEAAADx/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD8/wUAAgACAAYAAAD8/wYAAgACAAYAAAD9/wYAAgACAAYAAAD9/wQAAgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgACAAUAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAADq//3/AgACAAQAAADp//3/AgACAAQAAADo//3/AgACAAQAAADn//3/AgACAAQAAADm//3/AgACAAQAAADl//3/AgACAAQAAADk//3/AgACAAUAAADk//r/AgABAAcAAADl//r/AgACAAcAAADm//r/AgADAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADq//n/AgADAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADo//z/AgAEAAYAAADl/wEAAgACAAQAAADm/wEAAgACAAQAAADn/wEAAgADAAQAAAD7//v/AgACAAQAAAD8//v/AgACAAUAAADk/wEAAgACAAQAAADu/wUAAgACAAEAAADw/wUAAgACAAEAAADv/wUAAgACAAEAAAD7/wQAAgALAAUAAADk//7/AgADAAcAAAD7//7/AgACAAQAAAD8//7/AgACAAYAAAD7/wEAAgACAAUAAAD8/wEAAgACAAYAAAD8/wIAAgACAAYAAAD8/wMAAgABAAYAAAD8/wQAAgABAAYAAAD8//3/AgABAAYAAAD8//z/AgABAAYAAAD7/wIAAgACAAcAAAD8/wAAAgABAAYAAAD8////AgABAAYAAAD2/wIAAgACAAQAAAD3/wIAAgACAAcAAAD4/wEAAgACAAUAAAD4/wIAAgACAAcAAAD5/wEAAgACAAUAAAD5/wIAAgACAAcAAAD1/wIAAgABAAQAAAD3/wEAAgABAAUAAAD6//7/AgACAAQAAAD6/wEAAgACAAUAAAD6/wIAAgACAAcAAAD6//v/AgACAAQAAAD3//v/AgABAAQAAAD3//7/AgABAAQAAAD4//v/AgACAAQAAAD4//7/AgACAAQAAAD5//v/AgACAAQAAAD5//7/AgACAAQAAAD7/wAAAgAFAAYAAAD4//r/AgAGAAYAAAA=")
+tile_map_data = PackedByteArray("AAD9/wUAAgACAAUAAAD9/wMAAgACAAUAAAD9/wIAAgACAAYAAAD9/wEAAgADAAQAAAD9/wAAAgACAAYAAAD9////AgACAAUAAADu//3/AgADAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAADr//3/AgACAAQAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADo/wUAAgACAAUAAADo/wYAAgACAAYAAADp/wUAAgACAAUAAADp/wYAAgACAAYAAADq/wUAAgACAAUAAADq/wYAAgACAAYAAADr/wUAAgACAAUAAADr/wYAAgACAAYAAADs/wUAAgACAAUAAADs/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADk/wUAAgABAAUAAADk/wYAAgABAAYAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wUAAgACAAEAAADx/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD8/wUAAgACAAYAAAD8/wYAAgACAAYAAAD9/wYAAgACAAYAAAD9/wQAAgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgACAAUAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAADq//3/AgACAAQAAADp//3/AgACAAQAAADo//3/AgACAAQAAADn//3/AgACAAQAAADm//3/AgACAAQAAADl//3/AgACAAQAAADk//3/AgACAAUAAADk//r/AgABAAcAAADl//r/AgACAAcAAADm//r/AgADAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADq//n/AgADAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADo//z/AgAEAAYAAADl/wEAAgACAAQAAADm/wEAAgACAAQAAADn/wEAAgADAAQAAAD7//v/AgACAAQAAAD8//v/AgACAAUAAADk/wEAAgACAAQAAADu/wUAAgACAAEAAADw/wUAAgACAAEAAADv/wUAAgACAAEAAADk//7/AgADAAcAAAD7//7/AgACAAQAAAD8//7/AgACAAYAAAD7/wEAAgACAAUAAAD8/wEAAgACAAYAAAD8/wIAAgACAAYAAAD8/wMAAgABAAYAAAD8/wQAAgABAAYAAAD8//3/AgABAAYAAAD8//z/AgABAAYAAAD7/wIAAgACAAcAAAD8/wAAAgABAAYAAAD8////AgABAAYAAAD2/wIAAgACAAQAAAD3/wIAAgACAAcAAAD4/wEAAgACAAUAAAD4/wIAAgACAAcAAAD5/wEAAgACAAUAAAD5/wIAAgACAAcAAAD1/wIAAgABAAQAAAD3/wEAAgABAAUAAAD6//7/AgACAAQAAAD6/wEAAgACAAUAAAD6/wIAAgACAAcAAAD6//v/AgACAAQAAAD3//v/AgABAAQAAAD3//7/AgABAAQAAAD4//v/AgACAAQAAAD4//7/AgACAAQAAAD5//v/AgACAAQAAAD5//7/AgACAAQAAAD7/wAAAgAFAAYAAAD4//r/AgAGAAYAAAA=")
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=1300485581]
@@ -1050,10 +1052,6 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("7_mfkud")]
 position = Vector2(223, 75)
-
-[node name="Gate" parent="." unique_id=550434994 instance=ExtResource("10_yg775")]
-position = Vector2(-569, -161)
-scale = Vector2(3, 3)
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("12_yqg04")]
 position = Vector2(146, 250)
@@ -1079,26 +1077,6 @@ position = Vector2(514, -153)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_fi2td")]
 position = Vector2(97, -17)
-
-[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("17_imlax")]
-position = Vector2(341.83142, 251.57343)
-interact_action = "\" Pay the Sproutling’s little tax,Then you’re free to leave at last. \""
-npc_text = "\" Pay the Sproutling’s little tax,Then you’re free to leave at last. \""
-
-[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
-offset_left = -101.0
-offset_top = -89.0
-offset_right = 397.00006
-offset_bottom = 82.0
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("9_yg775")
-theme_override_font_sizes/font_size = 27
-text = "\" Pay the Sproutling’s little tax,
-Then you’re free to leave at last. \""
-metadata/_edit_use_anchors_ = true
 
 [node name="Item1" parent="." unique_id=1207001316 instance=ExtResource("17_0dnva")]
 position = Vector2(-572.9287, 15.623413)
@@ -1132,13 +1110,13 @@ region_enabled = true
 region_rect = Rect2(157.75641, 141.60904, 108.34338, 105.41522)
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
-position = Vector2(-418, -224)
+position = Vector2(-311, -223)
 
 [node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1307895906]
-offset_left = -83.0
-offset_top = -49.000004
-offset_right = 415.00006
-offset_bottom = 122.0
+offset_left = -124.0
+offset_top = -68.0
+offset_right = 374.00006
+offset_bottom = 103.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -1155,5 +1133,39 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("20_0mndl")
 
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("21_wiiqd")]
+visible = false
 position = Vector2(-379, -304)
 scale = Vector2(3, 3)
+
+[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("21_5oqnr")]
+position = Vector2(-546, -184)
+
+[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1154278823]
+offset_left = 19.999985
+offset_top = -69.000015
+offset_right = 518.00006
+offset_bottom = 101.999985
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_yg775")
+theme_override_font_sizes/font_size = 27
+text = "\" clue. \""
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" parent="." unique_id=954241513 instance=ExtResource("21_4onw6")]
+position = Vector2(411, 260)
+scale = Vector2(3, 3)
+
+[node name="gate" parent="." unique_id=550434994 instance=ExtResource("10_yg775")]
+position = Vector2(484, -107)
+scale = Vector2(3, 3)
+script = ExtResource("23_1rjxj")
+
+[node name="gate2" parent="." unique_id=1098154451 instance=ExtResource("10_yg775")]
+position = Vector2(-575, -161)
+scale = Vector2(3, 3)
+script = ExtResource("23_1rjxj")
+
+[connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

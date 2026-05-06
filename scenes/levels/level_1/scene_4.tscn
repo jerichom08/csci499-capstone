@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_2tk6r"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="10_rfl18"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="11_xe66q"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_5d1ty"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjb2i"]
 texture = ExtResource("2_avmw6")
@@ -665,5 +666,8 @@ target_path = NodePath("../Target_1")
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_2tk6r")]
 position = Vector2(97, -17)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_5d1ty")]
+position = Vector2(-560, 3)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

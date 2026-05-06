@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="13_1sttk"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="14_1sttk"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="15_rfnpt"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="19_k3kia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxo8g"]
 texture = ExtResource("1_0h6fl")
@@ -619,7 +620,7 @@ scale = Vector2(3, 3)
 script = ExtResource("5_6w5mp")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("8_1ydgn")]
-position = Vector2(21, 276)
+position = Vector2(-3, 256)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=367013843]
 position = Vector2(827, 1)
@@ -706,6 +707,9 @@ scale = Vector2(3, 3)
 [node name="bat2" parent="." unique_id=170560896 instance=ExtResource("15_rfnpt")]
 position = Vector2(476, -143)
 scale = Vector2(3, 3)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("19_k3kia")]
+position = Vector2(-609, 143)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="gate2" method="_on_button_2_button_pressed"]

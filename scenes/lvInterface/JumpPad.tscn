@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://db3qi0u7dhv2s" path="res://scenes/lvInterface/jump_pad.gd" id="1_1bbfk"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_jjgvv"]
+[ext_resource type="AudioStream" uid="uid://bxvrhs46exg8f" path="res://assets/sounds temp/level sounds/bounce.mp3" id="3_2dq4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bbfk"]
 size = Vector2(16, 7)
@@ -14,6 +15,9 @@ texture = ExtResource("1_jjgvv")
 hframes = 2
 region_enabled = true
 region_rect = Rect2(126, 94, 36, 14)
+
+[node name="sound player" type="AudioStreamPlayer" parent="." unique_id=1669316046]
+stream = ExtResource("3_2dq4h")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1991324510]
 

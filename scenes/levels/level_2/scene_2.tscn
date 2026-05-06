@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="11_ng8oe"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="12_5cqpn"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="12_80vwy"]
+[ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="13_x88pa"]
+[ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="14_m02ha"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_6y8wy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -815,3 +817,39 @@ position = Vector2(-233, 190)
 
 [node name="Spikes2" parent="." unique_id=715863427 instance=ExtResource("12_80vwy")]
 position = Vector2(-179, 189.99997)
+
+[node name="Item1" parent="." unique_id=1207001316 instance=ExtResource("13_x88pa")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Item1" unique_id=1487590549]
+position = Vector2(-449.12497, -184.5)
+scale = Vector2(0.42431128, 0.3771929)
+texture = ExtResource("14_m02ha")
+region_enabled = true
+region_rect = Rect2(285.13312, 137.21674, 109.807495, 114.19983)
+
+[node name="Item2" parent="." unique_id=1088422408 instance=ExtResource("13_x88pa")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Item2" unique_id=1418710084]
+position = Vector2(-443, 134)
+scale = Vector2(0.56982064, 0.68535036)
+texture = ExtResource("14_m02ha")
+region_enabled = true
+region_rect = Rect2(157.75641, 485.67258, 108.34338, 112.73569)
+
+[node name="Item3" parent="." unique_id=836316426 instance=ExtResource("13_x88pa")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Item3" unique_id=497804240]
+position = Vector2(91, -89)
+scale = Vector2(0.5857143, 0.5)
+texture = ExtResource("14_m02ha")
+region_enabled = true
+region_rect = Rect2(285.13312, 378.79327, 105.41522, 102.487)
+
+[node name="Item4" parent="." unique_id=1455084159 instance=ExtResource("13_x88pa")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Item4" unique_id=1190285704]
+position = Vector2(196, -295)
+scale = Vector2(0.46774194, 0.42436975)
+texture = ExtResource("14_m02ha")
+region_enabled = true
+region_rect = Rect2(270.49213, 0, 124.44849, 119.64754)

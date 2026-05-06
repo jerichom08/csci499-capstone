@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_hkv3s"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="7_mfkud"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="8_fi2td"]
-[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="8_la782"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="9_yg775"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="10_yg775"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="11_v4d6u"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="13_gaq46"]
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="14_m3ou3"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_n8pg6"]
+[ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1050,24 +1050,6 @@ position = Vector2(223, 75)
 position = Vector2(-569, -161)
 scale = Vector2(3, 3)
 
-[node name="ClueSign" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
-position = Vector2(-496, -223)
-
-[node name="InteractionLabel" type="Label" parent="ClueSign" unique_id=1314556152]
-offset_left = -120.0
-offset_top = -55.0
-offset_right = 378.00006
-offset_bottom = 116.0
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("9_yg775")
-theme_override_font_sizes/font_size = 27
-text = "\" Pay the Sproutling’s little tax,
-Then you’re free to leave at last. \""
-metadata/_edit_use_anchors_ = true
-
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("12_yqg04")]
 position = Vector2(146, 250)
 scale = Vector2(3, 3)
@@ -1092,3 +1074,23 @@ position = Vector2(514, -153)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_fi2td")]
 position = Vector2(97, -17)
+
+[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("17_imlax")]
+position = Vector2(-415, -185)
+interact_action = "\" Pay the Sproutling’s little tax,Then you’re free to leave at last. \""
+npc_text = "\" Pay the Sproutling’s little tax,Then you’re free to leave at last. \""
+
+[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
+offset_left = -120.0
+offset_top = -55.0
+offset_right = 378.00006
+offset_bottom = 116.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_yg775")
+theme_override_font_sizes/font_size = 27
+text = "\" Pay the Sproutling’s little tax,
+Then you’re free to leave at last. \""
+metadata/_edit_use_anchors_ = true

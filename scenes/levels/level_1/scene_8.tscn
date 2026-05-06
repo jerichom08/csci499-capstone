@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://cseowuw8i32le"]
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_3fp7r"]
-[ext_resource type="Script" path="res://scenes/levels/level_1/scene_8.gd" id="1_7u5ss"]
+[ext_resource type="Script" uid="uid://b4wpwbtn57ss2" path="res://scenes/levels/level_1/scene_8.gd" id="1_7u5ss"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_k3kia"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="5_c1cfn"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="6_tlx3o"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="8_l6ri2"]
 [ext_resource type="PackedScene" uid="uid://whunbwoakfj1" path="res://scenes/enemies/bosses/frog/frog.tscn" id="9_cs1uj"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="10_l3c5i"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="11_eqtf8"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="11_mn4ow"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="12_c3il6"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="15_g5mxj"]
@@ -493,7 +494,7 @@ texture_region_size = Vector2i(18, 18)
 15:7/0 = 0
 15:7/0/modulate = Color(1, 1, 1, 0.5647059)
 16:7/0 = 0
-16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -6.846612, 9, -6.846611, 6.6710567, -4.915514, -6.846609, -5.0910683)
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, -3.335527, -9, -2.9844189)
 17:7/0 = 0
 18:7/0 = 0
 19:7/0 = 0
@@ -586,7 +587,13 @@ tile_set = SubResource("TileSet_8oqd0")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1546364109]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AADk/wQAAgACAAYAAADl/wQAAgACAAEAAADm/wQAAgACAAEAAADn/wQAAgACAAEAAADo/wQAAgACAAEAAADp/wQAAgACAAEAAADq/wQAAgACAAEAAADr/wQAAgACAAEAAADs/wQAAgACAAEAAADt/wQAAgACAAEAAADu/wQAAgACAAEAAADv/wQAAgACAAEAAADw/wQAAgACAAEAAADx/wQAAgACAAEAAADy/wQAAgACAAEAAADz/wQAAgACAAEAAAD0/wQAAgACAAEAAAD1/wQAAgACAAEAAAD2/wQAAgACAAEAAAD3/wQAAgACAAEAAAD4/wQAAgACAAEAAAD5/wQAAgACAAEAAAD6/wQAAgACAAEAAAD7/wQAAgACAAEAAADl/wUAAgACAAYAAADm/wUAAgACAAYAAADn/wUAAgACAAYAAADo/wUAAgACAAYAAADp/wUAAgACAAYAAADq/wUAAgACAAYAAADr/wUAAgACAAYAAADs/wUAAgACAAYAAADt/wUAAgACAAYAAADu/wUAAgACAAYAAADv/wUAAgACAAYAAADw/wUAAgACAAYAAADx/wUAAgACAAYAAADy/wUAAgACAAYAAADz/wUAAgACAAYAAAD0/wUAAgACAAYAAAD1/wUAAgACAAYAAAD2/wUAAgACAAYAAAD3/wUAAgACAAYAAAD4/wUAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD7/wUAAgACAAYAAAD8/wUAAgACAAYAAAD9/wUAAgACAAYAAAD8/wYAAgACAAYAAAD6/wUAAgACAAYAAAD5/wUAAgACAAYAAAD3/wYAAgACAAYAAAD2/wYAAgACAAYAAAD1/wYAAgACAAYAAAD0/wYAAgACAAYAAADz/wYAAgACAAYAAADy/wYAAgACAAYAAADx/wYAAgACAAYAAADw/wYAAgACAAYAAADv/wYAAgACAAYAAADu/wYAAgACAAYAAADt/wYAAgACAAYAAADs/wYAAgACAAYAAADr/wYAAgACAAYAAADq/wYAAgACAAYAAADk/wUAAgACAAYAAADp/wYAAgACAAYAAADo/wYAAgACAAYAAADn/wYAAgACAAYAAADk/wYAAgACAAYAAADl/wYAAgACAAYAAADm/wYAAgACAAYAAADk/wEAAgADAAYAAADk/wAAAgAAAAYAAADk////AgAAAAYAAADk//7/AgAAAAYAAADk//3/AgAAAAYAAADk//z/AgAAAAYAAADk//v/AgAAAAYAAAD9/wMAAgAAAAYAAAD9/wIAAgAAAAYAAAD9/wEAAgAAAAYAAAD9/wAAAgAAAAYAAAD9////AgAAAAYAAAD8////AgABAAYAAAD8//7/AgABAAYAAAD8//r/AgABAAYAAAD8//n/AgABAAYAAAD8/wAAAgABAAYAAAD8/wEAAgABAAYAAAD8/wIAAgABAAYAAAD8/wMAAgABAAYAAADu//n/AgADAAYAAADu//r/AgADAAYAAADt//r/AgACAAcAAADs//r/AgACAAcAAADr//r/AgACAAcAAADq//r/AgACAAcAAADp//r/AgACAAcAAADo//r/AgACAAcAAADn//r/AgACAAcAAADm//r/AgACAAcAAADl//r/AgACAAcAAADt//n/AgACAAYAAADs//n/AgACAAYAAADr//n/AgACAAYAAADq//n/AgACAAYAAADp//n/AgACAAYAAADo//n/AgACAAYAAADn//n/AgACAAYAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADk//r/AgACAAYAAAD8/wQAAgACAAYAAADk/wIAAgADAAYAAADk/wMAAgADAAYAAADl/wMAAgAFAAYAAADm/wMAAgAEAAcAAADu//v/AgAAAAYAAADu//z/AgAAAAYAAADu//3/AgADAAcAAADr//3/AgABAAAAAADs//3/AgACAAAAAADt//3/AgACAAAAAAD8//z/AgACAAYAAAD8//3/AgACAAYAAAD8//v/AgABAAYAAAD7//3/AgACAAcAAAD6//3/AgACAAcAAAD5//3/AgACAAcAAAD7//z/AgACAAEAAAD6//z/AgACAAEAAAD5//z/AgACAAEAAAD4//z/AgACAAEAAAD4//3/AgACAAcAAAD3//3/AgACAAcAAAD3//z/AgACAAEAAAD2//z/AgABAAEAAAD2//3/AgABAAcAAAD6//n/AgARAAQAAAD6//r/AgARAAUAAAD6//v/AgARAAYAAAD7//n/AgATAAIAAAD5//n/AgARAAIAAAD7//r/AgASAAQAABD5//r/AgATAAYAABD5//v/AgAFAAcAAAD4//7/AgAEAAcAACDs//z/AgAIAAYAAAD4//r/AgAFAAUAAAD4//v/AgALAAMAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAAA=")
+tile_map_data = PackedByteArray("AADk/wQAAgACAAYAAADl/wQAAgACAAEAAADm/wQAAgACAAEAAADn/wQAAgACAAEAAADo/wQAAgACAAEAAADp/wQAAgACAAEAAADq/wQAAgACAAEAAADr/wQAAgACAAEAAADs/wQAAgACAAEAAADt/wQAAgACAAEAAADu/wQAAgACAAEAAADv/wQAAgACAAEAAADw/wQAAgACAAEAAADx/wQAAgACAAEAAADy/wQAAgACAAEAAADz/wQAAgACAAEAAAD0/wQAAgACAAEAAAD1/wQAAgACAAEAAAD2/wQAAgACAAEAAAD3/wQAAgACAAEAAAD4/wQAAgACAAEAAAD5/wQAAgACAAEAAAD6/wQAAgACAAEAAAD7/wQAAgACAAEAAADl/wUAAgACAAYAAADm/wUAAgACAAYAAADn/wUAAgACAAYAAADo/wUAAgACAAYAAADp/wUAAgACAAYAAADq/wUAAgACAAYAAADr/wUAAgACAAYAAADs/wUAAgACAAYAAADt/wUAAgACAAYAAADu/wUAAgACAAYAAADv/wUAAgACAAYAAADw/wUAAgACAAYAAADx/wUAAgACAAYAAADy/wUAAgACAAYAAADz/wUAAgACAAYAAAD0/wUAAgACAAYAAAD1/wUAAgACAAYAAAD2/wUAAgACAAYAAAD3/wUAAgACAAYAAAD4/wUAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD7/wUAAgACAAYAAAD8/wUAAgACAAYAAAD9/wUAAgACAAYAAAD8/wYAAgACAAYAAAD6/wUAAgACAAYAAAD5/wUAAgACAAYAAAD3/wYAAgACAAYAAAD2/wYAAgACAAYAAAD1/wYAAgACAAYAAAD0/wYAAgACAAYAAADz/wYAAgACAAYAAADy/wYAAgACAAYAAADx/wYAAgACAAYAAADw/wYAAgACAAYAAADv/wYAAgACAAYAAADu/wYAAgACAAYAAADt/wYAAgACAAYAAADs/wYAAgACAAYAAADr/wYAAgACAAYAAADq/wYAAgACAAYAAADk/wUAAgACAAYAAADp/wYAAgACAAYAAADo/wYAAgACAAYAAADn/wYAAgACAAYAAADk/wYAAgACAAYAAADl/wYAAgACAAYAAADm/wYAAgACAAYAAADk/wEAAgADAAYAAADk/wAAAgAAAAYAAADk////AgAAAAYAAADk//7/AgAAAAYAAADk//3/AgAAAAYAAADk//z/AgAAAAYAAADk//v/AgAAAAYAAAD9/wMAAgAAAAYAAAD9/wIAAgAAAAYAAAD9/wEAAgAAAAYAAAD9/wAAAgAAAAYAAAD9////AgAAAAYAAAD8////AgABAAYAAAD8/wAAAgABAAYAAAD8/wEAAgABAAYAAAD8/wIAAgABAAYAAAD8/wMAAgABAAYAAADu//n/AgADAAYAAADu//r/AgADAAYAAADt//r/AgACAAcAAADs//r/AgACAAcAAADr//r/AgACAAcAAADq//r/AgACAAcAAADp//r/AgACAAcAAADo//r/AgACAAcAAADn//r/AgACAAcAAADm//r/AgACAAcAAADl//r/AgACAAcAAADt//n/AgACAAYAAADs//n/AgACAAYAAADr//n/AgACAAYAAADq//n/AgACAAYAAADp//n/AgACAAYAAADo//n/AgACAAYAAADn//n/AgACAAYAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADk//r/AgACAAYAAAD8/wQAAgACAAYAAADk/wIAAgADAAYAAADk/wMAAgADAAYAAADl/wMAAgAFAAYAAADm/wMAAgAEAAcAAADu//v/AgAAAAYAAADu//z/AgAAAAYAAADu//3/AgADAAcAAADr//3/AgABAAAAAADs//3/AgACAAAAAADt//3/AgACAAAAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAAD8//n/AgACAAYAABD7//n/AgACAAYAABD6//n/AgACAAYAABD5//n/AgACAAYAABD4//n/AgACAAYAABD3//n/AgACAAYAABD2//n/AgACAAYAABD1//n/AgACAAYAABD0//n/AgACAAYAABDz//n/AgACAAYAABDy//n/AgADAAYAABD8//r/AgACAAYAABD7//r/AgACAAcAABD6//r/AgACAAcAABD5//r/AgACAAcAABD4//r/AgACAAcAABD3//r/AgACAAcAABD2//r/AgACAAcAABD1//r/AgACAAcAABD0//r/AgACAAcAABDz//r/AgACAAcAABDy//r/AgADAAYAABD8//v/AgABAAYAAADy//v/AgAAAAYAABD8//z/AgABAAYAAADy//z/AgAAAAYAABD8//3/AgABAAYAAAD1//3/AgABAAAAABD0//3/AgACAAAAABDz//3/AgACAAAAABDy//3/AgADAAcAABD8//7/AgABAAYAAADz//z/AgAFAAYAAAD0//v/AgAQAAMAAAD0//z/AgAQAAQAAAD1//z/AgAEAAcAAAA=")
+tile_set = SubResource("TileSet_5y2x0")
+
+[node name="p" type="TileMapLayer" parent="." unique_id=1099281182]
+position = Vector2(818, 22)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AADq//7/AgAQAAcAAADp//7/AgAQAAcAAADn/wAAAgAQAAcAAADo/wAAAgAQAAcAAAD3//7/AgAQAAcAABD2//7/AgAQAAcAABD5/wAAAgAQAAcAABD4/wAAAgAQAAcAABA=")
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="gate" parent="." unique_id=550434994 instance=ExtResource("5_c1cfn")]
@@ -596,7 +603,7 @@ script = ExtResource("6_tlx3o")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("8_l6ri2")]
 z_index = 1
-position = Vector2(450, -258)
+position = Vector2(309, 80)
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("12_c3il6")]
 position = Vector2(474.00006, 195.99997)
@@ -613,21 +620,16 @@ position = Vector2(97, -17)
 position = Vector2(-49, 27)
 scale = Vector2(3, 3)
 
-[node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("10_l3c5i")]
+[node name="DisappearingPlatforn3" parent="." unique_id=1667264246 instance=ExtResource("10_l3c5i")]
 position = Vector2(-589, 112)
-scale = Vector2(3, 3)
-
-[node name="DisappearingPlatforn3" parent="." unique_id=213703635 instance=ExtResource("10_l3c5i")]
-position = Vector2(-481, 20)
-scale = Vector2(3, 3)
-
-[node name="DisappearingPlatforn4" parent="." unique_id=1188814872 instance=ExtResource("10_l3c5i")]
-position = Vector2(-367, -55)
 scale = Vector2(3, 3)
 
 [node name="DisappearingPlatforn2" parent="." unique_id=965064528 instance=ExtResource("10_l3c5i")]
 position = Vector2(552, 112)
 scale = Vector2(3, 3)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("11_eqtf8")]
+position = Vector2(190, -202)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1120107661]
 
@@ -637,5 +639,7 @@ shape = SubResource("CapsuleShape2D_mn4ow")
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("11_mn4ow")]
 
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="boss_defeated" from="frog" to="." method="_on_frog_boss_defeated"]
 [connection signal="boss_defeated" from="frog" to="gate" method="_on_frog_boss_defeated"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

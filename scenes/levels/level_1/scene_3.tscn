@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="7_xe66q"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_2tk6r"]
-[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="13_itr4q"]
 [ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="14_hqohx"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="15_xjb2i"]
 
@@ -800,16 +799,16 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[sub_resource type="Resource" id="Resource_jl5l0"]
+[sub_resource type="Resource" id="Resource_s2bxe"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
-gravity = 10.0
+gravity = 100.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_rddbj"]
+[sub_resource type="Resource" id="Resource_hqohx"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
-gravity = 10.0
+gravity = 100.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [node name="Lv1R2" type="Node2D" unique_id=1440666369]
@@ -903,13 +902,10 @@ scale = Vector2(3, 3)
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_2tk6r")]
 position = Vector2(97, -17)
 
-[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("13_itr4q")]
-position = Vector2(-288, 241)
-
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("14_hqohx")]
 position = Vector2(405, -294)
-stats = SubResource("Resource_jl5l0")
+stats = SubResource("Resource_s2bxe")
 
 [node name="spider2" parent="." unique_id=672809836 instance=ExtResource("14_hqohx")]
 position = Vector2(-244, -297)
-stats = SubResource("Resource_rddbj")
+stats = SubResource("Resource_hqohx")

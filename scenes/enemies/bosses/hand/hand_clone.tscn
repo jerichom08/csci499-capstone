@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://bl5gp3g8ss4bo"]
+
+[ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scripts/enemies/components/palette_swap.tres" id="1_4pmdt"]
+[ext_resource type="Script" uid="uid://bhksva1mulcuf" path="res://scripts/enemies/bosses/hand/hand_clone.gd" id="1_bwjsp"]
+[ext_resource type="Texture2D" uid="uid://bgws2tt2bjrc2" path="res://assets/images/hand/hand_palette_swap.png" id="2_xyuux"]
+[ext_resource type="Texture2D" uid="uid://bw4xbopprw6j6" path="res://assets/images/hand/hand_palette_og.png" id="3_bwjsp"]
+[ext_resource type="Texture2D" uid="uid://cpploch0n22ub" path="res://assets/images/hand/spr_enemy_mud_hurt_strip4.png" id="4_4p2o3"]
+[ext_resource type="Texture2D" uid="uid://dtr4736wlsdcc" path="res://assets/images/hand/spr_enemy_mud_strip8.png" id="5_mxfpj"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="6_xyuux"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpybt"]
+shader = ExtResource("1_4pmdt")
+shader_parameter/og_palette = ExtResource("3_bwjsp")
+shader_parameter/new_palette = ExtResource("2_xyuux")
+shader_parameter/color_count = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v24qn"]
+atlas = ExtResource("4_4p2o3")
+region = Rect2(0, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfalx"]
+atlas = ExtResource("4_4p2o3")
+region = Rect2(62, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysndn"]
+atlas = ExtResource("4_4p2o3")
+region = Rect2(124, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eb3b"]
+atlas = ExtResource("4_4p2o3")
+region = Rect2(186, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmdsa"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(0, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7pjy"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(62, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1v21"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(124, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdemd"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(186, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n04oe"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(248, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yinqy"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(310, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ligq1"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(372, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1wyv"]
+atlas = ExtResource("5_mxfpj")
+region = Rect2(434, 0, 62, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abthl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v24qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfalx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysndn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eb3b")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmdsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7pjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1v21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdemd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n04oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yinqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ligq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1wyv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwjsp"]
+size = Vector2(55, 57)
+
+[node name="HandClone" type="Node2D" unique_id=880521471]
+script = ExtResource("1_bwjsp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329750586]
+texture_filter = 1
+material = SubResource("ShaderMaterial_xpybt")
+sprite_frames = SubResource("SpriteFrames_abthl")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1231489382]
+script = ExtResource("6_xyuux")
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1125636920]
+position = Vector2(-1.5, 4.5)
+shape = SubResource("RectangleShape2D_bwjsp")
+debug_color = Color(0, 1, 0, 0.41960785)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://csqvjbunqva2f"]
+
+[ext_resource type="Script" uid="uid://cfd4dp4dfqg8t" path="res://scenes/puzzles/PickupItem.gd" id="1_mkmmn"]
+[ext_resource type="Texture2D" uid="uid://bi56shwshcosw" path="res://icon.svg" id="2_gvq27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jiqe"]
+size = Vector2(41, 46)
+
+[node name="PickupItem" type="Area2D" unique_id=710280597]
+script = ExtResource("1_mkmmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=215027743]
+position = Vector2(10.5, 13)
+shape = SubResource("RectangleShape2D_0jiqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=664699747]
+texture = ExtResource("2_gvq27")

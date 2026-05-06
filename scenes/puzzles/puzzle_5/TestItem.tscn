@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bwilndgwo5sff"]
+
+[ext_resource type="Script" uid="uid://chov5f1jdlelt" path="res://scenes/puzzles/puzzle_5/test_item.gd" id="1_46tdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46tdf"]
+size = Vector2(41, 39)
+
+[node name="TestItem" type="Area2D" unique_id=1207001316]
+script = ExtResource("1_46tdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=664284858]
+position = Vector2(10.5, 9.5)
+shape = SubResource("RectangleShape2D_46tdf")

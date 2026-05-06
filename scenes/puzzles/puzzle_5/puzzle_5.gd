@@ -11,14 +11,45 @@ var puzzle_done: bool = false
 @onready var message_label = $MessageLabel
 @onready var exit_door = $ExitDoor
 @onready var section_entry_points = {
-	0: $Section1/EntryPoint,
+	0: $SpawnPoint,
 	1: $Section2/EntryPoint,
 	2: $Section3/EntryPoint
+}
+
+@onready var path_areas = {
+	$Section1/TopPath: "top",
+	$Section1/MiddlePath: "middle",
+	$Section1/BottomPath: "bottom",
+
+	$Section2/TopPath: "top",
+	$Section2/MiddlePath: "middle",
+	$Section2/BottomPath: "bottom",
+
+	$Section3/TopPath: "top",
+	$Section3/MiddlePath: "middle",
+	$Section3/BottomPath: "bottom"
 }
 
 func _ready() -> void:
 	if message_label:
 		message_label.visible = false
+	if exit_door:
+		exit_door.visible = false
+		exit_door.monitoring = false
+		
+	for area in path_areas.keys():
+		if area and area is Area2D:
+			area.monitoring = true
+			area.body_entered.connect(_on_path_body_entered.bind(path_areas[area]))
+		
+func _on_path_body_entered(body: Node2D, path_name: String) -> void:
+	if puzzle_done:
+		return
+
+	if not body.is_in_group("player"):
+		return
+
+	choose_path(path_name, body)
 
 func choose_path(path_name: String, player: Node2D) -> void:
 	print("choose_path called with:", path_name)

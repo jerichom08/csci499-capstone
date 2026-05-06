@@ -1,14 +1,8 @@
-extends Label
+extends Node
 
+signal coins_changed(total)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	text = "0" + str(CoinManager.get_total())
-	CoinManager.coins_changed.connect(_on_coins_changed)
+var total: int = 0
 
-
-func _on_coins_changed(total):
-	if (total < 10):
-		text = "0" + str(total)
-	else:
-		text = str(total)
+func get_total() -> int:
+	return total

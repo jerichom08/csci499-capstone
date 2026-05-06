@@ -4,6 +4,8 @@ extends Node2D
 @export var release_delay := 0.2  
 @onready var sprite = $Sprite2D  
 
+@onready var sound_player: AudioStreamPlayer = $"sound player"
+
 var release_timer := 0.0
 var player_on_pad := false
 
@@ -20,6 +22,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
 	player_on_pad = true
+	sound_player.play()
 	sprite.frame = 1
 	if body is CharacterBody2D:
 		body.velocity.y = force

@@ -619,7 +619,7 @@ scale = Vector2(3, 3)
 script = ExtResource("5_6w5mp")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("8_1ydgn")]
-position = Vector2(21, 276)
+position = Vector2(-3, 256)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=367013843]
 position = Vector2(827, 1)

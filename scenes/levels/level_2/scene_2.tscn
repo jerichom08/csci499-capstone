@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="13_x88pa"]
 [ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="14_m02ha"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_6y8wy"]
+[ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="15_m02ha"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="16_4dhsn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_0hn47")
@@ -857,3 +859,12 @@ scale = Vector2(0.46774194, 0.42436975)
 texture = ExtResource("14_m02ha")
 region_enabled = true
 region_rect = Rect2(270.49213, 0, 124.44849, 119.64754)
+
+[node name="Egg" type="Sprite2D" parent="." unique_id=730295562]
+position = Vector2(708, -10)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_m02ha")
+
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("16_4dhsn")]
+position = Vector2(-559, 32)
+scale = Vector2(3, 3)

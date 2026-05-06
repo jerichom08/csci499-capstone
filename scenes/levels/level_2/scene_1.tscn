@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="17_0dnva"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
 [ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="18_osl13"]
+[ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="20_0mndl"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="21_wiiqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1146,3 +1148,12 @@ theme_override_font_sizes/font_size = 27
 text = "\" Pay the Sproutling’s little tax,
 Then you’re free to leave at last. \""
 metadata/_edit_use_anchors_ = true
+
+[node name="Egg" type="Sprite2D" parent="." unique_id=2112516438]
+position = Vector2(708, -10)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_0mndl")
+
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("21_wiiqd")]
+position = Vector2(-379, -304)
+scale = Vector2(3, 3)

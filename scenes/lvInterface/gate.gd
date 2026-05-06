@@ -35,3 +35,11 @@ func _on_frog_boss_defeated() -> void:
 	
 	# Defer disabling collision to avoid "flushing queries" error
 	call_deferred("_disable_collision")
+
+func _on_puzzle_2_puzzle_completed_signal() -> void:
+	print("Gate opened.")
+
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.4)
+
+	call_deferred("_disable_collision")

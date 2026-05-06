@@ -10,4 +10,10 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		CoinManager.add_room_coin(1)
+		
+		$AudioStreamPlayer2D.play()
+		$CollisionShape2D.set_deferred("disabled", true)
+		$AnimatedSprite2D.visible = false
+		
+		await $AudioStreamPlayer2D.finished
 		queue_free()

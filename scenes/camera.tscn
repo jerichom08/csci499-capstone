@@ -8,6 +8,11 @@
 [ext_resource type="Script" uid="uid://js7cul2xq70r" path="res://scripts/lvls/coin_label.gd" id="4_ys67x"]
 [ext_resource type="Texture2D" uid="uid://yv3x0gb5nooq" path="res://assets/images/UI/scroll.png" id="5_b05li"]
 [ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="6_p8nh0"]
+[ext_resource type="Script" uid="uid://d0n8casn3hrwl" path="res://scenes/h_box_container.gd" id="6_v3c5o"]
+[ext_resource type="Texture2D" uid="uid://i3vsujlv28hi" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c37.png" id="7_qrs21"]
+[ext_resource type="Texture2D" uid="uid://dvaul16o8ld00" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c38.png" id="8_ty1so"]
+[ext_resource type="Texture2D" uid="uid://l2mjcjtlt4k4" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c39.png" id="9_goe4s"]
+[ext_resource type="Texture2D" uid="uid://dhxdna2cric7a" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c40.png" id="10_6v23c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b05li"]
 texture = ExtResource("2_tmlye")
@@ -950,17 +955,17 @@ tile_map_data = PackedByteArray("AAANAPn/AAAHAAEAAAANAPr/AAAHAAEAAAANAPv/AAAHAAE
 tile_set = SubResource("TileSet_p8nh0")
 
 [node name="temp life + score" type="TileMapLayer" parent="." unique_id=1669879909]
-position = Vector2(6, -6)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAMAPz/AAAiAAgAAAAMAP3/AAAiAAkAAAAMAP7/AAAiAAoAAAANAPz/AAAjAAgAAAANAP3/AAAjAAkAAAANAP7/AAAjAAoAAAAOAPz/AAAkAAgAAAAOAP3/AAAkAAkAAAAOAP7/AAAkAAoAAADx//n/AAAvAAwAAAA=")
+position = Vector2(-20, -20)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADx//n/AAAvAAwAAAAJAP3/AAAfAAgAAAAJAP7/AAAfAAkAAAAJAP//AAAfAAoAAAAKAP3/AAAgAAgAAAAKAP7/AAAgAAkAAAAKAP//AAAgAAoAAAALAP3/AAAhAAgAAAALAP7/AAAhAAkAAAALAP//AAAhAAoAAAA=")
 tile_set = SubResource("TileSet_ys67x")
 
 [node name="InteractionLabel" type="Label" parent="temp life + score" unique_id=286744738]
 texture_filter = 1
-offset_left = 215.0
-offset_top = -34.0
-offset_right = 246.0
-offset_bottom = 23.0
+offset_left = 167.25
+offset_top = -18.0
+offset_right = 198.25
+offset_bottom = 39.0
 theme_override_colors/font_color = Color(0.7137255, 0.5372549, 0.38431373, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -969,6 +974,41 @@ theme_override_font_sizes/font_size = 12
 text = "00
 "
 script = ExtResource("4_ys67x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="temp life + score" unique_id=1346163313]
+offset_left = 149.75
+offset_top = -43.25
+offset_right = 154.75
+offset_bottom = -39.75
+scale = Vector2(0.8, 0.8)
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("6_v3c5o")
+full_heart = ExtResource("7_qrs21")
+half_heart = ExtResource("8_ty1so")
+empty_heart = ExtResource("9_goe4s")
+
+[node name="Heart1" type="TextureRect" parent="temp life + score/HBoxContainer" unique_id=838816857]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Heart2" type="TextureRect" parent="temp life + score/HBoxContainer" unique_id=1243971530]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Heart3" type="TextureRect" parent="temp life + score/HBoxContainer" unique_id=783222686]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Coin" type="TextureRect" parent="temp life + score" unique_id=2128360579]
+offset_left = 146.75
+offset_top = -25.75
+offset_right = 172.25
+texture = ExtResource("10_6v23c")
+stretch_mode = 3
 
 [node name="temp inventory" type="TileMapLayer" parent="." unique_id=597128812]
 position = Vector2(35, 4)

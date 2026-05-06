@@ -85,7 +85,7 @@ func take_damage(amount: int, knockback: Vector2) -> void:
 	if health <= 0:
 		die()
 
-func heal(amount: int = 1):
+func heal(amount: int = 2):
 	if is_dead:
 		return
 	

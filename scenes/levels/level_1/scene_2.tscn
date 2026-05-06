@@ -7,11 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_avmw6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_gxgmc"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="6_rfl18"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="7_atlen"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="7_atlen"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="7_avmw6"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="7_xe66q"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_2tk6r"]
+[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="13_xe66q"]
+[ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="14_3n03w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iv2x"]
 texture = ExtResource("2_avmw6")
@@ -797,6 +799,18 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
+[sub_resource type="Resource" id="Resource_xe66q"]
+resource_local_to_scene = true
+script = ExtResource("14_3n03w")
+gravity = 100.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_3n03w"]
+resource_local_to_scene = true
+script = ExtResource("14_3n03w")
+gravity = 100.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
 [node name="Lv1R2" type="Node2D" unique_id=1440666369]
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1036639013]
@@ -877,10 +891,6 @@ scale = Vector2(20, 1)
 [node name="Spikes" parent="." unique_id=66394676 instance=ExtResource("7_avmw6")]
 position = Vector2(198, -188)
 
-[node name="bat4" parent="." unique_id=789512219 instance=ExtResource("7_atlen")]
-position = Vector2(336, -303)
-scale = Vector2(3, 3)
-
 [node name="bat3" parent="." unique_id=713067515 instance=ExtResource("7_atlen")]
 position = Vector2(160, -199)
 scale = Vector2(3, 3)
@@ -889,9 +899,13 @@ scale = Vector2(3, 3)
 position = Vector2(-45, -286)
 scale = Vector2(3, 3)
 
-[node name="bat" parent="." unique_id=413423160 instance=ExtResource("7_atlen")]
-position = Vector2(-318, -247.00002)
-scale = Vector2(3, 3)
-
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_2tk6r")]
 position = Vector2(97, -17)
+
+[node name="spider" parent="." unique_id=264598264 instance=ExtResource("13_xe66q")]
+position = Vector2(392, -308)
+stats = SubResource("Resource_xe66q")
+
+[node name="spider2" parent="." unique_id=1063099655 instance=ExtResource("13_xe66q")]
+position = Vector2(-255, -304)
+stats = SubResource("Resource_3n03w")

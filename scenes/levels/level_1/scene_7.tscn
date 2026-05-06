@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="5_c1cfn"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="6_tlx3o"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="8_l6ri2"]
-[ext_resource type="PackedScene" uid="uid://whunbwoakfj1" path="res://scenes/enemies/bosses/frog.tscn" id="9_cs1uj"]
+[ext_resource type="PackedScene" uid="uid://whunbwoakfj1" path="res://scenes/enemies/bosses/frog/frog.tscn" id="9_cs1uj"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="10_l3c5i"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="12_c3il6"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="15_g5mxj"]

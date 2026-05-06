@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpjywxcnjevuf" path="res://scripts/player/line_attack.gd" id="1_gbkoe"]
 [ext_resource type="Texture2D" uid="uid://dt4eysxltwgmi" path="res://assets/images/player/375.png" id="2_igyu8"]
-[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="3_338ia"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="3_338ia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q5hq"]
 atlas = ExtResource("2_igyu8")

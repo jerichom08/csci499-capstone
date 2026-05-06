@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://0h2xfahuajo5" path="res://scripts/lvls/animated_sprite_2d.gd" id="5_rtw2f"]
-[ext_resource type="PackedScene" uid="uid://d0wbk6fy0ftw2" path="res://scenes/enemies/mobs/nyarla_idle.tscn" id="6_oa1go"]
+[ext_resource type="PackedScene" uid="uid://d0wbk6fy0ftw2" path="res://scenes/mobs/nyarla_idle.tscn" id="6_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
 texture = ExtResource("3_bqqt6")

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="7_hgw45"]
 [ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="7_wagfe"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="11_5ni64"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="12_dausi"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="12_dausi"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="13_fjqn5"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="13_t0qep"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="14_cl6gn"]

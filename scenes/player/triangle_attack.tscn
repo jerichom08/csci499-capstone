@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddwbvnu4418vr" path="res://scripts/player/triangle_attack.gd" id="1_aecsh"]
 [ext_resource type="Texture2D" uid="uid://b4uv5y1v7stbl" path="res://assets/images/player/B_witch_attack.png" id="2_kee6l"]
-[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemy/hitbox.gd" id="3_kee6l"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="3_kee6l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8out"]
 atlas = ExtResource("2_kee6l")

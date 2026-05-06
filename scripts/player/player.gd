@@ -19,6 +19,10 @@ var is_dead := false
 @onready var sprite = $AnimatedSprite2D
 const WORLD_SCALE = 3.0
 
+#----------inventory line--------
+@onready var held_item_sprite: Sprite2D = $ItemHolder/HeldItemSprite
+
+
 const maxSpeed = 120.0 * WORLD_SCALE
 const jumpVelocity = -170.0 * WORLD_SCALE
 const jumpMultiplier = 0.7
@@ -41,9 +45,17 @@ var attack_animations = {
 var controlling_projectile := false
 var current_projectile = null
 
+#--------inventory--------
+var inventory: Array[Dictionary] = []
+var selected_item_index: int = -1
+var current_item_name: String = ""
+
 func _ready() -> void:
 	health = max_health
 	
+	if held_item_sprite:
+		held_item_sprite.visible = false
+		
 func take_damage(amount: int, knockback: Vector2) -> void:
 	#print("player took damage")
 
@@ -234,3 +246,59 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation.ends_with("_attack") and sprite.animation != "circle_attack":
 		is_attacking = false
 		
+# ---------------Below implemntation of inventory system---------------------
+func add_item(item_name: String, item_texture: Texture2D) -> void:
+	var item = {
+		"name": item_name,
+		"texture": item_texture
+	}
+
+	inventory.append(item)
+
+	if selected_item_index == -1:
+		select_item(0)
+
+
+func select_item(index: int) -> void:
+	if index < 0 or index >= inventory.size():
+		return
+
+	selected_item_index = index
+
+	var item = inventory[selected_item_index]
+	hold_item(item["name"], item["texture"])
+
+func hold_item(item_name: String, item_texture: Texture2D) -> void:
+	current_item_name = item_name
+
+	if held_item_sprite:
+		held_item_sprite.texture = item_texture
+		held_item_sprite.visible = true
+		held_item_sprite.show()
+		held_item_sprite.z_index = 999
+		held_item_sprite.z_as_relative = false
+		held_item_sprite.global_position = global_position + Vector2(0, -100)
+		held_item_sprite.scale = (Vector2.ONE / WORLD_SCALE) / 2.0
+		held_item_sprite.modulate = Color(1, 1, 1, 1)
+
+
+func clear_held_item() -> void:
+	current_item_name = ""
+
+	if held_item_sprite:
+		held_item_sprite.texture = null
+		held_item_sprite.visible = false
+
+
+func remove_selected_item() -> void:
+	if selected_item_index == -1:
+		return
+
+	inventory.remove_at(selected_item_index)
+
+	if inventory.size() == 0:
+		selected_item_index = -1
+		clear_held_item()
+	else:
+		selected_item_index = clamp(selected_item_index, 0, inventory.size() - 1)
+		select_item(selected_item_index)

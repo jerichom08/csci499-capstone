@@ -1,12 +1,13 @@
 """
 CharacterBody2D
-├─AnimatedSprite2D (Core)
-├─CollisionShape2D (Core)
-├─Hurtbox (Core)
+├─CollisionShape2D 
+├─AnimatedSprite2D 
+├─Hurtbox
 ├─Hitbox (Optional)
 ├─VisionRay (Optional)
 ├─WallRay (Optional)
-└─LedgeRay(Optional)
+├─LedgeRay(Optional)
+└─PlayerDetectionZone (Optional)
 """
 
 class_name EnemyBase extends CharacterBody2D

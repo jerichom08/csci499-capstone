@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gccjujw6ila0"]
 
-[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider.tscn" id="1_4qwix"]
+[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="1_4qwix"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_rjs0u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rjs0u"]

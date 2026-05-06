@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqjms010x4v87"]
 
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat.tscn" id="1_q215g"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="1_q215g"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_yggys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeqw0"]
@@ -8,6 +8,9 @@ size = Vector2(1276, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4abqv"]
 size = Vector2(661, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utmqb"]
+size = Vector2(105.5, 102)
 
 [node name="test-bat" type="Node2D" unique_id=1281306259]
 
@@ -30,3 +33,10 @@ debug_color = Color(0, 0, 1, 0.41960785)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_yggys")]
 position = Vector2(408, 401)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1789520569]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2008926030]
+position = Vector2(505, 304)
+shape = SubResource("RectangleShape2D_utmqb")
+debug_color = Color(0.97367436, 0, 0.43568832, 0.41960785)

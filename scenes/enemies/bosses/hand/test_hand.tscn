@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dj123b01wc0lx"]
+
+[ext_resource type="PackedScene" uid="uid://bbwkf3di5h7r6" path="res://scenes/enemies/bosses/hand/hand.tscn" id="1_jvv6t"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_7y1pd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tnbg4"]
+
+[node name="test_hand" type="Node2D" unique_id=915210185]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1806213722]
+position = Vector2(690, 675)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=541893989]
+shape = SubResource("WorldBoundaryShape2D_tnbg4")
+
+[node name="hand" parent="." unique_id=126375272 instance=ExtResource("1_jvv6t")]
+position = Vector2(600, 637)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_7y1pd")]
+position = Vector2(756, 635)

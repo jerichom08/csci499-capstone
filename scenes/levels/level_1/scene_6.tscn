@@ -681,7 +681,7 @@ script = ExtResource("6_gw3ed")
 spawn_path = NodePath("../../SpawnPoint")
 
 [node name="Door_7" parent="Node2D" unique_id=990334707 instance=ExtResource("5_fe028")]
-position = Vector2(-381, -154)
+position = Vector2(-382, -154)
 script = ExtResource("6_gw3ed")
 spawn_path = NodePath("../../SpawnPoint")
 

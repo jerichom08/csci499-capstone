@@ -19,6 +19,9 @@ signal health_changed(current, max)
 @export var circle_attack_scene: PackedScene
 @export var triangle_attack_scene: PackedScene
 @onready var sprite = $AnimatedSprite2D
+@onready var line_attack_sfx = $LineAttackSFX
+@onready var circle_attack_sfx = $CircleAttackSFX
+@onready var triangle_attack_sfx = $TriangleAttackSFX
 const WORLD_SCALE = 3.0
 
 #----------inventory line--------
@@ -193,8 +196,10 @@ func _on_hud_triangle_drawn() -> void:
 func spawn_attack(type: String):
 		match type:
 			"line":
+				line_attack_sfx.play()
 				spawn_line_attack()
 			"circle":
+				circle_attack_sfx.play()
 				spawn_circle_attack()
 			"triangle":
 				spawn_triangle_attack()
@@ -250,6 +255,9 @@ func spawn_triangle_attack():
 	attack.global_position = $AttackSpawn.global_position
 	
 	attack.scale.x *= -1 if sprite.flip_h else 1
+	
+	await create_tween().tween_interval(0.3).finished
+	triangle_attack_sfx.play()
 
 func perform_attack(type: String):
 	if is_attacking or not is_on_floor():

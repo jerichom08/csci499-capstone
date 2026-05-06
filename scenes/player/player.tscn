@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://b7vk25fjpy5ax" path="res://assets/images/player/witch_death.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="7_fjrip"]
+[ext_resource type="AudioStream" uid="uid://dl4lifc70hsg2" path="res://assets/sounds temp/level sounds/snd_laz.wav" id="11_je7p5"]
+[ext_resource type="AudioStream" uid="uid://ba5fclnfsu0q0" path="res://assets/sounds temp/level sounds/snd_damage.wav" id="12_fm80t"]
+[ext_resource type="AudioStream" uid="uid://cj4lxovhc0hq" path="res://assets/sounds temp/level sounds/mus_sfx_spellcast.wav" id="12_gx1jg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
 atlas = ExtResource("4_5gtgg")
@@ -411,6 +414,15 @@ position = Vector2(0, -60)
 scale = Vector2(20, 20)
 
 [node name="HeldItemSprite" type="Sprite2D" parent="ItemHolder" unique_id=1604656247]
+
+[node name="LineAttackSFX" type="AudioStreamPlayer2D" parent="." unique_id=498467217]
+stream = ExtResource("11_je7p5")
+
+[node name="CircleAttackSFX" type="AudioStreamPlayer2D" parent="." unique_id=1852821923]
+stream = ExtResource("12_gx1jg")
+
+[node name="TriangleAttackSFX" type="AudioStreamPlayer2D" parent="." unique_id=2017562627]
+stream = ExtResource("12_fm80t")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="Hurtbox" to="." method="_on_hurtbox_area_shape_entered"]

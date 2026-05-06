@@ -1,19 +1,14 @@
-extends Label
+extends Node
+
+signal coins_changed(total: int)
+
+var total_coins: int = 0
 
 
-func _ready() -> void:
-	update_text(CoinManager.get_total())
-
-	if not CoinManager.coins_changed.is_connected(_on_coins_changed):
-		CoinManager.coins_changed.connect(_on_coins_changed)
+func add_coin(amount: int = 1) -> void:
+	total_coins += amount
+	coins_changed.emit(total_coins)
 
 
-func _on_coins_changed(total: int) -> void:
-	update_text(total)
-
-
-func update_text(total: int) -> void:
-	if total < 10:
-		text = "0" + str(total)
-	else:
-		text = str(total)
+func get_total() -> int:
+	return total_coins

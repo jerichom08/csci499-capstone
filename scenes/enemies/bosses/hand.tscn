@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bbwkf3di5h7r6"]
 
-[ext_resource type="Script" uid="uid://cs4s8so4j0o7u" path="res://scripts/enemy/hand.gd" id="1_45kcu"]
+[ext_resource type="Script" uid="uid://cs4s8so4j0o7u" path="res://scripts/enemies/bosses/frog/hand.gd" id="1_45kcu"]
 [ext_resource type="Texture2D" uid="uid://cpploch0n22ub" path="res://assets/images/hand/spr_enemy_mud_hurt_strip4.png" id="1_cmdsa"]
 [ext_resource type="Texture2D" uid="uid://dtr4736wlsdcc" path="res://assets/images/hand/spr_enemy_mud_strip8.png" id="1_eyfoh"]
-[ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scenes/palette_swap.tres" id="1_uvhw8"]
+[ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scripts/enemies/components/palette_swap.tres" id="1_uvhw8"]
 [ext_resource type="Texture2D" uid="uid://bgws2tt2bjrc2" path="res://assets/images/hand/hand_palette_swap.png" id="2_45kcu"]
 [ext_resource type="Texture2D" uid="uid://bw4xbopprw6j6" path="res://assets/images/hand/hand_palette_og.png" id="3_0oine"]
 

@@ -64,7 +64,6 @@ func rest() -> void:
 		start_ribbit_loop()
 
 func chase() -> void:
-	
 	set_state(State.CHASE)
 	
 	var player: Node2D = get_player()
@@ -142,9 +141,11 @@ func spawn_spiders() -> void:
 	for i in range(50):
 		var spider = spider_scene.instantiate()
 		get_parent().add_child(spider)
-
+		spider.sprite.modulate.a = 0.0
+		spider.set_state(State.IDLE)
+		spider.fade_in()
 		spider.face_direction(1)
-		spider.scale *= WORLD_SCALE
+		#spider.scale *= WORLD_SCALE
 		
 		# Slight random spread
 		var offset := Vector2(randf_range(-100, 100), randf_range(0, 200))

@@ -864,7 +864,7 @@ position = Vector2(-397, -161)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_gxgmc")]
-position = Vector2(634, -300)
+position = Vector2(622, -305)
 scale = Vector2(0.9, 0.9)
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("6_rfl18")]

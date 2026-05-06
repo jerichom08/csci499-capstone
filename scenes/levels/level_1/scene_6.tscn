@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bstsy7om3txek"]
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_7gcic"]
-[ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_0unn0"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_0unn0"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_axkas"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="3_bpdsq"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="4_8oqd0"]
@@ -667,6 +667,7 @@ spawn_path = NodePath("../../SpawnPoint")
 [node name="Door_4" parent="Node2D" unique_id=1538867615 instance=ExtResource("5_fe028")]
 position = Vector2(-582, -156)
 script = ExtResource("6_gw3ed")
+target_path = NodePath("../../spawnPoint")
 spawn_path = NodePath("../../SpawnPoint")
 
 [node name="Door_5" parent="Node2D" unique_id=357206373 instance=ExtResource("5_fe028")]
@@ -678,11 +679,13 @@ spawn_path = NodePath("../../SpawnPoint")
 [node name="Door_6" parent="Node2D" unique_id=1424021197 instance=ExtResource("5_fe028")]
 position = Vector2(422, -145)
 script = ExtResource("6_gw3ed")
+target_path = NodePath("../../spawnPoint")
 spawn_path = NodePath("../../SpawnPoint")
 
 [node name="Door_7" parent="Node2D" unique_id=990334707 instance=ExtResource("5_fe028")]
 position = Vector2(-381, -154)
 script = ExtResource("6_gw3ed")
+target_path = NodePath("../../spawnPoint")
 spawn_path = NodePath("../../SpawnPoint")
 
 [node name="Targets" type="Node2D" parent="." unique_id=2023680980]
@@ -705,3 +708,6 @@ position = Vector2(97, -17)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("12_scqn4")]
 position = Vector2(-486, -158)
+
+[node name="spawnPoint" type="Marker2D" parent="." unique_id=1248179490]
+position = Vector2(581, 185)

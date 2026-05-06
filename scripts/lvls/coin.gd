@@ -1,13 +1,19 @@
-extends Area2D
+extends Label
 
-@export var value: int = 1
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimatedSprite2D.play("spin")
-	body_entered.connect(_on_body_entered)
+	update_text(CoinManager.get_total())
 
-func _on_body_entered(body):
-	if body.is_in_group("player"):
-		CoinManager.add_room_coin(1)
-		queue_free()
+	if not CoinManager.coins_changed.is_connected(_on_coins_changed):
+		CoinManager.coins_changed.connect(_on_coins_changed)
+
+
+func _on_coins_changed(total: int) -> void:
+	update_text(total)
+
+
+func update_text(total: int) -> void:
+	if total < 10:
+		text = "0" + str(total)
+	else:
+		text = str(total)

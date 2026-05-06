@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="7_tnvac"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="8_o4gie"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_bpdsq"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="12_scqn4"]
 
 [sub_resource type="GDScript" id="GDScript_n15qb"]
 script/source = "extends Node2D
@@ -701,3 +702,6 @@ position = Vector2(-187, -321)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_bpdsq")]
 position = Vector2(97, -17)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("12_scqn4")]
+position = Vector2(-486, -158)

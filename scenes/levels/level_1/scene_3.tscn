@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="7_xe66q"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_2tk6r"]
+[ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="13_itr4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iv2x"]
 texture = ExtResource("2_avmw6")
@@ -895,3 +896,6 @@ scale = Vector2(3, 3)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_2tk6r")]
 position = Vector2(97, -17)
+
+[node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("13_itr4q")]
+position = Vector2(-288, 241)

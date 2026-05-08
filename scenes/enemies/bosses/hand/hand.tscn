@@ -13,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_0ofnw"]
 script = ExtResource("2_joeo2")
+faces_left = false
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j00ee"]
@@ -144,6 +145,8 @@ position = Vector2(-5, 28)
 shape = SubResource("RectangleShape2D_eyfoh")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=208754301]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("8_ff2jo")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"
 
@@ -153,10 +156,15 @@ shape = SubResource("CircleShape2D_hq6h7")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2136483316]
+collision_layer = 4
 script = ExtResource("9_pwxef")
+apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1140325091]
 position = Vector2(-3.5, 22)
 shape = SubResource("RectangleShape2D_rh6lw")
 debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="VisionRay" type="RayCast2D" parent="." unique_id=1555714647]
+target_position = Vector2(200, 10)

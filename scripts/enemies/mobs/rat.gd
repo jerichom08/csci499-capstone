@@ -1,42 +1,61 @@
 extends EnemyBase
 
 @export var chase_speed : float = 350.0
-@export var burst_duration : float = 0.4
 @export var chase_duration : float = 1.5
 @export var underground_wait : float = 1.0
-@export var underground_distance : float = 80.0
-@export var player_offset : float = 20.0
+@export var patrol_radius : float = 250.0
+@export var player_offset : float = 25.0
+@export var hole_delay : float = 0.5
 
-var emerging := false
+@export var hole_scene : PackedScene
+
+@onready var pdz = $PlayerDetectionZone
+
 var disappearing := false
-var base_y : float
+var active := false
+var cycle_started := false
+
+var base_position : Vector2
+var next_spawn_position : Vector2
 
 func _ready() -> void:
 	super._ready()
 
 	scale *= 3
 
-	base_y = global_position.y
+	base_position = global_position
+	next_spawn_position = base_position
 
-	# disable collisions underground
+	set_state(State.REST)
+
+	# start hidden
+	sprite.modulate.a = 0.0
+
 	set_collisions_enabled(false)
 
-	# start underground
-	global_position.y += underground_distance
-	sprite.modulate.a = 1.0
+func _process(_delta: float) -> void:
+	if cycle_started:
+		return
 
-	emerge()
+	if pdz.player != null:
+		cycle_started = true
+		start_cycle()
 
-func _physics_process(delta: float) -> void:
-	if emerging or disappearing:
-		move_and_slide()
+func _physics_process(_delta: float) -> void:
+	update_state_machine()
+	move_and_slide()
+
+func rest() -> void:
+	velocity = Vector2.ZERO
+
+func chase() -> void:
+	if disappearing:
 		return
 
 	var player := get_player()
 
 	if player == null:
 		velocity.x = 0
-		move_and_slide()
 		return
 
 	var target_x : float
@@ -45,6 +64,12 @@ func _physics_process(delta: float) -> void:
 		target_x = player.global_position.x - player_offset
 	else:
 		target_x = player.global_position.x + player_offset
+
+	target_x = clamp(
+		target_x,
+		base_position.x - patrol_radius,
+		base_position.x + patrol_radius
+	)
 
 	var dir : int = sign(target_x - global_position.x)
 
@@ -55,72 +80,91 @@ func _physics_process(delta: float) -> void:
 	if abs(global_position.x - target_x) <= 10:
 		velocity.x = 0
 
-	move_and_slide()
+func start_cycle() -> void:
+	while current_state != State.DEFEAT:
+		await get_tree().create_timer(underground_wait).timeout
 
-func emerge() -> void:
-	emerging = true
+		if current_state == State.DEFEAT:
+			return
+
+		var spawn_x := randf_range(
+			base_position.x - patrol_radius,
+			base_position.x + patrol_radius
+		)
+
+		next_spawn_position = Vector2(
+			spawn_x,
+			base_position.y
+		)
+
+		spawn_hole(next_spawn_position, "open")
+
+		await get_tree().create_timer(hole_delay).timeout
+
+		if current_state == State.DEFEAT:
+			return
+
+		spawn_rat()
+
+		await get_tree().create_timer(chase_duration).timeout
+
+		if current_state == State.DEFEAT:
+			return
+
+		await despawn_rat()
+
+func spawn_rat() -> void:
+	active = true
 	disappearing = false
 
-	# enable collisions when emerging
+	global_position = next_spawn_position
+
+	sprite.modulate.a = 1.0
+
 	set_collisions_enabled(true)
 
-	sprite.play("idle")
+	set_state(State.CHASE)
 
-	var tween := create_tween()
+func despawn_rat() -> void:
+	if disappearing or current_state == State.DEFEAT:
+		return
 
-	tween.tween_property(
-		self,
-		"global_position:y",
-		base_y,
-		burst_duration
-	)
-
-	await tween.finished
-
-	emerging = false
-
-	sprite.play("chase")
-
-	await get_tree().create_timer(chase_duration).timeout
-
-	go_underground()
-
-func go_underground() -> void:
 	disappearing = true
 
 	velocity = Vector2.ZERO
 
-	sprite.play("idle")
+	var disappear_position := global_position
 
-	var tween := create_tween()
-	tween.set_parallel(true)
+	# instantly hide rat
+	sprite.modulate.a = 0.0
 
-	tween.tween_property(
-		self,
-		"global_position:y",
-		base_y + underground_distance,
-		burst_duration
-	)
-
-	tween.tween_property(
-		sprite,
-		"modulate:a",
-		0.0,
-		burst_duration
-	)
-
-	await tween.finished
-
-	# disable collisions underground
 	set_collisions_enabled(false)
 
-	disappearing = false
+	set_state(State.REST)
 
-	await get_tree().create_timer(underground_wait).timeout
+	active = false
 
-	sprite.modulate.a = 1.0
+	# play closing hole AFTER despawn
+	spawn_hole(disappear_position, "close")
 
-	emerge()
+func spawn_hole(pos : Vector2, anim : String) -> void:
+	if hole_scene == null:
+		return
+
+	var hole = hole_scene.instantiate()
+
+	get_parent().add_child(hole)
+
+	hole.global_position = pos
+
+	#hole.z_index = z_index - 1
+	hole.z_index = 100
+	
+
+	var hole_sprite := hole.get_node_or_null("AnimatedSprite2D")
+
+	if hole_sprite:
+		hole_sprite.play(anim)
 
 func set_collisions_enabled(enabled : bool) -> void:
 	$CollisionShape2D.disabled = !enabled
@@ -132,3 +176,21 @@ func set_collisions_enabled(enabled : bool) -> void:
 	if hitbox:
 		hitbox.monitoring = enabled
 		hitbox.monitorable = enabled
+
+func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
+	if current_state == State.DEFEAT:
+		return
+
+	set_state(State.DEFEAT)
+
+	velocity = Vector2.ZERO
+
+	set_collisions_enabled(false)
+
+	sprite.modulate.a = 1.0
+
+	sprite.play("defeat")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "defeat":
+		queue_free()

@@ -43,7 +43,7 @@ func return_to_spawn() -> void:
 	face_direction(-sign(direction.x))
 
 func chase() -> void:
-	set_state(State.CHASE)
+	#set_state(State.CHASE)
 	
 	var player = pdz.player
 	if player == null:
@@ -77,5 +77,7 @@ func can_see_player_los(player: Node2D) -> bool:
 	
 	if not vision_ray.is_colliding():
 		return false
+	
+	print(vision_ray.get_collider())
 	
 	return vision_ray.get_collider() == player

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://v5lwb3ciyyd8"]
+
+[ext_resource type="Texture2D" uid="uid://dvf224nbp3d40" path="res://assets/images/rat/hole.png" id="1_1dyes"]
+[ext_resource type="Script" uid="uid://bkf2cqjbppgul" path="res://scripts/enemies/mobs/rat_hole.gd" id="1_jifh5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jifh5"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dixx3"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cr4h"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpsom"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0uqu"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfr51"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji8es"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlicm"]
+atlas = ExtResource("1_1dyes")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3scak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jifh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dixx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cr4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpsom")
+}],
+"loop": false,
+"name": &"close",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0uqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfr51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji8es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlicm")
+}],
+"loop": false,
+"name": &"open",
+"speed": 8.0
+}]
+
+[node name="RatHole" type="Node2D" unique_id=1753034209]
+script = ExtResource("1_jifh5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1774559120]
+sprite_frames = SubResource("SpriteFrames_3scak")
+animation = &"open"

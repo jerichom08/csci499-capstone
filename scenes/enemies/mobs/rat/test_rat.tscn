@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8b1yme1kdaue"]
 
-[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat.tscn" id="1_mkja0"]
+[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="1_mkja0"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_apnyg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dj8qa"]

@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cwddpl64tmi1h" path="res://scenes/mobs/turnipNPCF.tscn" id="21_5oqnr"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="21_wiiqd"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="23_1rjxj"]
+[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="24_1rjxj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1166,5 +1167,8 @@ script = ExtResource("23_1rjxj")
 position = Vector2(-575, -161)
 scale = Vector2(3, 3)
 script = ExtResource("23_1rjxj")
+
+[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("24_1rjxj")]
+position = Vector2(282, 265)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

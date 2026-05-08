@@ -1,41 +1,32 @@
 [gd_scene format=3 uid="uid://diruyewfe185g"]
 
+[ext_resource type="Script" uid="uid://baiuax4nnmupw" path="res://scripts/lvls/player_icon.gd" id="1_eyug6"]
 [ext_resource type="Texture2D" uid="uid://bhl2v8nsj64pj" path="res://assets/images/UI/UI Pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_rjwjj"]
 [ext_resource type="Texture2D" uid="uid://5n3unyyn7fm5" path="res://assets/images/player/B_witch_icon.png" id="2_ddvy2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rwss"]
-atlas = ExtResource("2_ddvy2")
-region = Rect2(0, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eyug6"]
-atlas = ExtResource("2_ddvy2")
-region = Rect2(0, 48, 32, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmdt1"]
 atlas = ExtResource("2_ddvy2")
-region = Rect2(0, 96, 32, 48)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4iq3g"]
 atlas = ExtResource("2_ddvy2")
-region = Rect2(0, 144, 32, 48)
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h72au"]
 atlas = ExtResource("2_ddvy2")
-region = Rect2(0, 192, 32, 48)
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gyiu7"]
 atlas = ExtResource("2_ddvy2")
-region = Rect2(0, 240, 32, 48)
+region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ddvy2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddvy2"]
+atlas = ExtResource("2_ddvy2")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btw3e"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8rwss")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eyug6")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nmdt1")
 }, {
@@ -47,6 +38,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gyiu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddvy2")
 }],
 "loop": true,
 "name": &"default",
@@ -54,6 +48,7 @@ animations = [{
 }]
 
 [node name="PlayerIcon" type="Node2D" unique_id=1646893056]
+script = ExtResource("1_eyug6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1154590370]
 position = Vector2(64.5, 58.922623)
@@ -62,8 +57,8 @@ texture = ExtResource("1_rjwjj")
 region_enabled = true
 region_rect = Rect2(153, 105, 30, 30)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1387640642]
-texture_filter = 1
-position = Vector2(67, 75)
-scale = Vector2(2.4843748, 2.4843748)
-sprite_frames = SubResource("SpriteFrames_ddvy2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652629795]
+position = Vector2(64.5, 58.999996)
+scale = Vector2(3.0625, 2.9999995)
+sprite_frames = SubResource("SpriteFrames_btw3e")
+frame_progress = 0.37660906

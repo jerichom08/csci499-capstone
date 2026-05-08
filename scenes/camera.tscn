@@ -960,28 +960,20 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AADx//n/AAAvAAwAAAAJAP3/AAAfAAgAAAAJAP7/AAAfAAkAAAAJAP//AAAfAAoAAAAKAP3/AAAgAAgAAAAKAP7/AAAgAAkAAAAKAP//AAAgAAoAAAALAP3/AAAhAAgAAAALAP7/AAAhAAkAAAALAP//AAAhAAoAAAA=")
 tile_set = SubResource("TileSet_ys67x")
 
-[node name="InteractionLabel" type="Label" parent="temp life + score" unique_id=286744738]
-texture_filter = 1
-offset_left = 167.25
-offset_top = -18.0
-offset_right = 198.25
-offset_bottom = 39.0
-theme_override_colors/font_color = Color(0.7137255, 0.5372549, 0.38431373, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_mq7sm")
-theme_override_font_sizes/font_size = 12
-text = "00
-"
-script = ExtResource("4_ys67x")
+[node name="Coin" type="TextureRect" parent="temp life + score" unique_id=2128360579]
+offset_left = 146.75
+offset_top = -25.75
+offset_right = 172.25
+texture = ExtResource("10_6v23c")
+stretch_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="temp life + score" unique_id=1346163313]
-offset_left = 149.75
-offset_top = -43.25
-offset_right = 154.75
-offset_bottom = -39.75
+offset_left = 153.25
+offset_top = -42.75
+offset_right = 160.25
+offset_bottom = -39.25
 scale = Vector2(0.8, 0.8)
-theme_override_constants/separation = 0
+theme_override_constants/separation = -4
 alignment = 1
 script = ExtResource("6_v3c5o")
 full_heart = ExtResource("7_qrs21")
@@ -1003,18 +995,27 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Coin" type="TextureRect" parent="temp life + score" unique_id=2128360579]
-offset_left = 146.75
-offset_top = -25.75
-offset_right = 172.25
-texture = ExtResource("10_6v23c")
-stretch_mode = 3
-
 [node name="temp inventory" type="TileMapLayer" parent="." unique_id=597128812]
 position = Vector2(35, 4)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAMAP//AAAvAAIAAAAMAAAAAAAvAAMAAAAMAAEAAAAvAAIAAAAMAAIAAAAvAAMAAAANAP//AAAuAAIAAAANAAAAAAAuAAMAAAANAAEAAAAuAAIAAAANAAIAAAAuAAMAAAAOAP//AAAvAAIAAAAOAAAAAAAvAAMAAAAOAAEAAAAvAAIAAAAOAAIAAAAvAAMAAAALAP//AAAuAAIAAAALAAAAAAAuAAMAAAALAAEAAAAuAAIAAAALAAIAAAAuAAMAAAA=")
 tile_set = SubResource("TileSet_ys67x")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=286744738]
+texture_filter = 1
+offset_left = 640.0
+offset_top = -90.0
+offset_right = 733.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.7137255, 0.5372549, 0.38431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 2
+theme_override_fonts/font = ExtResource("4_mq7sm")
+theme_override_font_sizes/font_size = 45
+text = "000"
+script = ExtResource("4_ys67x")
 
 [node name="border" type="TileMapLayer" parent="." unique_id=278327386]
 position = Vector2(13.000001, 4)

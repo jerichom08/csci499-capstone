@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Nyarla’s Birthday Bash"
-run/main_scene="uid://cseowuw8i32le"
+run/main_scene="uid://8sbrqv2cxiec"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,7 +26,6 @@ CoinManager="*uid://bo1g3nyxyjgcx"
 
 window/size/viewport_width=1500
 window/size/viewport_height=720
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

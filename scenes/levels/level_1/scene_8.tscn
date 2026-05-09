@@ -628,6 +628,14 @@ scale = Vector2(3, 3)
 position = Vector2(552, 112)
 scale = Vector2(3, 3)
 
+[node name="DisappearingPlatforn4" parent="." unique_id=1325980132 instance=ExtResource("10_l3c5i")]
+position = Vector2(318.00006, 21)
+scale = Vector2(3, 3)
+
+[node name="DisappearingPlatforn5" parent="." unique_id=197509157 instance=ExtResource("10_l3c5i")]
+position = Vector2(-354, 21)
+scale = Vector2(3, 3)
+
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("11_eqtf8")]
 position = Vector2(190, -202)
 

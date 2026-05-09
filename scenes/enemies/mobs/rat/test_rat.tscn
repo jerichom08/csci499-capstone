@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8b1yme1kdaue"]
+
+[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="1_mkja0"]
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="2_apnyg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dj8qa"]
+
+[node name="TestRat" type="Node2D" unique_id=1266876403]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=265181142]
+position = Vector2(747, 667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=163631778]
+shape = SubResource("WorldBoundaryShape2D_dj8qa")
+
+[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("1_mkja0")]
+position = Vector2(572, 650)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_apnyg")]
+position = Vector2(785, 632)

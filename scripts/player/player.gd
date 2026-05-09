@@ -103,9 +103,9 @@ func reset_room():
 	CoinManager.reset_room_coins()
 	get_tree().reload_current_scene()
 
-func _input(event):
-	if Input.is_action_just_pressed("reset_room"):
-		reset_room()
+#func _input(event):
+	#if Input.is_action_just_pressed("reset_room"):
+		#reset_room()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

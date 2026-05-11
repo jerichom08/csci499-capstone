@@ -1,62 +1,51 @@
 extends Node2D
+
 signal puzzle_completed_signal
 
-@export var correct_order : Array[String] = ["bread", "tomato", "apple", "potato"]
+@export var required_items: int = 4
 
-var player_sequence : Array[String] = []
-var puzzle_completed : bool = false
+var picked_up_items: int = 0
+var puzzle_completed: bool = false
 
-@onready var ingredient_stations = $IngredientStations
+@onready var items = $Items
 @onready var audio_correct = $AudioCorrect
-@onready var audio_wrong = $AudioWrong
 @onready var audio_complete = $AudioComplete
 @onready var gate = $Gate
 
+
 func _ready() -> void:
 	PuzzleManager.register_puzzle(self)
-	for station in ingredient_stations.get_children():
-		if station.has_signal("ingredient_selected"):
-			station.ingredient_selected.connect(_on_ingredient_selected)
+
+	for item in items.get_children():
+		if item.has_signal("item_picked_up"):
+			item.item_picked_up.connect(_on_item_picked_up)
 
 	print("Puzzle 2 ready.")
-	print("Correct order is: ", correct_order)
+	print("Need to pick up ", required_items, " items.")
 
 
-func _on_ingredient_selected(ingredient_name: String) -> void:
+func _on_item_picked_up(item_name: String) -> void:
 	if puzzle_completed:
 		return
 
-	player_sequence.append(ingredient_name)
-	print("Player selected: ", ingredient_name)
-	print("Current sequence: ", player_sequence)
+	picked_up_items += 1
 
-	_check_sequence()
+	print("Picked up item:", item_name)
+	print("Items collected:", picked_up_items, "/", required_items)
 
-
-func _check_sequence() -> void:
-	var current_index = player_sequence.size() - 1
-
-	if player_sequence[current_index] != correct_order[current_index]:
-		print("Wrong ingredient. Resetting puzzle.")
-		_play_wrong_audio()
-		_reset_puzzle()
-		return
-
-	print("Correct ingredient.")
 	_play_correct_audio()
 
-	if player_sequence.size() == correct_order.size():
+	if picked_up_items >= required_items:
 		_puzzle_completed()
 
 
-func _reset_puzzle() -> void:
-	player_sequence.clear()
-	print("Puzzle reset.")
-
-
 func _puzzle_completed() -> void:
-	puzzle_completed_signal.emit()
+	if puzzle_completed:
+		return
+
 	puzzle_completed = true
+	puzzle_completed_signal.emit()
+
 	print("Puzzle completed!")
 	_play_complete_audio()
 
@@ -69,17 +58,10 @@ func _puzzle_completed() -> void:
 			gate.get_node("CollisionShape2D").disabled = true
 
 
-
 func _play_correct_audio() -> void:
 	if audio_correct and audio_correct.stream:
 		audio_correct.stop()
 		audio_correct.play()
-
-
-func _play_wrong_audio() -> void:
-	if audio_wrong and audio_wrong.stream:
-		audio_wrong.stop()
-		audio_wrong.play()
 
 
 func _play_complete_audio() -> void:

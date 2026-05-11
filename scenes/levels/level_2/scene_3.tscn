@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bupgjle8aga1"]
 
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_ah41n"]
+[ext_resource type="Script" uid="uid://bxwnx7nm3xdcy" path="res://scenes/levels/level_2/scene_3.gd" id="1_qe53u"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_8yxch"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_kitqp"]
 [ext_resource type="PackedScene" uid="uid://7g32nhth5c8d" path="res://scenes/levels/level_2/NextScene2.tscn" id="4_7kjpp"]
@@ -21,6 +22,15 @@
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="20_c1212"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="20_u5omo"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="21_j3xv2"]
+[ext_resource type="PackedScene" uid="uid://bxxay0en10aln" path="res://scenes/puzzles/puzzle_2/ingredient_station.tscn" id="22_8ifkk"]
+[ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="23_sokct"]
+[ext_resource type="AudioStream" uid="uid://7iwcd3o8gbfy" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C00.wav" id="24_lupjy"]
+[ext_resource type="AudioStream" uid="uid://ceamjxp4qdmtc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C03.wav" id="25_hxxlo"]
+[ext_resource type="AudioStream" uid="uid://basyt4fu3r8oc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C02.wav" id="26_qe53u"]
+[ext_resource type="AudioStream" uid="uid://7tdqw0jyc5un" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C01.wav" id="27_wa3js"]
+[ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="28_hxxlo"]
+[ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="29_qe53u"]
+[ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="30_wa3js"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ah41n")
@@ -764,8 +774,20 @@ sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 sources/0 = SubResource("TileSetAtlasSource_imlax")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44q8j"]
+size = Vector2(15.25, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vm3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ej6"]
+size = Vector2(34, 23.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqkvr"]
+size = Vector2(17, 13)
+
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
+script = ExtResource("1_qe53u")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -16)
@@ -882,6 +904,129 @@ position = Vector2(482, -327)
 position = Vector2(60, -47)
 scale = Vector2(2, 2)
 
+[node name="IngredientStations" type="Node2D" parent="." unique_id=555551347]
+
+[node name="BreadStation" parent="IngredientStations" unique_id=1519206893 instance=ExtResource("22_8ifkk")]
+position = Vector2(-623, -9)
+
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/BreadStation" unique_id=2105410390]
+position = Vector2(9.538716, 34.627003)
+scale = Vector2(0.5287612, 0.43205228)
+texture = ExtResource("23_sokct")
+region_enabled = true
+region_rect = Rect2(19, 11.386002, 119, 114)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/BreadStation" unique_id=1990876934]
+position = Vector2(9, 8)
+shape = SubResource("RectangleShape2D_44q8j")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/BreadStation" unique_id=615425946]
+position = Vector2(-4, 10)
+stream = ExtResource("24_lupjy")
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/BreadStation" unique_id=1380782689]
+offset_left = -100.0
+offset_top = 107.0
+offset_right = 113.0
+offset_bottom = 130.0
+text = "Press E to select item"
+metadata/_edit_use_anchors_ = true
+
+[node name="PotatoStation" parent="IngredientStations" unique_id=349027496 instance=ExtResource("22_8ifkk")]
+position = Vector2(-243, 204)
+ingredient_name = "potato"
+
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/PotatoStation" unique_id=820677691]
+position = Vector2(7, 30.99997)
+scale = Vector2(0.48525152, 0.48611075)
+texture = ExtResource("23_sokct")
+region_enabled = true
+region_rect = Rect2(281.40002, 254.4, 107.79999, 108.899994)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/PotatoStation" unique_id=1313365795]
+position = Vector2(4, 29)
+shape = SubResource("RectangleShape2D_4vm3k")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/PotatoStation" unique_id=566318196]
+position = Vector2(-11, 32)
+stream = ExtResource("25_hxxlo")
+volume_db = -36.243
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/PotatoStation" unique_id=1572989757]
+offset_left = -78.0
+offset_top = 68.0
+offset_right = 135.0
+offset_bottom = 91.0
+text = "Press E to select item!"
+metadata/_edit_use_anchors_ = true
+
+[node name="AppleStation" parent="IngredientStations" unique_id=2123437346 instance=ExtResource("22_8ifkk")]
+position = Vector2(239.65344, -320.52832)
+ingredient_name = "apple"
+
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/AppleStation" unique_id=2092211751]
+position = Vector2(8.915115, 1.8962398)
+scale = Vector2(0.55211264, 0.54805475)
+texture = ExtResource("23_sokct")
+region_enabled = true
+region_rect = Rect2(271.0449, 8.923004, 127.37671, 121.52031)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/AppleStation" unique_id=772176108]
+position = Vector2(3.9151611, 1.7087402)
+shape = SubResource("RectangleShape2D_p0ej6")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/AppleStation" unique_id=729559718]
+position = Vector2(-1, -40)
+stream = ExtResource("26_qe53u")
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/AppleStation" unique_id=1999606037]
+offset_left = -86.0
+offset_top = 57.0
+offset_right = 127.0
+offset_bottom = 80.0
+text = "Press E to select item!"
+metadata/_edit_use_anchors_ = true
+
+[node name="TomatoStation" parent="IngredientStations" unique_id=815464560 instance=ExtResource("22_8ifkk")]
+position = Vector2(5, -56)
+ingredient_name = "tomato"
+
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/TomatoStation" unique_id=1629642281]
+position = Vector2(54.99997, 9)
+scale = Vector2(0.64062464, 0.51678205)
+texture = ExtResource("23_sokct")
+region_enabled = true
+region_rect = Rect2(291.55005, 487.82162, 85.03491, 108.06528)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/TomatoStation" unique_id=596318103]
+position = Vector2(53, 13.5)
+shape = SubResource("RectangleShape2D_hqkvr")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/TomatoStation" unique_id=476622818]
+position = Vector2(55.5, 12)
+stream = ExtResource("27_wa3js")
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/TomatoStation" unique_id=1893454582]
+offset_left = -45.0
+offset_top = 62.0
+offset_right = 168.0
+offset_bottom = 85.0
+text = "Press E to select item"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=110728247]
+position = Vector2(-105, -10)
+stream = ExtResource("28_hxxlo")
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="." unique_id=541049264]
+position = Vector2(-75, -11)
+stream = ExtResource("29_qe53u")
+
+[node name="AudioComplete" type="AudioStreamPlayer2D" parent="." unique_id=508717965]
+position = Vector2(-146, -62)
+stream = ExtResource("30_wa3js")
+
+[connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]

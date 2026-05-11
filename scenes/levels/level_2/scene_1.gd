@@ -1,5 +1,4 @@
 extends Node2D
-
 signal puzzle_completed_signal
 
 @export var required_items: int = 4
@@ -7,11 +6,10 @@ signal puzzle_completed_signal
 var picked_up_items: int = 0
 var puzzle_completed: bool = false
 
-@onready var items = $Items
 @onready var audio_correct = $AudioCorrect
 @onready var audio_complete = $AudioComplete
 @onready var gate = $Gate
-
+@onready var items = $Items
 
 func _ready() -> void:
 	PuzzleManager.register_puzzle(self)

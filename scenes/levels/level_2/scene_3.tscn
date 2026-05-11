@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="20_c1212"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="20_u5omo"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="21_j3xv2"]
+[ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="23_sokct"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="26_8ifkk"]
-[ext_resource type="Texture2D" uid="uid://choj3367pq3jt" path="res://assets/images/food/Tomato.png" id="27_8ifkk"]
 [ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="28_hxxlo"]
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="29_qe53u"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="30_wa3js"]
@@ -904,7 +904,7 @@ position = Vector2(-608.5929, 35.247986)
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=573091110]
 position = Vector2(2.774841, -5.2473717)
 scale = Vector2(0.5090909, 0.481982)
-texture = ExtResource("27_8ifkk")
+texture = ExtResource("23_sokct")
 region_enabled = true
 region_rect = Rect2(24, 8, 112, 112)
 
@@ -914,7 +914,7 @@ position = Vector2(-233.78326, 240.22198)
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1859076492]
 position = Vector2(2, -6)
 scale = Vector2(0.6375, 0.5769231)
-texture = ExtResource("27_8ifkk")
+texture = ExtResource("23_sokct")
 region_enabled = true
 region_rect = Rect2(296, 488, 80, 104)
 
@@ -924,7 +924,7 @@ position = Vector2(252.29797, -73.09543)
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1488969666]
 position = Vector2(-2, -3.999939)
 scale = Vector2(0.50735164, 0.46528718)
-texture = ExtResource("27_8ifkk")
+texture = ExtResource("23_sokct")
 region_enabled = true
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
@@ -935,7 +935,7 @@ position = Vector2(256.6903, -308.81555)
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1763015935]
 position = Vector2(-2.999998, 2)
 scale = Vector2(0.59821427, 0.5089286)
-texture = ExtResource("27_8ifkk")
+texture = ExtResource("23_sokct")
 region_enabled = true
 region_rect = Rect2(24, 136, 112, 112)
 

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://58jgcyafcwym"]
 
+[ext_resource type="Script" uid="uid://drddkyjeoa0t1" path="res://scenes/levels/level_2/scene_4.gd" id="1_7kjpp"]
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_ah41n"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_8yxch"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_kitqp"]
@@ -19,7 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="19_ah41n"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="20_8yxch"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_kitqp"]
+[ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="21_7kjpp"]
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="21_kitqp"]
+[ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="23_y1fwk"]
+[ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="24_aue0u"]
+[ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="25_lq0co"]
+[ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ah41n")
@@ -763,6 +769,7 @@ sources/0 = SubResource("TileSetAtlasSource_imlax")
 
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
+script = ExtResource("1_7kjpp")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -17)
@@ -856,3 +863,60 @@ position = Vector2(-311, 267)
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("20_kitqp")]
 position = Vector2(-479, -133)
 scale = Vector2(2, 2)
+
+[node name="Items" type="Node2D" parent="." unique_id=1385002690]
+
+[node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("21_7kjpp")]
+position = Vector2(-608.10004, -27.399994)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=453394811]
+position = Vector2(2.774841, -5.2473717)
+scale = Vector2(0.5090909, 0.481982)
+texture = ExtResource("23_y1fwk")
+region_enabled = true
+region_rect = Rect2(24, 8, 112, 112)
+
+[node name="TestItem2" parent="Items" unique_id=427441340 instance=ExtResource("21_7kjpp")]
+position = Vector2(-347.40002, -191.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=374233414]
+position = Vector2(2, -6)
+scale = Vector2(0.6375, 0.5769231)
+texture = ExtResource("23_y1fwk")
+region_enabled = true
+region_rect = Rect2(296, 488, 80, 104)
+
+[node name="TestItem3" parent="Items" unique_id=74561668 instance=ExtResource("21_7kjpp")]
+position = Vector2(-237.40002, 235.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=568878247]
+position = Vector2(-2, -3.999939)
+scale = Vector2(0.50735164, 0.46528718)
+texture = ExtResource("23_y1fwk")
+region_enabled = true
+region_rect = Rect2(272, -24, 136, 144)
+region_filter_clip_enabled = true
+
+[node name="TestItem4" parent="Items" unique_id=1090181437 instance=ExtResource("21_7kjpp")]
+position = Vector2(583.5488, 87.76999)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1060525077]
+position = Vector2(-2.999998, 2)
+scale = Vector2(0.59821427, 0.5089286)
+texture = ExtResource("23_y1fwk")
+region_enabled = true
+region_rect = Rect2(24, 136, 112, 112)
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=1607674467]
+position = Vector2(-105, -10)
+stream = ExtResource("24_aue0u")
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="." unique_id=842490417]
+position = Vector2(-75, -11)
+stream = ExtResource("25_lq0co")
+
+[node name="AudioComplete" type="AudioStreamPlayer2D" parent="." unique_id=1213709587]
+position = Vector2(-146, -62)
+stream = ExtResource("26_xglgs")
+
+[connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]

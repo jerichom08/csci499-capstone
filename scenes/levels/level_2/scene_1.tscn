@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://clsbymg4y2dlg"]
 
+[ext_resource type="Script" uid="uid://ce8qo5p8cd8ia" path="res://scenes/levels/level_2/scene_1.gd" id="1_1rjxj"]
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_pvakf"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_xurha"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_tw80l"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="7_mfkud"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="8_fi2td"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="8_la782"]
+[ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="9_j7pju"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="9_yg775"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="10_yg775"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="11_v4d6u"]
@@ -16,14 +18,16 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="13_gaq46"]
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="14_m3ou3"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_n8pg6"]
-[ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="17_0dnva"]
+[ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
+[ext_resource type="PackedScene" uid="uid://bxxay0en10aln" path="res://scenes/puzzles/puzzle_2/ingredient_station.tscn" id="18_4onw6"]
 [ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="18_osl13"]
-[ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="20_0mndl"]
-[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="21_4onw6"]
-[ext_resource type="PackedScene" uid="uid://cwddpl64tmi1h" path="res://scenes/mobs/turnipNPCF.tscn" id="21_5oqnr"]
-[ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="23_1rjxj"]
-[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="24_1rjxj"]
-[ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="24_uf1yc"]
+[ext_resource type="AudioStream" uid="uid://7iwcd3o8gbfy" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C00.wav" id="20_1rjxj"]
+[ext_resource type="AudioStream" uid="uid://7tdqw0jyc5un" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C01.wav" id="21_uf1yc"]
+[ext_resource type="AudioStream" uid="uid://basyt4fu3r8oc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C02.wav" id="22_o32q5"]
+[ext_resource type="AudioStream" uid="uid://ceamjxp4qdmtc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C03.wav" id="23_wmega"]
+[ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="25_wmega"]
+[ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="26_j7pju"]
+[ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1021,8 +1025,20 @@ physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_gaq46")
 sources/3 = SubResource("TileSetAtlasSource_m3ou3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt1ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ijtv"]
+size = Vector2(34, 23.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uougs"]
+size = Vector2(17, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7pju"]
+size = Vector2(15.25, 19)
+
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
+script = ExtResource("1_1rjxj")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -17)
@@ -1042,7 +1058,7 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1546364109]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD9/wUAAgACAAUAAAD9/wMAAgACAAUAAAD9/wIAAgACAAYAAAD9/wEAAgADAAQAAAD9/wAAAgACAAYAAAD9////AgACAAUAAADu//3/AgADAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAADr//3/AgACAAQAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADo/wUAAgACAAUAAADo/wYAAgACAAYAAADp/wUAAgACAAUAAADp/wYAAgACAAYAAADq/wUAAgACAAUAAADq/wYAAgACAAYAAADr/wUAAgACAAUAAADr/wYAAgACAAYAAADs/wUAAgACAAUAAADs/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADk/wUAAgABAAUAAADk/wYAAgABAAYAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wUAAgACAAEAAADx/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD8/wUAAgACAAYAAAD8/wYAAgACAAYAAAD9/wYAAgACAAYAAAD9/wQAAgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgACAAUAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAADq//3/AgACAAQAAADp//3/AgACAAQAAADo//3/AgACAAQAAADn//3/AgACAAQAAADm//3/AgACAAQAAADl//3/AgACAAQAAADk//3/AgACAAUAAADk//r/AgABAAcAAADl//r/AgACAAcAAADm//r/AgADAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADq//n/AgADAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADo//z/AgAEAAYAAADl/wEAAgACAAQAAADm/wEAAgACAAQAAADn/wEAAgADAAQAAAD7//v/AgACAAQAAAD8//v/AgACAAUAAADk/wEAAgACAAQAAADu/wUAAgACAAEAAADw/wUAAgACAAEAAADv/wUAAgACAAEAAADk//7/AgADAAcAAAD7//7/AgACAAQAAAD8//7/AgACAAYAAAD7/wEAAgACAAUAAAD8/wEAAgACAAYAAAD8/wIAAgACAAYAAAD8/wMAAgABAAYAAAD8/wQAAgABAAYAAAD8//3/AgABAAYAAAD8//z/AgABAAYAAAD7/wIAAgACAAcAAAD8/wAAAgABAAYAAAD8////AgABAAYAAAD2/wIAAgACAAQAAAD3/wIAAgACAAcAAAD4/wEAAgACAAUAAAD4/wIAAgACAAcAAAD5/wEAAgACAAUAAAD5/wIAAgACAAcAAAD1/wIAAgABAAQAAAD3/wEAAgABAAUAAAD6//7/AgACAAQAAAD6/wEAAgACAAUAAAD6/wIAAgACAAcAAAD6//v/AgACAAQAAAD3//v/AgABAAQAAAD3//7/AgABAAQAAAD4//v/AgACAAQAAAD4//7/AgACAAQAAAD5//v/AgACAAQAAAD5//7/AgACAAQAAAD7/wAAAgAFAAYAAAD4//r/AgAGAAYAAAD6/wAAAgAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAD9/wUAAgACAAUAAAD9/wMAAgACAAUAAAD9/wIAAgACAAYAAAD9/wEAAgADAAQAAAD9/wAAAgACAAYAAAD9////AgACAAUAAADu//3/AgADAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAADr//3/AgACAAQAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADo/wUAAgACAAUAAADo/wYAAgACAAYAAADp/wUAAgACAAUAAADp/wYAAgACAAYAAADq/wUAAgACAAUAAADq/wYAAgACAAYAAADr/wUAAgACAAUAAADr/wYAAgACAAYAAADs/wUAAgACAAUAAADs/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADk/wUAAgABAAUAAADk/wYAAgABAAYAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wUAAgACAAEAAADx/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD8/wUAAgACAAYAAAD8/wYAAgACAAYAAAD9/wYAAgACAAYAAAD9/wQAAgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgACAAUAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAADq//3/AgACAAQAAADp//3/AgACAAQAAADo//3/AgACAAQAAADn//3/AgACAAQAAADm//3/AgACAAQAAADl//3/AgACAAQAAADk//3/AgACAAUAAADk//r/AgABAAcAAADl//r/AgACAAcAAADm//r/AgADAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADq//n/AgADAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADo//z/AgAEAAYAAADl/wEAAgACAAQAAADm/wEAAgACAAQAAADn/wEAAgADAAQAAAD7//v/AgACAAQAAAD8//v/AgACAAUAAADk/wEAAgACAAQAAADu/wUAAgACAAEAAADw/wUAAgACAAEAAADv/wUAAgACAAEAAAD7/wQAAgALAAUAAADk//7/AgADAAcAAAD7//7/AgACAAQAAAD8//7/AgACAAYAAAD7/wEAAgACAAUAAAD8/wEAAgACAAYAAAD8/wIAAgACAAYAAAD8/wMAAgABAAYAAAD8/wQAAgABAAYAAAD8//3/AgABAAYAAAD8//z/AgABAAYAAAD7/wIAAgACAAcAAAD8/wAAAgABAAYAAAD8////AgABAAYAAAD2/wIAAgACAAQAAAD3/wIAAgACAAcAAAD4/wEAAgACAAUAAAD4/wIAAgACAAcAAAD5/wEAAgACAAUAAAD5/wIAAgACAAcAAAD1/wIAAgABAAQAAAD3/wEAAgABAAUAAAD6//7/AgACAAQAAAD6/wEAAgACAAUAAAD6/wIAAgACAAcAAAD6//v/AgACAAQAAAD3//v/AgABAAQAAAD3//7/AgABAAQAAAD4//v/AgACAAQAAAD4//7/AgACAAQAAAD5//v/AgACAAQAAAD5//7/AgACAAQAAAD7/wAAAgAFAAYAAAD4//r/AgAGAAYAAAA=")
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=1300485581]
@@ -1053,6 +1069,11 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("7_mfkud")]
 position = Vector2(223, 75)
+
+[node name="Gate" parent="." unique_id=550434994 instance=ExtResource("10_yg775")]
+position = Vector2(-569, -161)
+scale = Vector2(3, 3)
+script = ExtResource("9_j7pju")
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("12_yqg04")]
 position = Vector2(146, 250)
@@ -1076,45 +1097,39 @@ position = Vector2(221, -118)
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_n8pg6")]
 position = Vector2(514, -153)
 
-[node name="Item1" parent="." unique_id=1207001316 instance=ExtResource("17_0dnva")]
-position = Vector2(-572.9287, 15.623413)
+[node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_fi2td")]
+position = Vector2(97, -17)
 
-[node name="Sprite2D" type="Sprite2D" parent="Item1" unique_id=1618417001]
-position = Vector2(-4, -5.0000134)
-scale = Vector2(0.43939397, 0.42543882)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(0, 0, 132.63486, 114.874115)
-region_filter_clip_enabled = true
+[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("17_imlax")]
+position = Vector2(559.8258, 245.50336)
+interact_action = "\"First a classic, next a man, then some heart, finally some jame\""
+npc_text = "\"First a classic, next a man, then some heart, finally some jame\""
 
-[node name="Item2" parent="." unique_id=1875681408 instance=ExtResource("17_0dnva")]
-position = Vector2(-609.2287, 222.53345)
-
-[node name="Sprite2D" type="Sprite2D" parent="Item2" unique_id=1029155041]
-position = Vector2(15.228699, -4.5334473)
-scale = Vector2(0.65076333, 0.63559324)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(286.59723, 479.81616, 131.40277, 118.18384)
-
-[node name="Item3" parent="." unique_id=642356948 instance=ExtResource("17_0dnva")]
-position = Vector2(564.47144, -307.4466)
-
-[node name="Sprite2D" type="Sprite2D" parent="Item3" unique_id=2013177104]
-position = Vector2(4, 2)
-scale = Vector2(0.4638045, 0.43776053)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(147.90814, 136.95837, 117.17465, 115.05487)
+[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
+offset_left = -290.82587
+offset_top = -72.50336
+offset_right = 207.1742
+offset_bottom = 98.49664
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_yg775")
+theme_override_font_sizes/font_size = 27
+text = "\"First a classic, 
+next a man, 
+then some heart, 
+finally some jam\""
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
-position = Vector2(-311, -223)
+position = Vector2(-418, -224)
 
 [node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1307895906]
-offset_left = -124.0
-offset_top = -68.0
-offset_right = 374.00006
-offset_bottom = 103.0
+offset_left = -83.0
+offset_top = -49.000004
+offset_right = 415.00006
+offset_bottom = 122.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -1125,50 +1140,127 @@ text = "\" Pay the Sproutling’s little tax,
 Then you’re free to leave at last. \""
 metadata/_edit_use_anchors_ = true
 
-[node name="Egg" type="Sprite2D" parent="." unique_id=2112516438]
-position = Vector2(708, -10)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("20_0mndl")
+[node name="IngredientStations" type="Node2D" parent="." unique_id=685394197]
 
-[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("21_5oqnr")]
-position = Vector2(-546, -184)
+[node name="PotatoStation" parent="IngredientStations" unique_id=311951423 instance=ExtResource("18_4onw6")]
+position = Vector2(464.6593, -334.28027)
+ingredient_name = "potato"
 
-[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1154278823]
-offset_left = 19.999985
-offset_top = -69.000015
-offset_right = 518.00006
-offset_bottom = 101.999985
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("9_yg775")
-theme_override_font_sizes/font_size = 27
-text = "\" clue. \""
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/PotatoStation" unique_id=2082655041]
+position = Vector2(7, 30.99997)
+scale = Vector2(0.48525152, 0.48611075)
+texture = ExtResource("18_osl13")
+region_enabled = true
+region_rect = Rect2(281.40002, 254.4, 107.79999, 108.899994)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/PotatoStation" unique_id=1485395884]
+position = Vector2(4, 29)
+shape = SubResource("RectangleShape2D_kt1ph")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/PotatoStation" unique_id=466040524]
+position = Vector2(-11, 32)
+stream = ExtResource("23_wmega")
+volume_db = -36.243
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/PotatoStation" unique_id=1756210952]
+offset_left = -78.0
+offset_top = 68.0
+offset_right = 135.0
+offset_bottom = 91.0
+text = "Press E to select item!"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" parent="." unique_id=954241513 instance=ExtResource("21_4onw6")]
-position = Vector2(411, 260)
-scale = Vector2(3, 3)
+[node name="AppleStation" parent="IngredientStations" unique_id=1064590629 instance=ExtResource("18_4onw6")]
+position = Vector2(488.08484, 17.10376)
+ingredient_name = "apple"
 
-[node name="gate" parent="." unique_id=550434994 instance=ExtResource("10_yg775")]
-position = Vector2(484, -107)
-scale = Vector2(3, 3)
-script = ExtResource("23_1rjxj")
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/AppleStation" unique_id=2114635359]
+position = Vector2(8.915115, 1.8962398)
+scale = Vector2(0.55211264, 0.54805475)
+texture = ExtResource("18_osl13")
+region_enabled = true
+region_rect = Rect2(271.0449, 8.923004, 127.37671, 121.52031)
 
-[node name="gate2" parent="." unique_id=1098154451 instance=ExtResource("10_yg775")]
-position = Vector2(-575, -161)
-scale = Vector2(3, 3)
-script = ExtResource("23_1rjxj")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/AppleStation" unique_id=964370710]
+position = Vector2(3.9151611, 1.7087402)
+shape = SubResource("RectangleShape2D_0ijtv")
 
-[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("24_1rjxj")]
-position = Vector2(462, 262)
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/AppleStation" unique_id=34322307]
+position = Vector2(-1, -40)
+stream = ExtResource("22_o32q5")
 
-[node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("24_uf1yc")]
-position = Vector2(-372, 131)
-scale = Vector2(2, 2)
+[node name="InteractionLabel" type="Label" parent="IngredientStations/AppleStation" unique_id=2038944497]
+offset_left = -86.0
+offset_top = 57.0
+offset_right = 127.0
+offset_bottom = 80.0
+text = "Press E to select item!"
+metadata/_edit_use_anchors_ = true
 
-[node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_fi2td")]
-position = Vector2(97, -17)
+[node name="TomatoStation" parent="IngredientStations" unique_id=5625050 instance=ExtResource("18_4onw6")]
+position = Vector2(-596.81335, 226.4701)
+ingredient_name = "tomato"
 
-[connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/TomatoStation" unique_id=2035999602]
+position = Vector2(54.99997, 9)
+scale = Vector2(0.64062464, 0.51678205)
+texture = ExtResource("18_osl13")
+region_enabled = true
+region_rect = Rect2(291.55005, 487.82162, 85.03491, 108.06528)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/TomatoStation" unique_id=166810150]
+position = Vector2(53, 13.5)
+shape = SubResource("RectangleShape2D_uougs")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/TomatoStation" unique_id=1489578671]
+position = Vector2(55.5, 12)
+stream = ExtResource("21_uf1yc")
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/TomatoStation" unique_id=1406584401]
+offset_left = -45.0
+offset_top = 62.0
+offset_right = 168.0
+offset_bottom = 85.0
+text = "Press E to select item"
+metadata/_edit_use_anchors_ = true
+
+[node name="BreadStation" parent="IngredientStations" unique_id=1519206893 instance=ExtResource("18_4onw6")]
+position = Vector2(-611.45435, -32.67566)
+
+[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/BreadStation" unique_id=468715218]
+position = Vector2(9.538716, 34.627003)
+scale = Vector2(0.5287612, 0.43205228)
+texture = ExtResource("18_osl13")
+region_enabled = true
+region_rect = Rect2(19, 11.386002, 119, 114)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/BreadStation" unique_id=1265592365]
+position = Vector2(9, 8)
+shape = SubResource("RectangleShape2D_j7pju")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/BreadStation" unique_id=1437903730]
+position = Vector2(-4, 10)
+stream = ExtResource("20_1rjxj")
+
+[node name="InteractionLabel" type="Label" parent="IngredientStations/BreadStation" unique_id=198952424]
+offset_left = -100.0
+offset_top = 107.0
+offset_right = 113.0
+offset_bottom = 130.0
+text = "Press E to select item"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=1367123272]
+position = Vector2(-105, -10)
+stream = ExtResource("25_wmega")
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="." unique_id=1309823867]
+position = Vector2(-75, -11)
+stream = ExtResource("26_j7pju")
+
+[node name="AudioComplete" type="AudioStreamPlayer2D" parent="." unique_id=2037922064]
+position = Vector2(-146, -62)
+stream = ExtResource("27_uougs")
+
+[node name="MovingPlatform2" parent="." unique_id=1776935031 instance=ExtResource("7_mfkud")]
+position = Vector2(452, 22)

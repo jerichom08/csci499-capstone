@@ -889,7 +889,6 @@ position = Vector2(95.83923, -76.96301)
 position = Vector2(-2, -3.999939)
 scale = Vector2(0.50735164, 0.46528718)
 texture = ExtResource("23_6y8wy")
-region_enabled = true
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
 

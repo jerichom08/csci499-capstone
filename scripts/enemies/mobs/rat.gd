@@ -1,5 +1,10 @@
 extends EnemyBase
 
+const WORLD_LEFT   : float = 0.0
+const WORLD_RIGHT  : float = 5000.0
+const WORLD_TOP    : float = 120.0   
+const WORLD_BOTTOM : float = 720.0
+
 @export var chase_speed : float = 350.0
 @export var burst_duration : float = 0.4
 @export var chase_duration : float = 1.5

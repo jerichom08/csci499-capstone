@@ -22,12 +22,12 @@
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_kitqp"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="21_7kjpp"]
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="21_kitqp"]
-[ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="23_l2ibj"]
+[ext_resource type="Texture2D" uid="uid://cc0kn3qmkdbfo" path="res://assets/images/food/cookie_10.png" id="23_l2ibj"]
 [ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="24_aue0u"]
-[ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="24_iyvtx"]
-[ext_resource type="Texture2D" uid="uid://cahawb4ghtdk7" path="res://assets/images/food/cookie_3.png" id="25_ca4uv"]
+[ext_resource type="Texture2D" uid="uid://dvwdfyf8ik6gs" path="res://assets/images/food/cookie_12.png" id="24_iyvtx"]
+[ext_resource type="Texture2D" uid="uid://dpnc6kof44qty" path="res://assets/images/food/cookie_2.png" id="25_ca4uv"]
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="25_lq0co"]
-[ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="26_68o1d"]
+[ext_resource type="Texture2D" uid="uid://co4truixt2nep" path="res://assets/images/food/cookie_6.png" id="26_68o1d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -803,6 +803,9 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_q2pai")]
 position = Vector2(613, -206)
+max_health = null
+damage_flash_time = null
+invincibility_time = null
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_aue0u")]
 position = Vector2(-591, 120)

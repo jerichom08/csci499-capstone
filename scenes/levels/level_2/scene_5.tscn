@@ -24,11 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="21_lmty0"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="23_ph1vo"]
 [ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="24_x31aq"]
+[ext_resource type="Texture2D" uid="uid://p8dankw132qh" path="res://assets/images/food/cookie_11.png" id="25_5c0ee"]
 [ext_resource type="Texture2D" uid="uid://cahawb4ghtdk7" path="res://assets/images/food/cookie_3.png" id="25_qpovd"]
 [ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="25_x31aq"]
-[ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="26_5c0ee"]
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="26_qpovd"]
-[ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="27_3id5d"]
+[ext_resource type="Texture2D" uid="uid://35oise2jki27" path="res://assets/images/food/cookie_8.png" id="27_3id5d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_5c0ee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -812,6 +812,9 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_u8b8i")]
 position = Vector2(620, -202)
+max_health = null
+damage_flash_time = null
+invincibility_time = null
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_j7k2a")]
 position = Vector2(2, -339)
@@ -922,7 +925,7 @@ position = Vector2(-471.24686, 70.91998)
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1255784303]
 position = Vector2(2, -6)
 scale = Vector2(0.6375, 0.5769231)
-texture = ExtResource("25_qpovd")
+texture = ExtResource("25_5c0ee")
 region_rect = Rect2(296, 488, 80, 104)
 
 [node name="TestItem3" parent="Items" unique_id=1444657902 instance=ExtResource("23_ph1vo")]
@@ -931,7 +934,7 @@ position = Vector2(406.00317, -79.120056)
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1291439597]
 position = Vector2(-2, -3.999939)
 scale = Vector2(0.50735164, 0.46528718)
-texture = ExtResource("26_5c0ee")
+texture = ExtResource("25_qpovd")
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
 

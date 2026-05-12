@@ -17,13 +17,14 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_83xw0"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="20_6ewla"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="20_g75hv"]
-[ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="21_5cqpn"]
+[ext_resource type="Texture2D" uid="uid://35oise2jki27" path="res://assets/images/food/cookie_8.png" id="21_83xw0"]
 [ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="21_wpwoo"]
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="22_5cqpn"]
-[ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="22_83xw0"]
-[ext_resource type="Texture2D" uid="uid://cahawb4ghtdk7" path="res://assets/images/food/cookie_3.png" id="23_6y8wy"]
+[ext_resource type="Texture2D" uid="uid://bar48dsfeyohl" path="res://assets/images/food/cookie_5.png" id="22_6y8wy"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="23_83xw0"]
-[ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="24_fmsi3"]
+[ext_resource type="Texture2D" uid="uid://p8dankw132qh" path="res://assets/images/food/cookie_11.png" id="23_fmsi3"]
+[ext_resource type="Texture2D" uid="uid://cq3lipcayqih0" path="res://assets/images/food/cookie_13.png" id="24_7ykea"]
+[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="25_56k5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_0hn47")
@@ -802,7 +803,7 @@ scale = Vector2(3, 3)
 script = ExtResource("8_5cqpn")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_diiut")]
-position = Vector2(631, -194)
+position = Vector2(504.9088, -192.91971)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_6y8wy")]
 position = Vector2(554, 43)
@@ -844,10 +845,10 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("16_83xw0")
 theme_override_font_sizes/font_size = 27
-text = "\"First a classic, 
-next a man, 
-then some heart, 
-finally some jam\""
+text = "\"First a star, 
+next a flower, 
+then some swirl, 
+finally some pie\""
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=551138249]
@@ -866,39 +867,48 @@ stream = ExtResource("23_83xw0")
 
 [node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("20_g75hv")]
 position = Vector2(-446.9028, -191.3092)
+item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=2059858849]
 position = Vector2(2.774841, -5.2473717)
 scale = Vector2(0.5090909, 0.481982)
-texture = ExtResource("21_5cqpn")
+texture = ExtResource("21_83xw0")
 region_rect = Rect2(24, 8, 112, 112)
 
 [node name="TestItem2" parent="Items" unique_id=1602273114 instance=ExtResource("20_g75hv")]
 position = Vector2(-451.7343, 132.40332)
+item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1742483822]
 position = Vector2(2, -6)
 scale = Vector2(0.6375, 0.5769231)
-texture = ExtResource("22_83xw0")
+texture = ExtResource("22_6y8wy")
 region_rect = Rect2(296, 488, 80, 104)
 
 [node name="TestItem3" parent="Items" unique_id=1400175796 instance=ExtResource("20_g75hv")]
 position = Vector2(95.83923, -76.96301)
+item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1296545017]
 position = Vector2(-2, -3.999939)
 scale = Vector2(0.50735164, 0.46528718)
-texture = ExtResource("23_6y8wy")
+texture = ExtResource("23_fmsi3")
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
 
 [node name="TestItem4" parent="Items" unique_id=545120888 instance=ExtResource("20_g75hv")]
 position = Vector2(200.52234, -297.60287)
+item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1527831372]
 position = Vector2(-2.999998, 2)
 scale = Vector2(0.59821427, 0.5089286)
-texture = ExtResource("24_fmsi3")
+texture = ExtResource("24_7ykea")
 region_rect = Rect2(24, 136, 112, 112)
 
+[node name="ResetButton" parent="." unique_id=954241513 instance=ExtResource("25_56k5g")]
+position = Vector2(591.99994, -174.99998)
+scale = Vector2(2.9777782, 4.7624984)
+
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
+[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]

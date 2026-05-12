@@ -281,9 +281,8 @@ func add_item(item_name: String, item_texture: Texture2D) -> void:
 	}
 
 	inventory.append(item)
-
-	if selected_item_index == -1:
-		select_item(0)
+	selected_item_index = inventory.size() - 1
+	select_item(selected_item_index)
 
 
 func select_item(index: int) -> void:

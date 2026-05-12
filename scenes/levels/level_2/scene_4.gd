@@ -1,9 +1,13 @@
 extends Node2D
 signal puzzle_completed_signal
 
-@export var required_items: int = 4
-
-var picked_up_items: int = 0
+@export var correct_order: Array[String] = [
+	"TestItem",
+	"TestItem2",
+	"TestItem3",
+	"TestItem4"
+]
+var picked_up_order: Array[String] = []
 var puzzle_completed: bool = false
 
 @onready var audio_correct = $AudioCorrect
@@ -19,24 +23,29 @@ func _ready() -> void:
 			item.item_picked_up.connect(_on_item_picked_up)
 
 	print("Puzzle 2 ready.")
-	print("Need to pick up ", required_items, " items.")
+	print("Correct order is:", correct_order)
 
 
 func _on_item_picked_up(item_name: String) -> void:
 	if puzzle_completed:
 		return
 
-	picked_up_items += 1
+	picked_up_order.append(item_name)
 
 	print("Picked up item:", item_name)
-	print("Items collected:", picked_up_items, "/", required_items)
+	print("Current order:", picked_up_order)
 
 	_play_correct_audio()
 
-	if picked_up_items >= required_items:
+	if picked_up_order.size() >= correct_order.size():
+		_check_sequence()
+
+func _check_sequence() -> void:
+	if picked_up_order == correct_order:
 		_puzzle_completed()
-
-
+	else:
+		print("Wrong full sequence. Press reset button to try again.")
+		
 func _puzzle_completed() -> void:
 	if puzzle_completed:
 		return
@@ -54,6 +63,10 @@ func _puzzle_completed() -> void:
 
 		if gate.has_node("CollisionShape2D"):
 			gate.get_node("CollisionShape2D").disabled = true
+			
+			
+func _reset_puzzle() -> void:
+	get_tree().reload_current_scene()
 
 
 func _play_correct_audio() -> void:
@@ -66,3 +79,5 @@ func _play_complete_audio() -> void:
 	if audio_complete and audio_complete.stream:
 		audio_complete.stop()
 		audio_complete.play()
+		
+	

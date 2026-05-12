@@ -811,10 +811,7 @@ tile_map_data = PackedByteArray("AADm/wEAAAAIAAMAAADn/wEAAAAJAAEAAADm/wAAAAAIAAI
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_u8b8i")]
-position = Vector2(620, -202)
-max_health = null
-damage_flash_time = null
-invincibility_time = null
+position = Vector2(528.0127, -197.73758)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_j7k2a")]
 position = Vector2(2, -339)
@@ -905,13 +902,18 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("16_r0wbf")
 theme_override_font_sizes/font_size = 27
-text = "\" clue \""
+text = "\"First a classic,
+next a swirl,
+add some heart
+finally a star
+ \""
 metadata/_edit_use_anchors_ = true
 
 [node name="Items" type="Node2D" parent="." unique_id=1890513090]
 
 [node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("23_ph1vo")]
 position = Vector2(-614.02686, -234.00003)
+item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=325077746]
 position = Vector2(2.774841, -5.2473717)
@@ -921,6 +923,7 @@ region_rect = Rect2(24, 8, 112, 112)
 
 [node name="TestItem2" parent="Items" unique_id=1457528072 instance=ExtResource("23_ph1vo")]
 position = Vector2(-471.24686, 70.91998)
+item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1255784303]
 position = Vector2(2, -6)
@@ -930,6 +933,7 @@ region_rect = Rect2(296, 488, 80, 104)
 
 [node name="TestItem3" parent="Items" unique_id=1444657902 instance=ExtResource("23_ph1vo")]
 position = Vector2(406.00317, -79.120056)
+item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1291439597]
 position = Vector2(-2, -3.999939)
@@ -940,6 +944,7 @@ region_filter_clip_enabled = true
 
 [node name="TestItem4" parent="Items" unique_id=1418741754 instance=ExtResource("23_ph1vo")]
 position = Vector2(571.7732, 83.01996)
+item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=917709482]
 position = Vector2(-2.999998, 2)
@@ -959,7 +964,15 @@ stream = ExtResource("26_qpovd")
 position = Vector2(-146, -62)
 stream = ExtResource("27_5c0ee")
 
+[node name="ResetButton" parent="." unique_id=5767617 instance=ExtResource("21_lmty0")]
+position = Vector2(596, -178)
+scale = Vector2(2.9777782, 4.7624984)
+
+[node name="MovingPlatform3" parent="." unique_id=504706286 instance=ExtResource("18_48kkf")]
+position = Vector2(-14, 260)
+
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]
+[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]

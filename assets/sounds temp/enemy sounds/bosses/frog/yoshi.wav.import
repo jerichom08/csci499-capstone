@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://be0xmeoorupyc"
-path="res://.godot/imported/yoshi.wav-5647e5fef4d5d10d9455112b879fee29.sample"
+path="res://.godot/imported/yoshi.wav-2394099e82d87b025ec7b2183750522f.sample"
 
 [deps]
 
-source_file="res://assets/sounds temp/enemy sounds/frog/yoshi.wav"
-dest_files=["res://.godot/imported/yoshi.wav-5647e5fef4d5d10d9455112b879fee29.sample"]
+source_file="res://assets/sounds temp/enemy sounds/bosses/frog/yoshi.wav"
+dest_files=["res://.godot/imported/yoshi.wav-2394099e82d87b025ec7b2183750522f.sample"]
 
 [params]
 

@@ -1,8 +1,8 @@
 extends EnemyBase
 
 const WORLD_LEFT   : float = 0.0
-const WORLD_RIGHT  : float = 5000.0
-const WORLD_TOP    : float = 120.0   
+const WORLD_RIGHT  : float = 1400.0
+const WORLD_TOP    : float = 0.0   
 const WORLD_BOTTOM : float = 720.0
 
 @export var chase_speed : float = 350.0
@@ -11,6 +11,11 @@ const WORLD_BOTTOM : float = 720.0
 @export var patrol_radius : float = 250.0
 @export var player_offset : float = 25.0
 @export var hole_delay : float = 0.5
+
+@onready var rat_hit: AudioStreamPlayer2D = $RatHit
+@onready var rat_attack: AudioStreamPlayer2D = $RatAttack
+@onready var rat_idle: AudioStreamPlayer2D = $RatIdle
+@onready var rat_emerge: AudioStreamPlayer2D = $RatEmerge
 
 @export var hole_scene : PackedScene
 
@@ -39,6 +44,7 @@ func _ready() -> void:
 	set_collisions_enabled(false)
 
 func _process(_delta: float) -> void:
+	print(pdz.player)
 	if cycle_started:
 		return
 
@@ -49,6 +55,7 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	update_state_machine()
 	move_and_slide()
+	apply_world_bounds()
 
 func rest() -> void:
 	velocity = Vector2.ZERO
@@ -56,7 +63,10 @@ func rest() -> void:
 func chase() -> void:
 	if disappearing:
 		return
-
+	
+	if !rat_idle.playing:
+		rat_idle.play()
+	
 	var player := get_player()
 
 	if player == null:
@@ -86,7 +96,7 @@ func chase() -> void:
 		velocity.x = 0
 
 func start_cycle() -> void:
-	while current_state != State.DEFEAT:
+	while current_state != State.DEFEAT and pdz.player != null:
 		await get_tree().create_timer(underground_wait).timeout
 
 		if current_state == State.DEFEAT:
@@ -101,13 +111,15 @@ func start_cycle() -> void:
 			spawn_x,
 			base_position.y
 		)
-
+		rat_emerge.play()
+		await rat_emerge.finished
 		spawn_hole(next_spawn_position, "open")
 
 		await get_tree().create_timer(hole_delay).timeout
 
 		if current_state == State.DEFEAT:
 			return
+
 
 		spawn_rat()
 
@@ -117,8 +129,10 @@ func start_cycle() -> void:
 			return
 
 		await despawn_rat()
+	cycle_started = false
 
 func spawn_rat() -> void:
+
 	active = true
 	disappearing = false
 
@@ -127,6 +141,8 @@ func spawn_rat() -> void:
 	sprite.modulate.a = 1.0
 
 	set_collisions_enabled(true)
+	
+
 
 	set_state(State.CHASE)
 
@@ -134,6 +150,7 @@ func despawn_rat() -> void:
 	if disappearing or current_state == State.DEFEAT:
 		return
 
+	rat_idle.stop()
 	disappearing = true
 
 	velocity = Vector2.ZERO
@@ -185,7 +202,9 @@ func set_collisions_enabled(enabled : bool) -> void:
 func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 	if current_state == State.DEFEAT:
 		return
-
+	
+	rat_idle.stop()
+	rat_hit.play()
 	set_state(State.DEFEAT)
 
 	velocity = Vector2.ZERO
@@ -195,7 +214,19 @@ func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 	sprite.modulate.a = 1.0
 
 	sprite.play("defeat")
+	
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite.animation == "defeat":
 		queue_free()
+
+func apply_world_bounds() -> void:
+	global_position.x = clamp(global_position.x,
+		WORLD_LEFT,
+		WORLD_RIGHT
+	)
+
+	global_position.y = clamp(global_position.y,
+		WORLD_TOP,
+		WORLD_BOTTOM
+	)

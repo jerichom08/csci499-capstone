@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://7rxffg4wqy0a"
-path="res://.godot/imported/heal.wav-c533b1c40cf2cf25f8231ae5f2f40f56.sample"
+path="res://.godot/imported/heal.wav-f157782d1003e49548e53375117d799a.sample"
 
 [deps]
 
-source_file="res://assets/sounds temp/enemy sounds/frog/heal.wav"
-dest_files=["res://.godot/imported/heal.wav-c533b1c40cf2cf25f8231ae5f2f40f56.sample"]
+source_file="res://assets/sounds temp/enemy sounds/bosses/frog/heal.wav"
+dest_files=["res://.godot/imported/heal.wav-f157782d1003e49548e53375117d799a.sample"]
 
 [params]
 

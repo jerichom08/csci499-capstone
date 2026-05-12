@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://opbo08k2f2ug"
-path="res://.godot/imported/slime.wav-852d118eee43ec731d55cf7bcb53aeb3.sample"
+path="res://.godot/imported/slime.wav-c77dec608e63445b5e2304e62feec8d8.sample"
 
 [deps]
 
-source_file="res://assets/sounds temp/enemy sounds/frog/slime.wav"
-dest_files=["res://.godot/imported/slime.wav-852d118eee43ec731d55cf7bcb53aeb3.sample"]
+source_file="res://assets/sounds temp/enemy sounds/bosses/frog/slime.wav"
+dest_files=["res://.godot/imported/slime.wav-c77dec608e63445b5e2304e62feec8d8.sample"]
 
 [params]
 

@@ -46,5 +46,9 @@ func _on_puzzle_2_puzzle_completed_signal() -> void:
 
 
 func _on_node_2d_puzzle_completed_signal() -> void:
-	pass 
-	
+	print("Gate opened from item pickup puzzle.")
+
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.4)
+
+	call_deferred("_disable_collision")

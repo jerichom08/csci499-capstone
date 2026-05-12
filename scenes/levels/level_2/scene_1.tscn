@@ -19,14 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="14_m3ou3"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_n8pg6"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
-[ext_resource type="PackedScene" uid="uid://bxxay0en10aln" path="res://scenes/puzzles/puzzle_2/ingredient_station.tscn" id="18_4onw6"]
-[ext_resource type="Texture2D" uid="uid://c5u8kdxy2b4cq" path="res://assets/images/food/cookies-removebg-preview(1).png" id="18_osl13"]
-[ext_resource type="AudioStream" uid="uid://7iwcd3o8gbfy" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C00.wav" id="20_1rjxj"]
-[ext_resource type="AudioStream" uid="uid://7tdqw0jyc5un" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C01.wav" id="21_uf1yc"]
-[ext_resource type="AudioStream" uid="uid://basyt4fu3r8oc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C02.wav" id="22_o32q5"]
-[ext_resource type="AudioStream" uid="uid://ceamjxp4qdmtc" path="res://assets/sounds temp/magic sounds/Retro Instrument - crystal - C03.wav" id="23_wmega"]
+[ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="23_4onw6"]
+[ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="24_uf1yc"]
+[ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="25_j7pju"]
 [ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="25_wmega"]
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="26_j7pju"]
+[ext_resource type="Texture2D" uid="uid://c1il4ccq4sqwo" path="res://assets/images/food/cookie_9.png" id="26_uougs"]
+[ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="27_0ijtv"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -1025,17 +1024,6 @@ physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_gaq46")
 sources/3 = SubResource("TileSetAtlasSource_m3ou3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt1ph"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ijtv"]
-size = Vector2(34, 23.625)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uougs"]
-size = Vector2(17, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7pju"]
-size = Vector2(15.25, 19)
-
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 script = ExtResource("1_1rjxj")
@@ -1140,116 +1128,6 @@ text = "\" Pay the Sproutling’s little tax,
 Then you’re free to leave at last. \""
 metadata/_edit_use_anchors_ = true
 
-[node name="IngredientStations" type="Node2D" parent="." unique_id=685394197]
-
-[node name="PotatoStation" parent="IngredientStations" unique_id=311951423 instance=ExtResource("18_4onw6")]
-position = Vector2(464.6593, -334.28027)
-ingredient_name = "potato"
-
-[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/PotatoStation" unique_id=2082655041]
-position = Vector2(7, 30.99997)
-scale = Vector2(0.48525152, 0.48611075)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(281.40002, 254.4, 107.79999, 108.899994)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/PotatoStation" unique_id=1485395884]
-position = Vector2(4, 29)
-shape = SubResource("RectangleShape2D_kt1ph")
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/PotatoStation" unique_id=466040524]
-position = Vector2(-11, 32)
-stream = ExtResource("23_wmega")
-volume_db = -36.243
-
-[node name="InteractionLabel" type="Label" parent="IngredientStations/PotatoStation" unique_id=1756210952]
-offset_left = -78.0
-offset_top = 68.0
-offset_right = 135.0
-offset_bottom = 91.0
-text = "Press E to select item!"
-metadata/_edit_use_anchors_ = true
-
-[node name="AppleStation" parent="IngredientStations" unique_id=1064590629 instance=ExtResource("18_4onw6")]
-position = Vector2(488.08484, 17.10376)
-ingredient_name = "apple"
-
-[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/AppleStation" unique_id=2114635359]
-position = Vector2(8.915115, 1.8962398)
-scale = Vector2(0.55211264, 0.54805475)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(271.0449, 8.923004, 127.37671, 121.52031)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/AppleStation" unique_id=964370710]
-position = Vector2(3.9151611, 1.7087402)
-shape = SubResource("RectangleShape2D_0ijtv")
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/AppleStation" unique_id=34322307]
-position = Vector2(-1, -40)
-stream = ExtResource("22_o32q5")
-
-[node name="InteractionLabel" type="Label" parent="IngredientStations/AppleStation" unique_id=2038944497]
-offset_left = -86.0
-offset_top = 57.0
-offset_right = 127.0
-offset_bottom = 80.0
-text = "Press E to select item!"
-metadata/_edit_use_anchors_ = true
-
-[node name="TomatoStation" parent="IngredientStations" unique_id=5625050 instance=ExtResource("18_4onw6")]
-position = Vector2(-596.81335, 226.4701)
-ingredient_name = "tomato"
-
-[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/TomatoStation" unique_id=2035999602]
-position = Vector2(54.99997, 9)
-scale = Vector2(0.64062464, 0.51678205)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(291.55005, 487.82162, 85.03491, 108.06528)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/TomatoStation" unique_id=166810150]
-position = Vector2(53, 13.5)
-shape = SubResource("RectangleShape2D_uougs")
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/TomatoStation" unique_id=1489578671]
-position = Vector2(55.5, 12)
-stream = ExtResource("21_uf1yc")
-
-[node name="InteractionLabel" type="Label" parent="IngredientStations/TomatoStation" unique_id=1406584401]
-offset_left = -45.0
-offset_top = 62.0
-offset_right = 168.0
-offset_bottom = 85.0
-text = "Press E to select item"
-metadata/_edit_use_anchors_ = true
-
-[node name="BreadStation" parent="IngredientStations" unique_id=1519206893 instance=ExtResource("18_4onw6")]
-position = Vector2(-611.45435, -32.67566)
-
-[node name="Sprite2D2" type="Sprite2D" parent="IngredientStations/BreadStation" unique_id=468715218]
-position = Vector2(9.538716, 34.627003)
-scale = Vector2(0.5287612, 0.43205228)
-texture = ExtResource("18_osl13")
-region_enabled = true
-region_rect = Rect2(19, 11.386002, 119, 114)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientStations/BreadStation" unique_id=1265592365]
-position = Vector2(9, 8)
-shape = SubResource("RectangleShape2D_j7pju")
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="IngredientStations/BreadStation" unique_id=1437903730]
-position = Vector2(-4, 10)
-stream = ExtResource("20_1rjxj")
-
-[node name="InteractionLabel" type="Label" parent="IngredientStations/BreadStation" unique_id=198952424]
-offset_left = -100.0
-offset_top = 107.0
-offset_right = 113.0
-offset_bottom = 130.0
-text = "Press E to select item"
-metadata/_edit_use_anchors_ = true
-
 [node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=1367123272]
 position = Vector2(-105, -10)
 stream = ExtResource("25_wmega")
@@ -1264,3 +1142,44 @@ stream = ExtResource("27_uougs")
 
 [node name="MovingPlatform2" parent="." unique_id=1776935031 instance=ExtResource("7_mfkud")]
 position = Vector2(452, 22)
+
+[node name="Items" type="Node2D" parent="." unique_id=229748280]
+
+[node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("23_4onw6")]
+position = Vector2(-618.77484, 11.2473755)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=492152436]
+position = Vector2(4.5293827, -5.751874)
+scale = Vector2(0.5491884, 0.50884813)
+texture = ExtResource("24_uf1yc")
+region_rect = Rect2(0, 0, 120, 104)
+
+[node name="TestItem2" parent="Items" unique_id=1894080684 instance=ExtResource("23_4onw6")]
+position = Vector2(-607, 228)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=86225407]
+position = Vector2(2, -6)
+scale = Vector2(0.6375, 0.5769231)
+texture = ExtResource("25_j7pju")
+region_rect = Rect2(8, 8, 80, 88)
+
+[node name="TestItem3" parent="Items" unique_id=1225982846 instance=ExtResource("23_4onw6")]
+position = Vector2(504, -318)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1406045324]
+position = Vector2(6.5478716, 6.4719906)
+scale = Vector2(0.66276747, 0.6522859)
+texture = ExtResource("26_uougs")
+region_rect = Rect2(272, -24, 136, 144)
+region_filter_clip_enabled = true
+
+[node name="TestItem4" parent="Items" unique_id=1588023688 instance=ExtResource("23_4onw6")]
+position = Vector2(462, 11)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1416938982]
+position = Vector2(-2.999998, 2)
+scale = Vector2(0.59821427, 0.5089286)
+texture = ExtResource("27_0ijtv")
+region_rect = Rect2(24, 136, 112, 112)
+
+[connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]

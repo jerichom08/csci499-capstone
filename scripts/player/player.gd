@@ -305,7 +305,7 @@ func hold_item(item_name: String, item_texture: Texture2D) -> void:
 		held_item_sprite.z_index = 999
 		held_item_sprite.z_as_relative = false
 		held_item_sprite.global_position = global_position + Vector2(0, -100)
-		held_item_sprite.scale = (Vector2.ONE / WORLD_SCALE) / 2.0
+		held_item_sprite.scale = Vector2(0.025, 0.025)
 		held_item_sprite.modulate = Color(1, 1, 1, 1)
 
 

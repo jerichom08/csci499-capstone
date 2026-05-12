@@ -44,8 +44,7 @@ func _check_sequence() -> void:
 	if picked_up_order == correct_order:
 		_puzzle_completed()
 	else:
-		print("Wrong full sequence. Resetting puzzle.")
-		get_tree().reload_current_scene()
+		print("Wrong full sequence. Press reset button to try again.")
 		
 func _puzzle_completed() -> void:
 	if puzzle_completed:
@@ -80,3 +79,5 @@ func _play_complete_audio() -> void:
 	if audio_complete and audio_complete.stream:
 		audio_complete.stop()
 		audio_complete.play()
+		
+	

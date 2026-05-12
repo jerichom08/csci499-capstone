@@ -805,7 +805,7 @@ tile_map_data = PackedByteArray("AADu//r/AgAEAAcAACDm/wEAAgAEAAcAAADl/wEAAgAFAAc
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_q2pai")]
-position = Vector2(-661, 239)
+position = Vector2(-545.2876, 242.46667)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_aue0u")]
 position = Vector2(629, -310)
@@ -950,9 +950,14 @@ then some heart,
 finally some jam\""
 metadata/_edit_use_anchors_ = true
 
+[node name="ResetButton" parent="." unique_id=1096903747 instance=ExtResource("20_u5omo")]
+position = Vector2(-624.80005, 256.05002)
+scale = Vector2(2.9777782, 4.7624984)
+
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform4" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform5" method="_on_button_2_button_pressed"]
+[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]

@@ -328,3 +328,17 @@ func remove_selected_item() -> void:
 	else:
 		selected_item_index = clamp(selected_item_index, 0, inventory.size() - 1)
 		select_item(selected_item_index)
+		
+		
+		
+func remove_last_items(amount: int) -> void:
+	for i in range(amount):
+		if inventory.size() > 0:
+			inventory.pop_back()
+
+	if inventory.size() == 0:
+		selected_item_index = -1
+		clear_held_item()
+	else:
+		selected_item_index = inventory.size() - 1
+		select_item(selected_item_index)

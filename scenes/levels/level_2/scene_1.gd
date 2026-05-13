@@ -63,7 +63,14 @@ func _check_sequence() -> void:
 		if turnip_npc:
 			turnip_npc.set_npc_text("Try again!", true)
 
+		_clear_player_last_items()
 		_reset_items()
+
+func _clear_player_last_items() -> void:
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player and player.has_method("remove_last_items"):
+		player.remove_last_items(correct_order.size())
 
 func _puzzle_completed() -> void:
 	if puzzle_completed:

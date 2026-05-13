@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://js7cul2xq70r" path="res://scripts/lvls/coin_label.gd" id="4_ys67x"]
 [ext_resource type="Texture2D" uid="uid://yv3x0gb5nooq" path="res://assets/images/UI/scroll.png" id="5_b05li"]
 [ext_resource type="PackedScene" uid="uid://cufs2bspg63px" path="res://scenes/player/canvas.tscn" id="6_p8nh0"]
-[ext_resource type="Script" uid="uid://d0n8casn3hrwl" path="res://scenes/h_box_container.gd" id="6_v3c5o"]
+[ext_resource type="Script" uid="uid://d0n8casn3hrwl" path="res://scripts/lvls/h_box_container.gd" id="6_v3c5o"]
 [ext_resource type="Texture2D" uid="uid://i3vsujlv28hi" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c37.png" id="7_qrs21"]
 [ext_resource type="Texture2D" uid="uid://dvaul16o8ld00" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c38.png" id="8_ty1so"]
 [ext_resource type="Texture2D" uid="uid://l2mjcjtlt4k4" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c39.png" id="9_goe4s"]

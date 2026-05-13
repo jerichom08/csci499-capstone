@@ -92,7 +92,8 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
-	reset_room()
+	print("You're dead")
+	#reset_room()
 
 func reset_room():
 	PlayerStats.reset_health()
@@ -104,6 +105,21 @@ func reset_room():
 		#reset_room()
 
 func _physics_process(delta: float) -> void:
+	# Update Timers
+	#------------------------------------
+	# damage flash timer
+	if flash_timer > 0.0:
+		flash_timer -= delta
+		if flash_timer <= 0.0:
+			sprite.modulate = Color(1, 1, 1, 1)
+
+	# invincibility timer
+	if is_invincible:
+		invincibility_timer -= delta
+		if invincibility_timer <= 0.0:
+			is_invincible = false
+			
+	#--------------------------------------
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -156,21 +172,7 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = direction < 0
 		$AttackSpawn.position.x = abs($AttackSpawn.position.x) * (-1 if sprite.flip_h else 1)
 		
-	# Update Timers
-	#------------------------------------
-	# damage flash timer
-	if flash_timer > 0.0:
-		flash_timer -= delta
-		if flash_timer <= 0.0:
-			sprite.modulate = Color(1, 1, 1, 1)
 
-	# invincibility timer
-	if is_invincible:
-		invincibility_timer -= delta
-		if invincibility_timer <= 0.0:
-			is_invincible = false
-			
-	#--------------------------------------
 	
 	move_and_slide()
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bl5gp3g8ss4bo"]
 
 [ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scripts/enemies/components/palette_swap.tres" id="1_4pmdt"]
-[ext_resource type="Texture2D" uid="uid://chea4u7wvrd5s" path="res://assets/images/hand/hand_clone.png" id="2_a0erh"]
-[ext_resource type="Texture2D" uid="uid://bgws2tt2bjrc2" path="res://assets/images/hand/hand_palette_swap.png" id="2_xyuux"]
-[ext_resource type="Texture2D" uid="uid://bw4xbopprw6j6" path="res://assets/images/hand/hand_palette_og.png" id="3_bwjsp"]
+[ext_resource type="Texture2D" uid="uid://chea4u7wvrd5s" path="res://assets/images/enemies/bosses/hand/hand_clone.png" id="2_a0erh"]
+[ext_resource type="Texture2D" uid="uid://bgws2tt2bjrc2" path="res://assets/images/enemies/bosses/hand/hand_palette_swap.png" id="2_xyuux"]
+[ext_resource type="Texture2D" uid="uid://bw4xbopprw6j6" path="res://assets/images/enemies/bosses/hand/hand_palette_og.png" id="3_bwjsp"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="6_xyuux"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bwjsp"]

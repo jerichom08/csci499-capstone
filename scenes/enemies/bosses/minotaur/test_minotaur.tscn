@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dhouyhul2vjhb"]
+
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_pf0tl"]
+[ext_resource type="PackedScene" uid="uid://cry1cqpxqni6h" path="res://scenes/enemies/bosses/minotaur/minotaur.tscn" id="2_3eapv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8d1ql"]
+
+[node name="test_minotaur" type="Node2D" unique_id=1706086618]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1466557858]
+position = Vector2(695, 674)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=47057084]
+shape = SubResource("WorldBoundaryShape2D_8d1ql")
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_pf0tl")]
+position = Vector2(519, 616)
+
+[node name="minotaur" parent="." unique_id=503455755 instance=ExtResource("2_3eapv")]
+position = Vector2(863, 605)

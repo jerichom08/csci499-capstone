@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://etipfvshoals"]
 
 [ext_resource type="Script" uid="uid://dqa3mj6o08ohq" path="res://scripts/enemies/bosses/frog/frog_spit_attack.gd" id="1_10xrm"]
-[ext_resource type="Texture2D" uid="uid://bqlk8p860qiyx" path="res://assets/images/frogger/light_attack.png" id="1_pb6uj"]
+[ext_resource type="Texture2D" uid="uid://bqlk8p860qiyx" path="res://assets/images/enemies/bosses/frogger/light_attack.png" id="1_pb6uj"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_10xrm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nufie"]

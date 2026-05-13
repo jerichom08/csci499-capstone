@@ -19,7 +19,7 @@ const WORLD_BOTTOM : float = 720.0
 
 @export var hole_scene : PackedScene
 
-@onready var pdz = $PlayerDetectionZone
+#@onready var pdz = $PlayerDetectionZone
 
 var disappearing := false
 var active := false

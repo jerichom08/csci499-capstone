@@ -834,6 +834,12 @@ position = Vector2(-179, 189.99997)
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("20_6ewla")]
 position = Vector2(521.6887, 246.74957)
 
+[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+offset_left = -529.0237
+offset_top = -45.725647
+offset_right = -463.02368
+offset_bottom = 3.274353
+
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1366618637]
 offset_left = -290.82587
 offset_top = -72.50336
@@ -912,3 +918,5 @@ scale = Vector2(2.9777782, 4.7624984)
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc"]

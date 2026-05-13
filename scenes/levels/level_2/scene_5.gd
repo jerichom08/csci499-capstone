@@ -14,6 +14,7 @@ var puzzle_completed: bool = false
 @onready var audio_complete = $AudioComplete
 @onready var gate = $Gate
 @onready var items = $Items
+@onready var turnip_npc = $TurnipNpc
 
 func _ready() -> void:
 	PuzzleManager.register_puzzle(self)
@@ -45,7 +46,12 @@ func _check_sequence() -> void:
 		_puzzle_completed()
 	else:
 		print("Wrong full sequence. Press reset button to try again.")
-		
+
+		if turnip_npc:
+			turnip_npc.set_npc_text(
+				"That was the wrong order! Press the reset button to try again.",
+				true
+			)
 func _puzzle_completed() -> void:
 	if puzzle_completed:
 		return

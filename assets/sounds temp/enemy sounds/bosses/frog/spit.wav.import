@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dp537dml8fxf4"
-path="res://.godot/imported/spit.wav-4081ea3f8dece7311d489a9996b8f4f3.sample"
+path="res://.godot/imported/spit.wav-a83f7835baf3bad4f2641451f5fbfa94.sample"
 
 [deps]
 
-source_file="res://assets/sounds temp/enemy sounds/frog/spit.wav"
-dest_files=["res://.godot/imported/spit.wav-4081ea3f8dece7311d489a9996b8f4f3.sample"]
+source_file="res://assets/sounds temp/enemy sounds/bosses/frog/spit.wav"
+dest_files=["res://.godot/imported/spit.wav-a83f7835baf3bad4f2641451f5fbfa94.sample"]
 
 [params]
 

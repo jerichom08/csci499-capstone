@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://58jgcyafcwym"]
 
+[ext_resource type="Script" uid="uid://drddkyjeoa0t1" path="res://scenes/levels/level_2/scene_4.gd" id="1_7kjpp"]
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_ah41n"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_8yxch"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_kitqp"]
@@ -19,7 +20,16 @@
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="19_ah41n"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="20_8yxch"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_kitqp"]
+[ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="21_7kjpp"]
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="21_kitqp"]
+[ext_resource type="Texture2D" uid="uid://cc0kn3qmkdbfo" path="res://assets/images/food/cookie_10.png" id="23_l2ibj"]
+[ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="24_aue0u"]
+[ext_resource type="Texture2D" uid="uid://dvwdfyf8ik6gs" path="res://assets/images/food/cookie_12.png" id="24_iyvtx"]
+[ext_resource type="Texture2D" uid="uid://dpnc6kof44qty" path="res://assets/images/food/cookie_2.png" id="25_ca4uv"]
+[ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="25_lq0co"]
+[ext_resource type="Texture2D" uid="uid://co4truixt2nep" path="res://assets/images/food/cookie_6.png" id="26_68o1d"]
+[ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
+[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="30_iyvtx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ah41n")
@@ -763,6 +773,7 @@ sources/0 = SubResource("TileSetAtlasSource_imlax")
 
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
+script = ExtResource("1_7kjpp")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -17)
@@ -792,7 +803,7 @@ tile_map_data = PackedByteArray("AAD7//7/AgARAAcAAAD9////AgARAAcAAADv/wEAAgARAAc
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_q2pai")]
-position = Vector2(613, -206)
+position = Vector2(505.71204, -195.52005)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_aue0u")]
 position = Vector2(-591, 120)
@@ -830,17 +841,21 @@ script = ExtResource("16_gysk4")
 position = Vector2(-596, -184)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=778075000]
-offset_left = -27.0
-offset_top = -79.00001
-offset_right = 471.00006
-offset_bottom = 91.99999
+offset_left = 22.999996
+offset_top = -76.00001
+offset_right = 521.00006
+offset_bottom = 94.99999
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("18_u5736")
 theme_override_font_sizes/font_size = 27
-text = "\" clue \""
+text = "\" A dab of choclate.
+\"a circular treat,
+next a cracker
+finaly a chip\"
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="DisappearingPlatforn" parent="." unique_id=33812697 instance=ExtResource("20_8yxch")]
@@ -856,3 +871,66 @@ position = Vector2(-311, 267)
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("20_kitqp")]
 position = Vector2(-479, -133)
 scale = Vector2(2, 2)
+
+[node name="Items" type="Node2D" parent="." unique_id=1385002690]
+
+[node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("21_7kjpp")]
+position = Vector2(-608.10004, -27.399994)
+item_name = "TestItem"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=453394811]
+position = Vector2(2.774841, -5.2473717)
+scale = Vector2(0.5090909, 0.481982)
+texture = ExtResource("23_l2ibj")
+region_rect = Rect2(24, 8, 112, 112)
+
+[node name="TestItem2" parent="Items" unique_id=427441340 instance=ExtResource("21_7kjpp")]
+position = Vector2(-347.40002, -191.3)
+item_name = "TestItem2"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=723323786]
+position = Vector2(-2.999998, 2)
+scale = Vector2(0.59821427, 0.5089286)
+texture = ExtResource("24_iyvtx")
+region_rect = Rect2(24, 136, 112, 112)
+
+[node name="TestItem3" parent="Items" unique_id=74561668 instance=ExtResource("21_7kjpp")]
+position = Vector2(-237.40002, 235.5)
+item_name = "TestItem3"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1424859298]
+position = Vector2(-2.999998, 2)
+scale = Vector2(0.59821427, 0.5089286)
+texture = ExtResource("25_ca4uv")
+region_rect = Rect2(24, 136, 112, 112)
+
+[node name="TestItem4" parent="Items" unique_id=1090181437 instance=ExtResource("21_7kjpp")]
+position = Vector2(583.5488, 87.76999)
+item_name = "TestItem4"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=974581714]
+position = Vector2(-2.999998, 2)
+scale = Vector2(0.59821427, 0.5089286)
+texture = ExtResource("26_68o1d")
+region_rect = Rect2(24, 136, 112, 112)
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=1607674467]
+position = Vector2(-105, -10)
+stream = ExtResource("24_aue0u")
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="." unique_id=842490417]
+position = Vector2(-75, -11)
+stream = ExtResource("25_lq0co")
+
+[node name="AudioComplete" type="AudioStreamPlayer2D" parent="." unique_id=1213709587]
+position = Vector2(-146, -62)
+stream = ExtResource("26_xglgs")
+
+[node name="ResetButton" parent="." unique_id=954241513 instance=ExtResource("30_iyvtx")]
+position = Vector2(596, -178)
+scale = Vector2(2.9777782, 4.7624984)
+
+[connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
+[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc"]

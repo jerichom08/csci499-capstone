@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://qvxn3sst3aoc"]
 
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_lhpga"]
+[ext_resource type="Script" uid="uid://bqgjw8ckf37b6" path="res://scenes/levels/level_2/scene_5.gd" id="1_sqfee"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_d8dm4"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_lmty0"]
 [ext_resource type="PackedScene" uid="uid://7g32nhth5c8d" path="res://scenes/levels/level_2/NextScene2.tscn" id="4_ap8s5"]
@@ -21,6 +22,14 @@
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_24to7"]
 [ext_resource type="PackedScene" uid="uid://cebymkk2gghii" path="res://scenes/lvInterface/HiddenPlatform.tscn" id="20_d8dm4"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="21_lmty0"]
+[ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="23_ph1vo"]
+[ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="24_x31aq"]
+[ext_resource type="Texture2D" uid="uid://p8dankw132qh" path="res://assets/images/food/cookie_11.png" id="25_5c0ee"]
+[ext_resource type="Texture2D" uid="uid://cahawb4ghtdk7" path="res://assets/images/food/cookie_3.png" id="25_qpovd"]
+[ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="25_x31aq"]
+[ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="26_qpovd"]
+[ext_resource type="Texture2D" uid="uid://35oise2jki27" path="res://assets/images/food/cookie_8.png" id="27_3id5d"]
+[ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_5c0ee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_lhpga")
@@ -764,6 +773,7 @@ sources/0 = SubResource("TileSetAtlasSource_imlax")
 
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
+script = ExtResource("1_sqfee")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -17)
@@ -801,7 +811,7 @@ tile_map_data = PackedByteArray("AADm/wEAAAAIAAMAAADn/wEAAAAJAAEAAADm/wAAAAAIAAI
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_u8b8i")]
-position = Vector2(620, -202)
+position = Vector2(528.0127, -197.73758)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_j7k2a")]
 position = Vector2(2, -339)
@@ -892,9 +902,79 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("16_r0wbf")
 theme_override_font_sizes/font_size = 27
-text = "\" clue \""
+text = "\"First a classic,
+next a swirl,
+add some heart
+finally a star
+ \""
 metadata/_edit_use_anchors_ = true
 
+[node name="Items" type="Node2D" parent="." unique_id=1890513090]
+
+[node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("23_ph1vo")]
+position = Vector2(-614.02686, -234.00003)
+item_name = "TestItem"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=325077746]
+position = Vector2(2.774841, -5.2473717)
+scale = Vector2(0.5090909, 0.481982)
+texture = ExtResource("24_x31aq")
+region_rect = Rect2(24, 8, 112, 112)
+
+[node name="TestItem2" parent="Items" unique_id=1457528072 instance=ExtResource("23_ph1vo")]
+position = Vector2(-471.24686, 70.91998)
+item_name = "TestItem2"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1255784303]
+position = Vector2(2, -6)
+scale = Vector2(0.6375, 0.5769231)
+texture = ExtResource("25_5c0ee")
+region_rect = Rect2(296, 488, 80, 104)
+
+[node name="TestItem3" parent="Items" unique_id=1444657902 instance=ExtResource("23_ph1vo")]
+position = Vector2(406.00317, -79.120056)
+item_name = "TestItem3"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1291439597]
+position = Vector2(-2, -3.999939)
+scale = Vector2(0.50735164, 0.46528718)
+texture = ExtResource("25_qpovd")
+region_rect = Rect2(272, -24, 136, 144)
+region_filter_clip_enabled = true
+
+[node name="TestItem4" parent="Items" unique_id=1418741754 instance=ExtResource("23_ph1vo")]
+position = Vector2(571.7732, 83.01996)
+item_name = "TestItem4"
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=917709482]
+position = Vector2(-2.999998, 2)
+scale = Vector2(0.59821427, 0.5089286)
+texture = ExtResource("27_3id5d")
+region_rect = Rect2(24, 136, 112, 112)
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="." unique_id=1558414026]
+position = Vector2(-105, -10)
+stream = ExtResource("25_x31aq")
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="." unique_id=358837417]
+position = Vector2(-75, -11)
+stream = ExtResource("26_qpovd")
+
+[node name="AudioComplete" type="AudioStreamPlayer2D" parent="." unique_id=182206173]
+position = Vector2(-146, -62)
+stream = ExtResource("27_5c0ee")
+
+[node name="ResetButton" parent="." unique_id=5767617 instance=ExtResource("21_lmty0")]
+position = Vector2(596, -178)
+scale = Vector2(2.9777782, 4.7624984)
+
+[node name="MovingPlatform3" parent="." unique_id=504706286 instance=ExtResource("18_48kkf")]
+position = Vector2(-14, 260)
+
+[connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]
+[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc"]

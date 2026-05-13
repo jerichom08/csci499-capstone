@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1t6dlm8olyru"
-path="res://.godot/imported/snore.wav-d2e78c73853cb4b9073425d2c9386441.sample"
+path="res://.godot/imported/snore.wav-17d6b105ceba1e73b6df9aa8e37e4c33.sample"
 
 [deps]
 
-source_file="res://assets/sounds temp/enemy sounds/frog/snore.wav"
-dest_files=["res://.godot/imported/snore.wav-d2e78c73853cb4b9073425d2c9386441.sample"]
+source_file="res://assets/sounds temp/enemy sounds/bosses/frog/snore.wav"
+dest_files=["res://.godot/imported/snore.wav-17d6b105ceba1e73b6df9aa8e37e4c33.sample"]
 
 [params]
 

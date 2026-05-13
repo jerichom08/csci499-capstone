@@ -1,75 +1,78 @@
 extends Node2D
 signal puzzle_completed_signal
 
-@export var correct_order : Array[String] = ["bread", "tomato", "apple", "potato"]
+@export var correct_order: Array[String] = [
+	"TestItem",
+	"TestItem2",
+	"TestItem3",
+	"TestItem4"
+]
+var picked_up_order: Array[String] = []
+var puzzle_completed: bool = false
 
-var player_sequence : Array[String] = []
-var puzzle_completed : bool = false
-
-@onready var ingredient_stations = $IngredientStations
 @onready var audio_correct = $AudioCorrect
-@onready var audio_wrong = $AudioWrong
 @onready var audio_complete = $AudioComplete
 @onready var gate = $Gate
-
+@onready var items = $Items
+@onready var turnip_npc = $TurnipNpc
 
 func _ready() -> void:
 	PuzzleManager.register_puzzle(self)
-	for station in ingredient_stations.get_children():
-		if station.has_signal("ingredient_selected"):
-			station.ingredient_selected.connect(_on_ingredient_selected)
+
+	for item in items.get_children():
+		if item.has_signal("item_picked_up"):
+			item.item_picked_up.connect(_on_item_picked_up)
 
 	print("Puzzle 2 ready.")
-	print("Correct order is: ", correct_order)
+	print("Correct order is:", correct_order)
 
 
-func _on_ingredient_selected(ingredient_name: String) -> void:
+func _on_item_picked_up(item_name: String) -> void:
 	if puzzle_completed:
 		return
 
-	player_sequence.append(ingredient_name)
-	print("Player selected: ", ingredient_name)
-	print("Current sequence: ", player_sequence)
+	picked_up_order.append(item_name)
 
-	_check_sequence()
+	print("Picked up item:", item_name)
+	print("Current order:", picked_up_order)
 
-
-func _check_sequence() -> void:
-	var current_index = player_sequence.size() - 1
-
-	if player_sequence[current_index] != correct_order[current_index]:
-		print("Wrong ingredient. Resetting puzzle.")
-		_play_wrong_audio()
-		_reset_puzzle()
-		return
-
-	print("Correct ingredient.")
 	_play_correct_audio()
 
-	if player_sequence.size() == correct_order.size():
+	if picked_up_order.size() >= correct_order.size():
+		_check_sequence()
+
+func _check_sequence() -> void:
+	if picked_up_order == correct_order:
 		_puzzle_completed()
+	else:
+		print("Wrong full sequence. Press reset button to try again.")
 
-
-func _reset_puzzle() -> void:
-	player_sequence.clear()
-	print("Puzzle reset.")
-
-
+		if turnip_npc:
+			turnip_npc.set_npc_text(
+				"That was the wrong order! Press the reset button to try again.",
+				true
+			)
 func _puzzle_completed() -> void:
-	puzzle_completed_signal.emit()
+	if puzzle_completed:
+		return
+
 	puzzle_completed = true
+	puzzle_completed_signal.emit()
+
 	print("Puzzle completed!")
 	_play_complete_audio()
 
 	if gate:
-		print("Opening gate...")
 		gate.visible = false
 		gate.collision_layer = 0
 		gate.collision_mask = 0
 
 		if gate.has_node("CollisionShape2D"):
-			gate.get_node("CollisionShape2D").set_deferred("disabled", true)
-
+			gate.get_node("CollisionShape2D").disabled = true
+			
+			
+func _reset_puzzle() -> void:
+	get_tree().reload_current_scene()
 
 
 func _play_correct_audio() -> void:
@@ -78,13 +81,9 @@ func _play_correct_audio() -> void:
 		audio_correct.play()
 
 
-func _play_wrong_audio() -> void:
-	if audio_wrong and audio_wrong.stream:
-		audio_wrong.stop()
-		audio_wrong.play()
-
-
 func _play_complete_audio() -> void:
 	if audio_complete and audio_complete.stream:
 		audio_complete.stop()
 		audio_complete.play()
+		
+	

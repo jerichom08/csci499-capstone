@@ -9,6 +9,10 @@
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="5_f34me"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="6_nrruo"]
 [ext_resource type="PackedScene" uid="uid://by0dowubj4e1h" path="res://scenes/enemies/components/player_detection_zone.tscn" id="9_hgi5h"]
+[ext_resource type="AudioStream" uid="uid://caxppanekkjth" path="res://assets/sounds temp/enemy sounds/mobs/rat/rat_emerge.wav" id="10_gx54s"]
+[ext_resource type="AudioStream" uid="uid://cml8ychcndilj" path="res://assets/sounds temp/enemy sounds/mobs/rat/rat_hurt.wav" id="11_pxvcr"]
+[ext_resource type="AudioStream" uid="uid://ul823m8hqpp4" path="res://assets/sounds temp/enemy sounds/mobs/rat/rat_attack.wav" id="12_oe3dr"]
+[ext_resource type="AudioStream" uid="uid://dmi36bk8m7gbc" path="res://assets/sounds temp/enemy sounds/mobs/rat/rat_squeak.wav" id="13_c4ghx"]
 
 [sub_resource type="Resource" id="Resource_f34me"]
 script = ExtResource("2_y5ou3")
@@ -199,5 +203,18 @@ collision_mask = 1
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_hgi5h")
 debug_color = Color(0, 0, 0.69803923, 0.12156863)
+
+[node name="RatEmerge" type="AudioStreamPlayer2D" parent="." unique_id=747886028]
+stream = ExtResource("10_gx54s")
+volume_db = 24.0
+
+[node name="RatHit" type="AudioStreamPlayer2D" parent="." unique_id=993840342]
+stream = ExtResource("11_pxvcr")
+
+[node name="RatAttack" type="AudioStreamPlayer2D" parent="." unique_id=1830001812]
+stream = ExtResource("12_oe3dr")
+
+[node name="RatIdle" type="AudioStreamPlayer2D" parent="." unique_id=78835237]
+stream = ExtResource("13_c4ghx")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

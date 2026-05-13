@@ -281,9 +281,8 @@ func add_item(item_name: String, item_texture: Texture2D) -> void:
 	}
 
 	inventory.append(item)
-
-	if selected_item_index == -1:
-		select_item(0)
+	selected_item_index = inventory.size() - 1
+	select_item(selected_item_index)
 
 
 func select_item(index: int) -> void:
@@ -305,7 +304,7 @@ func hold_item(item_name: String, item_texture: Texture2D) -> void:
 		held_item_sprite.z_index = 999
 		held_item_sprite.z_as_relative = false
 		held_item_sprite.global_position = global_position + Vector2(0, -100)
-		held_item_sprite.scale = (Vector2.ONE / WORLD_SCALE) / 2.0
+		held_item_sprite.scale = Vector2(0.025, 0.025)
 		held_item_sprite.modulate = Color(1, 1, 1, 1)
 
 

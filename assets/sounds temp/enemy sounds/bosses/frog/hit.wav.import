@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ciede2404git1"
-path="res://.godot/imported/hit.wav-05dbab40faad55e8da867c3ca08a4075.sample"
+path="res://.godot/imported/hit.wav-7405cc7bf294eb732b45806695bff497.sample"
 
 [deps]
 
-source_file="res://assets/sounds temp/enemy sounds/frog/hit.wav"
-dest_files=["res://.godot/imported/hit.wav-05dbab40faad55e8da867c3ca08a4075.sample"]
+source_file="res://assets/sounds temp/enemy sounds/bosses/frog/hit.wav"
+dest_files=["res://.godot/imported/hit.wav-7405cc7bf294eb732b45806695bff497.sample"]
 
 [params]
 

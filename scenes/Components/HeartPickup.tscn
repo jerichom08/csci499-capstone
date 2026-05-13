@@ -43,6 +43,7 @@ animations = [{
 }]
 
 [node name="HeartPickup" type="Area2D" unique_id=526582475]
+scale = Vector2(2, 2)
 script = ExtResource("1_b8rig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=355032004]

@@ -1005,6 +1005,7 @@ tile_map_data = PackedByteArray("AAAMAP//AAAvAAIAAAAMAAAAAAAvAAMAAAAMAAEAAAAvAAI
 tile_set = SubResource("TileSet_ys67x")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=286744738]
+z_index = 13
 texture_filter = 1
 offset_left = 640.0
 offset_top = -90.0

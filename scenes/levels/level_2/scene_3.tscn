@@ -933,6 +933,12 @@ script = ExtResource("16_gysk4")
 [node name="TurnipNpc2" parent="." unique_id=960637076 instance=ExtResource("29_wa3js")]
 position = Vector2(-520.10565, -184.01172)
 
+[node name="DialogueLabel" parent="TurnipNpc2" index="1" unique_id=1341102752]
+offset_left = 61.0506
+offset_top = -28.437378
+offset_right = 127.0506
+offset_bottom = 20.562622
+
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc2" unique_id=1960397308]
 offset_left = 38.10562
 offset_top = -66.98829
@@ -961,3 +967,5 @@ scale = Vector2(2.9777782, 4.7624984)
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform4" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform5" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc2"]

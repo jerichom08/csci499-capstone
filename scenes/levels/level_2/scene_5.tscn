@@ -976,3 +976,5 @@ position = Vector2(-14, 260)
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc"]

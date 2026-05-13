@@ -841,10 +841,10 @@ script = ExtResource("16_gysk4")
 position = Vector2(-596, -184)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=778075000]
-offset_left = -27.0
-offset_top = -79.00001
-offset_right = 471.00006
-offset_bottom = 91.99999
+offset_left = 22.999996
+offset_top = -76.00001
+offset_right = 521.00006
+offset_bottom = 94.99999
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -932,3 +932,5 @@ scale = Vector2(2.9777782, 4.7624984)
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc"]

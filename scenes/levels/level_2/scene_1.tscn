@@ -1094,6 +1094,18 @@ position = Vector2(559.8258, 245.50336)
 interact_action = "\"First a classic, next a man, then some heart, finally some jame\""
 npc_text = "\"First a classic, next a man, then some heart, finally some jame\""
 
+[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+offset_left = -578.79126
+offset_top = -54.906067
+offset_right = -176.79126
+offset_bottom = 3.093933
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.21039295, 4.1488707e-05, 0.7766155, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 27
+text = "Wrong full sequence. 
+dwPress reset button to try again"
+
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
 offset_left = -290.82587
 offset_top = -72.50336
@@ -1110,6 +1122,15 @@ next a man,
 then some jam, 
 finally a classic\""
 metadata/_edit_use_anchors_ = true
+
+[node name="DialogueLabel2" type="Label" parent="TurnipNpc" unique_id=418612919]
+modulate = Color(0.14774385, 0.72103935, 0.75303876, 1)
+offset_left = -663.70905
+offset_top = -65.154785
+offset_right = -597.70905
+offset_bottom = -16.154785
+theme_override_fonts/font = ExtResource("9_yg775")
+theme_override_font_sizes/font_size = 18
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
 position = Vector2(-418, -224)
@@ -1193,3 +1214,5 @@ scale = Vector2(2.9777782, 4.7624984)
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
+
+[editable path="TurnipNpc"]

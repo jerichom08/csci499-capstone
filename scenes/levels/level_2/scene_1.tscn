@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://c1il4ccq4sqwo" path="res://assets/images/food/cookie_9.png" id="26_uougs"]
 [ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="27_0ijtv"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
+[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="28_j7pju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1077,7 +1078,7 @@ position = Vector2(-370, 163)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_hkv3s")]
-position = Vector2(-237, -199)
+position = Vector2(-168.95721, -194.25085)
 
 [node name="MovingPlatformH" parent="." unique_id=970703486 instance=ExtResource("14_m3ou3")]
 position = Vector2(221, -118)
@@ -1104,10 +1105,10 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("9_yg775")
 theme_override_font_sizes/font_size = 27
-text = "\"First a classic, 
+text = "\"First a squaredw, 
 next a man, 
-then some heart, 
-finally some jam\""
+then some jam, 
+finally a classic\""
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
@@ -1147,6 +1148,7 @@ position = Vector2(452, 22)
 
 [node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("23_4onw6")]
 position = Vector2(-618.77484, 11.2473755)
+item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=492152436]
 position = Vector2(4.5293827, -5.751874)
@@ -1156,6 +1158,7 @@ region_rect = Rect2(0, 0, 120, 104)
 
 [node name="TestItem2" parent="Items" unique_id=1894080684 instance=ExtResource("23_4onw6")]
 position = Vector2(-607, 228)
+item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=86225407]
 position = Vector2(2, -6)
@@ -1165,6 +1168,7 @@ region_rect = Rect2(8, 8, 80, 88)
 
 [node name="TestItem3" parent="Items" unique_id=1225982846 instance=ExtResource("23_4onw6")]
 position = Vector2(504, -318)
+item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1406045324]
 position = Vector2(6.5478716, 6.4719906)
@@ -1175,6 +1179,7 @@ region_filter_clip_enabled = true
 
 [node name="TestItem4" parent="Items" unique_id=1588023688 instance=ExtResource("23_4onw6")]
 position = Vector2(462, 11)
+item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1416938982]
 position = Vector2(-2.999998, 2)
@@ -1182,4 +1187,9 @@ scale = Vector2(0.59821427, 0.5089286)
 texture = ExtResource("27_0ijtv")
 region_rect = Rect2(24, 136, 112, 112)
 
+[node name="ResetButton" parent="." unique_id=954241513 instance=ExtResource("28_j7pju")]
+position = Vector2(-270, -178)
+scale = Vector2(2.9777782, 4.7624984)
+
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
+[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]

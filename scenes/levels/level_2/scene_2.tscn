@@ -24,7 +24,6 @@
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="23_83xw0"]
 [ext_resource type="Texture2D" uid="uid://p8dankw132qh" path="res://assets/images/food/cookie_11.png" id="23_fmsi3"]
 [ext_resource type="Texture2D" uid="uid://cq3lipcayqih0" path="res://assets/images/food/cookie_13.png" id="24_7ykea"]
-[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="25_56k5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_0hn47")
@@ -912,11 +911,6 @@ scale = Vector2(0.59821427, 0.5089286)
 texture = ExtResource("24_7ykea")
 region_rect = Rect2(24, 136, 112, 112)
 
-[node name="ResetButton" parent="." unique_id=954241513 instance=ExtResource("25_56k5g")]
-position = Vector2(591.99994, -174.99998)
-scale = Vector2(2.9777782, 4.7624984)
-
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
-[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
 
 [editable path="TurnipNpc"]

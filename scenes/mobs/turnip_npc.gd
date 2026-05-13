@@ -1,5 +1,7 @@
 extends Area2D
 
+signal npc_interacted
+
 @export var interact_action : String = "interaction"
 @export var npc_text : String = "Hello there."
 
@@ -30,6 +32,8 @@ func _process(_delta: float) -> void:
 
 
 func _interact_with_npc() -> void:
+	
+	npc_interacted.emit()
 	if dialogue_label:
 		dialogue_label.text = npc_text
 		dialogue_label.visible = true

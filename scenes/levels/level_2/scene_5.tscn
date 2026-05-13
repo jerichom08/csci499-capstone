@@ -891,6 +891,12 @@ script = ExtResource("14_3id5d")
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("15_gts1u")]
 position = Vector2(-542, 248)
 
+[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+offset_left = 118.601105
+offset_top = -50.533325
+offset_right = 158.6011
+offset_bottom = -27.533325
+
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=778075000]
 offset_left = -27.0
 offset_top = -79.00001
@@ -964,10 +970,6 @@ stream = ExtResource("26_qpovd")
 position = Vector2(-146, -62)
 stream = ExtResource("27_5c0ee")
 
-[node name="ResetButton" parent="." unique_id=5767617 instance=ExtResource("21_lmty0")]
-position = Vector2(596, -178)
-scale = Vector2(2.9777782, 4.7624984)
-
 [node name="MovingPlatform3" parent="." unique_id=504706286 instance=ExtResource("18_48kkf")]
 position = Vector2(-14, 260)
 
@@ -975,6 +977,5 @@ position = Vector2(-14, 260)
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]
-[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
 
 [editable path="TurnipNpc"]

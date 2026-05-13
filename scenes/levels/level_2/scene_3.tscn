@@ -925,21 +925,21 @@ scale = Vector2(0.59821427, 0.5089286)
 texture = ExtResource("26_hxxlo")
 region_rect = Rect2(24, 136, 112, 112)
 
-[node name="gate" parent="." unique_id=550434994 instance=ExtResource("15_sjr6n")]
+[node name="Gate" parent="." unique_id=550434994 instance=ExtResource("15_sjr6n")]
 position = Vector2(-603, -161)
 scale = Vector2(3, 3)
 script = ExtResource("16_gysk4")
 
-[node name="TurnipNpc2" parent="." unique_id=960637076 instance=ExtResource("29_wa3js")]
+[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_wa3js")]
 position = Vector2(-520.10565, -184.01172)
 
-[node name="DialogueLabel" parent="TurnipNpc2" index="1" unique_id=1341102752]
-offset_left = 61.0506
-offset_top = -28.437378
-offset_right = 127.0506
-offset_bottom = 20.562622
+[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+offset_left = 98.49057
+offset_top = -35.498352
+offset_right = 164.49057
+offset_bottom = 13.501648
 
-[node name="InteractionLabel2" type="Label" parent="TurnipNpc2" unique_id=1960397308]
+[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1960397308]
 offset_left = 38.10562
 offset_top = -66.98829
 offset_right = 536.1057
@@ -956,16 +956,11 @@ then some heart,
 finally some jam\""
 metadata/_edit_use_anchors_ = true
 
-[node name="ResetButton" parent="." unique_id=1096903747 instance=ExtResource("20_u5omo")]
-position = Vector2(-624.80005, 256.05002)
-scale = Vector2(2.9777782, 4.7624984)
-
-[connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
+[connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform3" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform4" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform5" method="_on_button_2_button_pressed"]
-[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
 
-[editable path="TurnipNpc2"]
+[editable path="TurnipNpc"]

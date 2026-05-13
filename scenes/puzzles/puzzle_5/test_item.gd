@@ -4,7 +4,10 @@ signal item_picked_up(item_name: String)
 
 @export var item_name: String = "key"
 
+var start_position: Vector2
+
 func _ready() -> void:
+	start_position = global_position
 	body_entered.connect(_on_body_entered)
 
 
@@ -30,5 +33,10 @@ func _on_body_entered(body: Node2D) -> void:
 		body.add_item(item_name, item_sprite.texture)
 
 		item_picked_up.emit(item_name)
-
-		queue_free()
+		visible = false
+		set_deferred("monitoring", false)		
+				
+func respawn() -> void:
+	global_position = start_position
+	visible = true
+	set_deferred("monitoring", true)

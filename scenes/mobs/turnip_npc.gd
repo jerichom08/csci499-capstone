@@ -61,3 +61,10 @@ func _on_body_exited(body: Node) -> void:
 
 		if animated_sprite:
 			animated_sprite.play("idle")
+
+func set_npc_text(new_text: String, show_now: bool = false) -> void:
+	npc_text = new_text
+
+	if show_now and dialogue_label:
+		dialogue_label.text = npc_text
+		dialogue_label.visible = true

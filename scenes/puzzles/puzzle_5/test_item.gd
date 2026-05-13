@@ -1,5 +1,7 @@
 extends Area2D
 
+signal item_picked_up(item_name: String)
+
 @export var item_name: String = "key"
 
 func _ready() -> void:
@@ -24,7 +26,9 @@ func _on_body_entered(body: Node2D) -> void:
 			return
 
 		print("Picking up:", item_name)
-		print("Using texture:", item_sprite.texture)
 
 		body.add_item(item_name, item_sprite.texture)
+
+		item_picked_up.emit(item_name)
+
 		queue_free()

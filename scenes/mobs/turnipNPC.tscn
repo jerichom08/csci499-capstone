@@ -61,8 +61,11 @@ offset_left = -106.0
 offset_top = -43.0
 offset_right = -40.0
 offset_bottom = 6.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_uw2hr")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 27
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327155034]
 texture_filter = 1

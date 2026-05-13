@@ -2,17 +2,14 @@ extends CharacterBody2D
 
 # HP System Variables
 #---------------------------
-@export var max_health: int = 6
 @export var damage_flash_time: float = 0.15
 @export var invincibility_time: float = 1
 
-var health: int
 var is_invincible := false
 var invincibility_timer := 0.0
 var flash_timer := 0.0
 var is_dead := false
 
-signal health_changed(current, max)
 #-----------------------------
 
 @export var line_attack_scene: PackedScene
@@ -56,8 +53,7 @@ var selected_item_index: int = -1
 var current_item_name: String = ""
 
 func _ready() -> void:
-	health = max_health
-	emit_signal("health_changed", health, max_health)
+	PlayerStats.health_changed.emit(PlayerStats.health, PlayerStats.max_health)
 	
 	if held_item_sprite:
 		held_item_sprite.visible = false
@@ -71,9 +67,7 @@ func take_damage(amount: int, knockback: Vector2) -> void:
 	if is_dead:
 		return
 
-	health -= amount
-	health = max(health, 0)
-	emit_signal("health_changed", health, max_health)
+	PlayerStats.take_damage(amount)
 
 	velocity = knockback
 
@@ -85,16 +79,14 @@ func take_damage(amount: int, knockback: Vector2) -> void:
 	is_invincible = true
 	invincibility_timer = invincibility_time
 
-	if health <= 0:
+	if PlayerStats.health <= 0:
 		die()
 
 func heal(amount: int = 2):
 	if is_dead:
 		return
 	
-	health += amount
-	health = min(health, max_health)
-	emit_signal("health_changed", health, max_health)
+	PlayerStats.heal(amount)
 
 func die():
 	if is_dead:
@@ -103,6 +95,7 @@ func die():
 	reset_room()
 
 func reset_room():
+	PlayerStats.reset_health()
 	CoinManager.reset_room_coins()
 	get_tree().reload_current_scene()
 
@@ -327,4 +320,18 @@ func remove_selected_item() -> void:
 		clear_held_item()
 	else:
 		selected_item_index = clamp(selected_item_index, 0, inventory.size() - 1)
+		select_item(selected_item_index)
+		
+		
+		
+func remove_last_items(amount: int) -> void:
+	for i in range(amount):
+		if inventory.size() > 0:
+			inventory.pop_back()
+
+	if inventory.size() == 0:
+		selected_item_index = -1
+		clear_held_item()
+	else:
+		selected_item_index = inventory.size() - 1
 		select_item(selected_item_index)

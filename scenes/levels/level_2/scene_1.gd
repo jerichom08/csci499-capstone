@@ -23,6 +23,8 @@ func _ready() -> void:
 		if item.has_signal("item_picked_up"):
 			item.item_picked_up.connect(_on_item_picked_up)
 
+	if turnip_npc.has_signal("npc_interacted"):
+		turnip_npc.npc_interacted.connect(_check_sequence)
 	print("Puzzle 2 ready.")
 	print("Correct order is:", correct_order)
 
@@ -39,19 +41,37 @@ func _on_item_picked_up(item_name: String) -> void:
 	_play_correct_audio()
 
 	if picked_up_order.size() >= correct_order.size():
-		_check_sequence()
+		if turnip_npc:
+			turnip_npc.set_npc_text("Now come talk to me.", true)
 
 func _check_sequence() -> void:
+	if puzzle_completed:
+		return
+
+	if picked_up_order.size() < correct_order.size():
+		if turnip_npc:
+			turnip_npc.set_npc_text("Collect all the cookies first.", true)
+		return
+
 	if picked_up_order == correct_order:
+		if turnip_npc:
+			turnip_npc.set_npc_text("You're free to go!", true)
 		_puzzle_completed()
 	else:
-		print("Wrong full sequence. Press reset button to try again.")
+		print("Wrong sequence. Try again.")
 
 		if turnip_npc:
-			turnip_npc.set_npc_text(
-				"That was the wrong order! Press the reset button to try again.",
-				true
-			)
+			turnip_npc.set_npc_text("Try again!", true)
+
+		_clear_player_last_items()
+		_reset_items()
+
+func _clear_player_last_items() -> void:
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player and player.has_method("remove_last_items"):
+		player.remove_last_items(correct_order.size())
+
 func _puzzle_completed() -> void:
 	if puzzle_completed:
 		return
@@ -71,8 +91,12 @@ func _puzzle_completed() -> void:
 			gate.get_node("CollisionShape2D").disabled = true
 			
 			
-func _reset_puzzle() -> void:
-	get_tree().reload_current_scene()
+func _reset_items() -> void:
+	picked_up_order.clear()
+
+	for item in items.get_children():
+		if item.has_method("respawn"):
+			item.respawn()
 
 
 func _play_correct_audio() -> void:

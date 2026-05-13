@@ -40,6 +40,33 @@ scale = Vector2(1.5, 1.5)
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("3_c5w8p")]
 position = Vector2(358, -7)
 
+[node name="Coin2" parent="." unique_id=1648779549 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin3" parent="." unique_id=1303972198 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin4" parent="." unique_id=853807781 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin5" parent="." unique_id=373169945 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin6" parent="." unique_id=1615741028 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin7" parent="." unique_id=744014100 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin8" parent="." unique_id=500435151 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin9" parent="." unique_id=1960290142 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
+[node name="Coin10" parent="." unique_id=426140156 instance=ExtResource("3_c5w8p")]
+position = Vector2(358, -7)
+
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
 [connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
 [connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

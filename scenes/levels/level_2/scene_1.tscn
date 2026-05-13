@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://c1il4ccq4sqwo" path="res://assets/images/food/cookie_9.png" id="26_uougs"]
 [ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="27_0ijtv"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
-[ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="28_j7pju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1091,7 +1090,6 @@ position = Vector2(97, -17)
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("17_imlax")]
 position = Vector2(559.8258, 245.50336)
-interact_action = "\"First a classic, next a man, then some heart, finally some jame\""
 npc_text = "\"First a classic, next a man, then some heart, finally some jame\""
 
 [node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
@@ -1099,12 +1097,12 @@ offset_left = -578.79126
 offset_top = -54.906067
 offset_right = -176.79126
 offset_bottom = 3.093933
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0.21039295, 4.1488707e-05, 0.7766155, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 27
 text = "Wrong full sequence. 
-dwPress reset button to try again"
+Press reset button to try again"
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
 offset_left = -290.82587
@@ -1208,11 +1206,6 @@ scale = Vector2(0.59821427, 0.5089286)
 texture = ExtResource("27_0ijtv")
 region_rect = Rect2(24, 136, 112, 112)
 
-[node name="ResetButton" parent="." unique_id=954241513 instance=ExtResource("28_j7pju")]
-position = Vector2(-270, -178)
-scale = Vector2(2.9777782, 4.7624984)
-
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
-[connection signal="button_pressed" from="ResetButton" to="." method="_reset_puzzle"]
 
 [editable path="TurnipNpc"]

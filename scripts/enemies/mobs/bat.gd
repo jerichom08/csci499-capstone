@@ -9,7 +9,7 @@ Bat
 
 extends EnemyBase
 
-@onready var pdz = $PlayerDetectionZone
+#@onready var pdz = $PlayerDetectionZone
 @export var detection_radius : float = 78.0
 
 @onready var detection_shape : CollisionShape2D = $PlayerDetectionZone/CollisionShape2D

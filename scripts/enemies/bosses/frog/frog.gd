@@ -22,6 +22,8 @@ var ribbiting: bool = false
 var getting_hit: bool = false
 const WORLD_SCALE = 3.0
 
+signal boss_defeated
+
 func set_state(new_state: State) -> void:
 	if current_state == new_state:
 		return

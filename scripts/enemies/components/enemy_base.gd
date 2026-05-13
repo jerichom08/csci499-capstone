@@ -26,8 +26,9 @@ class_name EnemyBase extends CharacterBody2D
 @onready var ledge_ray: RayCast2D = get_node_or_null("LedgeRay")
 @onready var light_spawn: Marker2D = get_node_or_null("LightSpawn")
 @onready var heavy_spawn: Marker2D = get_node_or_null("HeavySpawn")
+@onready var pdz : Area2D = get_node_or_null("PlayerDetectionZone")
 
-signal boss_defeated
+#signal boss_defeated
 
 # --- Runtime Stats ---
 var health : int
@@ -39,6 +40,7 @@ var can_attack : bool = true
 enum State {
 	IDLE,
 	REST,
+	ARISE,
 	RETURN,
 	CHASE,
 	ATTACK,
@@ -49,6 +51,7 @@ enum State {
 var state_animations := {
 	State.IDLE : "idle",
 	State.REST : "rest",
+	State.ARISE : "arise",
 	State.RETURN : "chase",
 	State.CHASE : "chase",
 	State.ATTACK : "attack",
@@ -96,6 +99,8 @@ func update_state_machine() -> void:
 			idle()
 		State.REST:
 			rest()
+		State.ARISE:
+			arise()
 		State.RETURN:
 			return_to_spawn()
 		State.CHASE:
@@ -139,6 +144,9 @@ func idle() -> void:
 func rest() -> void:
 	pass
 
+func arise() -> void:
+	pass
+
 func return_to_spawn() -> void:
 	pass
 
@@ -169,6 +177,7 @@ func get_seen_player() -> Node2D:
 		return null
 	
 	var collider = vision_ray.get_collider()
+	print(collider)
 	if collider == null:
 		return null
 	

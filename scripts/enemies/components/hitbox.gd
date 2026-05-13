@@ -22,3 +22,28 @@ func _on_area_entered(area: Area2D) -> void:
 			knockback = Vector2(dir * knockback_force, knockback_upward)
 
 		area.take_hit(damage, knockback)
+		return
+func _physics_process(_delta: float) -> void:
+	if not monitoring:
+		return
+	for area in get_overlapping_areas():
+
+		if area.owner == owner:
+			continue
+
+		if area is Hurtbox:
+
+			var knockback := Vector2.ZERO
+
+			if apply_knockback:
+				var dir : int = sign(area.global_position.x - global_position.x)
+
+				if dir == 0:
+					dir = 1
+
+				knockback = Vector2(
+					dir * knockback_force,
+					knockback_upward
+				)
+
+			area.take_hit(damage, knockback)

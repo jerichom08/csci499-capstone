@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b4o5nyaxbw6ul"]
+
+[ext_resource type="Texture2D" uid="uid://cul08ixbwdxi" path="res://assets/images/enemies/bosses/minotaur/light_attack.png" id="1_4jy66"]
+[ext_resource type="Script" uid="uid://crychs221urb" path="res://scripts/enemies/bosses/minotaur_light_attack.gd" id="1_tlgfa"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_tlgfa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2enh1"]
+atlas = ExtResource("1_4jy66")
+region = Rect2(0, 0, 96, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uftev"]
+atlas = ExtResource("1_4jy66")
+region = Rect2(96, 0, 96, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvwhg"]
+atlas = ExtResource("1_4jy66")
+region = Rect2(192, 0, 96, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3db0g"]
+atlas = ExtResource("1_4jy66")
+region = Rect2(288, 0, 96, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dexht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2enh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uftev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvwhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3db0g")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm2ti"]
+size = Vector2(90, 14)
+
+[node name="minotaur_light_attack" type="Node2D" unique_id=1160365130]
+script = ExtResource("1_tlgfa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749623484]
+sprite_frames = SubResource("SpriteFrames_dexht")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2001748274]
+script = ExtResource("2_tlgfa")
+apply_knockback = true
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1886089508]
+position = Vector2(-3, 18)
+shape = SubResource("RectangleShape2D_wm2ti")
+debug_color = Color(1, 0, 0, 0.41960785)

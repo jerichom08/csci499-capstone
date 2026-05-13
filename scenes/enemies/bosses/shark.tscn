@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c3c40im21xna6"]
 
-[ext_resource type="Texture2D" uid="uid://d3xbwoabfnxlb" path="res://assets/images/shark/shark_attack.png" id="1_xgdv4"]
-[ext_resource type="Texture2D" uid="uid://u3ltn0kn1tss" path="res://assets/images/shark/shark_jump.png" id="2_ab8e7"]
-[ext_resource type="Texture2D" uid="uid://54qtx7btsydo" path="res://assets/images/shark/shark_hurt.png" id="3_g85en"]
-[ext_resource type="Texture2D" uid="uid://b5r22q11fp566" path="res://assets/images/shark/shark_run.png" id="4_3t7am"]
+[ext_resource type="Texture2D" uid="uid://d3xbwoabfnxlb" path="res://assets/images/enemies/bosses/shark/shark_attack.png" id="1_xgdv4"]
+[ext_resource type="Texture2D" uid="uid://u3ltn0kn1tss" path="res://assets/images/enemies/bosses/shark/shark_jump.png" id="2_ab8e7"]
+[ext_resource type="Texture2D" uid="uid://54qtx7btsydo" path="res://assets/images/enemies/bosses/shark/shark_hurt.png" id="3_g85en"]
+[ext_resource type="Texture2D" uid="uid://b5r22q11fp566" path="res://assets/images/enemies/bosses/shark/shark_run.png" id="4_3t7am"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kh8ea"]
 atlas = ExtResource("1_xgdv4")

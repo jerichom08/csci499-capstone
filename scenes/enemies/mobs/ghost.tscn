@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfqyoqgd2hdby"]
 
-[ext_resource type="Texture2D" uid="uid://cs6abg28n3igh" path="res://assets/images/ghost/MiniGhost_Idle.png" id="1_l5lq6"]
-[ext_resource type="Texture2D" uid="uid://d3irdp17b8qnh" path="res://assets/images/ghost/MiniGhost_Spawn.png" id="2_bbnym"]
+[ext_resource type="Texture2D" uid="uid://cs6abg28n3igh" path="res://assets/images/enemies/mobs/ghost/MiniGhost_Idle.png" id="1_l5lq6"]
+[ext_resource type="Texture2D" uid="uid://d3irdp17b8qnh" path="res://assets/images/enemies/mobs/ghost/MiniGhost_Spawn.png" id="2_bbnym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_veat2"]
 atlas = ExtResource("1_l5lq6")

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://wj5fjpxfcxak"]
+
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_iry02"]
+[ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="2_k0x3n"]
+[ext_resource type="Texture2D" uid="uid://bu73v6l2076fs" path="res://assets/images/tilemaps/Tiles/tile_0000.png" id="3_guc5p"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k0x3n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k0x3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0x3n"]
+size = Vector2(465, 20)
+
+[node name="test_skeleton" type="Node2D" unique_id=316475293]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1168174126]
+position = Vector2(787, 661)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=852491553]
+shape = SubResource("WorldBoundaryShape2D_k0x3n")
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_iry02")]
+position = Vector2(299, 599)
+
+[node name="Skeleton" parent="." unique_id=712153249 instance=ExtResource("2_k0x3n")]
+position = Vector2(860, 487)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1934332155]
+position = Vector2(675, 576)
+physics_material_override = SubResource("PhysicsMaterial_k0x3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1087657224]
+position = Vector2(160.5, 0)
+shape = SubResource("RectangleShape2D_k0x3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1970807463]
+position = Vector2(837, 576)
+scale = Vector2(25.777779, 1)
+texture = ExtResource("3_guc5p")

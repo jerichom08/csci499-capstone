@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://blm6oqej4wfcp"]
+
+[ext_resource type="Script" uid="uid://bthw8wjjei8ph" path="res://scripts/enemies/bosses/minotaur_heavy_attack.gd" id="1_jbqyw"]
+[ext_resource type="Texture2D" uid="uid://v0xqssslratg" path="res://assets/images/enemies/bosses/minotaur/heavy_attack.png" id="1_n4ddq"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_jbqyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvope"]
+atlas = ExtResource("1_n4ddq")
+region = Rect2(0, 0, 96, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ca0"]
+atlas = ExtResource("1_n4ddq")
+region = Rect2(96, 0, 96, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njjq7"]
+atlas = ExtResource("1_n4ddq")
+region = Rect2(192, 0, 96, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odime"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvope")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1ca0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njjq7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7wxs"]
+size = Vector2(52, 72)
+
+[node name="minotaur_heavy_attack" type="Node2D" unique_id=160455546]
+script = ExtResource("1_jbqyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=681630754]
+sprite_frames = SubResource("SpriteFrames_odime")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=827476845]
+script = ExtResource("2_jbqyw")
+apply_knockback = true
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1267501670]
+position = Vector2(16, -5)
+shape = SubResource("RectangleShape2D_g7wxs")
+debug_color = Color(1, 0, 0, 0.41960785)

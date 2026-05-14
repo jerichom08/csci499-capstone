@@ -1024,7 +1024,7 @@ physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_gaq46")
 sources/3 = SubResource("TileSetAtlasSource_m3ou3")
 
-[node name="Node2D" type="Node2D" unique_id=188122060]
+[node name="Node2D2" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 script = ExtResource("1_1rjxj")
 
@@ -1093,14 +1093,11 @@ position = Vector2(559.8258, 245.50336)
 npc_text = "\"First a classic, next a man, then some heart, finally some jame\""
 
 [node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
-offset_left = -578.79126
+offset_left = -577.79126
 offset_top = -54.906067
-offset_right = -176.79126
+offset_right = -175.79126
 offset_bottom = 3.093933
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 27
 text = "Wrong full sequence. 
 Press reset button to try again"
 

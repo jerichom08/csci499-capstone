@@ -1026,7 +1026,7 @@ physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_gaq46")
 sources/3 = SubResource("TileSetAtlasSource_m3ou3")
 
-[node name="Node2D2" type="Node2D" unique_id=188122060]
+[node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 script = ExtResource("1_1rjxj")
 
@@ -1102,17 +1102,10 @@ offset_bottom = 12.0
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
-<<<<<<< HEAD
-offset_left = -577.79126
-offset_top = -54.906067
-offset_right = -175.79126
-offset_bottom = 3.093933
-=======
 offset_left = 6.0
 offset_top = -103.0
 offset_right = 408.0
 offset_bottom = -36.0
->>>>>>> f255ce503eb35129a661ff1fa48d357e437b061c
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 text = "Wrong full sequence. 
 Press reset button to try again"

@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://c1il4ccq4sqwo" path="res://assets/images/food/cookie_9.png" id="26_uougs"]
 [ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="27_0ijtv"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
+[ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="29_kt1ph"]
+[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="30_86w07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_pvakf")
@@ -1046,7 +1048,7 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1546364109]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD9/wUAAgACAAUAAAD9/wMAAgACAAUAAAD9/wIAAgACAAYAAAD9/wEAAgADAAQAAAD9/wAAAgACAAYAAAD9////AgACAAUAAADu//3/AgADAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAADr//3/AgACAAQAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADo/wUAAgACAAUAAADo/wYAAgACAAYAAADp/wUAAgACAAUAAADp/wYAAgACAAYAAADq/wUAAgACAAUAAADq/wYAAgACAAYAAADr/wUAAgACAAUAAADr/wYAAgACAAYAAADs/wUAAgACAAUAAADs/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADk/wUAAgABAAUAAADk/wYAAgABAAYAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wUAAgACAAEAAADx/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD8/wUAAgACAAYAAAD8/wYAAgACAAYAAAD9/wYAAgACAAYAAAD9/wQAAgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgACAAUAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAADq//3/AgACAAQAAADp//3/AgACAAQAAADo//3/AgACAAQAAADn//3/AgACAAQAAADm//3/AgACAAQAAADl//3/AgACAAQAAADk//3/AgACAAUAAADk//r/AgABAAcAAADl//r/AgACAAcAAADm//r/AgADAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADq//n/AgADAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADo//z/AgAEAAYAAADl/wEAAgACAAQAAADm/wEAAgACAAQAAADn/wEAAgADAAQAAAD7//v/AgACAAQAAAD8//v/AgACAAUAAADk/wEAAgACAAQAAADu/wUAAgACAAEAAADw/wUAAgACAAEAAADv/wUAAgACAAEAAAD7/wQAAgALAAUAAADk//7/AgADAAcAAAD7//7/AgACAAQAAAD8//7/AgACAAYAAAD7/wEAAgACAAUAAAD8/wEAAgACAAYAAAD8/wIAAgACAAYAAAD8/wMAAgABAAYAAAD8/wQAAgABAAYAAAD8//3/AgABAAYAAAD8//z/AgABAAYAAAD7/wIAAgACAAcAAAD8/wAAAgABAAYAAAD8////AgABAAYAAAD2/wIAAgACAAQAAAD3/wIAAgACAAcAAAD4/wEAAgACAAUAAAD4/wIAAgACAAcAAAD5/wEAAgACAAUAAAD5/wIAAgACAAcAAAD1/wIAAgABAAQAAAD3/wEAAgABAAUAAAD6//7/AgACAAQAAAD6/wEAAgACAAUAAAD6/wIAAgACAAcAAAD6//v/AgACAAQAAAD3//v/AgABAAQAAAD3//7/AgABAAQAAAD4//v/AgACAAQAAAD4//7/AgACAAQAAAD5//v/AgACAAQAAAD5//7/AgACAAQAAAD7/wAAAgAFAAYAAAD4//r/AgAGAAYAAAA=")
+tile_map_data = PackedByteArray("AAD9/wUAAgACAAUAAAD9/wMAAgACAAUAAAD9/wIAAgACAAYAAAD9/wEAAgADAAQAAAD9/wAAAgACAAYAAAD9////AgACAAUAAADu//3/AgADAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADs//z/AgAIAAYAAADt//v/AgAKAAUAAADt//z/AgAKAAYAAADr//3/AgACAAQAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADo/wUAAgACAAUAAADo/wYAAgACAAYAAADp/wUAAgACAAUAAADp/wYAAgACAAYAAADq/wUAAgACAAUAAADq/wYAAgACAAYAAADr/wUAAgACAAUAAADr/wYAAgACAAYAAADs/wUAAgACAAUAAADs/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADk/wUAAgABAAUAAADk/wYAAgABAAYAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wUAAgACAAEAAADx/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD8/wUAAgACAAYAAAD8/wYAAgACAAYAAAD9/wYAAgACAAYAAAD9/wQAAgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgACAAUAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAADq//3/AgACAAQAAADp//3/AgACAAQAAADo//3/AgACAAQAAADn//3/AgACAAQAAADm//3/AgACAAQAAADl//3/AgACAAQAAADk//3/AgACAAUAAADk//r/AgABAAcAAADl//r/AgACAAcAAADm//r/AgADAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADk//n/AgACAAYAAADq//n/AgADAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADo//z/AgAEAAYAAADl/wEAAgACAAQAAADm/wEAAgACAAQAAADn/wEAAgADAAQAAAD7//v/AgACAAQAAAD8//v/AgACAAUAAADk/wEAAgACAAQAAADu/wUAAgACAAEAAADw/wUAAgACAAEAAADv/wUAAgACAAEAAADk//7/AgADAAcAAAD7//7/AgACAAQAAAD8//7/AgACAAYAAAD7/wEAAgACAAUAAAD8/wEAAgACAAYAAAD8/wIAAgACAAYAAAD8/wMAAgABAAYAAAD8/wQAAgABAAYAAAD8//3/AgABAAYAAAD8//z/AgABAAYAAAD7/wIAAgACAAcAAAD8/wAAAgABAAYAAAD8////AgABAAYAAAD2/wIAAgACAAQAAAD3/wIAAgACAAcAAAD4/wEAAgACAAUAAAD4/wIAAgACAAcAAAD5/wEAAgACAAUAAAD5/wIAAgACAAcAAAD1/wIAAgABAAQAAAD3/wEAAgABAAUAAAD6//7/AgACAAQAAAD6/wEAAgACAAUAAAD6/wIAAgACAAcAAAD6//v/AgACAAQAAAD3//v/AgABAAQAAAD3//7/AgABAAQAAAD4//v/AgACAAQAAAD4//7/AgACAAQAAAD5//v/AgACAAQAAAD5//7/AgACAAQAAAD7/wAAAgAFAAYAAAD4//r/AgAGAAYAAAA=")
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=1300485581]
@@ -1083,29 +1085,51 @@ position = Vector2(-168.95721, -194.25085)
 position = Vector2(221, -118)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_n8pg6")]
-position = Vector2(514, -153)
+position = Vector2(532, 209)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_fi2td")]
 position = Vector2(97, -17)
 
-[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("17_imlax")]
-position = Vector2(559.8258, 245.50336)
+[node name="TurnipNpc" parent="." unique_id=370282961 instance=ExtResource("17_imlax")]
+position = Vector2(-495, -184)
 npc_text = "\"First a classic, next a man, then some heart, finally some jame\""
 
+[node name="InteractionLabel" parent="TurnipNpc" index="0" unique_id=876962569]
+offset_left = 40.0
+offset_top = -11.0
+offset_right = 80.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
 [node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+<<<<<<< HEAD
 offset_left = -577.79126
 offset_top = -54.906067
 offset_right = -175.79126
 offset_bottom = 3.093933
+=======
+offset_left = 6.0
+offset_top = -103.0
+offset_right = 408.0
+offset_bottom = -36.0
+>>>>>>> f255ce503eb35129a661ff1fa48d357e437b061c
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 text = "Wrong full sequence. 
 Press reset button to try again"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" parent="TurnipNpc" index="2" unique_id=327155034]
+position = Vector2(-52, -14)
+flip_h = true
+
+[node name="CollisionShape2D" parent="TurnipNpc" index="3" unique_id=1929903529]
+position = Vector2(-19, -17)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
-offset_left = -290.82587
-offset_top = -72.50336
-offset_right = 207.1742
-offset_bottom = 98.49664
+offset_left = -33.999996
+offset_top = -145.0
+offset_right = 464.00003
+offset_bottom = 26.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -1126,15 +1150,16 @@ offset_right = -597.70905
 offset_bottom = -16.154785
 theme_override_fonts/font = ExtResource("9_yg775")
 theme_override_font_sizes/font_size = 18
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
-position = Vector2(-418, -224)
+position = Vector2(-313, -223)
 
 [node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1307895906]
-offset_left = -83.0
-offset_top = -49.000004
-offset_right = 415.00006
-offset_bottom = 122.0
+offset_left = -120.99999
+offset_top = -78.0
+offset_right = 377.00006
+offset_bottom = 93.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -1156,9 +1181,6 @@ stream = ExtResource("26_j7pju")
 [node name="AudioComplete" type="AudioStreamPlayer2D" parent="." unique_id=2037922064]
 position = Vector2(-146, -62)
 stream = ExtResource("27_uougs")
-
-[node name="MovingPlatform2" parent="." unique_id=1776935031 instance=ExtResource("7_mfkud")]
-position = Vector2(452, 22)
 
 [node name="Items" type="Node2D" parent="." unique_id=229748280]
 
@@ -1202,6 +1224,12 @@ position = Vector2(-2.999998, 2)
 scale = Vector2(0.59821427, 0.5089286)
 texture = ExtResource("27_0ijtv")
 region_rect = Rect2(24, 136, 112, 112)
+
+[node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("29_kt1ph")]
+position = Vector2(447, -156)
+
+[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("30_86w07")]
+position = Vector2(387, 266.99997)
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 

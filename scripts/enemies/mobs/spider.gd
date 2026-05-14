@@ -11,7 +11,7 @@ Spider
 
 extends EnemyBase
 
-@onready var pdz = $PlayerDetectionZone
+#@onready var pdz = $PlayerDetectionZone
 
 var WORLD_SCALE : float = 3.0
 var dropping : bool = false

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg27s73xenirs"
+path="res://.godot/imported/defeat.wav-3767e90be6e22348fadb566f18c5b01a.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/mobs/skeleton/defeat.wav"
+dest_files=["res://.godot/imported/defeat.wav-3767e90be6e22348fadb566f18c5b01a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -768,7 +768,7 @@ sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 sources/0 = SubResource("TileSetAtlasSource_imlax")
 
 [node name="Node2D" type="Node2D" unique_id=188122060]
-position = Vector2(793, 343)
+position = Vector2(796, 343)
 script = ExtResource("1_32hn8")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]

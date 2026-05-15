@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dgprocfcenaoi"]
+
+[ext_resource type="Texture2D" uid="uid://bqwfqlmtad1gk" path="res://scenes/test_scenes/64x64_textures__108_-removebg-preview.png" id="1_tcrni"]
+
+[sub_resource type="Animation" id="Animation_2niu8"]
+resource_name = "lightAnie"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sggwa"]
+_data = {
+&"lightAnie": SubResource("Animation_2niu8")
+}
+
+[node name="Light" type="PointLight2D" unique_id=137180950]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(2.609375, 2.390625)
+blend_mode = 2
+texture = ExtResource("1_tcrni")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1285206149]
+libraries/ = SubResource("AnimationLibrary_sggwa")

@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="12_qpovd"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="13_5c0ee"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="14_3id5d"]
-[ext_resource type="PackedScene" uid="uid://cwddpl64tmi1h" path="res://scenes/mobs/turnipNPCF.tscn" id="15_gts1u"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_r0wbf"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="18_48kkf"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="19_i3nm3"]
@@ -30,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="26_qpovd"]
 [ext_resource type="Texture2D" uid="uid://35oise2jki27" path="res://assets/images/food/cookie_8.png" id="27_3id5d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_5c0ee"]
+[ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="29_x31aq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_lhpga")
@@ -887,33 +887,6 @@ position = Vector2(-563, 270.99997)
 scale = Vector2(3, 3)
 script = ExtResource("14_3id5d")
 
-[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("15_gts1u")]
-position = Vector2(-542, 248)
-
-[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
-offset_left = 118.601105
-offset_top = -50.533325
-offset_right = 158.6011
-offset_bottom = -27.533325
-
-[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=778075000]
-offset_left = -27.0
-offset_top = -79.00001
-offset_right = 471.00006
-offset_bottom = 91.99999
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("16_r0wbf")
-theme_override_font_sizes/font_size = 27
-text = "\"First a classic,
-next a swirl,
-add some heart
-finally a star
- \""
-metadata/_edit_use_anchors_ = true
-
 [node name="Items" type="Node2D" parent="." unique_id=1890513090]
 
 [node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("23_ph1vo")]
@@ -971,6 +944,39 @@ stream = ExtResource("27_5c0ee")
 
 [node name="MovingPlatform3" parent="." unique_id=504706286 instance=ExtResource("18_48kkf")]
 position = Vector2(-14, 260)
+
+[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_x31aq")]
+position = Vector2(-423.3989, 244.50818)
+
+[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+offset_left = 98.49057
+offset_top = -35.498352
+offset_right = 164.49057
+offset_bottom = 13.501648
+
+[node name="AnimatedSprite2D" parent="TurnipNpc" index="2" unique_id=327155034]
+position = Vector2(-60.89435, -13.988282)
+flip_h = true
+
+[node name="CollisionShape2D" parent="TurnipNpc" index="3" unique_id=1929903529]
+position = Vector2(4.115326, -19)
+
+[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=874316782]
+offset_left = 55.10565
+offset_top = -136.98828
+offset_right = 553.1057
+offset_bottom = 34.01172
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("16_r0wbf")
+theme_override_font_sizes/font_size = 27
+text = "\"First a classic, 
+next a man, 
+then some heart, 
+finally some jam\""
+metadata/_edit_use_anchors_ = true
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]

@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="25_lq0co"]
 [ext_resource type="Texture2D" uid="uid://co4truixt2nep" path="res://assets/images/food/cookie_6.png" id="26_68o1d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
+[ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="28_l2ibj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ah41n")
@@ -835,24 +836,6 @@ position = Vector2(-603, -161)
 scale = Vector2(3, 3)
 script = ExtResource("16_gysk4")
 
-[node name="InteractionLabel2" type="Label" parent="." unique_id=778075000]
-offset_left = -562.0
-offset_top = -266.0
-offset_right = -63.99994
-offset_bottom = -95.0
-scale = Vector2(0.8, 0.8)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("18_u5736")
-theme_override_font_sizes/font_size = 27
-text = "\" A dab of choclate.
-\"a circular treat,
-next a cracker
-finaly a chip\"
-"
-metadata/_edit_use_anchors_ = true
-
 [node name="DisappearingPlatforn" parent="." unique_id=33812697 instance=ExtResource("20_8yxch")]
 position = Vector2(-442, -59)
 scale = Vector2(3, 3)
@@ -920,4 +903,39 @@ stream = ExtResource("25_lq0co")
 position = Vector2(-146, -62)
 stream = ExtResource("26_xglgs")
 
+[node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("28_l2ibj")]
+position = Vector2(-520.10565, -184.01172)
+
+[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
+offset_left = 98.49057
+offset_top = -35.498352
+offset_right = 164.49057
+offset_bottom = 13.501648
+
+[node name="AnimatedSprite2D" parent="TurnipNpc" index="2" unique_id=327155034]
+position = Vector2(-60.89435, -13.988282)
+flip_h = true
+
+[node name="CollisionShape2D" parent="TurnipNpc" index="3" unique_id=1929903529]
+position = Vector2(4.115326, -19)
+
+[node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=677447281]
+offset_left = -31.89434
+offset_top = -87.98828
+offset_right = 466.1057
+offset_bottom = 83.01172
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("18_u5736")
+theme_override_font_sizes/font_size = 27
+text = "\"First some chocolate, 
+next a treat, 
+then a cracker, 
+finally a chipaa\""
+metadata/_edit_use_anchors_ = true
+
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
+
+[editable path="TurnipNpc"]

@@ -1,32 +1,45 @@
-[gd_scene format=3 uid="uid://dgprocfcenaoi"]
+[gd_scene format=3 uid="uid://bjogyjwyccuna"]
 
-[ext_resource type="Texture2D" uid="uid://bqwfqlmtad1gk" path="res://scenes/test_scenes/64x64_textures__108_-removebg-preview.png" id="1_tcrni"]
+[ext_resource type="Texture2D" uid="uid://b2682eedhr71n" path="res://assets/images/animation/7.png" id="1_76kh2"]
 
-[sub_resource type="Animation" id="Animation_2niu8"]
-resource_name = "lightAnie"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_scoe8"]
+atlas = ExtResource("1_76kh2")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sggwa"]
-_data = {
-&"lightAnie": SubResource("Animation_2niu8")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dyre"]
+atlas = ExtResource("1_76kh2")
+region = Rect2(32, 0, 32, 32)
 
-[node name="Light" type="PointLight2D" unique_id=137180950]
-position = Vector2(3.8146973e-06, 0)
-scale = Vector2(2.609375, 2.390625)
-blend_mode = 2
-texture = ExtResource("1_tcrni")
+[sub_resource type="AtlasTexture" id="AtlasTexture_b57t3"]
+atlas = ExtResource("1_76kh2")
+region = Rect2(64, 0, 32, 32)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1285206149]
-libraries/ = SubResource("AnimationLibrary_sggwa")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d62u"]
+atlas = ExtResource("1_76kh2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwoht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scoe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dyre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b57t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d62u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Light" type="AnimatedSprite2D" unique_id=1564031698]
+position = Vector2(4.7683716e-07, 2.3841858e-07)
+scale = Vector2(2.75, 2.421875)
+sprite_frames = SubResource("SpriteFrames_wwoht")
+frame_progress = 0.54205245

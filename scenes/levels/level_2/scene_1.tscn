@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="14_m3ou3"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_n8pg6"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
+[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="18_kt1ph"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="23_4onw6"]
 [ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="24_uf1yc"]
 [ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="25_j7pju"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ho00tk238tv" path="res://assets/images/food/cookie_4.png" id="27_0ijtv"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="29_kt1ph"]
+[ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="30_0ijtv"]
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="30_86w07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -1093,6 +1095,8 @@ position = Vector2(97, -17)
 [node name="TurnipNpc" parent="." unique_id=370282961 instance=ExtResource("17_imlax")]
 position = Vector2(-495, -184)
 npc_text = "\"First a classic, next a man, then some heart, finally some jame\""
+character_face = ExtResource("18_kt1ph")
+dialogue_box_path = NodePath("../RpgStyleTalk")
 
 [node name="InteractionLabel" parent="TurnipNpc" index="0" unique_id=876962569]
 offset_left = 40.0
@@ -1101,21 +1105,11 @@ offset_right = 80.0
 offset_bottom = 12.0
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
-offset_left = 6.0
-offset_top = -103.0
-offset_right = 408.0
-offset_bottom = -36.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-text = "Wrong full sequence. 
-Press reset button to try again"
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimatedSprite2D" parent="TurnipNpc" index="2" unique_id=327155034]
+[node name="AnimatedSprite2D" parent="TurnipNpc" index="1" unique_id=327155034]
 position = Vector2(-52, -14)
 flip_h = true
 
-[node name="CollisionShape2D" parent="TurnipNpc" index="3" unique_id=1929903529]
+[node name="CollisionShape2D" parent="TurnipNpc" index="2" unique_id=1929903529]
 position = Vector2(-19, -17)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1677611829]
@@ -1133,16 +1127,6 @@ text = "\"First a squaredw,
 next a man, 
 then some jam, 
 finally a classic\""
-metadata/_edit_use_anchors_ = true
-
-[node name="DialogueLabel2" type="Label" parent="TurnipNpc" unique_id=418612919]
-modulate = Color(0.14774385, 0.72103935, 0.75303876, 1)
-offset_left = -663.70905
-offset_top = -65.154785
-offset_right = -597.70905
-offset_bottom = -16.154785
-theme_override_fonts/font = ExtResource("9_yg775")
-theme_override_font_sizes/font_size = 18
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("8_la782")]
@@ -1223,6 +1207,8 @@ position = Vector2(447, -156)
 
 [node name="Rat" parent="." unique_id=69780106 instance=ExtResource("30_86w07")]
 position = Vector2(387, 266.99997)
+
+[node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("30_0ijtv")]
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 

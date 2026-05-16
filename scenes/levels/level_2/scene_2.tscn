@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="12_5cqpn"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="12_80vwy"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_6y8wy"]
+[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="16_7ykea"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_83xw0"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="20_6ewla"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="20_g75hv"]
@@ -26,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cq3lipcayqih0" path="res://assets/images/food/cookie_13.png" id="24_7ykea"]
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="25_83xw0"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="26_6y8wy"]
+[ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="27_fmsi3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_0hn47")
@@ -834,12 +836,8 @@ position = Vector2(-179, 189.99997)
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("20_6ewla")]
 position = Vector2(521.6887, 246.74957)
-
-[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
-offset_left = -529.0237
-offset_top = -45.725647
-offset_right = -463.02368
-offset_bottom = 3.274353
+character_face = ExtResource("16_7ykea")
+dialogue_box_path = NodePath("../RpgStyleTalk")
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1366618637]
 offset_left = -290.82587
@@ -924,6 +922,8 @@ position = Vector2(-568, -223)
 
 [node name="HeartPickup2" parent="." unique_id=1695181317 instance=ExtResource("26_6y8wy")]
 position = Vector2(-299, 1)
+
+[node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("27_fmsi3")]
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 

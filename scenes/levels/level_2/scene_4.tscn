@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://co4truixt2nep" path="res://assets/images/food/cookie_6.png" id="26_68o1d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="28_l2ibj"]
+[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="29_ca4uv"]
+[ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="30_iyvtx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ah41n")
@@ -905,18 +907,14 @@ stream = ExtResource("26_xglgs")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("28_l2ibj")]
 position = Vector2(-520.10565, -184.01172)
+character_face = ExtResource("29_ca4uv")
+dialogue_box_path = NodePath("../RpgStyleTalk")
 
-[node name="DialogueLabel" parent="TurnipNpc" index="1" unique_id=1341102752]
-offset_left = 98.49057
-offset_top = -35.498352
-offset_right = 164.49057
-offset_bottom = 13.501648
-
-[node name="AnimatedSprite2D" parent="TurnipNpc" index="2" unique_id=327155034]
+[node name="AnimatedSprite2D" parent="TurnipNpc" index="1" unique_id=327155034]
 position = Vector2(-60.89435, -13.988282)
 flip_h = true
 
-[node name="CollisionShape2D" parent="TurnipNpc" index="3" unique_id=1929903529]
+[node name="CollisionShape2D" parent="TurnipNpc" index="2" unique_id=1929903529]
 position = Vector2(4.115326, -19)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=677447281]
@@ -935,6 +933,8 @@ next a treat,
 then a cracker, 
 finally a chipaa\""
 metadata/_edit_use_anchors_ = true
+
+[node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("30_iyvtx")]
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cwtwx8kf8338r"]
+
+[ext_resource type="Script" uid="uid://fkehvuvce6lj" path="res://scripts/UI/rpg_style_talk.gd" id="1_6shrq"]
+[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="2_on7qd"]
+[ext_resource type="FontFile" uid="uid://d022t1deah30r" path="res://assets/images/UI/text box/star-crush/Star Crush.otf" id="3_brviy"]
+
+[node name="RpgStyleTalk" type="CanvasLayer" unique_id=333744718]
+script = ExtResource("1_6shrq")
+
+[node name="Panel" type="Panel" parent="." unique_id=698894427]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -209.0
+offset_right = -155.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FaceTexture" type="TextureRect" parent="Panel" unique_id=742695846]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -64.0
+offset_right = 213.0
+offset_bottom = 67.0
+grow_vertical = 2
+texture = ExtResource("2_on7qd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogueText" type="Label" parent="Panel" unique_id=1478326074]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 47.0
+offset_right = 1115.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("3_brviy")
+theme_override_font_sizes/font_size = 34
+autowrap_mode = 2

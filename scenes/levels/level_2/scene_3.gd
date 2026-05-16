@@ -40,9 +40,9 @@ func _on_item_picked_up(item_name: String) -> void:
 
 	_play_correct_audio()
 
-	if picked_up_order.size() >= correct_order.size():
-		if turnip_npc:
-			turnip_npc.set_npc_text("Now come talk to me.", true)
+	#if picked_up_order.size() >= correct_order.size():
+		#if turnip_npc:
+			#turnip_npc.set_npc_text("Now come talk to me.", true)
 
 func _check_sequence() -> void:
 	if puzzle_completed:

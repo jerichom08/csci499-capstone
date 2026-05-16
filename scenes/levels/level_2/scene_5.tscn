@@ -944,9 +944,6 @@ stream = ExtResource("26_qpovd")
 position = Vector2(-146, -62)
 stream = ExtResource("27_5c0ee")
 
-[node name="MovingPlatform3" parent="." unique_id=504706286 instance=ExtResource("18_48kkf")]
-position = Vector2(-14, 260)
-
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_x31aq")]
 position = Vector2(-423.3989, 244.50818)
 character_face = ExtResource("30_5c0ee")

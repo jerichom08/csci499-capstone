@@ -30,6 +30,10 @@ const jumpVelocity = -170.0 * WORLD_SCALE
 const jumpMultiplier = 0.7
 const gravity = 400.0 * WORLD_SCALE
 
+const oneWayPlatformLayer = 5
+const dropThroughTime = 0.2
+var droppingThrough := false
+
 # 1500 2000 800 tight
 # 500 600 300 floaty
 # 600 800 600 perfect
@@ -93,7 +97,7 @@ func die():
 		return
 	is_dead = true
 	print("You're dead")
-	#reset_room()
+	reset_room()
 
 func reset_room():
 	PlayerStats.reset_health()
@@ -123,6 +127,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	if Input.is_action_just_pressed("move_down") and is_on_floor() and !is_attacking:
+		drop_through_platform()
 	
 	if controlling_projectile:
 		return
@@ -172,9 +179,19 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = direction < 0
 		$AttackSpawn.position.x = abs($AttackSpawn.position.x) * (-1 if sprite.flip_h else 1)
 		
-
-	
 	move_and_slide()
+		
+func drop_through_platform() -> void:
+	if droppingThrough:
+		return
+		
+	droppingThrough = true
+		
+	collision_mask &= ~(1 << (oneWayPlatformLayer - 1))
+	await get_tree().create_timer(dropThroughTime).timeout
+	collision_mask |= (1 << (oneWayPlatformLayer - 1))
+	
+	droppingThrough = false
 
 func _on_hud_line_drawn() -> void:
 	print("Signal recieved")

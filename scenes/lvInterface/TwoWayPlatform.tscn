@@ -7,6 +7,7 @@ size = Vector2(54, 5)
 
 [node name="TwoWayPlatform" type="StaticBody2D" unique_id=1325980132]
 scale = Vector2(3, 3)
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580125014]
 visibility_layer = 17

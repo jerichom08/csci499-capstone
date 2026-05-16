@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_j8ego"]
 [ext_resource type="Texture2D" uid="uid://pq1invg3xulj" path="res://assets/images/tilemaps/tilemap2_packed.png" id="4_8awc5"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_byuye"]
-[ext_resource type="PackedScene" uid="uid://bjogyjwyccuna" path="res://scenes/test_scenes/Light.tscn" id="6_7tec0"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="6_nt56x"]
 [ext_resource type="PackedScene" uid="uid://dllynjydlblvp" path="res://scenes/test_scenes/PlayerLight.tscn" id="7_6vfut"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="7_7tec0"]
@@ -769,8 +768,6 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_byuye")]
 position = Vector2(543, 233)
 
-[node name="Light" parent="Player" unique_id=1564031698 instance=ExtResource("6_7tec0")]
-
 [node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("7_6vfut")]
 position = Vector2(103, 28)
 
@@ -796,23 +793,13 @@ color = Color(0, 0, 0, 1)
 [node name="hud" parent="CanvasLayer" unique_id=2086834432 instance=ExtResource("7_7tec0")]
 position = Vector2(730, 361)
 
-[node name="Light4" parent="." unique_id=2062113602 instance=ExtResource("6_7tec0")]
-position = Vector2(476.00003, -212)
-scale = Vector2(4.6054688, 3.636719)
-
-[node name="Light3" parent="." unique_id=137180950 instance=ExtResource("6_7tec0")]
-position = Vector2(-144, -117.99999)
-scale = Vector2(3.5546868, 3.0234375)
-
-[node name="Light5" parent="." unique_id=1654915710 instance=ExtResource("6_7tec0")]
-position = Vector2(198.99997, 106.99999)
-scale = Vector2(3.5546868, 3.0234375)
-
-[node name="Light6" parent="." unique_id=1279750918 instance=ExtResource("6_7tec0")]
-position = Vector2(-192, 226.99997)
-scale = Vector2(3.5546868, 3.0234375)
-
 [node name="PlayerLight" parent="." unique_id=201406950 instance=ExtResource("7_6vfut")]
-position = Vector2(103, 28)
+position = Vector2(143, -43)
+
+[node name="PlayerLight2" parent="." unique_id=330065421 instance=ExtResource("7_6vfut")]
+position = Vector2(-236, 237)
+
+[node name="PlayerLight3" parent="." unique_id=668610475 instance=ExtResource("7_6vfut")]
+position = Vector2(568, -203)
 
 [editable path="Player"]

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bxcsrmuququwo"]
+
+[ext_resource type="Script" uid="uid://ua7aab2n5cgr" path="res://scripts/UI/inventory.gd" id="1_ebc1f"]
+[ext_resource type="Texture2D" uid="uid://horug3tdwdcx" path="res://assets/images/UI/UI Pack/inventory_display.png" id="2_evjl3"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=2087940317]
+visible = false
+script = ExtResource("1_ebc1f")
+
+[node name="Panel" type="Panel" parent="." unique_id=638171875]
+custom_minimum_size = Vector2(170, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -16.0
+offset_right = 85.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="InventoryBackground" type="TextureRect" parent="Panel" unique_id=256483541]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_evjl3")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=741264593]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 47.0
+offset_bottom = 45.0
+
+[node name="Slot1" type="TextureRect" parent="Panel/HBoxContainer" unique_id=1954910150]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Slot2" type="TextureRect" parent="Panel/HBoxContainer" unique_id=93299140]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Slot3" type="TextureRect" parent="Panel/HBoxContainer" unique_id=476972888]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Slot4" type="TextureRect" parent="Panel/HBoxContainer" unique_id=36374060]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Slot5" type="TextureRect" parent="Panel/HBoxContainer" unique_id=560868922]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2

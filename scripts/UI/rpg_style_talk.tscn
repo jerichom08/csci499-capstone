@@ -4,6 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="2_on7qd"]
 [ext_resource type="FontFile" uid="uid://d022t1deah30r" path="res://assets/images/UI/text box/star-crush/Star Crush.otf" id="3_brviy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6shrq"]
+bg_color = Color(0.33660764, 0.3366076, 0.3366076, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on7qd"]
+bg_color = Color(0.3372549, 0.3372549, 0.3372549, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 12
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="RpgStyleTalk" type="CanvasLayer" unique_id=333744718]
 script = ExtResource("1_6shrq")
 
@@ -12,21 +31,30 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
+offset_left = 3.0
 offset_top = -209.0
-offset_right = -155.0
+offset_right = -186.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6shrq")
 
-[node name="FaceTexture" type="TextureRect" parent="Panel" unique_id=742695846]
+[node name="Panel" type="Panel" parent="Panel" unique_id=909717853]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 231.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_on7qd")
+
+[node name="FaceTexture" type="TextureRect" parent="Panel/Panel" unique_id=742695846]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -64.0
-offset_right = 213.0
-offset_bottom = 67.0
+offset_left = 8.0
+offset_top = -73.0
+offset_right = 196.0
+offset_bottom = 58.0
 grow_vertical = 2
 texture = ExtResource("2_on7qd")
 expand_mode = 1

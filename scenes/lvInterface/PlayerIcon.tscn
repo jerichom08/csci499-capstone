@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://diruyewfe185g"]
 
 [ext_resource type="Script" uid="uid://baiuax4nnmupw" path="res://scripts/lvls/player_icon.gd" id="1_eyug6"]
-[ext_resource type="Texture2D" uid="uid://bhl2v8nsj64pj" path="res://assets/images/UI/UI Pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_rjwjj"]
 [ext_resource type="Texture2D" uid="uid://5n3unyyn7fm5" path="res://assets/images/player/B_witch_icon.png" id="2_ddvy2"]
+[ext_resource type="Texture2D" uid="uid://dtpnmo0q6f2cc" path="res://assets/images/UI/UI Pack/Sprite sheets/frame.png" id="2_eyug6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmdt1"]
 atlas = ExtResource("2_ddvy2")
@@ -50,15 +50,22 @@ animations = [{
 [node name="PlayerIcon" type="Node2D" unique_id=1646893056]
 script = ExtResource("1_eyug6")
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=307470316]
+position = Vector2(64.5, 58.922623)
+scale = Vector2(3.0333333, 3.0333333)
+texture = ExtResource("2_eyug6")
+region_enabled = true
+region_rect = Rect2(201, 105, 30, 30)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652629795]
+position = Vector2(64.5, 59)
+scale = Vector2(3.8125, 3.734693)
+sprite_frames = SubResource("SpriteFrames_btw3e")
+frame_progress = 0.37660906
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1154590370]
 position = Vector2(64.5, 58.922623)
 scale = Vector2(3.0333333, 3.0333333)
-texture = ExtResource("1_rjwjj")
+texture = ExtResource("2_eyug6")
 region_enabled = true
 region_rect = Rect2(153, 105, 30, 30)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652629795]
-position = Vector2(64.5, 58.999996)
-scale = Vector2(3.0625, 2.9999995)
-sprite_frames = SubResource("SpriteFrames_btw3e")
-frame_progress = 0.37660906

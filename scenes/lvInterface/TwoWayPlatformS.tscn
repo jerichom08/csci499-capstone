@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cmhra3c1bntj"]
+[gd_scene format=3 uid="uid://b3tiwnxtbfvlh"]
 
-[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_y82ly"]
-[ext_resource type="Texture2D" uid="uid://dl6rq07cu35gy" path="res://assets/images/tilemaps/tilemap3_packed.png" id="2_34djf"]
+[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_h4gsh"]
+[ext_resource type="Texture2D" uid="uid://dl6rq07cu35gy" path="res://assets/images/tilemaps/tilemap3_packed.png" id="2_nd8g0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlwus"]
-texture = ExtResource("1_y82ly")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4gsh"]
+texture = ExtResource("1_h4gsh")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
@@ -229,8 +229,8 @@ texture_region_size = Vector2i(18, 18)
 18:8/0 = 0
 19:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_upvue"]
-texture = ExtResource("2_34djf")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ayde8"]
+texture = ExtResource("2_nd8g0")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -345,28 +345,28 @@ texture_region_size = Vector2i(18, 18)
 14:6/0 = 0
 15:6/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_ns2bm"]
+[sub_resource type="TileSet" id="TileSet_nd8g0"]
 tile_size = Vector2i(18, 18)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_hlwus")
-sources/3 = SubResource("TileSetAtlasSource_upvue")
+sources/2 = SubResource("TileSetAtlasSource_h4gsh")
+sources/3 = SubResource("TileSetAtlasSource_ayde8")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcyu1"]
-size = Vector2(32.666664, 3.6666665)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o04vk"]
+size = Vector2(49.666668, 3.6666665)
 
-[node name="TwoWayPlatformS" type="StaticBody2D" unique_id=1325980132]
+[node name="TwoWayPlatform" type="StaticBody2D" unique_id=1325980132]
 scale = Vector2(3, 3)
 collision_layer = 16
 collision_mask = 0
 
-[node name="basic tiles" type="TileMapLayer" parent="." unique_id=305851905]
-position = Vector2(8.999996, -5.0000005)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 3, 0, 14, 0, 5, 0, 0, 16, 254, 255, 0, 0, 3, 0, 14, 0, 5, 0, 0, 0, 255, 255, 0, 0, 3, 0, 15, 0, 5, 0, 0, 0)
-tile_set = SubResource("TileSet_ns2bm")
+[node name="basic tiles" type="TileMapLayer" parent="." unique_id=1132188064]
+position = Vector2(17.666664, -5.0000005)
+tile_map_data = PackedByteArray(0, 0, 254, 255, 0, 0, 3, 0, 15, 0, 5, 0, 0, 0, 255, 255, 0, 0, 3, 0, 15, 0, 5, 0, 0, 0, 253, 255, 0, 0, 3, 0, 14, 0, 5, 0, 0, 0, 0, 0, 0, 0, 3, 0, 14, 0, 5, 0, 0, 16)
+tile_set = SubResource("TileSet_nd8g0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1871124922]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580125014]
 light_mask = 0
-position = Vector2(9.536743e-07, -2.3333344)
-shape = SubResource("RectangleShape2D_mcyu1")
+position = Vector2(-0.1666654, -2.3333344)
+shape = SubResource("RectangleShape2D_o04vk")
 one_way_collision = true

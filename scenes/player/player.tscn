@@ -370,6 +370,7 @@ height = 24.666668
 size = Vector2(27, 66)
 
 [node name="Player" type="CharacterBody2D" unique_id=2085610372 groups=["player"]]
+collision_mask = 17
 script = ExtResource("1_dqkch")
 line_attack_scene = ExtResource("2_h17s1")
 circle_attack_scene = ExtResource("2_qek5x")

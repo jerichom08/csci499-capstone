@@ -997,11 +997,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="temp inventory" type="TileMapLayer" parent="." unique_id=597128812]
+[node name="left inv" type="TileMapLayer" parent="." unique_id=597128812]
 z_index = 12
-position = Vector2(35, 4)
+position = Vector2(44, 16)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAMAP//AAAvAAIAAAAMAAAAAAAvAAMAAAAMAAEAAAAvAAIAAAAMAAIAAAAvAAMAAAANAP//AAAuAAIAAAANAAAAAAAuAAMAAAANAAEAAAAuAAIAAAANAAIAAAAuAAMAAAAOAP//AAAvAAIAAAAOAAAAAAAvAAMAAAAOAAEAAAAvAAIAAAAOAAIAAAAvAAMAAAALAP//AAAuAAIAAAALAAAAAAAuAAMAAAALAAEAAAAuAAIAAAALAAIAAAAuAAMAAAA=")
+tile_map_data = PackedByteArray("AAAMAP//AAAvAAIAAAAMAAAAAAAvAAMAAAAMAAEAAAAvAAIAAAAMAAIAAAAvAAMAAAALAP//AAAuAAIAAAALAAAAAAAuAAMAAAALAAEAAAAuAAIAAAALAAIAAAAuAAMAAAA=")
+tile_set = SubResource("TileSet_ys67x")
+
+[node name="right inv" type="TileMapLayer" parent="." unique_id=1623792343]
+z_index = 12
+position = Vector2(24, 16)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAANAP//AAAuAAIAAAANAAAAAAAuAAMAAAANAAEAAAAuAAIAAAANAAIAAAAuAAMAAAAOAP//AAAvAAIAAAAOAAAAAAAvAAMAAAAOAAEAAAAvAAIAAAAOAAIAAAAvAAMAAAA=")
 tile_set = SubResource("TileSet_ys67x")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=286744738]

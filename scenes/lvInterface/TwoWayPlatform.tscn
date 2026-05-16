@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cmhra3c1bntj"]
+
+[ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_y82ly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o04vk"]
+size = Vector2(54, 5)
+
+[node name="TwoWayPlatform" type="StaticBody2D" unique_id=1325980132]
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580125014]
+visibility_layer = 17
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_o04vk")
+one_way_collision = true
+
+[node name="tile" type="Sprite2D" parent="." unique_id=546140502]
+position = Vector2(0, 4)
+texture = ExtResource("1_y82ly")
+region_enabled = true
+region_rect = Rect2(180, 74, 54, 14)

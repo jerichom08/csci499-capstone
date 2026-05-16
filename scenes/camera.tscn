@@ -1047,6 +1047,7 @@ scale = Vector2(0.46, 0.46)
 texture = ExtResource("5_b05li")
 
 [node name="Canvas" parent="." unique_id=1377326731 instance=ExtResource("6_p8nh0")]
+z_index = 13
 offset_left = 597.0
 offset_top = 190.0
 offset_right = 597.0

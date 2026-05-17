@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dgiqqm5j0nxtp"]
+
+[ext_resource type="Texture2D" uid="uid://crxmo2tn8iq61" path="res://assets/images/enemies/bosses/gollux/gollux_heavy_attack.png" id="1_hbmrh"]
+[ext_resource type="Script" uid="uid://b3l2b7pqpy27p" path="res://scripts/enemies/bosses/gollux_heavy_attack.gd" id="1_sqrvu"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_sqrvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eivpt"]
+atlas = ExtResource("1_hbmrh")
+region = Rect2(0, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jr8f"]
+atlas = ExtResource("1_hbmrh")
+region = Rect2(384, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb6dt"]
+atlas = ExtResource("1_hbmrh")
+region = Rect2(768, 0, 384, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32nrv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eivpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jr8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb6dt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ecw"]
+size = Vector2(82, 91)
+
+[node name="gollux_heavy_attack" type="Node2D" unique_id=1067823650]
+script = ExtResource("1_sqrvu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1549349851]
+sprite_frames = SubResource("SpriteFrames_32nrv")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=129315171]
+collision_layer = 4
+script = ExtResource("2_sqrvu")
+apply_knockback = true
+knockback_force = 1200.0
+knockback_upward = -600.0
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1965344323]
+position = Vector2(31, 18.5)
+shape = SubResource("RectangleShape2D_a3ecw")
+debug_color = Color(1, 0, 0, 0.41960785)

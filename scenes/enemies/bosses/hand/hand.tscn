@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cs4s8so4j0o7u" path="res://scripts/enemies/bosses/hand/hand.gd" id="1_fea25"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="2_joeo2"]
 [ext_resource type="PackedScene" uid="uid://bl5gp3g8ss4bo" path="res://scenes/enemies/bosses/hand/hand_clone.tscn" id="2_yc1la"]
+[ext_resource type="PackedScene" uid="uid://ckwhnpsdmr7te" path="res://scenes/ingredients/flour.tscn" id="3_vii5b"]
 [ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scripts/enemies/components/palette_swap.tres" id="3_yc1la"]
 [ext_resource type="Texture2D" uid="uid://bgws2tt2bjrc2" path="res://assets/images/enemies/bosses/hand/hand_palette_swap.png" id="4_v2mx8"]
 [ext_resource type="Texture2D" uid="uid://bw4xbopprw6j6" path="res://assets/images/enemies/bosses/hand/hand_palette_og.png" id="5_7ukfo"]
@@ -10,9 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://dtr4736wlsdcc" path="res://assets/images/enemies/bosses/hand/spr_enemy_mud_strip8.png" id="7_xwnrt"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="8_ff2jo"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="9_pwxef"]
+[ext_resource type="AudioStream" uid="uid://dn068envbu5vm" path="res://assets/sounds temp/enemy sounds/bosses/hand/hand_idle.wav" id="11_7ukfo"]
+[ext_resource type="AudioStream" uid="uid://fjddv0psp5vr" path="res://assets/sounds temp/enemy sounds/bosses/hand/hand_telegraph.wav" id="11_yc1la"]
+[ext_resource type="AudioStream" uid="uid://d2w2owh2loops" path="res://assets/sounds temp/enemy sounds/bosses/hand/hand_attack.wav" id="12_v2mx8"]
 
 [sub_resource type="Resource" id="Resource_0ofnw"]
 script = ExtResource("2_joeo2")
+max_health = 5
+move_speed = 100.0
 faces_left = false
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
@@ -85,9 +91,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0eb3b")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -131,6 +137,7 @@ size = Vector2(51, 20)
 [node name="hand" type="CharacterBody2D" unique_id=126375272]
 script = ExtResource("1_fea25")
 hand_clone_scene = ExtResource("2_yc1la")
+flour_scene = ExtResource("3_vii5b")
 stats = SubResource("Resource_0ofnw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=523929594]
@@ -158,7 +165,6 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Hitbox" type="Area2D" parent="." unique_id=2136483316]
 collision_layer = 4
 script = ExtResource("9_pwxef")
-apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1140325091]
@@ -167,4 +173,14 @@ shape = SubResource("RectangleShape2D_rh6lw")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=1555714647]
-target_position = Vector2(200, 10)
+target_position = Vector2(200, 30)
+
+[node name="HandIdle" type="AudioStreamPlayer2D" parent="." unique_id=26887666]
+stream = ExtResource("11_7ukfo")
+
+[node name="HandTelegraph" type="AudioStreamPlayer2D" parent="." unique_id=1900704963]
+stream = ExtResource("11_yc1la")
+volume_db = 15.0
+
+[node name="HandAttack" type="AudioStreamPlayer2D" parent="." unique_id=287129151]
+stream = ExtResource("12_v2mx8")

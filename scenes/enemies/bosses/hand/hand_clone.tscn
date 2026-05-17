@@ -1,32 +1,99 @@
 [gd_scene format=3 uid="uid://bl5gp3g8ss4bo"]
 
 [ext_resource type="Shader" uid="uid://reop3j52anf" path="res://scripts/enemies/components/palette_swap.tres" id="1_4pmdt"]
-[ext_resource type="Texture2D" uid="uid://chea4u7wvrd5s" path="res://assets/images/enemies/bosses/hand/hand_clone.png" id="2_a0erh"]
-[ext_resource type="Texture2D" uid="uid://bgws2tt2bjrc2" path="res://assets/images/enemies/bosses/hand/hand_palette_swap.png" id="2_xyuux"]
+[ext_resource type="Texture2D" uid="uid://bwxrrk8y5v1dx" path="res://assets/images/enemies/bosses/hand/hand_palette_brown.png" id="2_4pmdt"]
 [ext_resource type="Texture2D" uid="uid://bw4xbopprw6j6" path="res://assets/images/enemies/bosses/hand/hand_palette_og.png" id="3_bwjsp"]
+[ext_resource type="Texture2D" uid="uid://dtr4736wlsdcc" path="res://assets/images/enemies/bosses/hand/spr_enemy_mud_strip8.png" id="6_bwjsp"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="6_xyuux"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwjsp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwjsp"]
+size = Vector2(55, 60)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4p2o3"]
 shader = ExtResource("1_4pmdt")
 shader_parameter/og_palette = ExtResource("3_bwjsp")
-shader_parameter/new_palette = ExtResource("2_xyuux")
+shader_parameter/new_palette = ExtResource("2_4pmdt")
 shader_parameter/color_count = 4
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwjsp"]
-size = Vector2(55, 57)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxfpj"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(0, 0, 62, 64)
 
-[node name="HandClone" type="Node2D" unique_id=880521471]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpybt"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(62, 0, 62, 64)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1358378378]
-material = SubResource("ShaderMaterial_bwjsp")
-texture = ExtResource("2_a0erh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_abthl"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(124, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8b5k"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(186, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwnmh"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(248, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5khh2"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(310, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2oty"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(372, 0, 62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_murnl"]
+atlas = ExtResource("6_bwjsp")
+region = Rect2(434, 0, 62, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2j6i4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxfpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abthl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8b5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwnmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5khh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2oty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_murnl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="HandClone" type="Node2D" unique_id=1951035437]
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1231489382]
 script = ExtResource("6_xyuux")
+apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1125636920]
-visible = false
-position = Vector2(-1.5, 4.5)
+position = Vector2(-3.5, 2)
 shape = SubResource("RectangleShape2D_bwjsp")
-debug_color = Color(0, 1, 0, 0.41960785)
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=930420776]
+material = SubResource("ShaderMaterial_4p2o3")
+sprite_frames = SubResource("SpriteFrames_2j6i4")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0

@@ -3,6 +3,10 @@ extends EnemyBase
 @export var minotaur_heavy_attack: PackedScene
 @export var minotaur_light_attack: PackedScene
 
+@onready var light_attack_sfx: AudioStreamPlayer2D = $MinotaurLightAttack
+@onready var heavy_attack_sfx: AudioStreamPlayer2D = $MinotaurHeavyAttack
+
+
 var attack_executed: bool = false
 const WORLD_SCALE: float = 3.0
 
@@ -11,7 +15,7 @@ func _ready() -> void:
 	super._ready()
 	sprite.frame_changed.connect(_on_sprite_frame_changed)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	update_state_machine()
 	move_and_slide()
 
@@ -59,8 +63,10 @@ func start_attack() -> void:
 	
 	if randi_range(0, 1) == 0:
 		set_attack(AttackType.LIGHT)
+		light_attack_sfx.play()
 	else:
 		set_attack(AttackType.HEAVY)
+		heavy_attack_sfx.play()
 
 	set_state(State.ATTACK)
 
@@ -106,6 +112,8 @@ func _on_animation_finished() -> void:
 			reset_attack_cooldown()
 			set_state(State.CHASE)
 			attack_executed = false
+		State.DEFEAT:
+			fade_out_and_free()
 func reset_attack_cooldown() -> void:
 	await get_tree().create_timer(stats.attack_cooldown).timeout
 	can_attack = true

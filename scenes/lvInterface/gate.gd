@@ -52,3 +52,12 @@ func _on_node_2d_puzzle_completed_signal() -> void:
 	tween.tween_property(self, "modulate:a", 0.0, 0.4)
 
 	call_deferred("_disable_collision")
+
+
+func _on_hand_boss_defeated() -> void:
+	print("signal received")
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.4)
+	
+	# Defer disabling collision to avoid "flushing queries" error
+	call_deferred("_disable_collision")

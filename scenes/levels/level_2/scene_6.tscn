@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="16_klbbt"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="17_k7g66"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="18_ovvhx"]
+[ext_resource type="PackedScene" uid="uid://bbwkf3di5h7r6" path="res://scenes/enemies/bosses/hand/hand.tscn" id="18_yn0q2"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="19_y22pt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -800,7 +801,6 @@ texture = ExtResource("11_aw8wo")
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_im1am")]
 position = Vector2(539, -1)
-scale = Vector2(2, 2)
 
 [node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("16_klbbt")]
 position = Vector2(-454, 237)
@@ -846,8 +846,11 @@ shape = SubResource("CapsuleShape2D_spoa0")
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("16_24xcw")]
 
+[node name="hand" parent="." unique_id=126375272 instance=ExtResource("18_yn0q2")]
+
 [connection signal="button_pressed" from="Button" to="HiddenPlatform2" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform3" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform4" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform5" method="_on_button_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="boss_defeated" from="hand" to="gate" method="_on_hand_boss_defeated"]

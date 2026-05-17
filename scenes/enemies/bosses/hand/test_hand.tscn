@@ -14,7 +14,7 @@ position = Vector2(690, 675)
 shape = SubResource("WorldBoundaryShape2D_tnbg4")
 
 [node name="hand" parent="." unique_id=126375272 instance=ExtResource("1_jvv6t")]
-position = Vector2(600, 637)
+position = Vector2(1148, 604)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("2_7y1pd")]
-position = Vector2(756, 635)
+position = Vector2(168, 615)

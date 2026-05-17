@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://de6ho4oo033xv"]
+
+[ext_resource type="Texture2D" uid="uid://cyc0q6e6r8s8h" path="res://assets/images/UI/BG.png" id="1_egmj1"]
+[ext_resource type="Script" uid="uid://ckoelrr2be0gm" path="res://scripts/lvls/level_select.gd" id="1_ibarm"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="2_6y6kj"]
+[ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_fmuyb"]
+[ext_resource type="Texture2D" uid="uid://chg8pvq011ugw" path="res://assets/images/enemies/mobs/bat/bat_idle_spritesheet.png" id="5_fmuyb"]
+[ext_resource type="Texture2D" uid="uid://b5tt8da50bu4q" path="res://assets/images/enemies/mobs/rat/idling.png" id="6_3p8qn"]
+[ext_resource type="Texture2D" uid="uid://b2r7hy8kr8kma" path="res://assets/images/enemies/mobs/skeleton/3_Head/1_Default/Skeleton_Head_Default_Roll.png" id="7_t7n47"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibarm"]
+texture = ExtResource("1_egmj1")
+modulate_color = Color(0.34621716, 0.4803471, 0.5474121, 0.5921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.15747333, 0.1288, 0.23, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 0.94509804)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.1292127, 0.10409229, 0.18877175, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.12941177, 0.105882354, 0.1882353, 1)
+border_width_top = 10
+border_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_egmj1"]
+Button/styles/hover = SubResource("StyleBoxFlat_wu84c")
+Button/styles/normal = SubResource("StyleBoxFlat_8ln24")
+Button/styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxdfm"]
+atlas = ExtResource("5_fmuyb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p8qn"]
+atlas = ExtResource("5_fmuyb")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7n47"]
+atlas = ExtResource("5_fmuyb")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t37j"]
+atlas = ExtResource("5_fmuyb")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33358"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxdfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p8qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7n47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t37j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33358"]
+atlas = ExtResource("6_3p8qn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chx4x"]
+atlas = ExtResource("6_3p8qn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptr58"]
+atlas = ExtResource("6_3p8qn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0xe"]
+atlas = ExtResource("6_3p8qn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8h11"]
+atlas = ExtResource("6_3p8qn")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8xfq"]
+atlas = ExtResource("6_3p8qn")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ia1sy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33358")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chx4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptr58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8h11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8xfq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfk40"]
+atlas = ExtResource("7_t7n47")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5t3p"]
+atlas = ExtResource("7_t7n47")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khoec"]
+atlas = ExtResource("7_t7n47")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tbk4"]
+atlas = ExtResource("7_t7n47")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlsph"]
+atlas = ExtResource("7_t7n47")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h60ok"]
+atlas = ExtResource("7_t7n47")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7t6fj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfk40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5t3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khoec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tbk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlsph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h60ok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LevelSelect" type="Node2D" unique_id=340735494]
+script = ExtResource("1_ibarm")
+
+[node name="Panel" type="Panel" parent="." unique_id=1616153705]
+offset_left = -751.0
+offset_top = -183.0
+offset_right = 749.0
+offset_bottom = 537.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ibarm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=314946597]
+position = Vector2(-1, 177)
+
+[node name="Label" type="Label" parent="." unique_id=714550598]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -489.5
+offset_top = -114.0
+offset_right = 489.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.12941177, 0.101960786, 0.1882353, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_6y6kj")
+theme_override_font_sizes/font_size = 100
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="Button Manager" type="Control" parent="." unique_id=1313472479]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -112.0
+offset_bottom = -112.0
+size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="lv1" type="Button" parent="Button Manager" unique_id=2081167131]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = 112.0
+offset_right = -32.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("2_6y6kj")
+theme_override_font_sizes/font_size = 75
+text = "level. 1"
+
+[node name="lv2" type="Button" parent="Button Manager" unique_id=333229539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = 112.0
+offset_right = 346.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("2_6y6kj")
+theme_override_font_sizes/font_size = 75
+text = "level. 2"
+
+[node name="lv3" type="Button" parent="Button Manager" unique_id=1873171562]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = 261.0
+offset_right = -32.0
+offset_bottom = 371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("2_6y6kj")
+theme_override_font_sizes/font_size = 75
+text = "level. 3"
+
+[node name="lv4" type="Button" parent="Button Manager" unique_id=2130517524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = 261.0
+offset_right = 346.0
+offset_bottom = 371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("2_6y6kj")
+theme_override_font_sizes/font_size = 75
+text = "level. 4"
+
+[node name="return" type="Button" parent="Button Manager" unique_id=1804199009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = 410.0
+offset_right = 346.0
+offset_bottom = 506.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("2_6y6kj")
+theme_override_font_sizes/font_size = 67
+text = "Return to Main Menu"
+
+[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_fmuyb")]
+
+[node name="bat" type="AnimatedSprite2D" parent="." unique_id=1883421116]
+position = Vector2(431, 84.00001)
+scale = Vector2(2.5416667, 2.5416667)
+sprite_frames = SubResource("SpriteFrames_33358")
+frame_progress = 0.94876003
+
+[node name="bat2" type="AnimatedSprite2D" parent="." unique_id=1560260788]
+position = Vector2(-426.00003, 358)
+scale = Vector2(2.5416667, 2.5416667)
+sprite_frames = SubResource("SpriteFrames_33358")
+frame_progress = 0.89453447
+flip_h = true
+
+[node name="rat" type="AnimatedSprite2D" parent="." unique_id=843173645]
+position = Vector2(-56.999935, 473.00006)
+scale = Vector2(7.75, 7.75)
+sprite_frames = SubResource("SpriteFrames_ia1sy")
+
+[node name="rat2" type="AnimatedSprite2D" parent="." unique_id=1747271725]
+position = Vector2(55.999992, 473)
+scale = Vector2(7.75, 7.75)
+sprite_frames = SubResource("SpriteFrames_ia1sy")
+flip_h = true
+
+[node name="skeleton" type="AnimatedSprite2D" parent="." unique_id=1891461779]
+position = Vector2(426, 287)
+scale = Vector2(6.1875, 6.1875)
+sprite_frames = SubResource("SpriteFrames_7t6fj")
+
+[node name="skeleton2" type="AnimatedSprite2D" parent="." unique_id=89600163]
+position = Vector2(-431, -10)
+scale = Vector2(6.1875, 6.1875)
+sprite_frames = SubResource("SpriteFrames_7t6fj")
+flip_h = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Button Manager/lv1" to="." method="_on_lv_1_pressed"]
+[connection signal="pressed" from="Button Manager/lv2" to="." method="_on_lv_2_pressed"]
+[connection signal="pressed" from="Button Manager/lv3" to="." method="_on_lv_3_pressed"]
+[connection signal="pressed" from="Button Manager/lv4" to="." method="_on_lv_4_pressed"]
+[connection signal="pressed" from="Button Manager/return" to="." method="_on_return_pressed"]
+[connection signal="ready" from="bat" to="." method="_on_bat_ready"]

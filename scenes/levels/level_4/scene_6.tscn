@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://vwnhi8pclt33" path="res://assets/images/bedroom/texture_8.png" id="10_krsaw"]
 [ext_resource type="Texture2D" uid="uid://cd4fn4n8fev4p" path="res://assets/images/bedroom/wall.png" id="11_kmic8"]
 [ext_resource type="Texture2D" uid="uid://b53btw62uvv6n" path="res://assets/images/bedroom/texture_0.png" id="12_24ygd"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="14_txmux"]
 [ext_resource type="PackedScene" uid="uid://d03pbptyxehk3" path="res://assets/images/UI/text box/DialogueProto.tscn" id="14_xv8a3"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="16_hrr0t"]
 [ext_resource type="PackedScene" uid="uid://cqr3q5uem3bh" path="res://scenes/player/PlayerIntro.tscn" id="17_pek3y"]
@@ -292,8 +293,11 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_tk4a3")
 sources/3 = SubResource("TileSetAtlasSource_ul5ke")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmggb"]
+size = Vector2(178, 179.5)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mtpt"]
-radius = 16.396572
+radius = 14.577586
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txmux"]
 atlas = ExtResource("18_1mtpt")
@@ -324,6 +328,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f75fc"]
+radius = 7.0
+
 [node name="Bedroom" type="Node2D" unique_id=439811219]
 script = ExtResource("1_txmux")
 
@@ -352,16 +359,36 @@ tile_set = SubResource("TileSet_tk4a3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=658766121]
 
-[node name="Area2D" type="StaticBody2D" parent="." unique_id=1684437244]
+[node name="interract" type="Area2D" parent="." unique_id=73637377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interract" unique_id=1756911584]
+position = Vector2(0, 38.25)
+shape = SubResource("RectangleShape2D_mmggb")
+
+[node name="InteractionLabel" type="Label" parent="interract" unique_id=974894671]
+offset_left = -121.00001
+offset_top = -79.000015
+offset_right = 229.0
+offset_bottom = -42.000015
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("14_txmux")
+theme_override_font_sizes/font_size = 38
+text = "\"press E to interract\""
+
+[node name="c" type="StaticBody2D" parent="." unique_id=1684437244]
 position = Vector2(-0.881948, 39.933422)
 scale = Vector2(5, 5)
 collision_mask = 0
 
-[node name="cauldron" type="Sprite2D" parent="Area2D" unique_id=549325377]
+[node name="cauldron" type="Sprite2D" parent="c" unique_id=549325377]
 scale = Vector2(0.9999998, 0.9999998)
 texture = ExtResource("7_kqxi4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1274518414]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="c" unique_id=1274518414]
+position = Vector2(-0.19999999, -0.9999995)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_1mtpt")
 
@@ -372,20 +399,27 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_12sa1")
 frame_progress = 0.59978724
 
+[node name="player" type="Area2D" parent="." unique_id=456360038]
+position = Vector2(-256, 97)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player" unique_id=56010721]
+shape = SubResource("CapsuleShape2D_f75fc")
+
+[node name="PlayerIntro" parent="player" unique_id=1656014910 instance=ExtResource("17_pek3y")]
+
+[node name="nyarla" parent="." unique_id=1080435679 instance=ExtResource("18_txmux")]
+position = Vector2(-475, 18)
+scale = Vector2(3.375, 3.375)
+
+[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("16_hrr0t")]
+
 [node name="DialogueProto" parent="." unique_id=1092022285 instance=ExtResource("14_xv8a3")]
 offset_left = -19.0
 offset_top = -7.0
 offset_right = -19.0
 offset_bottom = -7.0
 
-[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("16_hrr0t")]
-
-[node name="PlayerIntro" parent="." unique_id=1656014910 instance=ExtResource("17_pek3y")]
-position = Vector2(-256, 97)
-scale = Vector2(4, 4)
-
-[node name="nyarla" parent="." unique_id=1080435679 instance=ExtResource("18_txmux")]
-position = Vector2(-475, 18)
-scale = Vector2(3.375, 3.375)
-
 [connection signal="ready" from="cauldron_work" to="." method="_on_cauldron_ready"]
+[connection signal="area_entered" from="player" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="player" to="." method="_on_area_2d_area_exited"]

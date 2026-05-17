@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	$Lilith.play("default")
 	AudioPlayer._play_music_level()
 func _on_start_pressed() -> void:
 	$SceneTransition.change_scene_to("res://scenes/levels/tutorial/room.tscn")

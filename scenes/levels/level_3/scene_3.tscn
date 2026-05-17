@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pq1invg3xulj" path="res://assets/images/tilemaps/tilemap2_packed.png" id="4_tqapc"]
 [ext_resource type="Texture2D" uid="uid://dl6rq07cu35gy" path="res://assets/images/tilemaps/tilemap3_packed.png" id="5_1jcon"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_umvcf"]
+[ext_resource type="PackedScene" uid="uid://dllynjydlblvp" path="res://scenes/test_scenes/PlayerLight.tscn" id="7_1jcon"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_5b86e"]
 [ext_resource type="PackedScene" uid="uid://cmhra3c1bntj" path="res://scenes/lvInterface/TwoWayPlatform.tscn" id="11_w4mar"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="12_tqtkf"]
@@ -830,6 +831,9 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_umvcf")]
 position = Vector2(-635, 232)
 
+[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("7_1jcon")]
+position = Vector2(2, -23)
+
 [node name="Button2" parent="." unique_id=954241513 instance=ExtResource("14_ujl0q")]
 position = Vector2(380, -10.9999695)
 scale = Vector2(3, 3)
@@ -964,6 +968,21 @@ position = Vector2(-102, 133)
 
 [node name="TwoWayPlatform4" parent="." unique_id=1794845947 instance=ExtResource("20_tqapc")]
 position = Vector2(550, 183.99997)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1951016205]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerLight" parent="." unique_id=1239053449 instance=ExtResource("7_1jcon")]
+position = Vector2(620, -257)
+
+[node name="PlayerLight2" parent="." unique_id=525251645 instance=ExtResource("7_1jcon")]
+position = Vector2(-487, -91)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=305432329]
+
+[node name="hud" parent="CanvasLayer" unique_id=94793832 instance=ExtResource("9_5b86e")]
+position = Vector2(749, 331)
 
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Gate/Button" to="HiddenPlatform" method="_on_button_button_pressed"]

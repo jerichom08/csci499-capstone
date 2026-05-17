@@ -4,9 +4,8 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://cyc0q6e6r8s8h" path="res://assets/images/UI/BG.png" id="3_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_8ln24"]
+[ext_resource type="PackedScene" uid="uid://bbvjk6ma742ot" path="res://scenes/lvInterface/NyarlaIdle.tscn" id="4_rtw2f"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://0h2xfahuajo5" path="res://scripts/lvls/animated_sprite_2d.gd" id="5_rtw2f"]
-[ext_resource type="PackedScene" uid="uid://d0wbk6fy0ftw2" path="res://scenes/mobs/nyarla_idle.tscn" id="6_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
 texture = ExtResource("3_bqqt6")
@@ -97,17 +96,20 @@ offset_right = 749.0
 offset_bottom = 537.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rtw2f")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110530687]
+[node name="Lilith" type="AnimatedSprite2D" parent="." unique_id=110530687]
 texture_filter = 1
 position = Vector2(-494, 259)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_lgwnu")
 frame_progress = 0.7874393
-script = ExtResource("5_rtw2f")
 
-[node name="NyarlaIdle" parent="." unique_id=435622663 instance=ExtResource("6_oa1go")]
-position = Vector2(463, 357)
-scale = Vector2(10, 10)
+[node name="nyarla" parent="." unique_id=1080435679 instance=ExtResource("4_rtw2f")]
+position = Vector2(511, 410)
+scale = Vector2(9.969, 9.969)
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=285807831]
+position = Vector2(-1, 177)
 
 [node name="Label" type="Label" parent="." unique_id=730008650]
 anchors_preset = 7
@@ -207,9 +209,6 @@ theme_override_font_sizes/font_size = 75
 text = "Quit"
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_wu84c")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=285807831]
-position = Vector2(-1, 177)
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]

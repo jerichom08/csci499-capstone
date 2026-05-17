@@ -7,6 +7,7 @@
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1508795935]
 position = Vector2(5.0000305, 5.000046)
 scale = Vector2(4.358398, 3.8281252)
+blend_mode = 2
 texture = ExtResource("1_ytpmw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=338452381]

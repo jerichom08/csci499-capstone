@@ -794,10 +794,10 @@ color = Color(0, 0, 0, 1)
 position = Vector2(730, 361)
 
 [node name="PlayerLight" parent="." unique_id=201406950 instance=ExtResource("7_6vfut")]
-position = Vector2(143, -43)
+position = Vector2(17, -101)
 
 [node name="PlayerLight2" parent="." unique_id=330065421 instance=ExtResource("7_6vfut")]
-position = Vector2(-236, 237)
+position = Vector2(-306, 256)
 
 [node name="PlayerLight3" parent="." unique_id=668610475 instance=ExtResource("7_6vfut")]
 position = Vector2(568, -203)

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="10_7oyrk"]
 [ext_resource type="PackedScene" uid="uid://cmhra3c1bntj" path="res://scenes/lvInterface/TwoWayPlatform.tscn" id="11_rwaj0"]
 [ext_resource type="PackedScene" uid="uid://diigctrp2rkc6" path="res://scenes/lvInterface/DisappearingPlatformSingle.tscn" id="12_h7vdm"]
+[ext_resource type="PackedScene" uid="uid://dllynjydlblvp" path="res://scenes/test_scenes/PlayerLight.tscn" id="13_5q35u"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="14_xvdq1"]
 [ext_resource type="PackedScene" uid="uid://cebymkk2gghii" path="res://scenes/lvInterface/HiddenPlatform.tscn" id="15_n40r4"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_rp4ru"]
@@ -802,7 +803,7 @@ sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/0 = SubResource("TileSetAtlasSource_imlax")
 sources/1 = SubResource("TileSetAtlasSource_gmqph")
 
-[node name="Node2D" type="Node2D" unique_id=188122060]
+[node name="Node2D2" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
@@ -893,6 +894,9 @@ position = Vector2(-69.33331, 0)
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_tuhi8")]
 position = Vector2(601, -91)
 
+[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("13_5q35u")]
+position = Vector2(132, 50)
+
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("10_7oyrk")]
 position = Vector2(97, -17)
 
@@ -936,7 +940,12 @@ position = Vector2(604, 260.99997)
 [node name="TwoWayPlatform5" parent="." unique_id=1289962829 instance=ExtResource("18_jpis6")]
 position = Vector2(604, 180.99997)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=533511465]
+color = Color(0, 0, 0, 1)
+
 [connection signal="button_pressed" from="Button" to="Gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform/HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform/HiddenPlatform3" method="_on_button_2_button_pressed"]
+
+[editable path="Player"]

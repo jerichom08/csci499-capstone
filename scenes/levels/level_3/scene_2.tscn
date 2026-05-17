@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dl6rq07cu35gy" path="res://assets/images/tilemaps/tilemap3_packed.png" id="4_kl103"]
 [ext_resource type="PackedScene" uid="uid://cu7lxq5trcvpt" path="res://scenes/levels/level_3/NextScene3.tscn" id="5_y3fkg"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_j8gku"]
+[ext_resource type="PackedScene" uid="uid://dllynjydlblvp" path="res://scenes/test_scenes/PlayerLight.tscn" id="7_p27hb"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="8_hwoup"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="11_0s3sr"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="11_a26gl"]
@@ -830,6 +831,9 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_j8gku")]
 position = Vector2(-662, -252)
 
+[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("7_p27hb")]
+position = Vector2(146, 45)
+
 [node name="Rat" parent="." unique_id=69780106 instance=ExtResource("13_ocjfo")]
 position = Vector2(-448, 265)
 
@@ -886,5 +890,19 @@ scale = Vector2(3, 3)
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("19_j8gku")]
 position = Vector2(214, -247)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=388250630]
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerLight" parent="." unique_id=2036442051 instance=ExtResource("7_p27hb")]
+position = Vector2(-442, 224)
+
+[node name="PlayerLight2" parent="." unique_id=990036315 instance=ExtResource("7_p27hb")]
+position = Vector2(506, -17)
+
+[node name="PlayerLight3" parent="." unique_id=2010324930 instance=ExtResource("7_p27hb")]
+position = Vector2(-160, -214)
+
 [connection signal="button_pressed" from="Button" to="Gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform" method="_on_button_2_button_pressed"]
+
+[editable path="Player"]

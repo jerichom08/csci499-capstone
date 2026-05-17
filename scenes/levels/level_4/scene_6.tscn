@@ -352,9 +352,10 @@ tile_set = SubResource("TileSet_tk4a3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=658766121]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=513561582]
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1684437244]
 position = Vector2(-0.881948, 39.933422)
 scale = Vector2(5, 5)
+collision_mask = 0
 
 [node name="cauldron" type="Sprite2D" parent="Area2D" unique_id=549325377]
 scale = Vector2(0.9999998, 0.9999998)

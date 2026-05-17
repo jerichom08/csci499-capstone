@@ -804,7 +804,7 @@ sources/0 = SubResource("TileSetAtlasSource_imlax")
 sources/1 = SubResource("TileSetAtlasSource_gmqph")
 
 [node name="Node2D" type="Node2D" unique_id=188122060]
-position = Vector2(793, 343)
+position = Vector2(656, 340)
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -17)
@@ -843,9 +843,6 @@ position = Vector2(134, 41)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("6_jdyoy")]
 position = Vector2(596, 13)
-
-[node name="hud" parent="." unique_id=2086834432 instance=ExtResource("7_jordh")]
-position = Vector2(97, -17)
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("9_8ntn2")]
 position = Vector2(-452, -15)
@@ -920,6 +917,11 @@ position = Vector2(734, 70)
 
 [node name="PlayerLight3" parent="." unique_id=348861922 instance=ExtResource("8_s2hta")]
 position = Vector2(-471, 289)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=247437470]
+
+[node name="hud" parent="CanvasLayer" unique_id=2086834432 instance=ExtResource("7_jordh")]
+position = Vector2(751, 337)
 
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]

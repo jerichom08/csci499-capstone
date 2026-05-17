@@ -4,6 +4,9 @@ extends EnemyBase
 @export var frog_tongue_attack: PackedScene
 @export var spider_scene: PackedScene
 @export var egg_scene: PackedScene
+
+@export var damage_cooldown : float = 2
+
 @onready var tongue_sfx : AudioStreamPlayer2D = $TongueSound
 @onready var spit_sfx: AudioStreamPlayer2D = $SpitSound
 @onready var snore_sfx: AudioStreamPlayer2D = $SnoreSound
@@ -11,6 +14,7 @@ extends EnemyBase
 @onready var slime_sfx: AudioStreamPlayer2D = $SlimeSound
 @onready var hit_sfx: AudioStreamPlayer2D = $HitSound
 @onready var heal_sfx: AudioStreamPlayer2D = $HealSound
+
 
 
 var active_spiders: Array[Node2D] = []
@@ -126,6 +130,7 @@ func defeat() -> void:
 
 
 func heal(hp: int) -> void:
+	hurtbox.monitorable = false
 	hitbox.monitoring = true
 	heal_sfx.play(3.5)
 	is_invincible = true
@@ -166,7 +171,15 @@ func clear_spiders() -> void:
 func take_damage(damage: int, _knockback: Vector2) -> void:
 	if is_invincible:
 		return
+
+	is_invincible = true
+
 	hit(damage)
+
+	await get_tree().create_timer(damage_cooldown).timeout
+
+	if current_state != State.DEFEAT and current_state != State.HEAL:
+		is_invincible = false
 
 func spawn_light_attack() -> void:
 	spit_sfx.play(1)
@@ -208,6 +221,7 @@ func _on_animation_finished() -> void:
 		State.HEAL:
 			clear_spiders()
 			is_invincible = false
+			hurtbox.monitorable = true
 			set_state(State.CHASE)
 
 		State.DEFEAT:

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqn35ufdjdfnu"]
+
+[ext_resource type="Script" uid="uid://de3jnp0uqmmde" path="res://scripts/enemies/ingredient.gd" id="1_xwl8b"]
+[ext_resource type="Texture2D" uid="uid://cgnajnbu4w3ha" path="res://assets/images/ingredients/milk.png" id="2_ned81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kls7"]
+size = Vector2(359, 575)
+
+[node name="Milk" type="Area2D" unique_id=1285655012]
+script = ExtResource("1_xwl8b")
+floor_y = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1114709538]
+texture = ExtResource("2_ned81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=664687798]
+position = Vector2(3.5, 2.5)
+shape = SubResource("RectangleShape2D_1kls7")

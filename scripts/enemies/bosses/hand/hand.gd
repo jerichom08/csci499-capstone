@@ -1,6 +1,7 @@
 extends EnemyBase
 
 @export var hand_clone_scene: PackedScene
+@export var flour_scene: PackedScene
 
 @export var clone_speed: float = 700.0
 @export var clone_lifetime: float = 0.5
@@ -13,16 +14,24 @@ extends EnemyBase
 
 @export var gravity: float = 900.0
 
+@export var damage_cooldown : float = 0.8
+
+@onready var telegraph_sfx = $HandTelegraph
+@onready var attack_sfx = $HandAttack
+@onready var idle_sfx = $HandIdle
+
+var can_take_damage := true
 const WORLD_SCALE := 3.0
 
 var attack_executed := false
+signal boss_defeated
 
 func _ready() -> void:
 	super._ready()
 
 	scale *= WORLD_SCALE
 
-	set_state(State.CHASE)
+	set_state(State.IDLE)
 
 func _physics_process(delta: float) -> void:
 	print(state_animations[current_state])
@@ -44,7 +53,14 @@ func play_animation() -> void:
 			if sprite.animation != "idle":
 				sprite.play("idle")
 
+func idle() -> void:
+	if can_see_player():
+		set_state(State.CHASE)
+
 func chase() -> void:
+	if not idle_sfx.playing:
+		idle_sfx.play()
+
 	var player := get_player()
 
 	if player == null:
@@ -60,28 +76,41 @@ func chase() -> void:
 	var dx : float = abs(player.global_position.x - global_position.x)
 
 	if dx <= attack_range and can_attack:
+		can_attack = false
+
+		velocity.x = 0
+
+		if idle_sfx.playing:
+			idle_sfx.stop()
+
+		if not telegraph_sfx.playing:
+			telegraph_sfx.play()
+
+		await telegraph_sfx.finished
+
+		if not attack_sfx.playing:
+			attack_sfx.play()
+
 		set_state(State.ATTACK)
+
 
 func attack() -> void:
 	velocity.x = 0
 
-	if attack_executed or !can_attack:
+	if attack_executed:
 		return
 
 	attack_executed = true
-	can_attack = false
 
 	var player := get_player()
 
 	if player != null:
-		spawn_clone_barrage(player)
+		await spawn_clone_barrage(player)
 
 	attack_executed = false
 
-	# immediately resume chase
 	set_state(State.CHASE)
 
-	# cooldown before next attack
 	await get_tree().create_timer(attack_cooldown).timeout
 
 	can_attack = true
@@ -99,6 +128,9 @@ func spawn_clone_barrage(player : Node2D) -> void:
 
 		offset += clone_spacing
 
+		# wait before spawning next clone
+		await get_tree().create_timer(0.12).timeout
+
 func spawn_attack_clone(direction : int, offset : float) -> void:
 	if hand_clone_scene == null:
 		return
@@ -110,16 +142,12 @@ func spawn_attack_clone(direction : int, offset : float) -> void:
 	# progressively farther outward
 	clone.global_position = global_position + Vector2(direction * offset, 0)
 
-	clone.scale = scale * 0.8
+	clone.scale = scale * 1
 
-	var clone_sprite : Sprite2D = clone.get_node_or_null("Sprite2D")
+	var clone_sprite : AnimatedSprite2D = clone.get_node_or_null("AnimatedSprite2D")
 
 	if clone_sprite:
 		clone_sprite.flip_h = direction < 0
-
-	# movement
-	if clone.has_method("set"):
-		clone.set("velocity", Vector2(direction * clone_speed, 0))
 
 	# despawn clone
 	var tween := clone.create_tween()
@@ -137,8 +165,20 @@ func spawn_attack_clone(direction : int, offset : float) -> void:
 	tween.tween_callback(clone.queue_free)
 
 func hit(damage: int) -> void:
+	print("Boss taking damage")
+
 	if is_dead:
 		return
+
+	if idle_sfx.playing:
+		idle_sfx.stop()
+
+	if telegraph_sfx.playing:
+		telegraph_sfx.stop()
+
+	set_state(State.HIT)
+
+	velocity.x = 0
 
 	health -= damage
 
@@ -146,9 +186,10 @@ func hit(damage: int) -> void:
 		defeat()
 		return
 
-	set_state(State.HIT)
 
 func defeat() -> void:
+	set_state(State.DEFEAT)
+	print("defeat")
 	if is_dead:
 		return
 
@@ -160,16 +201,26 @@ func defeat() -> void:
 
 	sprite.modulate.a = 0.0
 
-	set_collisions_enabled(false)
+	#set_collisions_enabled(false)
+	boss_defeated.emit()
+	fade_out_and_free()
 
-	queue_free()
+func take_damage(damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
+	if not can_take_damage:
+		return
 
-func take_damage(damage: int, knockback: Vector2 = Vector2.ZERO) -> void:
+	can_take_damage = false
+
 	hit(damage)
+
+	await get_tree().create_timer(damage_cooldown).timeout
+
+	can_take_damage = true
 
 func _on_animation_finished() -> void:
 	match current_state:
 		State.HIT:
+			can_attack = true
 			set_state(State.CHASE)
 
 func set_collisions_enabled(enabled : bool) -> void:
@@ -185,3 +236,18 @@ func set_collisions_enabled(enabled : bool) -> void:
 	if hitbox:
 		hitbox.monitoring = enabled
 		hitbox.monitorable = enabled
+
+func fade_out_and_free() -> void:
+	var tween := create_tween()
+
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.4)
+
+	await tween.finished
+
+	var flour = flour_scene.instantiate()
+	flour.scale *= 0.1
+	get_parent().add_child(flour)
+	flour.global_position = global_position
+
+
+	queue_free()

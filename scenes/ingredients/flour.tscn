@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ckwhnpsdmr7te"]
+
+[ext_resource type="Script" uid="uid://de3jnp0uqmmde" path="res://scripts/enemies/ingredient.gd" id="1_wny8e"]
+[ext_resource type="Texture2D" uid="uid://d24g2e3bju64o" path="res://assets/images/ingredients/flour.png" id="2_iuwqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o7ah"]
+size = Vector2(556, 554)
+
+[node name="flour" type="Area2D" unique_id=944476384]
+script = ExtResource("1_wny8e")
+floor_y = 580
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1973187837]
+texture = ExtResource("2_iuwqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=7132531]
+position = Vector2(5, 19)
+shape = SubResource("RectangleShape2D_7o7ah")

@@ -50,6 +50,7 @@ script = ExtResource("1_tlgfa")
 sprite_frames = SubResource("SpriteFrames_dexht")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2001748274]
+collision_layer = 4
 script = ExtResource("2_tlgfa")
 apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"

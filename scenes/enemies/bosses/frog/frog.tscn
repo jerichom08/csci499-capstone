@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b3ei7jg713kal" path="res://assets/images/enemies/bosses/frogger/frogger_tongue.png" id="6_v57dn"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="8_dyhkr"]
 [ext_resource type="Texture2D" uid="uid://dnycvrpdbgljh" path="res://assets/images/enemies/bosses/frogger/frogger_rest.png" id="9_x6f5r"]
-[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="15_bgwjc"]
+[ext_resource type="Script" uid="uid://v770e1yey2ge" path="res://scripts/enemies/bosses/frog/frog_hitbox.gd" id="16_d2if8"]
 [ext_resource type="AudioStream" uid="uid://be0xmeoorupyc" path="res://assets/sounds temp/enemy sounds/bosses/frog/yoshi.wav" id="17_4gpb1"]
 [ext_resource type="AudioStream" uid="uid://dp537dml8fxf4" path="res://assets/sounds temp/enemy sounds/bosses/frog/spit.wav" id="18_28ec5"]
 [ext_resource type="AudioStream" uid="uid://1t6dlm8olyru" path="res://assets/sounds temp/enemy sounds/bosses/frog/snore.wav" id="19_1kjsf"]
@@ -560,7 +560,7 @@ position = Vector2(112, 39)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=102907647]
 collision_layer = 4
-script = ExtResource("15_bgwjc")
+script = ExtResource("16_d2if8")
 apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 

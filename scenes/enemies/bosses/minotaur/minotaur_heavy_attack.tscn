@@ -43,6 +43,7 @@ script = ExtResource("1_jbqyw")
 sprite_frames = SubResource("SpriteFrames_odime")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=827476845]
+collision_layer = 4
 script = ExtResource("2_jbqyw")
 apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"

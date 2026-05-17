@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3d8dwpnpmqhs"]
+
+[ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_0ljph"]
+[ext_resource type="PackedScene" uid="uid://dcm1s1ie20jcq" path="res://scenes/enemies/bosses/gollux/gollux.tscn" id="2_kt7i4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_igls1"]
+
+[node name="TestGollux" type="Node2D" unique_id=902506676]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=959748022]
+position = Vector2(556, 683)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2143117940]
+shape = SubResource("WorldBoundaryShape2D_igls1")
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_0ljph")]
+position = Vector2(385, 625)
+
+[node name="gollux" parent="." unique_id=1147398116 instance=ExtResource("2_kt7i4")]
+position = Vector2(897, 603)

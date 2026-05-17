@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://b2leux2hbwhar"]
+
+[ext_resource type="Texture2D" uid="uid://ct3bfeuutf1pa" path="res://assets/images/enemies/bosses/gollux/gollux_light_attack.png" id="1_3dfka"]
+[ext_resource type="Script" uid="uid://dj2s1pcm3q6w0" path="res://scripts/enemies/bosses/gollux_light_attack.gd" id="1_8ump3"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_8ump3"]
+[ext_resource type="Texture2D" uid="uid://bkeec1ym61wqh" path="res://assets/images/enemies/bosses/gollux/gollux_palette_swap.png" id="2_t2n1p"]
+[ext_resource type="Texture2D" uid="uid://204t7v8kup21" path="res://assets/images/enemies/bosses/gollux/gollux_palette.png" id="3_f44o3"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_8e4fj"]
+input_name = "texture"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_kfljn"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_pv4uk"]
+parameter_name = "og_palette"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_8k5a4"]
+parameter_name = "new_palette"
+
+[sub_resource type="VisualShaderNodeIntParameter" id="VisualShaderNodeIntParameter_jfulh"]
+parameter_name = "color_count"
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_lxqtg"]
+size = Vector2(900, 620)
+expression = "vec2 new_uv = vec2(0,0);
+
+for (int i = 0; i < color_count; i++)
+{
+	float u = (float(i) + 0.5) / float(color_count);
+	float v = 0.5;
+	vec2 uv = vec2(u, v);
+	
+	vec4 og_palette_color = texture(og_palette, uv);
+	float dist = distance(color, og_palette_color);
+	
+	if (dist == 0.0)
+	{
+		new_uv = uv;
+	}
+}
+
+new_color = texture(new_palette, new_uv);"
+
+[sub_resource type="VisualShader" id="VisualShader_6pq4j"]
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(560, 528)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_8e4fj")
+nodes/fragment/2/position = Vector2(-1168, 208)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_kfljn")
+nodes/fragment/3/position = Vector2(-720, 288)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture2DParameter_pv4uk")
+nodes/fragment/4/position = Vector2(-1184, 352)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture2DParameter_8k5a4")
+nodes/fragment/5/position = Vector2(-1184, 672)
+nodes/fragment/6/node = SubResource("VisualShaderNodeIntParameter_jfulh")
+nodes/fragment/6/position = Vector2(-1152, 992)
+nodes/fragment/7/node = SubResource("VisualShaderNodeExpression_lxqtg")
+nodes/fragment/7/position = Vector2(-384, 480)
+nodes/fragment/7/size = Vector2(900, 620)
+nodes/fragment/7/input_ports = "0,5,color;1,8,og_palette;2,8,new_palette;3,1,color_count;"
+nodes/fragment/7/output_ports = "0,5,new_color;"
+nodes/fragment/7/expression = "vec2 new_uv = vec2(0,0);
+
+for (int i = 0; i < color_count; i++)
+{
+	float u = (float(i) + 0.5) / float(color_count);
+	float v = 0.5;
+	vec2 uv = vec2(u, v);
+	
+	vec4 og_palette_color = texture(og_palette, uv);
+	float dist = distance(color, og_palette_color);
+	
+	if (dist == 0.0)
+	{
+		new_uv = uv;
+	}
+}
+
+new_color = texture(new_palette, new_uv);"
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 7, 0, 4, 0, 7, 1, 5, 0, 7, 2, 6, 0, 7, 3, 7, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4oen"]
+shader = SubResource("VisualShader_6pq4j")
+shader_parameter/og_palette = ExtResource("3_f44o3")
+shader_parameter/new_palette = ExtResource("2_t2n1p")
+shader_parameter/color_count = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oqy8"]
+atlas = ExtResource("1_3dfka")
+region = Rect2(0, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2n1p"]
+atlas = ExtResource("1_3dfka")
+region = Rect2(384, 0, 384, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f44o3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oqy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2n1p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e4fj"]
+size = Vector2(22, 22)
+
+[node name="gollux_light_attack" type="Node2D" unique_id=2045339026]
+script = ExtResource("1_8ump3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1619123844]
+material = SubResource("ShaderMaterial_g4oen")
+sprite_frames = SubResource("SpriteFrames_f44o3")
+frame = 1
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=685839919]
+collision_layer = 4
+script = ExtResource("2_8ump3")
+apply_knockback = true
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1259874117]
+position = Vector2(27, 53)
+shape = SubResource("RectangleShape2D_8e4fj")
+debug_color = Color(1, 0, 0, 0.41960785)

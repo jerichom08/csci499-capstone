@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dp28t3cnep0iy"]
+[gd_scene format=4 uid="uid://cxxkp4nb4xs2w"]
 
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_tcy6h"]
 [ext_resource type="Script" uid="uid://cocbt1hin0d8s" path="res://scenes/levels/level_3/scene_6.gd" id="1_u2gci"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="9_u2gci"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="10_kanh6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="10_vd7kj"]
+[ext_resource type="PackedScene" uid="uid://dcm1s1ie20jcq" path="res://scenes/enemies/bosses/gollux/gollux.tscn" id="11_1lwkt"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="11_4cyrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -914,4 +915,8 @@ shape = SubResource("CapsuleShape2D_1lwkt")
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("10_kanh6")]
 
+[node name="gollux" parent="." unique_id=1147398116 instance=ExtResource("11_1lwkt")]
+position = Vector2(-165, 74)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="boss_defeated" from="gollux" to="." method="_on_gollux_boss_defeated"]

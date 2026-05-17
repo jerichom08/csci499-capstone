@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ciiybqs6dym04"
+path="res://.godot/imported/minotaur_heavy_attack_sfx.wav-3d2840ae9c22f5a417144abd15dd0e68.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/bosses/minotaur/minotaur_heavy_attack_sfx.wav"
+dest_files=["res://.godot/imported/minotaur_heavy_attack_sfx.wav-3d2840ae9c22f5a417144abd15dd0e68.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

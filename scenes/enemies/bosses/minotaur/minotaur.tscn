@@ -12,10 +12,12 @@
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="7_o845j"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="8_rl10w"]
 [ext_resource type="PackedScene" uid="uid://b4o5nyaxbw6ul" path="res://scenes/enemies/bosses/minotaur/minotaur_light_attack.tscn" id="9_iahlh"]
+[ext_resource type="AudioStream" uid="uid://ciiybqs6dym04" path="res://assets/sounds temp/enemy sounds/bosses/minotaur/minotaur_heavy_attack_sfx.wav" id="13_3ahq4"]
+[ext_resource type="AudioStream" uid="uid://blnx1vs3rbpbt" path="res://assets/sounds temp/enemy sounds/bosses/minotaur/minotaur_light_attack_sfx.wav" id="14_3u2jj"]
 
 [sub_resource type="Resource" id="Resource_3ahq4"]
 script = ExtResource("4_ytddw")
-max_health = 10
+max_health = 7
 move_speed = 200.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
@@ -324,8 +326,8 @@ height = 22.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rl10w"]
 height = 34.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iahlh"]
-size = Vector2(27, 36)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u2jj"]
+height = 26.0
 
 [node name="minotaur" type="CharacterBody2D" unique_id=503455755]
 script = ExtResource("1_iahlh")
@@ -337,7 +339,7 @@ stats = SubResource("Resource_3ahq4")
 texture_filter = 1
 position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_an5vr")
-animation = &"light_attack"
+animation = &"heavy_attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471408029]
@@ -362,8 +364,8 @@ apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=127069652]
-position = Vector2(-0.5, 6)
-shape = SubResource("RectangleShape2D_iahlh")
+position = Vector2(-1, 6)
+shape = SubResource("CapsuleShape2D_3u2jj")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=210104646]
@@ -374,3 +376,10 @@ position = Vector2(1, 1)
 
 [node name="HeavySpawn" type="Marker2D" parent="." unique_id=951658981]
 position = Vector2(0, 1)
+
+[node name="MinotaurHeavyAttack" type="AudioStreamPlayer2D" parent="." unique_id=408975447]
+stream = ExtResource("13_3ahq4")
+volume_db = -10.0
+
+[node name="MinotaurLightAttack" type="AudioStreamPlayer2D" parent="." unique_id=165254215]
+stream = ExtResource("14_3u2jj")

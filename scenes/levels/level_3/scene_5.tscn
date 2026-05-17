@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bkvq2rkhxc0lc"]
+[gd_scene format=4 uid="uid://bf5oxhrck5f4f"]
 
 [ext_resource type="Texture2D" uid="uid://dna7nyb7x57bm" path="res://assets/images/tilemaps/tilemap bg 2.png" id="1_ejo4f"]
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_ctoks"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="8_0nly2"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="9_jr7c3"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="10_4ximn"]
+[ext_resource type="PackedScene" uid="uid://dllynjydlblvp" path="res://scenes/test_scenes/PlayerLight.tscn" id="11_0jlf2"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="12_2xllt"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="12_ckcrt"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="13_67its"]
@@ -877,6 +878,9 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("12_ckcrt")]
 position = Vector2(637, -256)
 
+[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("11_0jlf2")]
+position = Vector2(-5, -5)
+
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("13_67its")]
 position = Vector2(97, -17)
 
@@ -903,6 +907,21 @@ position = Vector2(-338, -218)
 
 [node name="Rat2" parent="." unique_id=1793792294 instance=ExtResource("15_k7g5w")]
 position = Vector2(391, 266)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=663441545]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerLight" parent="." unique_id=76647200 instance=ExtResource("11_0jlf2")]
+position = Vector2(-438, -113)
+
+[node name="PlayerLight2" parent="." unique_id=678218054 instance=ExtResource("11_0jlf2")]
+position = Vector2(76, -344)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047767125]
+
+[node name="hud" parent="CanvasLayer" unique_id=1246055444 instance=ExtResource("13_67its")]
+position = Vector2(749, 324)
 
 [connection signal="button_pressed" from="Button" to="Gate2" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cu7lxq5trcvpt" path="res://scenes/levels/level_3/NextScene3.tscn" id="5_bo3qv"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="6_jdyoy"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="7_jordh"]
+[ext_resource type="PackedScene" uid="uid://dllynjydlblvp" path="res://scenes/test_scenes/PlayerLight.tscn" id="8_s2hta"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="9_8ntn2"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="9_xvmko"]
 [ext_resource type="PackedScene" uid="uid://cebymkk2gghii" path="res://scenes/lvInterface/HiddenPlatform.tscn" id="11_0851u"]
@@ -837,6 +838,9 @@ position = Vector2(628, -273)
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_58oey")]
 position = Vector2(571, 237)
 
+[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("8_s2hta")]
+position = Vector2(-4, -14)
+
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("6_jdyoy")]
 position = Vector2(596, 13)
 
@@ -904,6 +908,24 @@ script = ExtResource("19_s2hta")
 [node name="Button2" parent="." unique_id=519722775 instance=ExtResource("9_xvmko")]
 position = Vector2(-618, 97)
 scale = Vector2(3, 3)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=709157933]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerLight" parent="." unique_id=1195709516 instance=ExtResource("8_s2hta")]
+position = Vector2(-793, -342)
+
+[node name="PlayerLight2" parent="." unique_id=251707333 instance=ExtResource("8_s2hta")]
+position = Vector2(579, 17)
+
+[node name="PlayerLight3" parent="." unique_id=1382018392 instance=ExtResource("8_s2hta")]
+position = Vector2(-612, 230)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=428030324]
+
+[node name="hud" parent="CanvasLayer" unique_id=882388056 instance=ExtResource("7_jordh")]
+position = Vector2(747, 326)
 
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]

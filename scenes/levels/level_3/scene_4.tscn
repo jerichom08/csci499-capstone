@@ -803,7 +803,7 @@ sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/0 = SubResource("TileSetAtlasSource_imlax")
 sources/1 = SubResource("TileSetAtlasSource_gmqph")
 
-[node name="Node2D2" type="Node2D" unique_id=188122060]
+[node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
@@ -895,7 +895,7 @@ position = Vector2(-69.33331, 0)
 position = Vector2(601, -91)
 
 [node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("13_5q35u")]
-position = Vector2(132, 50)
+position = Vector2(-5, -11)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("10_7oyrk")]
 position = Vector2(97, -17)
@@ -940,12 +940,22 @@ position = Vector2(604, 260.99997)
 [node name="TwoWayPlatform5" parent="." unique_id=1289962829 instance=ExtResource("18_jpis6")]
 position = Vector2(604, 180.99997)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=533511465]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=258369969]
+visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="PlayerLight" parent="." unique_id=1112876541 instance=ExtResource("13_5q35u")]
+position = Vector2(-416, -145)
+
+[node name="PlayerLight2" parent="." unique_id=106583938 instance=ExtResource("13_5q35u")]
+position = Vector2(101, 257)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=715760788]
+
+[node name="hud" parent="CanvasLayer" unique_id=1862011010 instance=ExtResource("10_7oyrk")]
+position = Vector2(751, 328)
 
 [connection signal="button_pressed" from="Button" to="Gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform/HiddenPlatform2" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform/HiddenPlatform3" method="_on_button_2_button_pressed"]
-
-[editable path="Player"]

@@ -804,7 +804,7 @@ sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/0 = SubResource("TileSetAtlasSource_imlax")
 sources/1 = SubResource("TileSetAtlasSource_gmqph")
 
-[node name="Node2D2" type="Node2D" unique_id=188122060]
+[node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
@@ -832,7 +832,7 @@ tile_set = SubResource("TileSet_5y2x0")
 position = Vector2(-635, 232)
 
 [node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("7_1jcon")]
-position = Vector2(146, 46)
+position = Vector2(2, -23)
 
 [node name="Button2" parent="." unique_id=954241513 instance=ExtResource("14_ujl0q")]
 position = Vector2(380, -10.9999695)
@@ -969,17 +969,21 @@ position = Vector2(-102, 133)
 [node name="TwoWayPlatform4" parent="." unique_id=1794845947 instance=ExtResource("20_tqapc")]
 position = Vector2(550, 183.99997)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1185138508]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1951016205]
+visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="PlayerLight" parent="." unique_id=378794481 instance=ExtResource("7_1jcon")]
-position = Vector2(32, 186)
+[node name="PlayerLight" parent="." unique_id=1239053449 instance=ExtResource("7_1jcon")]
+position = Vector2(620, -257)
 
-[node name="PlayerLight2" parent="." unique_id=1607952343 instance=ExtResource("7_1jcon")]
-position = Vector2(734, -218)
+[node name="PlayerLight2" parent="." unique_id=525251645 instance=ExtResource("7_1jcon")]
+position = Vector2(-487, -91)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=305432329]
+
+[node name="hud" parent="CanvasLayer" unique_id=94793832 instance=ExtResource("9_5b86e")]
+position = Vector2(749, 331)
 
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Gate/Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Gate2/Button2" to="Gate2" method="_on_button_2_button_pressed"]
-
-[editable path="Player"]

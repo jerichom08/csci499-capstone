@@ -11,3 +11,7 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_level_select_pressed() -> void:
+	$SceneTransition.change_scene_to("res://scenes/LevelSelect.tscn")

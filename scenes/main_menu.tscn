@@ -55,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
 bg_color = Color(0.15747333, 0.1288, 0.23, 1)
 border_width_bottom = 10
 border_color = Color(0.10602669, 0.086399995, 0.16, 0.94509804)
@@ -64,7 +64,7 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
 bg_color = Color(0.1292127, 0.10409229, 0.18877175, 1)
 border_width_bottom = 10
 border_color = Color(0.10602669, 0.086399995, 0.16, 1)
@@ -73,7 +73,7 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
 bg_color = Color(0.12941177, 0.105882354, 0.1882353, 1)
 border_width_top = 10
 border_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
@@ -83,9 +83,9 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="Theme" id="Theme_8ln24"]
-Button/styles/hover = SubResource("StyleBoxFlat_wu84c")
-Button/styles/normal = SubResource("StyleBoxFlat_8ln24")
-Button/styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+Button/styles/hover = SubResource("StyleBoxFlat_oa1go")
+Button/styles/normal = SubResource("StyleBoxFlat_tbmy8")
+Button/styles/pressed = SubResource("StyleBoxFlat_jk1qb")
 
 [node name="Main Menu" type="Node2D" unique_id=2047207784]
 script = ExtResource("1_l6cm7")
@@ -96,24 +96,6 @@ offset_top = -183.0
 offset_right = 749.0
 offset_bottom = 537.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rtw2f")
-
-[node name="Label" type="Label" parent="." unique_id=730008650]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -489.5
-offset_top = -95.0
-offset_right = 489.5
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0.12941177, 0.101960786, 0.1882353, 1)
-theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 100
-text = "Nyarla's Birthday Bash"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110530687]
 texture_filter = 1
@@ -127,9 +109,30 @@ script = ExtResource("5_rtw2f")
 position = Vector2(463, 357)
 scale = Vector2(10, 10)
 
+[node name="Label" type="Label" parent="." unique_id=730008650]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -489.5
+offset_top = -114.0
+offset_right = 489.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.12941177, 0.101960786, 0.1882353, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 100
+text = "Nyarla's Birthday Bash"
+
 [node name="Button Manager" type="Control" parent="." unique_id=921903922]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -30.0
+offset_bottom = -30.0
 
 [node name="Start" type="Button" parent="Button Manager" unique_id=1302864906]
 layout_mode = 1
@@ -146,28 +149,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_8ln24")
 theme_override_fonts/font = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 75
 text = "Start"
 
 [node name="Options" type="Button" parent="Button Manager" unique_id=620540582]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = 160.0
-offset_right = 215.0
-offset_bottom = 256.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_8ln24")
-theme_override_fonts/font = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 80
-text = "Options"
-
-[node name="Quit" type="Button" parent="Button Manager" unique_id=1805338488]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,7 +167,43 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_8ln24")
 theme_override_fonts/font = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 75
+text = "Options‎"
+
+[node name="Level Select" type="Button" parent="Button Manager" unique_id=2089144965]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 160.0
+offset_right = 215.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8ln24")
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 75
+text = "Level Select"
+
+[node name="Quit" type="Button" parent="Button Manager" unique_id=1805338488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = 410.0
+offset_right = 215.0
+offset_bottom = 506.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8ln24")
+theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_font_sizes/font_size = 75
 text = "Quit"
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_wu84c")]
@@ -192,4 +213,5 @@ position = Vector2(-1, 177)
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button Manager/Level Select" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]

@@ -804,7 +804,7 @@ sources/0 = SubResource("TileSetAtlasSource_imlax")
 sources/1 = SubResource("TileSetAtlasSource_gmqph")
 
 [node name="Node2D" type="Node2D" unique_id=188122060]
-position = Vector2(656, 340)
+position = Vector2(793, 343)
 
 [node name="background" type="TileMapLayer" parent="." unique_id=1837942844]
 position = Vector2(118, -17)
@@ -839,10 +839,13 @@ position = Vector2(628, -273)
 position = Vector2(571, 237)
 
 [node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("8_s2hta")]
-position = Vector2(134, 41)
+position = Vector2(-4, -14)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("6_jdyoy")]
 position = Vector2(596, 13)
+
+[node name="hud" parent="." unique_id=2086834432 instance=ExtResource("7_jordh")]
+position = Vector2(97, -17)
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("9_8ntn2")]
 position = Vector2(-452, -15)
@@ -906,24 +909,23 @@ script = ExtResource("19_s2hta")
 position = Vector2(-618, 97)
 scale = Vector2(3, 3)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2145386076]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=709157933]
+visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="PlayerLight" parent="." unique_id=583320916 instance=ExtResource("8_s2hta")]
-position = Vector2(-304, 56)
+[node name="PlayerLight" parent="." unique_id=1195709516 instance=ExtResource("8_s2hta")]
+position = Vector2(-793, -342)
 
-[node name="PlayerLight2" parent="." unique_id=175334066 instance=ExtResource("8_s2hta")]
-position = Vector2(734, 70)
+[node name="PlayerLight2" parent="." unique_id=251707333 instance=ExtResource("8_s2hta")]
+position = Vector2(579, 17)
 
-[node name="PlayerLight3" parent="." unique_id=348861922 instance=ExtResource("8_s2hta")]
-position = Vector2(-471, 289)
+[node name="PlayerLight3" parent="." unique_id=1382018392 instance=ExtResource("8_s2hta")]
+position = Vector2(-612, 230)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=247437470]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=428030324]
 
-[node name="hud" parent="CanvasLayer" unique_id=2086834432 instance=ExtResource("7_jordh")]
-position = Vector2(751, 337)
+[node name="hud" parent="CanvasLayer" unique_id=882388056 instance=ExtResource("7_jordh")]
+position = Vector2(747, 326)
 
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]
-
-[editable path="Player"]

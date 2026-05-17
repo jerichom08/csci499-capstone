@@ -11,6 +11,8 @@ size = Vector2(22, 10)
 size = Vector2(17.5, 4)
 
 [node name="DisappearingPlatforn" type="StaticBody2D" unique_id=1325980132]
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_itq32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1580125014]

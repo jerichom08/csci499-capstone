@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_rgpl3"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="18_siy3p"]
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="19_siy3p"]
+[ext_resource type="PackedScene" uid="uid://b3tiwnxtbfvlh" path="res://scenes/lvInterface/TwoWayPlatformS.tscn" id="20_tqapc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ns4k2")
@@ -917,9 +918,6 @@ scale = Vector2(3, 3)
 position = Vector2(652, 83)
 scale = Vector2(3, 3)
 
-[node name="TwoWayPlatform5" parent="." unique_id=2117400097 instance=ExtResource("11_w4mar")]
-position = Vector2(546, 177.99997)
-
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("12_tqtkf")]
 position = Vector2(-560, 249.99997)
 scale = Vector2(3, 3)
@@ -963,6 +961,9 @@ position = Vector2(16, -219)
 
 [node name="HeartPickup2" parent="." unique_id=507373586 instance=ExtResource("18_siy3p")]
 position = Vector2(-102, 133)
+
+[node name="TwoWayPlatform4" parent="." unique_id=1794845947 instance=ExtResource("20_tqapc")]
+position = Vector2(550, 183.99997)
 
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]
 [connection signal="button_pressed" from="Gate/Button" to="HiddenPlatform" method="_on_button_button_pressed"]

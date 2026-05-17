@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bbvjk6ma742ot"]
+
+[ext_resource type="Texture2D" uid="uid://jg7yyt3rqejl" path="res://assets/images/cat/cat_idle.png" id="1_0cb4x"]
+[ext_resource type="Script" uid="uid://ivkkgsax5lhl" path="res://scenes/lvInterface/nyarla_idle.gd" id="2_1row4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fofnl"]
+atlas = ExtResource("1_0cb4x")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scjhm"]
+atlas = ExtResource("1_0cb4x")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vpc7"]
+atlas = ExtResource("1_0cb4x")
+region = Rect2(0, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ed12"]
+atlas = ExtResource("1_0cb4x")
+region = Rect2(0, 48, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftvdc"]
+atlas = ExtResource("1_0cb4x")
+region = Rect2(0, 64, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju5kw"]
+atlas = ExtResource("1_0cb4x")
+region = Rect2(0, 80, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpcdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fofnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scjhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vpc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ed12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftvdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju5kw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="nyarla" type="AnimatedSprite2D" unique_id=1080435679]
+sprite_frames = SubResource("SpriteFrames_gpcdq")
+script = ExtResource("2_1row4")

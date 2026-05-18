@@ -399,7 +399,7 @@ debug_color = Color(0, 1, 1, 0)
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=2045470251]
 
 [node name="LedgeRay" type="RayCast2D" parent="." unique_id=737474585]
-position = Vector2(13, -9)
+position = Vector2(18, -9)
 target_position = Vector2(0, 30)
 
 [node name="Defeat" type="AudioStreamPlayer2D" parent="." unique_id=1380790717]

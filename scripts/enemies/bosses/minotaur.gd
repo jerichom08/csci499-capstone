@@ -2,10 +2,19 @@ extends EnemyBase
 
 @export var minotaur_heavy_attack: PackedScene
 @export var minotaur_light_attack: PackedScene
+@export var milk_scene: PackedScene
 
 @onready var light_attack_sfx: AudioStreamPlayer2D = $MinotaurLightAttack
 @onready var heavy_attack_sfx: AudioStreamPlayer2D = $MinotaurHeavyAttack
 
+@export var landing_position : Vector2
+var active := false
+var skeletons_remaining := 2
+var jumping_in := false
+var jump_start : Vector2
+var jump_target : Vector2
+var jump_timer := 0.0
+var jump_duration := 1.2
 
 var attack_executed: bool = false
 const WORLD_SCALE: float = 3.0
@@ -67,6 +76,7 @@ func start_attack() -> void:
 	else:
 		set_attack(AttackType.HEAVY)
 		heavy_attack_sfx.play()
+		await heavy_attack_sfx.finished
 
 	set_state(State.ATTACK)
 
@@ -117,3 +127,26 @@ func _on_animation_finished() -> void:
 func reset_attack_cooldown() -> void:
 	await get_tree().create_timer(stats.attack_cooldown).timeout
 	can_attack = true
+
+func fade_out_and_free() -> void:
+	var tween := create_tween()
+
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.4)
+
+	await tween.finished
+
+	var milk = milk_scene.instantiate()
+	milk.scale *= 0.1
+	get_parent().add_child(milk)
+	#print("Frog Pos: ",global_position)
+	milk.global_position = global_position
+
+	#await get_tree().create_timer(1.0).timeout
+
+	queue_free()
+
+func _on_skeleton_defeated() -> void:
+	skeletons_remaining -= 1
+
+	if skeletons_remaining <= 0:
+		start_jump_in()

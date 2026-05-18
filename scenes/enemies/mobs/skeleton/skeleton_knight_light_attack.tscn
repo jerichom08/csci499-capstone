@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://6pbvsuh43wdx"]
+
+[ext_resource type="Script" uid="uid://30aaw33c85wl" path="res://scripts/enemies/mobs/skeleton_knight_light_attack.gd" id="1_3kbnx"]
+[ext_resource type="Texture2D" uid="uid://dfjbaeaplmou3" path="res://assets/images/enemies/mobs/skeleton/1_Warrior/2_Knight/Skeleton_Knight_Sword_Light_Attack.png" id="1_cmxhj"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_3kbnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7vea"]
+size = Vector2(25, 9)
+
+[node name="SkeletonKnightLightAttack" type="Node2D" unique_id=624286452]
+script = ExtResource("1_3kbnx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936297590]
+texture = ExtResource("1_cmxhj")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1806249925]
+script = ExtResource("2_3kbnx")
+apply_knockback = true
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=215673649]
+position = Vector2(-28.5, 7.5)
+shape = SubResource("RectangleShape2D_d7vea")
+debug_color = Color(1, 0, 0, 0.41960785)

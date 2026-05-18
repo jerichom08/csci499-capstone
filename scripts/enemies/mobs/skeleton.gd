@@ -14,6 +14,7 @@ extends EnemyBase
 var seen_animations: Array[String] = []
 var ledge_offset_x : float
 var is_arising : bool = false
+var defeat_sfx_played: bool = false
 
 @onready var skeleton_defeat_sfx : AudioStreamPlayer2D = $Defeat
 @onready var skeleton_arise_sfx : AudioStreamPlayer2D = $Arise
@@ -58,7 +59,6 @@ func rest() -> void:
 
 		skeleton_arise_sfx.play()
 		await skeleton_arise_sfx.finished
-		set_collisions_enabled(true)
 		set_state(State.ARISE)
 
 func arise() -> void:
@@ -67,6 +67,7 @@ func arise() -> void:
 func chase() -> void:
 	if not skeleton_chase_sfx.playing:
 		skeleton_chase_sfx.play()
+
 	var player = pdz.player
 
 	if player == null:
@@ -77,14 +78,15 @@ func chase() -> void:
 		player.global_position
 	)
 
-	var move_dir := direction.x
+	var move_dir :int = sign(direction.x)
 
+	# Always visually face the player
+	face_direction(-move_dir)
+
+	# Stop movement if path ahead is unsafe
 	if should_turn_around():
-		face_direction(facing_direction * -1)
-		move_dir *= -1
-		#move_dir = facing_direction
-	else:
-		face_direction(-sign(move_dir))
+		velocity.x = 0
+		return
 
 	velocity.x = move_dir * stats.move_speed
 	
@@ -93,7 +95,9 @@ func take_damage(_damage : int, _knockback: Vector2 = Vector2.ZERO) -> void:
 		skeleton_chase_sfx.stop()
 	velocity.x = 0
 	set_collisions_enabled(false)
-	skeleton_defeat_sfx.play()
+	if !defeat_sfx_played:
+		skeleton_defeat_sfx.play()
+		defeat_sfx_played = true
 	set_state(State.DEFEAT)
 	
 func can_see_player_los(player: Node2D) -> bool:
@@ -111,10 +115,13 @@ func can_see_player_los(player: Node2D) -> bool:
 func _on_animation_finished() -> void:
 	match current_state:
 		State.ARISE:
+			set_collisions_enabled(true)
 			set_state(State.CHASE)
+			
 		State.DEFEAT:
 			await get_tree().create_timer(2.0).timeout
 			is_arising = false
+			defeat_sfx_played = false
 			set_collisions_enabled(true)
 			set_state(State.REST)
 

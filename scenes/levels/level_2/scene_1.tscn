@@ -1082,7 +1082,7 @@ position = Vector2(-370, 163)
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_hkv3s")]
-position = Vector2(-55, 115)
+position = Vector2(-174, -197)
 
 [node name="MovingPlatformH" parent="." unique_id=970703486 instance=ExtResource("14_m3ou3")]
 position = Vector2(221, -118)

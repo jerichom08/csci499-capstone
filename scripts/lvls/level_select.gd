@@ -26,3 +26,7 @@ func _on_ready() -> void:
 	for child in get_children():
 		if child is AnimatedSprite2D:
 			child.play()
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

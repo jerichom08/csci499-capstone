@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://c6xwa7aab0ti0"]
+
+[ext_resource type="Script" uid="uid://ckoelrr2be0gm" path="res://scripts/lvls/level_select.gd" id="1_5gu5v"]
+[ext_resource type="Texture2D" uid="uid://cyc0q6e6r8s8h" path="res://assets/images/UI/BG.png" id="2_4acgi"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="3_ya8vd"]
+[ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_3knc2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibarm"]
+texture = ExtResource("2_4acgi")
+modulate_color = Color(0.34621716, 0.4803471, 0.5474121, 0.5921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.15747333, 0.1288, 0.23, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 0.94509804)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.1292127, 0.10409229, 0.18877175, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.12941177, 0.105882354, 0.1882353, 1)
+border_width_top = 10
+border_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_egmj1"]
+Button/styles/hover = SubResource("StyleBoxFlat_wu84c")
+Button/styles/normal = SubResource("StyleBoxFlat_8ln24")
+Button/styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+
+[node name="LevelSelect" type="Node2D" unique_id=340735494]
+script = ExtResource("1_5gu5v")
+
+[node name="Panel" type="Panel" parent="." unique_id=1616153705]
+offset_left = -751.0
+offset_top = -183.0
+offset_right = 749.0
+offset_bottom = 537.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ibarm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=314946597]
+position = Vector2(-1, 177)
+
+[node name="Label" type="Label" parent="." unique_id=714550598]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -489.5
+offset_top = -3.0
+offset_right = 489.5
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.12941177, 0.101960786, 0.1882353, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_ya8vd")
+theme_override_font_sizes/font_size = 100
+text = "Fin."
+horizontal_alignment = 1
+
+[node name="Button Manager" type="Control" parent="." unique_id=1313472479]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -112.0
+offset_bottom = -112.0
+size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="return" type="Button" parent="Button Manager" unique_id=1804199009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = 287.0
+offset_right = 346.0
+offset_bottom = 383.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("3_ya8vd")
+theme_override_font_sizes/font_size = 67
+text = "Return to Title Screen"
+
+[node name="Quit" type="Button" parent="Button Manager" unique_id=783112853]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = 410.0
+offset_right = 346.0
+offset_bottom = 506.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_egmj1")
+theme_override_fonts/font = ExtResource("3_ya8vd")
+theme_override_font_sizes/font_size = 67
+text = "Quit"
+
+[node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_3knc2")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Button Manager/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]

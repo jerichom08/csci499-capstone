@@ -845,6 +845,7 @@ position = Vector2(-4, -14)
 position = Vector2(596, 13)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("7_jordh")]
+visible = false
 position = Vector2(97, -17)
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("9_8ntn2")]
@@ -910,17 +911,25 @@ position = Vector2(-618, 97)
 scale = Vector2(3, 3)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=709157933]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=1195709516 instance=ExtResource("8_s2hta")]
-position = Vector2(-793, -342)
+position = Vector2(-458, -12)
 
 [node name="PlayerLight2" parent="." unique_id=251707333 instance=ExtResource("8_s2hta")]
 position = Vector2(579, 17)
 
 [node name="PlayerLight3" parent="." unique_id=1382018392 instance=ExtResource("8_s2hta")]
 position = Vector2(-612, 230)
+
+[node name="PlayerLight4" parent="." unique_id=938260299 instance=ExtResource("8_s2hta")]
+position = Vector2(334, -283)
+
+[node name="PlayerLight5" parent="." unique_id=245880552 instance=ExtResource("8_s2hta")]
+position = Vector2(-514, -225)
+
+[node name="PlayerLight6" parent="." unique_id=1804989282 instance=ExtResource("8_s2hta")]
+position = Vector2(74, -112)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=428030324]
 

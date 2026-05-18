@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7mssjdgrotoq" path="res://assets/images/enemies/bosses/minotaur/mino_defeat.png" id="3_600he"]
 [ext_resource type="Texture2D" uid="uid://mmfh4lhhcmhb" path="res://assets/images/enemies/bosses/minotaur/mino_hurt.png" id="4_m81ng"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="4_ytddw"]
+[ext_resource type="PackedScene" uid="uid://dqn35ufdjdfnu" path="res://scenes/ingredients/milk.tscn" id="4_ywwfh"]
 [ext_resource type="Texture2D" uid="uid://dhg4d2u7pri3e" path="res://assets/images/enemies/bosses/minotaur/mino_run.png" id="6_aubn0"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="7_o845j"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="8_rl10w"]
@@ -333,6 +334,7 @@ height = 26.0
 script = ExtResource("1_iahlh")
 minotaur_heavy_attack = ExtResource("2_w22xp")
 minotaur_light_attack = ExtResource("9_iahlh")
+milk_scene = ExtResource("4_ywwfh")
 stats = SubResource("Resource_3ahq4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1568472986]
@@ -341,6 +343,7 @@ position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_an5vr")
 animation = &"heavy_attack"
 autoplay = "idle"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471408029]
 position = Vector2(-1, 14)
@@ -375,7 +378,7 @@ target_position = Vector2(200, 20)
 position = Vector2(1, 1)
 
 [node name="HeavySpawn" type="Marker2D" parent="." unique_id=951658981]
-position = Vector2(0, 1)
+position = Vector2(1, 1)
 
 [node name="MinotaurHeavyAttack" type="AudioStreamPlayer2D" parent="." unique_id=408975447]
 stream = ExtResource("13_3ahq4")

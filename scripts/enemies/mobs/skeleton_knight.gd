@@ -11,7 +11,7 @@ extends EnemyBase
 signal skeleton_defeated
 
 var attack_executed: bool = false
-var damage_cooldown: float = 1.5
+var damage_cooldown: float = 1.2
 var is_taking_damage: bool = false
 const WORLD_SCALE = 3.0
 

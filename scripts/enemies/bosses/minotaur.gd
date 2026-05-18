@@ -17,6 +17,8 @@ var jump_target : Vector2
 var jump_timer := 0.0
 var jump_duration := 1.2
 
+var damage_cooldown : float = 1.5
+var is_taking_damage : bool = false
 var attack_executed: bool = false
 const WORLD_SCALE: float = 3.0
 
@@ -67,9 +69,28 @@ func defeat() -> void:
 func heal(_hp : int) -> void:
 	pass
 
-func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO):
+func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
+	if is_taking_damage:
+		return
+
+	is_taking_damage = true
+
 	velocity.x = 0
-	set_state(State.DEFEAT)
+
+	health = max(0, health - _damage)
+
+	if health <= 0:
+		set_state(State.DEFEAT)
+	else:
+		set_state(State.HIT)
+
+	set_collisions_enabled(false)
+
+	await get_tree().create_timer(damage_cooldown).timeout
+
+	set_collisions_enabled(true)
+
+	is_taking_damage = false
 
 func start_attack() -> void:
 	can_attack = false
@@ -124,6 +145,10 @@ func spawn_heavy_attack() -> void:
 func _on_animation_finished() -> void:
 	match current_state:
 		State.ATTACK:
+			reset_attack_cooldown()
+			set_state(State.CHASE)
+			attack_executed = false
+		State.HIT:
 			reset_attack_cooldown()
 			set_state(State.CHASE)
 			attack_executed = false
@@ -191,3 +216,12 @@ func _on_skeleton_knight_skeleton_defeated() -> void:
 
 	if skeletons_remaining <= 0:
 		start_jump_in()
+
+func set_collisions_enabled(enabled: bool) -> void:
+	if hurtbox:
+		hurtbox.set_deferred("monitoring", enabled)
+		hurtbox.set_deferred("monitorable", enabled)
+
+	if hitbox:
+		hitbox.set_deferred("monitoring", enabled)
+		hitbox.set_deferred("monitorable", enabled)

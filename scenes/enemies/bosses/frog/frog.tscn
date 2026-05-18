@@ -520,6 +520,7 @@ size = Vector2(76, 48.25)
 
 [node name="frog" type="CharacterBody2D" unique_id=1994586249]
 texture_filter = 1
+collision_layer = 512
 script = ExtResource("1_11g75")
 frog_spit_attack = ExtResource("2_r5l00")
 frog_tongue_attack = ExtResource("3_g1aui")

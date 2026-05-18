@@ -5,8 +5,8 @@
 [node name="PlayerLight" type="Node2D" unique_id=119456223]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1508795935]
-position = Vector2(5.0000305, 5.000046)
-scale = Vector2(4.358398, 3.8281252)
+position = Vector2(0.9999962, -1.0000038)
+scale = Vector2(5.3979483, 4.742187)
 blend_mode = 2
 texture = ExtResource("1_ytpmw")
 

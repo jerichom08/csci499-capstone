@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://dllynjydlblvp"]
 
-[ext_resource type="Texture2D" uid="uid://bqwfqlmtad1gk" path="res://scenes/test_scenes/64x64_textures__108_-removebg-preview.png" id="1_ytpmw"]
+[ext_resource type="Texture2D" uid="uid://bubjgfspwjdbl" path="res://assets/images/animation/64x64_textures__99_-removebg-preview.png" id="1_ytpmw"]
 
 [node name="PlayerLight" type="Node2D" unique_id=119456223]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1508795935]
 position = Vector2(0.9999962, -1.0000038)
 scale = Vector2(5.3979483, 4.742187)
-blend_mode = 2
 texture = ExtResource("1_ytpmw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=338452381]

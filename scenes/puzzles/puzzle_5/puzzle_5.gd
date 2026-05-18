@@ -76,7 +76,25 @@ func reset_puzzle(player: Node2D) -> void:
 	chosen_sequence.clear()
 
 	if player and spawn_point:
+		var camera := player.get_node_or_null("Camera2D")
+
+		var saved_velocity := Vector2.ZERO
+		if "velocity" in player:
+			saved_velocity = player.velocity
+
+		if camera:
+			camera.position_smoothing_enabled = false
+
 		player.global_position = spawn_point.global_position
+
+		if "velocity" in player:
+			player.velocity = saved_velocity
+
+		await get_tree().process_frame
+
+		if camera:
+			camera.force_update_scroll()
+			camera.position_smoothing_enabled = true
 
 func move_player_to_section(player: Node2D, section_index: int) -> void:
 	if player and section_entry_points.has(section_index):

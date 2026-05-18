@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="5_1xcsg"]
 [ext_resource type="Script" uid="uid://cec3qvdhoywef" path="res://scenes/puzzles/puzzle_5/camera_2d.gd" id="6_e2684"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="7_wxfxh"]
+[ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_0qfi1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s426x"]
 texture = ExtResource("2_dmhpr")
@@ -565,7 +566,7 @@ size = Vector2(60, 72)
 size = Vector2(64.5, 84.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxfxh"]
-size = Vector2(56, 86)
+size = Vector2(163, 239)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2684"]
 
@@ -599,7 +600,7 @@ tile_map_data = PackedByteArray("AADk/wYAAgAGAAcAAADl/wYAAgAGAAcAAADm/wYAAgAGAAc
 tile_set = SubResource("TileSet_gbkhu")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1364063156]
-position = Vector2(-636, 141)
+position = Vector2(-669.16003, 272.27002)
 
 [node name="MessageLabel" type="Label" parent="." unique_id=260892692]
 offset_left = -12.0
@@ -615,11 +616,11 @@ position = Vector2(48, -81)
 position = Vector2(-629, 266)
 
 [node name="TopPath" type="Area2D" parent="Section1" unique_id=1164410910]
-position = Vector2(685, -289)
+position = Vector2(701.5288, -240.21965)
 script = ExtResource("4_wxfxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Section1/TopPath" unique_id=526237004]
-position = Vector2(56, -46)
+position = Vector2(80, -35)
 shape = SubResource("RectangleShape2D_1xcsg")
 
 [node name="InteractionLabel" type="Label" parent="Section1/TopPath" unique_id=865805775]
@@ -649,7 +650,7 @@ position = Vector2(659, 261)
 script = ExtResource("4_wxfxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Section1/BottomPath" unique_id=715704978]
-position = Vector2(96, 20)
+position = Vector2(88.5, 22.5)
 shape = SubResource("RectangleShape2D_wxfxh")
 
 [node name="InteractionLabel" type="Label" parent="Section1/BottomPath" unique_id=2141819686]
@@ -664,6 +665,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-600, 0)
 
 [node name="EntryPoint" type="Marker2D" parent="Section2" unique_id=1188586525]
+position = Vector2(-67.950005, 191.20001)
 
 [node name="TopPath" type="Area2D" parent="Section2" unique_id=1351284881]
 position = Vector2(3467, -258)
@@ -685,8 +687,10 @@ script = ExtResource("4_wxfxh")
 shape = SubResource("RectangleShape2D_0qfi1")
 
 [node name="InteractionLabel" type="Label" parent="Section2/MiddlePath" unique_id=1245241481]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 48.0
+offset_top = -16.0
+offset_right = 88.0
+offset_bottom = 7.0
 metadata/_edit_use_anchors_ = true
 
 [node name="BottomPath" type="Area2D" parent="Section2" unique_id=1200611885]
@@ -770,6 +774,12 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 script = ExtResource("6_e2684")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=453255550]
+
+[node name="hud" parent="Player/CanvasLayer" unique_id=2086834432 instance=ExtResource("9_0qfi1")]
+visible = false
+position = Vector2(748, 371)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("5_1xcsg")]
 position = Vector2(-163, 1)

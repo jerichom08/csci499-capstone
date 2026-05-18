@@ -38,6 +38,10 @@ shape = SubResource("RectangleShape2D_3eapv")
 
 [node name="minotaur" parent="." unique_id=503455755 instance=ExtResource("2_3eapv")]
 position = Vector2(1294, 138)
-landing_position = null
+
+[node name="MinotaurLandingPoint" type="Marker2D" parent="." unique_id=1803010337]
+position = Vector2(695, 662)
 
 [connection signal="skeleton_defeated" from="SkeletonKnight" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="skeleton_defeated" from="SkeletonKnight2" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="skeleton_defeated" from="SkeletonKnight3" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]

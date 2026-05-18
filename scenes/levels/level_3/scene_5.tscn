@@ -921,7 +921,7 @@ position = Vector2(76, -344)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047767125]
 
 [node name="hud" parent="CanvasLayer" unique_id=1246055444 instance=ExtResource("13_67its")]
-position = Vector2(749, 324)
+position = Vector2(753, 363)
 
 [connection signal="button_pressed" from="Button" to="Gate2" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]

@@ -10,7 +10,8 @@ extends Control
 var dialogue_array : Array = [
 	 """ "It’s finally Nyarla’s birthday today" """,
 	 """ "And I really wanted to bake him a cake" """,
-	 """ "But I seem to be missing some ingredients" """
+	 """ "But I seem to be missing some ingredients" """,
+	 """ .Press WASD or ← ↑ ↓ → to move. """
 ]
 var dialogue_index : int  = 0:
 	set(value):
@@ -26,17 +27,20 @@ func _ready() -> void:
 	#animate_label()
 
 func animate_label() -> void:
-	if dialogue_index >=  dialogue_array.size():
+	if dialogue_index >= dialogue_array.size():
 		label.hide()
 		button.hide()
-		tilemap.hide()
 		return
-		#hide button and text
-		
+
+	# Hide the TileMap before the movement instruction appears
+	if dialogue_index == 3:
+		tilemap.hide()
+
 	label.text = dialogue_array[dialogue_index]
-	label.visible_characters+=1
+	label.visible_characters += 1
+
 	if label.visible_ratio == 1:
-		dialogue_index+=1
+		dialogue_index += 1
 	else:
 		timer.start()
 

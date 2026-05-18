@@ -787,6 +787,7 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("7_g7jjy")]
 position = Vector2(571, 237)
+dashEnabled = true
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("8_tyd0j")]
 position = Vector2(-458, -216)
@@ -847,6 +848,7 @@ shape = SubResource("CapsuleShape2D_spoa0")
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("16_24xcw")]
 
 [node name="hand" parent="." unique_id=126375272 instance=ExtResource("18_yn0q2")]
+collision_layer = 512
 
 [connection signal="button_pressed" from="Button" to="HiddenPlatform2" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform3" method="_on_button_button_pressed"]

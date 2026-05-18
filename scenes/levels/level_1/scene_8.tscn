@@ -604,6 +604,7 @@ script = ExtResource("6_tlx3o")
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("8_l6ri2")]
 z_index = 1
 position = Vector2(309, 80)
+dashEnabled = true
 
 [node name="JumpPad" parent="." unique_id=148337869 instance=ExtResource("12_c3il6")]
 position = Vector2(474.00006, 195.99997)

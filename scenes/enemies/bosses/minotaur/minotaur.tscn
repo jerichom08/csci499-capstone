@@ -343,6 +343,7 @@ position = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_an5vr")
 animation = &"heavy_attack"
 autoplay = "idle"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471408029]
 position = Vector2(-1, 14)
@@ -377,7 +378,7 @@ target_position = Vector2(200, 20)
 position = Vector2(1, 1)
 
 [node name="HeavySpawn" type="Marker2D" parent="." unique_id=951658981]
-position = Vector2(0, 1)
+position = Vector2(1, 1)
 
 [node name="MinotaurHeavyAttack" type="AudioStreamPlayer2D" parent="." unique_id=408975447]
 stream = ExtResource("13_3ahq4")

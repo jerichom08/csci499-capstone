@@ -907,7 +907,7 @@ scale = Vector2(3, 3)
 script = ExtResource("19_s2hta")
 
 [node name="Button2" parent="." unique_id=519722775 instance=ExtResource("9_xvmko")]
-position = Vector2(-618, 97)
+position = Vector2(-619, 97)
 scale = Vector2(3, 3)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=709157933]

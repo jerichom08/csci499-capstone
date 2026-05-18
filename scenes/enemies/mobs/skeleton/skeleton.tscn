@@ -22,7 +22,7 @@ metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ajnm"]
 radius = 4.0
-height = 20.0
+height = 9.333334
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1g8oi"]
 atlas = ExtResource("3_1g8oi")
@@ -356,7 +356,7 @@ stats = SubResource("Resource_l3dxt")
 metadata/_custom_type_script = "uid://upcw1k6dp6u8"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1320581151]
-position = Vector2(0, 6)
+position = Vector2(0.33333334, 10.333334)
 shape = SubResource("CapsuleShape2D_2ajnm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=97379467]
@@ -379,6 +379,7 @@ debug_color = Color(1, 0, 0, 0.41960785)
 collision_layer = 4
 script = ExtResource("10_m6x40")
 apply_knockback = true
+knockback_force = 400.0
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=173098873]

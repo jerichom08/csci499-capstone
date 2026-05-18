@@ -771,7 +771,6 @@ script = ExtResource("6_e2684")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=453255550]
 
 [node name="hud" parent="Player/CanvasLayer" unique_id=2086834432 instance=ExtResource("9_0qfi1")]
-visible = false
 position = Vector2(748, 371)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("5_1xcsg")]

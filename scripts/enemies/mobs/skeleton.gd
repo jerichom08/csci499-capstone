@@ -14,6 +14,7 @@ extends EnemyBase
 var seen_animations: Array[String] = []
 var ledge_offset_x : float
 var is_arising : bool = false
+
 @onready var skeleton_defeat_sfx : AudioStreamPlayer2D = $Defeat
 @onready var skeleton_arise_sfx : AudioStreamPlayer2D = $Arise
 @onready var skeleton_chase_sfx : AudioStreamPlayer2D = $Chase
@@ -43,6 +44,7 @@ func idle() -> void:
 		set_state(State.CHASE)
 
 func rest() -> void:
+	set_collisions_enabled(false)
 	velocity.x = 0
 
 	if skeleton_chase_sfx.playing:
@@ -56,7 +58,7 @@ func rest() -> void:
 
 		skeleton_arise_sfx.play()
 		await skeleton_arise_sfx.finished
-
+		set_collisions_enabled(true)
 		set_state(State.ARISE)
 
 func arise() -> void:
@@ -79,6 +81,7 @@ func chase() -> void:
 
 	if should_turn_around():
 		face_direction(facing_direction * -1)
+		move_dir *= -1
 		#move_dir = facing_direction
 	else:
 		face_direction(-sign(move_dir))

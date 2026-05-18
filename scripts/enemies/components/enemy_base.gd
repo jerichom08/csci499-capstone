@@ -41,6 +41,7 @@ enum State {
 	IDLE,
 	REST,
 	ARISE,
+	TAUNT,
 	RETURN,
 	CHASE,
 	ATTACK,
@@ -52,6 +53,7 @@ var state_animations := {
 	State.IDLE : "idle",
 	State.REST : "rest",
 	State.ARISE : "arise",
+	State.TAUNT : "taunt",
 	State.RETURN : "chase",
 	State.CHASE : "chase",
 	State.ATTACK : "attack",
@@ -101,6 +103,8 @@ func update_state_machine() -> void:
 			rest()
 		State.ARISE:
 			arise()
+		State.TAUNT:
+			taunt()
 		State.RETURN:
 			return_to_spawn()
 		State.CHASE:
@@ -145,6 +149,9 @@ func rest() -> void:
 	pass
 
 func arise() -> void:
+	pass
+	
+func taunt() -> void:
 	pass
 
 func return_to_spawn() -> void:

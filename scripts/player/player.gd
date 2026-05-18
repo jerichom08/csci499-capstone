@@ -35,8 +35,8 @@ const enemyLayer = 10
 const enemyHurtboxLayer = 4
 var normalCollisionMask = 0
 var normalHurtboxMask = 0
-const dashSpeed = 450 * WORLD_SCALE
-const dashTime = 0.15
+const dashSpeed = 420 * WORLD_SCALE
+const dashTime = 0.08
 const dashCooldown = 0.4
 const dashInvincibilityTime = 0.2
 
@@ -162,7 +162,7 @@ func _physics_process(delta: float) -> void:
 			isDashing = false
 		return
 	
-	if dashEnabled and Input.is_action_just_pressed("move_down") and is_on_floor() and !is_attacking:
+	if Input.is_action_just_pressed("move_down") and is_on_floor() and !is_attacking:
 		drop_through_platform()
 	
 	if controlling_projectile:
@@ -188,7 +188,7 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		facingDirection = sign(direction)
 		
-	if Input.is_action_just_pressed("dash") and dashCooldownTimer <= 0 and not is_attacking and not controlling_projectile:
+	if dashEnabled and Input.is_action_just_pressed("dash") and dashCooldownTimer <= 0 and not is_attacking and not controlling_projectile:
 		start_dash()
 	
 	if controlling_projectile:

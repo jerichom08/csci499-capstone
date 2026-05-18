@@ -45,6 +45,7 @@ size = Vector2(100.25, 83)
 
 [node name="TurnipNpc" type="Area2D" unique_id=960637076]
 script = ExtResource("1_fub78")
+dialogue_time = 2.5
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=876962569]
 modulate = Color(1, 0, 0, 1)

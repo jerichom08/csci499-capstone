@@ -2,8 +2,9 @@ extends Area2D
 
 signal npc_interacted
 
+@export var npc_text: String = "Hello traveler! Bring me the items in the correct order."
+@export var dialogue_time: float = 1.5
 @export var interact_action : String = "interaction"
-@export var npc_text : String = "Hello there."
 @export var character_face : Texture2D
 @export var dialogue_box_path : NodePath
 
@@ -34,10 +35,15 @@ func _process(_delta: float) -> void:
 
 
 func _interact_with_npc() -> void:
-	npc_interacted.emit()
-
 	if dialogue_box:
 		dialogue_box.show_dialogue(character_face, npc_text)
+
+	if _player_has_less_than_required_items():
+		return
+
+	await get_tree().create_timer(dialogue_time).timeout
+
+	npc_interacted.emit()
 
 	if animated_sprite:
 		animated_sprite.play("idle")
@@ -73,3 +79,11 @@ func set_npc_text(new_text: String, show_now: bool = false) -> void:
 
 	if show_now and dialogue_box:
 		dialogue_box.show_dialogue(character_face, npc_text)
+		
+func _player_has_less_than_required_items() -> bool:
+	var level = get_parent()
+
+	if level and "picked_up_order" in level and "correct_order" in level:
+		return level.picked_up_order.size() < level.correct_order.size()
+
+	return false

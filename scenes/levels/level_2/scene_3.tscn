@@ -933,6 +933,8 @@ script = ExtResource("16_gysk4")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_wa3js")]
 position = Vector2(-520.10565, -184.01172)
+npc_text = "\"First a classic, next a man, then some heart, finally some jam\""
+dialogue_time = 2.5
 character_face = ExtResource("30_44q8j")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 
@@ -954,10 +956,7 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("18_u5736")
 theme_override_font_sizes/font_size = 27
-text = "\"First a classic, 
-next a man, 
-then some heart, 
-finally some jam\""
+text = "Press E to interact"
 metadata/_edit_use_anchors_ = true
 
 [node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("31_qe53u")]

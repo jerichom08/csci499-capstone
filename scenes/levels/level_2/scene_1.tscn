@@ -30,7 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_uougs"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="29_kt1ph"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="30_0ijtv"]
-[ext_resource type="PackedScene" uid="uid://bxcsrmuququwo" path="res://scripts/UI/Inventory.tscn" id="32_86w07"]
+[ext_resource type="PackedScene" path="res://scripts/UI/Inventory.tscn" id="32_86w07"]
 [ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="32_w56qp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]

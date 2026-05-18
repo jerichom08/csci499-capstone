@@ -105,6 +105,6 @@ position = Vector2(10.000002, -122)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_6n3rb")
 format = 2
-layer_0/tile_data = PackedInt32Array(458740, 0, 0, 524276, 0, 1, 458741, 65536, 0, 524277, 65536, 1, 1179614, 0, 0, 1245150, 0, 1, 1179615, 65536, 0, 1245151, 65536, 1)
+layer_0/tile_data = PackedInt32Array(458740, 0, 0, 524276, 0, 1, 458741, 65536, 0, 524277, 65536, 1)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

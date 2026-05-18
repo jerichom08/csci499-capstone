@@ -907,11 +907,10 @@ scale = Vector2(3, 3)
 script = ExtResource("19_s2hta")
 
 [node name="Button2" parent="." unique_id=519722775 instance=ExtResource("9_xvmko")]
-position = Vector2(-618, 97)
+position = Vector2(-619, 97)
 scale = Vector2(3, 3)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=709157933]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=1195709516 instance=ExtResource("8_s2hta")]

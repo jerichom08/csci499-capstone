@@ -891,7 +891,6 @@ scale = Vector2(3, 3)
 position = Vector2(214, -247)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2095437580]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=935934356 instance=ExtResource("7_p27hb")]

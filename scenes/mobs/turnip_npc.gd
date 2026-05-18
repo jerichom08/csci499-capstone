@@ -13,6 +13,7 @@ var player_in_range : bool = false
 @onready var interaction_label = $InteractionLabel2
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var dialogue_box = get_node_or_null(dialogue_box_path)
+var dialogue_open: bool = false
 
 
 func _ready() -> void:
@@ -31,12 +32,18 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed(interact_action):
-		_interact_with_npc()
+		if dialogue_open:
+			if dialogue_box:
+				dialogue_box.hide_dialogue()
+			dialogue_open = false
+		else:
+			_interact_with_npc()
 
 
 func _interact_with_npc() -> void:
 	if dialogue_box:
 		dialogue_box.show_dialogue(character_face, npc_text)
+		dialogue_open = true
 
 	if _player_has_less_than_required_items():
 		return
@@ -62,6 +69,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
+		dialogue_open = false
 		player_in_range = false
 
 		if interaction_label:

@@ -882,6 +882,7 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("10_vd7kj")]
 position = Vector2(634, 233)
+dashEnabled = true
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("11_4cyrp")]
 position = Vector2(97, -17)
@@ -917,6 +918,7 @@ shape = SubResource("CapsuleShape2D_1lwkt")
 
 [node name="gollux" parent="." unique_id=1147398116 instance=ExtResource("11_1lwkt")]
 position = Vector2(-165, 74)
+collision_layer = 512
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="boss_defeated" from="gollux" to="." method="_on_gollux_boss_defeated"]

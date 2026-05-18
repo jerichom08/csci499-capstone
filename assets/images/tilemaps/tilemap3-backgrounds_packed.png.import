@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djt60ouuh61cu"
-path="res://.godot/imported/turnipFace.png-fcf3bfcb484442eab8d667215cac567a.ctex"
+uid="uid://gbk4pj3yu1uf"
+path="res://.godot/imported/tilemap3-backgrounds_packed.png-feb387ae2dac565a6719e5dfc652b635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npcs/turnipFace.png"
-dest_files=["res://.godot/imported/turnipFace.png-fcf3bfcb484442eab8d667215cac567a.ctex"]
+source_file="res://assets/images/tilemaps/tilemap3-backgrounds_packed.png"
+dest_files=["res://.godot/imported/tilemap3-backgrounds_packed.png-feb387ae2dac565a6719e5dfc652b635.ctex"]
 
 [params]
 

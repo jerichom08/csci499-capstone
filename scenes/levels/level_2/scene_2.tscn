@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="12_5cqpn"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="12_80vwy"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_6y8wy"]
-[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="16_7ykea"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="16_7ykea"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_83xw0"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="20_6ewla"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="20_g75hv"]
@@ -25,9 +25,9 @@
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="23_83xw0"]
 [ext_resource type="Texture2D" uid="uid://p8dankw132qh" path="res://assets/images/food/cookie_11.png" id="23_fmsi3"]
 [ext_resource type="Texture2D" uid="uid://cq3lipcayqih0" path="res://assets/images/food/cookie_13.png" id="24_7ykea"]
-[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="25_83xw0"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="26_6y8wy"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="27_fmsi3"]
+[ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="28_7ykea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_0hn47")
@@ -791,7 +791,7 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1546364109]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD8//3/AgACAAUAAAD8//7/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9////AgACAAUAAAD9/wAAAgACAAYAAAD9/wEAAgADAAQAAAD9/wIAAgACAAYAAAD9/wMAAgACAAUAAAD9/wQAAgACAAYAAAD9/wUAAgACAAUAAAD9/wYAAgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgADAAQAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAAD7//3/AgACAAUAAAD6//3/AgACAAUAAAD5//3/AgACAAUAAAD4//3/AgABAAQAAAD7//7/AgACAAcAAAD6//7/AgACAAcAAAD5//7/AgABAAcAAAD8////AgABAAYAAAD8/wAAAgABAAYAAAD8/wEAAgABAAYAAAD8/wIAAgACAAcAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADx/wUAAgACAAUAAADx/wYAAgACAAYAAADw/wUAAgACAAUAAADw/wYAAgACAAYAAADv/wUAAgACAAUAAADv/wYAAgACAAYAAADu/wUAAgACAAUAAADu/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADs/wYAAgACAAYAAADr/wYAAgACAAYAAADq/wYAAgACAAYAAADp/wYAAgACAAYAAADo/wYAAgADAAcAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADk/wUAAgACAAUAAADk/wYAAgACAAYAAAD8/wUAAgACAAUAAAD8/wYAAgACAAYAAAD5/wIAAgABAAQAAAD6/wIAAgACAAQAAAD7/wIAAgACAAQAAADu/wQAAgACAAUAAADt/wQAAgACAAUAAADs/wQAAgACAAUAAADr/wQAAgACAAUAAADq/wQAAgACAAUAAADp/wQAAgACAAYAAADo/wQAAgACAAYAAADn/wQAAgACAAYAAADm/wQAAgACAAYAAADl/wQAAgACAAYAAADp/wMAAgADAAUAAADo/wMAAgACAAUAAADn/wMAAgACAAUAAADm/wMAAgACAAUAAADl/wMAAgACAAYAAADm////AgACAAcAAADm//7/AgACAAYAAADm//3/AgACAAUAAADn//3/AgACAAUAAADo//3/AgACAAUAAADp//3/AgACAAUAAADq//3/AgACAAQAAADr//3/AgACAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADu//3/AgACAAUAAADv//3/AgADAAUAAADv//7/AgADAAYAAADv////AgABAAcAAADw////AgACAAQAAADx////AgACAAQAAADy////AgACAAQAAAD1//r/AgAAAAUAAAD1//v/AgADAAcAAAD0//v/AgACAAQAAADz//v/AgACAAQAAADy//v/AgABAAQAAADz////AgADAAQAAADo//7/AgACAAcAAADn////AgADAAcAAADp//7/AgADAAcAAADn//7/AgACAAYAAADl////AgACAAYAAADk////AgACAAYAAADl//7/AgACAAYAAADl//3/AgACAAUAAADk//3/AgACAAUAAADk//7/AgACAAYAAADl/wAAAgADAAYAAADl/wEAAgADAAYAAADl/wIAAgADAAYAAADk/wAAAgACAAYAAADk/wEAAgACAAYAAADk/wIAAgACAAYAAADk/wMAAgACAAYAAADk/wQAAgACAAYAAADv/wQAAgADAAUAAADs/wUAAgABAAUAAADo/wUAAgADAAUAAADp/wUAAgACAAYAAADq/wUAAgACAAYAAADr/wUAAgACAAYAAADm/wAAAgAEAAcAACD4//7/AgAEAAcAACDm//z/AgAEAAcAAADy//r/AgAEAAcAAAD7/wQAAgAEAAcAAAD8//z/AgAFAAcAAADn/wIAAgAFAAcAABDl//z/AgAFAAcAABDx/wQAAgAEAAYAAADx//7/AgAEAAYAAADs//n/AgADAAcAAADr//n/AgACAAcAAADq//n/AgACAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADm//r/AgADAAcAAADl//r/AgACAAcAAADk//r/AgACAAcAAADk//n/AgACAAYAAADu//7/AgABAAcAAADz/wQAAAAEAAYAAADz/wMAAAADAAUAAADu/wMAAgAEAAcAAAD6/wQAAgALAAUAAAA=")
+tile_map_data = PackedByteArray("AAD8//3/AgACAAUAAAD8//7/AgACAAYAAAD9//n/AgACAAUAAAD9//r/AgACAAYAAAD9//v/AgACAAUAAAD9//z/AgACAAYAAAD9//3/AgACAAUAAAD9//7/AgACAAYAAAD9////AgACAAUAAAD9/wAAAgACAAYAAAD9/wEAAgADAAQAAAD9/wIAAgACAAYAAAD9/wMAAgACAAUAAAD9/wQAAgACAAYAAAD9/wUAAgACAAUAAAD9/wYAAgACAAYAAADj//n/AgACAAUAAADj//r/AgACAAYAAADj//v/AgACAAUAAADj//z/AgACAAYAAADj//3/AgACAAUAAADj//7/AgACAAYAAADj////AgACAAUAAADj/wAAAgACAAYAAADj/wEAAgADAAQAAADj/wIAAgACAAYAAADj/wMAAgACAAUAAADj/wQAAgACAAYAAADj/wUAAgACAAUAAADj/wYAAgACAAYAAAD7//3/AgACAAUAAAD6//3/AgACAAUAAAD5//3/AgACAAUAAAD4//3/AgABAAQAAAD7//7/AgACAAcAAAD6//7/AgACAAcAAAD5//7/AgABAAcAAAD8////AgABAAYAAAD8/wAAAgABAAYAAAD8/wEAAgABAAYAAAD8/wIAAgACAAcAAAD7/wUAAgACAAUAAAD7/wYAAgACAAYAAAD6/wUAAgACAAUAAAD6/wYAAgACAAYAAAD5/wUAAgACAAUAAAD5/wYAAgACAAYAAAD4/wUAAgACAAUAAAD4/wYAAgACAAYAAAD3/wUAAgACAAUAAAD3/wYAAgACAAYAAAD2/wUAAgACAAUAAAD2/wYAAgACAAYAAAD1/wUAAgACAAUAAAD1/wYAAgACAAYAAAD0/wUAAgACAAUAAAD0/wYAAgACAAYAAADz/wUAAgACAAUAAADz/wYAAgACAAYAAADy/wUAAgACAAUAAADy/wYAAgACAAYAAADx/wUAAgACAAUAAADx/wYAAgACAAYAAADw/wUAAgACAAUAAADw/wYAAgACAAYAAADv/wUAAgACAAUAAADv/wYAAgACAAYAAADu/wUAAgACAAUAAADu/wYAAgACAAYAAADt/wUAAgACAAUAAADt/wYAAgACAAYAAADs/wYAAgACAAYAAADr/wYAAgACAAYAAADq/wYAAgACAAYAAADp/wYAAgACAAYAAADo/wYAAgADAAcAAADn/wUAAgACAAUAAADn/wYAAgACAAYAAADm/wUAAgACAAUAAADm/wYAAgACAAYAAADl/wUAAgACAAUAAADl/wYAAgACAAYAAADk/wUAAgACAAUAAADk/wYAAgACAAYAAAD8/wUAAgACAAUAAAD8/wYAAgACAAYAAAD5/wIAAgABAAQAAAD6/wIAAgACAAQAAAD7/wIAAgACAAQAAADu/wQAAgACAAUAAADt/wQAAgACAAUAAADs/wQAAgACAAUAAADr/wQAAgACAAUAAADq/wQAAgACAAUAAADp/wQAAgACAAYAAADo/wQAAgACAAYAAADn/wQAAgACAAYAAADm/wQAAgACAAYAAADl/wQAAgACAAYAAADp/wMAAgADAAUAAADo/wMAAgACAAUAAADn/wMAAgACAAUAAADm/wMAAgACAAUAAADl/wMAAgACAAYAAADm////AgACAAcAAADm//7/AgACAAYAAADm//3/AgACAAUAAADn//3/AgACAAUAAADo//3/AgACAAUAAADp//3/AgACAAUAAADq//3/AgACAAQAAADr//3/AgACAAQAAADs//3/AgACAAQAAADt//3/AgACAAQAAADu//3/AgACAAUAAADv//3/AgADAAUAAADv//7/AgADAAYAAADv////AgABAAcAAADw////AgACAAQAAADx////AgACAAQAAADy////AgACAAQAAAD1//r/AgAAAAUAAAD1//v/AgADAAcAAAD0//v/AgACAAQAAADz//v/AgACAAQAAADy//v/AgABAAQAAADz////AgADAAQAAADo//7/AgACAAcAAADn////AgADAAcAAADp//7/AgADAAcAAADn//7/AgACAAYAAADl////AgACAAYAAADk////AgACAAYAAADl//7/AgACAAYAAADl//3/AgACAAUAAADk//3/AgACAAUAAADk//7/AgACAAYAAADl/wAAAgADAAYAAADl/wEAAgADAAYAAADl/wIAAgADAAYAAADk/wAAAgACAAYAAADk/wEAAgACAAYAAADk/wIAAgACAAYAAADk/wMAAgACAAYAAADk/wQAAgACAAYAAADv/wQAAgADAAUAAADs/wUAAgABAAUAAADo/wUAAgADAAUAAADp/wUAAgACAAYAAADq/wUAAgACAAYAAADr/wUAAgACAAYAAADm/wAAAgAEAAcAACD4//7/AgAEAAcAACDm//z/AgAEAAcAAADy//r/AgAEAAcAAAD7/wQAAgAEAAcAAAD8//z/AgAFAAcAAADn/wIAAgAFAAcAABDl//z/AgAFAAcAABDx/wQAAgAEAAYAAADx//7/AgAEAAYAAADs//n/AgADAAcAAADr//n/AgACAAcAAADq//n/AgACAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADn//n/AgACAAcAAADm//n/AgACAAYAAADl//n/AgACAAYAAADm//r/AgADAAcAAADl//r/AgACAAcAAADk//r/AgACAAcAAADk//n/AgACAAYAAADu//7/AgABAAcAAADz/wQAAAAEAAYAAADz/wMAAAADAAUAAADu/wMAAgAEAAcAAAA=")
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=137678146]
@@ -837,15 +837,14 @@ position = Vector2(-179, 189.99997)
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("20_6ewla")]
 position = Vector2(521.6887, 246.74957)
 npc_text = "\"First a star, next a flower, then some swirl, finally some pie\""
-dialogue_time = 2.5
 character_face = ExtResource("16_7ykea")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=1366618637]
-offset_left = -207.68866
-offset_top = -34.749577
-offset_right = 290.3114
-offset_bottom = 136.25043
+offset_left = -81.68867
+offset_top = -63.749573
+offset_right = 416.3114
+offset_bottom = 107.25043
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -910,12 +909,6 @@ scale = Vector2(0.45322207, 0.45322207)
 texture = ExtResource("24_7ykea")
 region_rect = Rect2(24, 136, 112, 112)
 
-[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("25_83xw0")]
-position = Vector2(-256, -165)
-
-[node name="Rat2" parent="." unique_id=784318835 instance=ExtResource("25_83xw0")]
-position = Vector2(228, 266)
-
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("26_6y8wy")]
 position = Vector2(-568, -223)
 
@@ -923,7 +916,12 @@ position = Vector2(-568, -223)
 position = Vector2(-299, 1)
 
 [node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("27_fmsi3")]
-visible = false
+
+[node name="Skeleton" parent="." unique_id=712153249 instance=ExtResource("28_7ykea")]
+position = Vector2(-302, -209)
+
+[node name="Skeleton2" parent="." unique_id=1232608407 instance=ExtResource("28_7ykea")]
+position = Vector2(554, 60.99997)
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
 

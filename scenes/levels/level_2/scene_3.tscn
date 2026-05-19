@@ -888,7 +888,7 @@ item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=573091110]
 position = Vector2(2.774841, -5.2473717)
-scale = Vector2(0.5090909, 0.481982)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("28_44q8j")
 region_rect = Rect2(24, 8, 112, 112)
 
@@ -898,7 +898,7 @@ item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1859076492]
 position = Vector2(2, -6)
-scale = Vector2(0.6375, 0.5769231)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("25_hxxlo")
 region_rect = Rect2(296, 488, 80, 104)
 
@@ -908,7 +908,7 @@ item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1488969666]
 position = Vector2(-2, -3.999939)
-scale = Vector2(0.50735164, 0.46528718)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("26_qe53u")
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
@@ -919,7 +919,7 @@ item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1763015935]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.55, 0.55)
 texture = ExtResource("26_hxxlo")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -930,7 +930,7 @@ script = ExtResource("16_gysk4")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_wa3js")]
 position = Vector2(-520.10565, -184.01172)
-npc_text = "\"First a classic, next a man, then some heart, finally some jam\""
+npc_text = "\"First a classic, next a man, then some heart, finally some jam\" [ E ]"
 character_face = ExtResource("30_44q8j")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 
@@ -956,7 +956,6 @@ text = "Press E to interact"
 metadata/_edit_use_anchors_ = true
 
 [node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("31_qe53u")]
-visible = false
 
 [node name="Skeleton" parent="." unique_id=712153249 instance=ExtResource("32_wa3js")]
 position = Vector2(474, -370)

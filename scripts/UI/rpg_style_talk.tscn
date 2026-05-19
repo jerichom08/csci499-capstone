@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cwtwx8kf8338r"]
 
 [ext_resource type="Script" uid="uid://fkehvuvce6lj" path="res://scripts/UI/rpg_style_talk.gd" id="1_6shrq"]
-[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="2_on7qd"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="2_on7qd"]
 [ext_resource type="FontFile" uid="uid://d022t1deah30r" path="res://assets/images/UI/text box/star-crush/Star Crush.otf" id="3_brviy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6shrq"]
-bg_color = Color(0.33660764, 0.3366076, 0.3366076, 1)
+bg_color = Color(0.4977, 0.49990505, 0.63, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.3136, 0.35466662, 0.56, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on7qd"]
 bg_color = Color(0.34, 0.34, 0.34, 0)
@@ -18,6 +18,7 @@ border_width_left = 6
 border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
+border_color = Color(0.3136, 0.35466662, 0.56, 1)
 
 [node name="RpgStyleTalk" type="CanvasLayer" unique_id=333744718]
 script = ExtResource("1_6shrq")
@@ -27,10 +28,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -209.0
-offset_right = -186.0
-offset_bottom = -1.0
+offset_left = -1.0
+offset_top = -208.0
+offset_right = -190.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6shrq")

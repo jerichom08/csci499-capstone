@@ -9,11 +9,11 @@ signal npc_interacted
 @export var dialogue_box_path : NodePath
 
 var player_in_range : bool = false
+var dialogue_open: bool = false
 
 @onready var interaction_label = $InteractionLabel2
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var dialogue_box = get_node_or_null(dialogue_box_path)
-var dialogue_open: bool = false
 
 
 func _ready() -> void:
@@ -41,14 +41,9 @@ func _process(_delta: float) -> void:
 
 
 func _interact_with_npc() -> void:
-	if dialogue_box:
-		dialogue_box.show_dialogue(character_face, npc_text)
-		dialogue_open = true
-
 	if _player_has_less_than_required_items():
+		show_temporary_text(npc_text)
 		return
-
-	await get_tree().create_timer(dialogue_time).timeout
 
 	npc_interacted.emit()
 
@@ -85,9 +80,16 @@ func _on_body_exited(body: Node) -> void:
 func set_npc_text(new_text: String, show_now: bool = false) -> void:
 	npc_text = new_text
 
-	if show_now and dialogue_box:
-		dialogue_box.show_dialogue(character_face, npc_text)
-		
+	if show_now:
+		show_temporary_text(npc_text)
+
+
+func show_temporary_text(temp_text: String) -> void:
+	if dialogue_box:
+		dialogue_box.show_dialogue(character_face, temp_text)
+		dialogue_open = true
+
+
 func _player_has_less_than_required_items() -> bool:
 	var level = get_parent()
 

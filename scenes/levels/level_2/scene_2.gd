@@ -1,4 +1,5 @@
 extends Node2D
+
 signal puzzle_completed_signal
 
 @export var correct_order: Array[String] = [
@@ -7,6 +8,7 @@ signal puzzle_completed_signal
 	"TestItem3",
 	"TestItem4"
 ]
+
 var picked_up_order: Array[String] = []
 var puzzle_completed: bool = false
 
@@ -15,6 +17,7 @@ var puzzle_completed: bool = false
 @onready var gate = $Gate
 @onready var items = $Items
 @onready var turnip_npc = $TurnipNpc
+
 
 func _ready() -> void:
 	PuzzleManager.register_puzzle(self)
@@ -25,6 +28,7 @@ func _ready() -> void:
 
 	if turnip_npc.has_signal("npc_interacted"):
 		turnip_npc.npc_interacted.connect(_check_sequence)
+
 	print("Puzzle 2 ready.")
 	print("Correct order is:", correct_order)
 
@@ -40,9 +44,6 @@ func _on_item_picked_up(item_name: String) -> void:
 
 	_play_correct_audio()
 
-	#if picked_up_order.size() >= correct_order.size():
-		#if turnip_npc:
-			#turnip_npc.set_npc_text("Now come talk to me.", true)
 
 func _check_sequence() -> void:
 	if puzzle_completed:
@@ -50,20 +51,30 @@ func _check_sequence() -> void:
 
 	if picked_up_order.size() < correct_order.size():
 		if turnip_npc:
-			turnip_npc.set_npc_text("Collect all the cookies first.", true)
+			turnip_npc.show_temporary_text("Collect all the cookies first.")
 		return
 
 	if picked_up_order == correct_order:
 		if turnip_npc:
-			turnip_npc.set_npc_text("You're free to go!", true)
+			turnip_npc.set_npc_text("You're free to go! [ E ]", true)
+		_clear_player_last_items() 
 		_puzzle_completed()
 	else:
-		print("Wrong sequence. Try again.")
+		print("Wrong sequence. Try again. [ E ]")
 
 		if turnip_npc:
-			turnip_npc.set_npc_text("Try again!", true)
+			turnip_npc.show_temporary_text("Try again!")
 
+		_clear_player_last_items()
 		_reset_items()
+
+
+func _clear_player_last_items() -> void:
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player and player.has_method("remove_last_items"):
+		player.remove_last_items(correct_order.size())
+
 
 func _puzzle_completed() -> void:
 	if puzzle_completed:
@@ -82,8 +93,8 @@ func _puzzle_completed() -> void:
 
 		if gate.has_node("CollisionShape2D"):
 			gate.get_node("CollisionShape2D").disabled = true
-			
-			
+
+
 func _reset_items() -> void:
 	picked_up_order.clear()
 
@@ -102,5 +113,3 @@ func _play_complete_audio() -> void:
 	if audio_complete and audio_complete.stream:
 		audio_complete.stop()
 		audio_complete.play()
-		
-	

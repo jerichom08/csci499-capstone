@@ -12,6 +12,7 @@ Spider
 extends EnemyBase
 
 #@onready var pdz = $PlayerDetectionZone
+@onready var spider_hit_sfx : AudioStreamPlayer2D = $SpiderHit
 
 var WORLD_SCALE : float = 3.0
 var dropping : bool = false
@@ -139,7 +140,10 @@ func fade_out_and_free() -> void:
 	tween.tween_callback(queue_free)
 
 
-func take_damage(damage: int, knockback: Vector2) -> void:
+func take_damage(_damage: int, _knockback: Vector2) -> void:
+	if !is_dead:
+		spider_hit_sfx.play()
+	is_dead = true
 	set_state(State.DEFEAT)
 
 

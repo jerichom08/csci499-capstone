@@ -13,6 +13,7 @@ extends EnemyBase
 @export var detection_radius : float = 78.0
 
 @onready var detection_shape : CollisionShape2D = $PlayerDetectionZone/CollisionShape2D
+@onready var bat_hit_sfx : AudioStreamPlayer2D = $BatHit
 
 func _ready() -> void:
 	super._ready()
@@ -22,7 +23,7 @@ func _ready() -> void:
 	if circle:
 		circle.radius = detection_radius
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	update_state_machine()
 	move_and_slide()
 
@@ -60,7 +61,10 @@ func chase() -> void:
 	else:
 		velocity = direction * stats.move_speed
 
-func take_damage(damage : int, knockback : Vector2 = Vector2.ZERO) -> void:
+func take_damage(_damage : int, _knockback : Vector2 = Vector2.ZERO) -> void:
+	if !is_dead:
+		bat_hit_sfx.play()
+	is_dead = true
 	set_state(State.DEFEAT)
 
 

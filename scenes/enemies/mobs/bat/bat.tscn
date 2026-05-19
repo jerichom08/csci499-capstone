@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="6_np3d4"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="6_tt7xo"]
 [ext_resource type="PackedScene" uid="uid://by0dowubj4e1h" path="res://scenes/enemies/components/player_detection_zone.tscn" id="9_dsgjo"]
+[ext_resource type="AudioStream" uid="uid://bfhj2bmv3fknh" path="res://assets/sounds temp/enemy sounds/mobs/bat/hit.wav" id="10_nm6s1"]
 
 [sub_resource type="Resource" id="Resource_dsgjo"]
 script = ExtResource("2_ac1eo")
@@ -304,6 +305,9 @@ debug_color = Color(0, 0, 1, 0.09803922)
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=1733041941]
 target_position = Vector2(200, 0)
+
+[node name="BatHit" type="AudioStreamPlayer2D" parent="." unique_id=265901014]
+stream = ExtResource("10_nm6s1")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 

@@ -1191,12 +1191,15 @@ position = Vector2(53, 268)
 
 [node name="Scorpion2" parent="." unique_id=977581123 instance=ExtResource("13_f1rsi")]
 position = Vector2(-196, -57)
+patrol_radius = 50.0
 
 [node name="Scorpion3" parent="." unique_id=1683357208 instance=ExtResource("13_f1rsi")]
 position = Vector2(350, -167)
+patrol_radius = 50.0
 
 [node name="Scorpion4" parent="." unique_id=22123594 instance=ExtResource("13_f1rsi")]
 position = Vector2(-81, -275)
+patrol_radius = 150.0
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_yfuf1")]
 position = Vector2(-432, 16)

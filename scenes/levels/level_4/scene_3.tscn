@@ -679,9 +679,11 @@ position = Vector2(-244, -221)
 
 [node name="Scorpion" parent="." unique_id=1115055450 instance=ExtResource("12_3xl58")]
 position = Vector2(-220, 51)
+patrol_radius = 100.0
 
 [node name="Scorpion2" parent="." unique_id=643713681 instance=ExtResource("12_3xl58")]
 position = Vector2(419, 50)
+patrol_radius = 100.0
 
 [node name="Scorpion3" parent="." unique_id=340339693 instance=ExtResource("12_3xl58")]
 position = Vector2(257, 263)

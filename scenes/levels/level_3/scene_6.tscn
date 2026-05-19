@@ -881,7 +881,7 @@ tile_map_data = PackedByteArray("AADy/wIAAAAOAAAAAADw/wAAAAAOAAAAAADy//7/AAAOAAA
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("10_vd7kj")]
-position = Vector2(-15, -250)
+position = Vector2(637, 234)
 dashEnabled = true
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("11_4cyrp")]
@@ -917,7 +917,7 @@ shape = SubResource("CapsuleShape2D_1lwkt")
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("10_kanh6")]
 
 [node name="gollux" parent="." unique_id=1147398116 instance=ExtResource("11_1lwkt")]
-position = Vector2(-165, 74)
+position = Vector2(-165, 78)
 collision_layer = 512
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -759,7 +759,7 @@ HOO"
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("4_dmhpr")]
-position = Vector2(-661, 278)
+position = Vector2(4761, 265)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=510047109]
 position = Vector2(560, -243)
@@ -787,7 +787,7 @@ position = Vector2(967, 94)
 scale = Vector2(3, 3)
 
 [node name="bat2" parent="." unique_id=2127882501 instance=ExtResource("7_wxfxh")]
-position = Vector2(-580, 56)
+position = Vector2(-508, 34)
 scale = Vector2(3, 3)
 
 [node name="bat3" parent="." unique_id=196951575 instance=ExtResource("7_wxfxh")]

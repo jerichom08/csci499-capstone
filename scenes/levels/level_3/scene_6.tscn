@@ -881,7 +881,7 @@ tile_map_data = PackedByteArray("AADy/wIAAAAOAAAAAADw/wAAAAAOAAAAAADy//7/AAAOAAA
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("10_vd7kj")]
-position = Vector2(634, 233)
+position = Vector2(-15, -250)
 dashEnabled = true
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("11_4cyrp")]

@@ -28,7 +28,6 @@ func _on_lava_sound_area_body_exited(body: Node2D) -> void:
 func _on_death_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		$burnt.play()
-		await $burnt.finished
 		body.die()
 
 func _process(delta: float) -> void:

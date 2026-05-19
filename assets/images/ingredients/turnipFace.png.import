@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0mx3ewwjmn7q"
-path="res://.godot/imported/turnipFace.png-1d4dea918800c394f037ba636e5e89f8.ctex"
+path="res://.godot/imported/TurnipFace.png-96d1e98a24f57895df598ae859e832da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ingredients/turnipFace.png"
-dest_files=["res://.godot/imported/turnipFace.png-1d4dea918800c394f037ba636e5e89f8.ctex"]
+source_file="res://assets/images/ingredients/TurnipFace.png"
+dest_files=["res://.godot/imported/TurnipFace.png-96d1e98a24f57895df598ae859e832da.ctex"]
 
 [params]
 

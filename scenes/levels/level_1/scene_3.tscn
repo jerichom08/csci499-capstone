@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_avmw6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_gxgmc"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="6_rfl18"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="7_atlen"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="7_avmw6"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="7_xe66q"]
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]
@@ -800,16 +799,28 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[sub_resource type="Resource" id="Resource_xjb2i"]
+[sub_resource type="Resource" id="Resource_s2bxe"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
 gravity = 100.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_jl5l0"]
+[sub_resource type="Resource" id="Resource_hqohx"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
 gravity = 100.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_xjb2i"]
+resource_local_to_scene = true
+script = ExtResource("15_xjb2i")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_jl5l0"]
+resource_local_to_scene = true
+script = ExtResource("15_xjb2i")
+gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [node name="Lv1R2" type="Node2D" unique_id=1440666369]
@@ -892,24 +903,24 @@ scale = Vector2(20, 1)
 [node name="Spikes" parent="." unique_id=66394676 instance=ExtResource("7_avmw6")]
 position = Vector2(198, -188)
 
-[node name="bat3" parent="." unique_id=713067515 instance=ExtResource("7_atlen")]
-position = Vector2(160, -199)
-scale = Vector2(3, 3)
-
-[node name="bat2" parent="." unique_id=1029999524 instance=ExtResource("7_atlen")]
-position = Vector2(-45, -286)
-scale = Vector2(3, 3)
-
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_2tk6r")]
 position = Vector2(97, -17)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("14_hqohx")]
 position = Vector2(405, -294)
-stats = SubResource("Resource_xjb2i")
+stats = SubResource("Resource_s2bxe")
 
 [node name="spider2" parent="." unique_id=672809836 instance=ExtResource("14_hqohx")]
 position = Vector2(-244, -297)
-stats = SubResource("Resource_jl5l0")
+stats = SubResource("Resource_hqohx")
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_hqohx")]
 position = Vector2(-290, 273)
+
+[node name="spider3" parent="." unique_id=248195814 instance=ExtResource("14_hqohx")]
+position = Vector2(161, -217)
+stats = SubResource("Resource_xjb2i")
+
+[node name="spider4" parent="." unique_id=251184799 instance=ExtResource("14_hqohx")]
+position = Vector2(-46, -298)
+stats = SubResource("Resource_jl5l0")

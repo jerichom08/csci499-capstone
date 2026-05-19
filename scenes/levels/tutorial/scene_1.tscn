@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="3_e8ji1"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="4_aasmi"]
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="5_v3rwh"]
+[ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="6_xp1wc"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="7_va4an"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="8_8u52i"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="9_e8ji1"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="16_eje0s"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_exam8"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_exam8"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="19_uxqix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exam8"]
 texture = ExtResource("2_exam8")
@@ -419,6 +421,9 @@ position = Vector2(-513, -27)
 [node name="Spikes2" parent="." unique_id=1387824179 instance=ExtResource("3_e8ji1")]
 position = Vector2(-459, -27)
 
+[node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("6_xp1wc")]
+position = Vector2(529, -159)
+
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("4_aasmi")]
 position = Vector2(-353.00006, 270.00003)
 
@@ -499,6 +504,25 @@ position = Vector2(48, -6)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_exam8")]
 position = Vector2(-133.00003, -265)
+
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("19_uxqix")]
+position = Vector2(436, -197)
+scale = Vector2(3, 3)
+
+[node name="sign2" parent="." unique_id=884197283 instance=ExtResource("16_eje0s")]
+position = Vector2(47, -171)
+
+[node name="InteractionLabel" type="Label" parent="sign2" unique_id=1085273815]
+offset_left = -183.0
+offset_top = -19.0
+offset_right = 308.0
+offset_bottom = 10.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_uxqix")
+theme_override_font_sizes/font_size = 21
+text = "\"press c or draw a triangle on lilith's scroll\""
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

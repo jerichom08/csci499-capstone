@@ -17,8 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="12_qglet"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="13_1sttk"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="14_1sttk"]
-[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="15_rfnpt"]
+[ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="19_5l707"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="19_k3kia"]
+[ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="20_wfvsy"]
+[ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="21_wfvsy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxo8g"]
 texture = ExtResource("1_0h6fl")
@@ -576,6 +578,30 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 
+[sub_resource type="Resource" id="Resource_c1cfn"]
+resource_local_to_scene = true
+script = ExtResource("20_wfvsy")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_tlx3o"]
+resource_local_to_scene = true
+script = ExtResource("20_wfvsy")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_l6ri2"]
+resource_local_to_scene = true
+script = ExtResource("20_wfvsy")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_jirmk"]
+resource_local_to_scene = true
+script = ExtResource("20_wfvsy")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
 [node name="Node2D" type="Node2D" unique_id=188122060]
 position = Vector2(793, 343)
 
@@ -594,7 +620,7 @@ position = Vector2(869, 208)
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1546364109]
 position = Vector2(818, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD1/wYAAgAAAAYAAAD1/wUAAgAAAAYAAAD1/wQAAgAAAAYAAAD1/wMAAgACAAYAAAD1/wIAAgAAAAYAAAD1/wEAAgAAAAYAAAD1/wAAAgACAAEAAAD0/wAAAgACAAAAAADz/wAAAgACAAAAAADy/wAAAgACAAAAAADx/wAAAgACAAAAAADw/wAAAgACAAAAAADv/wAAAgACAAAAAADu/wAAAgACAAAAAADt/wAAAgACAAEAAADt/wEAAgAAAAYAAADt/wIAAgAAAAYAAADt/wMAAgADAAYAAADt/wQAAgAAAAYAAADt/wUAAgAAAAYAAADt/wYAAgABAAYAAADs/wMAAgACAAAAAADr/wMAAgACAAAAAADq/wMAAgACAAAAAADp/wMAAgACAAAAAADo/wMAAgABAAAAAADs/wAAAgACAAAAAADr/wAAAgACAAAAAAD2/wMAAgACAAAAAAD3/wMAAgACAAAAAAD4/wMAAgACAAAAAAD5/wMAAgACAAAAAAD6/wMAAgACAAAAAAD7/wMAAgACAAAAAAD8/wMAAgACAAAAAAD2/wAAAgACAAAAAAD3/wAAAgACAAAAAAD4/wAAAgACAAAAAAD5/wAAAgACAAAAAAD6/wAAAgADAAAAAADx/wYAAgADAAAAAADw/wYAAgACAAAAAADv/wYAAgACAAAAAADu/wYAAgACAAAAAADx/wMAAgABAAAAAADy/wMAAgACAAAAAADz/wMAAgACAAAAAAD0/wMAAgACAAAAAADl/wYAAgACAAAAAADm/wYAAgACAAAAAADn/wYAAgADAAAAAADq/wAAAgACAAAAAADo/wAAAgACAAAAAADp/wAAAgACAAAAAADl/wAAAgACAAAAAADm/wAAAgACAAAAAADn/wAAAgACAAAAAADk/wAAAgABAAAAAADj//7/AgAAAAYAAADj////AgAAAAYAAADj/wAAAgAAAAYAAADk/wYAAgABAAAAAADj/wUAAgACAAAAAADj/wQAAgACAAAAAADj/wMAAgACAAAAAADj/wIAAgACAAAAAADj/wEAAgACAAAAAAD6/wIAAgAHAAQAAADz/wEAAgAKAAUAAADz/wIAAgAKAAYAAADl/wQAAgAKAAUAAADl/wUAAgAKAAYAAADj//z/AgAAAAYAAADq//z/AgADAAEAAADx//z/AgABAAEAAADj//3/AgAAAAYAAADk//z/AgABAAAAAADl//z/AgACAAAAAADm//z/AgACAAAAAADn//z/AgACAAAAAADo//z/AgACAAAAAADp//z/AgACAAAAAADq//3/AgABAAcAAADr//3/AgACAAAAAADs//3/AgACAAAAAADt//3/AgACAAAAAADu//3/AgACAAAAAADv//3/AgACAAAAAADw//3/AgACAAAAAADx//3/AgADAAcAAADy//z/AgADAAAAAAD2//z/AgABAAAAAAD3//z/AgACAAAAAAD4//z/AgACAAAAAAD5//z/AgACAAAAAAD6//z/AgACAAAAAAD7//z/AgACAAAAAAD8//z/AgACAAAAAADs//v/AgALAAIAAADs//z/AgALAAMAAADr//z/AgAJAAYAAADt//z/AgAFAAcAAADq//v/AgAEAAcAAADl//n/AgACAAcAAADm//n/AgACAAcAAADn//n/AgACAAcAAADo//n/AgACAAcAAADp//n/AgACAAcAAADq//n/AgACAAcAAADk//n/AgACAAcAAADt//n/AgADAAcAAADs//n/AgACAAcAAADr//n/AgACAAcAAAD8//n/AgACAAcAAAD7//n/AgABAAcAAAD6/wYAAgADAAYAAAD7/wYAAgACAAEAAAD8/wYAAgADAAEAAAD5/wUAAgABAAEAAAD5/wYAAgABAAYAAAD6/wUAAgADAAEAAAD7/wUAAgAIAAYAAAD8/wUAAgAIAAMAAADj//n/AgABAAAAAADj//r/AgABAAAAAADj//v/AgABAAAAAAD9//n/AgABAAYAAAD9//r/AgABAAYAAAD9//v/AgABAAYAAAD9//z/AgABAAYAAAD9//3/AgABAAYAAAD9//7/AgABAAYAAAD9////AgABAAYAAAD9/wAAAgABAAYAAAD9/wEAAgABAAYAAAD9/wIAAgABAAYAAAD9/wMAAgABAAYAAAD9/wQAAgABAAYAAAD9/wUAAgABAAYAAAD9/wYAAgABAAYAAAA=")
+tile_map_data = PackedByteArray("AAD1/wYAAgAAAAYAAAD1/wUAAgAAAAYAAAD1/wQAAgAAAAYAAAD1/wMAAgACAAYAAAD1/wIAAgAAAAYAAAD1/wEAAgAAAAYAAAD1/wAAAgACAAEAAAD0/wAAAgACAAAAAADz/wAAAgACAAAAAADy/wAAAgACAAAAAADx/wAAAgACAAAAAADw/wAAAgACAAAAAADv/wAAAgACAAAAAADu/wAAAgACAAAAAADt/wAAAgACAAEAAADt/wEAAgAAAAYAAADt/wIAAgAAAAYAAADt/wMAAgADAAYAAADt/wQAAgAAAAYAAADt/wUAAgAAAAYAAADt/wYAAgABAAYAAADs/wMAAgACAAAAAADr/wMAAgACAAAAAADq/wMAAgACAAAAAADp/wMAAgACAAAAAADo/wMAAgABAAAAAADs/wAAAgACAAAAAADr/wAAAgACAAAAAAD2/wMAAgACAAAAAAD3/wMAAgACAAAAAAD4/wMAAgACAAAAAAD5/wMAAgACAAAAAAD6/wMAAgACAAAAAAD7/wMAAgACAAAAAAD8/wMAAgACAAAAAAD2/wAAAgACAAAAAAD3/wAAAgACAAAAAAD4/wAAAgACAAAAAAD5/wAAAgACAAAAAAD6/wAAAgADAAAAAADx/wYAAgADAAAAAADw/wYAAgACAAAAAADv/wYAAgACAAAAAADu/wYAAgACAAAAAADx/wMAAgABAAAAAADy/wMAAgACAAAAAADz/wMAAgACAAAAAAD0/wMAAgACAAAAAADl/wYAAgACAAAAAADm/wYAAgACAAAAAADn/wYAAgADAAAAAADq/wAAAgACAAAAAADo/wAAAgACAAAAAADp/wAAAgACAAAAAADl/wAAAgACAAAAAADm/wAAAgACAAAAAADn/wAAAgACAAAAAADk/wAAAgABAAAAAADj//7/AgAAAAYAAADj////AgAAAAYAAADj/wAAAgAAAAYAAADk/wYAAgABAAAAAADj/wUAAgACAAAAAADj/wQAAgACAAAAAADj/wMAAgACAAAAAADj/wIAAgACAAAAAADj/wEAAgACAAAAAAD6/wIAAgAHAAQAAADz/wEAAgAKAAUAAADz/wIAAgAKAAYAAADl/wQAAgAKAAUAAADl/wUAAgAKAAYAAADj//z/AgAAAAYAAADq//z/AgADAAEAAADx//z/AgABAAEAAADj//3/AgAAAAYAAADk//z/AgABAAAAAADl//z/AgACAAAAAADm//z/AgACAAAAAADn//z/AgACAAAAAADo//z/AgACAAAAAADp//z/AgACAAAAAADq//3/AgABAAcAAADr//3/AgACAAAAAADs//3/AgACAAAAAADt//3/AgACAAAAAADu//3/AgACAAAAAADv//3/AgACAAAAAADw//3/AgACAAAAAADx//3/AgADAAcAAADy//z/AgADAAAAAAD2//z/AgABAAAAAAD3//z/AgACAAAAAAD4//z/AgACAAAAAAD5//z/AgACAAAAAAD6//z/AgACAAAAAAD7//z/AgACAAAAAAD8//z/AgACAAAAAADs//v/AgALAAIAAADs//z/AgALAAMAAADr//z/AgAJAAYAAADt//z/AgAFAAcAAADq//v/AgAEAAcAAADl//n/AgACAAcAAADm//n/AgACAAcAAADn//n/AgACAAcAAADo//n/AgACAAcAAADp//n/AgACAAcAAADq//n/AgACAAcAAADk//n/AgACAAcAAADt//n/AgADAAcAAADs//n/AgACAAcAAADr//n/AgACAAcAAAD8//n/AgACAAcAAAD7//n/AgABAAcAAAD6/wYAAgADAAYAAAD7/wYAAgACAAEAAAD8/wYAAgADAAEAAAD5/wUAAgABAAEAAAD5/wYAAgABAAYAAAD6/wUAAgADAAEAAAD7/wUAAgAIAAYAAAD8/wUAAgAIAAMAAADj//n/AgABAAAAAADj//r/AgABAAAAAADj//v/AgABAAAAAAD9//n/AgABAAYAAAD9//r/AgABAAYAAAD9//v/AgABAAYAAAD9//z/AgABAAYAAAD9//3/AgABAAYAAAD9//7/AgABAAYAAAD9////AgABAAYAAAD9/wAAAgABAAYAAAD9/wEAAgABAAYAAAD9/wIAAgABAAYAAAD9/wMAAgABAAYAAAD9/wQAAgABAAYAAAD9/wUAAgABAAYAAAD9/wYAAgABAAYAAADv////AgAEAAcAAAA=")
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="gate" parent="." unique_id=550434994 instance=ExtResource("4_1ydgn")]
@@ -700,16 +726,27 @@ position = Vector2(471, 4)
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("14_1sttk")]
 position = Vector2(43, 360)
 
-[node name="bat" parent="." unique_id=789512219 instance=ExtResource("15_rfnpt")]
-position = Vector2(-327, 73)
-scale = Vector2(3, 3)
-
-[node name="bat2" parent="." unique_id=170560896 instance=ExtResource("15_rfnpt")]
-position = Vector2(476, -143)
-scale = Vector2(3, 3)
-
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("19_k3kia")]
 position = Vector2(-609, 143)
+
+[node name="spider" parent="." unique_id=264598264 instance=ExtResource("19_5l707")]
+position = Vector2(-280, -183)
+stats = SubResource("Resource_c1cfn")
+
+[node name="spider3" parent="." unique_id=420706573 instance=ExtResource("19_5l707")]
+position = Vector2(-70, -17)
+stats = SubResource("Resource_tlx3o")
+
+[node name="spider4" parent="." unique_id=1760497611 instance=ExtResource("19_5l707")]
+position = Vector2(458, -34)
+stats = SubResource("Resource_l6ri2")
+
+[node name="spider2" parent="." unique_id=510250024 instance=ExtResource("19_5l707")]
+position = Vector2(-308, 80)
+stats = SubResource("Resource_jirmk")
+
+[node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("21_wfvsy")]
+position = Vector2(366, -282)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="gate2" method="_on_button_2_button_pressed"]

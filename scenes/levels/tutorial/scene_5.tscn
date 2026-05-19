@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_1nwqk"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_4to3b"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_w2k8u"]
+[ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="19_hlo1c"]
+[ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_jvhar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gv3wu"]
 texture = ExtResource("1_a6gv3")
@@ -383,8 +385,9 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("7_1nwqk")
 theme_override_font_sizes/font_size = 27
-text = "3.0 ) \"The Jump Boost Can Be Pretty Fun..\"
+text = "3.5 ) \"The Jump Boost Can Be Pretty Fun..\"
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("6_pbgsm")]
 position = Vector2(453.00003, -80)
@@ -440,6 +443,42 @@ position = Vector2(84, -5)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_w2k8u")]
 position = Vector2(74.99997, 45.999985)
+
+[node name="Area2D2" parent="." unique_id=932735879 instance=ExtResource("14_1nwqk")]
+position = Vector2(484, -169)
+
+[node name="InteractionLabel" type="Label" parent="Area2D2" unique_id=1303170523]
+offset_left = -131.0
+offset_top = -63.0
+offset_right = 411.0
+offset_bottom = 44.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_1nwqk")
+theme_override_font_sizes/font_size = 25
+text = "  3.0 ) \"Holding [ W ] or 
+( ↑ ) lets you jump higher\"
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="bat" parent="." unique_id=789512219 instance=ExtResource("19_hlo1c")]
+position = Vector2(292, -251)
+scale = Vector2(3, 3)
+detection_radius = 60.0
+
+[node name="bat2" parent="." unique_id=1688161933 instance=ExtResource("19_hlo1c")]
+position = Vector2(85, -58.000015)
+scale = Vector2(3, 3)
+detection_radius = 60.0
+
+[node name="bat3" parent="." unique_id=1784510416 instance=ExtResource("19_hlo1c")]
+position = Vector2(102.00001, 148.99997)
+scale = Vector2(3, 3)
+detection_radius = 60.0
+
+[node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("20_jvhar")]
+position = Vector2(-385, -144)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

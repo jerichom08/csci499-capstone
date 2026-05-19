@@ -979,7 +979,10 @@ position = Vector2(620, -257)
 position = Vector2(-487, -91)
 
 [node name="PlayerLight3" parent="." unique_id=700686515 instance=ExtResource("7_1jcon")]
-position = Vector2(-18, -32)
+position = Vector2(-48, 78)
+
+[node name="PlayerLight4" parent="." unique_id=1454169405 instance=ExtResource("7_1jcon")]
+position = Vector2(381, -70)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=305432329]
 

@@ -944,13 +944,20 @@ position = Vector2(604, 180.99997)
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=1112876541 instance=ExtResource("13_5q35u")]
-position = Vector2(-429, -126)
+position = Vector2(-417.00003, -158)
+scale = Vector2(0.8, 0.8)
 
 [node name="PlayerLight2" parent="." unique_id=106583938 instance=ExtResource("13_5q35u")]
 position = Vector2(101, 257)
+scale = Vector2(0.8, 0.8)
 
 [node name="PlayerLight3" parent="." unique_id=778407988 instance=ExtResource("13_5q35u")]
-position = Vector2(61, -170)
+position = Vector2(116, -169.00002)
+scale = Vector2(0.7, 0.7)
+
+[node name="PlayerLight4" parent="." unique_id=309451177 instance=ExtResource("13_5q35u")]
+position = Vector2(456, 256)
+scale = Vector2(0.7, 0.7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=715760788]
 

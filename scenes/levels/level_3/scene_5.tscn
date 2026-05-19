@@ -904,11 +904,14 @@ scale = Vector2(3, 3)
 
 [node name="Rat" parent="." unique_id=69780106 instance=ExtResource("15_k7g5w")]
 position = Vector2(-338, -218)
+patrol_radius = 150.0
 
 [node name="Rat2" parent="." unique_id=1793792294 instance=ExtResource("15_k7g5w")]
 position = Vector2(391, 266)
+patrol_radius = 150.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=663441545]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=76647200 instance=ExtResource("11_0jlf2")]

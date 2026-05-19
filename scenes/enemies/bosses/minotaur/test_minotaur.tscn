@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="1_pf0tl"]
 [ext_resource type="PackedScene" uid="uid://cry1cqpxqni6h" path="res://scenes/enemies/bosses/minotaur/minotaur.tscn" id="2_3eapv"]
+[ext_resource type="PackedScene" uid="uid://8v3l1d3d0sha" path="res://scenes/enemies/mobs/skeleton/skeleton_knight.tscn" id="3_3eapv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8d1ql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eapv"]
+size = Vector2(372, 20)
 
 [node name="test_minotaur" type="Node2D" unique_id=1706086618]
 
@@ -14,7 +18,30 @@ position = Vector2(695, 674)
 shape = SubResource("WorldBoundaryShape2D_8d1ql")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("1_pf0tl")]
-position = Vector2(519, 616)
+position = Vector2(82, 616)
+
+[node name="SkeletonKnight" parent="." unique_id=178756808 instance=ExtResource("3_3eapv")]
+position = Vector2(669, 621)
+
+[node name="SkeletonKnight2" parent="." unique_id=118433276 instance=ExtResource("3_3eapv")]
+position = Vector2(794, 533)
+
+[node name="SkeletonKnight3" parent="." unique_id=1820030320 instance=ExtResource("3_3eapv")]
+position = Vector2(935, 601)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=477739337]
+position = Vector2(1227, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=587565441]
+position = Vector2(85, 33)
+shape = SubResource("RectangleShape2D_3eapv")
 
 [node name="minotaur" parent="." unique_id=503455755 instance=ExtResource("2_3eapv")]
-position = Vector2(863, 605)
+position = Vector2(1294, 138)
+
+[node name="MinotaurLandingPoint" type="Marker2D" parent="." unique_id=1803010337]
+position = Vector2(695, 662)
+
+[connection signal="skeleton_defeated" from="SkeletonKnight" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="skeleton_defeated" from="SkeletonKnight2" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="skeleton_defeated" from="SkeletonKnight3" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi4jb6wi5s2as"
+path="res://.godot/imported/taunt.wav-4fcaac0db90cc8a72ad78ad580dc579f.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/mobs/skeleton/taunt.wav"
+dest_files=["res://.godot/imported/taunt.wav-4fcaac0db90cc8a72ad78ad580dc579f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -907,6 +907,8 @@ stream = ExtResource("26_xglgs")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("28_l2ibj")]
 position = Vector2(-520.10565, -184.01172)
+npc_text = "\"First some chocolate, next a treat, then a cracker, finally a chip\""
+dialogue_time = 2.5
 character_face = ExtResource("29_ca4uv")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 
@@ -928,10 +930,8 @@ theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.521568
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("18_u5736")
 theme_override_font_sizes/font_size = 27
-text = "\"First some chocolate, 
-next a treat, 
-then a cracker, 
-finally a chipaa\""
+text = "Press E to
+interact"
 metadata/_edit_use_anchors_ = true
 
 [node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("30_iyvtx")]

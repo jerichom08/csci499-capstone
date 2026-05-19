@@ -8,7 +8,7 @@ size = Vector2(359, 575)
 
 [node name="Milk" type="Area2D" unique_id=1285655012]
 script = ExtResource("1_xwl8b")
-floor_y = 1000
+floor_y = 580
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1114709538]
 texture = ExtResource("2_ned81")

@@ -46,6 +46,7 @@ sprite_frames = SubResource("SpriteFrames_odime")
 collision_layer = 4
 script = ExtResource("2_jbqyw")
 apply_knockback = true
+knockback_force = 1200.0
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1267501670]

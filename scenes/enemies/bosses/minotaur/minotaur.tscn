@@ -331,6 +331,7 @@ height = 34.0
 height = 26.0
 
 [node name="minotaur" type="CharacterBody2D" unique_id=503455755]
+collision_layer = 256
 script = ExtResource("1_iahlh")
 minotaur_heavy_attack = ExtResource("2_w22xp")
 minotaur_light_attack = ExtResource("9_iahlh")

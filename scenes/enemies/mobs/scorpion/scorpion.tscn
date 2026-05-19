@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://dr58ju0pl1vf4"]
+
+[ext_resource type="Script" uid="uid://dfgaephsj8mrx" path="res://scripts/enemies/mobs/rat.gd" id="1_sm0ti"]
+[ext_resource type="Texture2D" uid="uid://mbvdemcqlbyc" path="res://assets/images/enemies/mobs/scorpion/Walk.png" id="1_th4rw"]
+[ext_resource type="PackedScene" uid="uid://v5lwb3ciyyd8" path="res://scenes/enemies/mobs/rat/rat_hole.tscn" id="2_oyw1n"]
+[ext_resource type="Texture2D" uid="uid://cwjw8t4cjlna4" path="res://assets/images/enemies/mobs/scorpion/Idel.png" id="2_sm0ti"]
+[ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="3_if02e"]
+[ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="3_vgn7x"]
+[ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="4_oyw1n"]
+[ext_resource type="PackedScene" uid="uid://by0dowubj4e1h" path="res://scenes/enemies/components/player_detection_zone.tscn" id="5_if02e"]
+[ext_resource type="Texture2D" uid="uid://wfia68lh61ab" path="res://assets/images/enemies/mobs/scorpion/scorpion_hit.png" id="5_oq67y"]
+[ext_resource type="AudioStream" uid="uid://caxppanekkjth" path="res://assets/sounds temp/enemy sounds/mobs/rat/rat_emerge.wav" id="6_oq67y"]
+[ext_resource type="AudioStream" uid="uid://cml8ychcndilj" path="res://assets/sounds temp/enemy sounds/mobs/rat/rat_hurt.wav" id="7_53nr7"]
+[ext_resource type="AudioStream" uid="uid://d2iieffhn6kmp" path="res://assets/sounds temp/enemy sounds/mobs/scorpion/scorpion_idle.wav" id="12_oyw1n"]
+
+[sub_resource type="Resource" id="Resource_oq67y"]
+script = ExtResource("3_if02e")
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jw6k"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxmuc"]
+atlas = ExtResource("1_th4rw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r171e"]
+atlas = ExtResource("1_th4rw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhbyh"]
+atlas = ExtResource("1_th4rw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53nr7"]
+atlas = ExtResource("5_oq67y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23krj"]
+atlas = ExtResource("5_oq67y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcbix"]
+atlas = ExtResource("5_oq67y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jw6k"]
+atlas = ExtResource("5_oq67y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqriv"]
+atlas = ExtResource("2_sm0ti")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw77b"]
+atlas = ExtResource("2_sm0ti")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iatg4"]
+atlas = ExtResource("2_sm0ti")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7v67r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxmuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r171e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhbyh")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53nr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23krj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcbix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jw6k")
+}],
+"loop": false,
+"name": &"defeat",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqriv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw77b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iatg4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkgh3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cwrvs"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7encr"]
+size = Vector2(218, 20)
+
+[node name="Scorpion" type="CharacterBody2D" unique_id=1115055450]
+script = ExtResource("1_sm0ti")
+hole_scene = ExtResource("2_oyw1n")
+stats = SubResource("Resource_oq67y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1196979958]
+shape = SubResource("CircleShape2D_0jw6k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=988845729]
+scale = Vector2(0.546875, 0.546875)
+sprite_frames = SubResource("SpriteFrames_7v67r")
+animation = &"defeat"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=525891137]
+collision_layer = 4
+script = ExtResource("3_vgn7x")
+metadata/_custom_type_script = "uid://bfqavi17nvck4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1674237711]
+shape = SubResource("CircleShape2D_jkgh3")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1529253008]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_oyw1n")
+metadata/_custom_type_script = "uid://bdex8w352e0k1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1203643701]
+shape = SubResource("CircleShape2D_cwrvs")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="PlayerDetectionZone" parent="." unique_id=1704440266 instance=ExtResource("5_if02e")]
+collision_mask = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDetectionZone" unique_id=1283482090]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7encr")
+debug_color = Color(0, 0, 0.69803923, 0.12156863)
+
+[node name="RatEmerge" type="AudioStreamPlayer2D" parent="." unique_id=172865707]
+stream = ExtResource("6_oq67y")
+volume_db = 24.0
+
+[node name="RatHit" type="AudioStreamPlayer2D" parent="." unique_id=1733828019]
+stream = ExtResource("7_53nr7")
+volume_db = 4.269
+
+[node name="RatIdle" type="AudioStreamPlayer2D" parent="." unique_id=1739115431]
+stream = ExtResource("12_oyw1n")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

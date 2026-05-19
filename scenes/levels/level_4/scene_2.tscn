@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="9_hxl4b"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="9_o4et5"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="11_4m88t"]
+[ext_resource type="PackedScene" uid="uid://dr58ju0pl1vf4" path="res://scenes/enemies/mobs/scorpion/scorpion.tscn" id="13_78x4y"]
+[ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="14_yys22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y02w2"]
 texture = ExtResource("1_0ls8f")
@@ -650,7 +652,7 @@ tile_map_data = PackedByteArray("AAD+//n/AgACAAYAAAD+//r/AgACAAcAAAD+//v/AgADAAU
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_o4et5")]
-position = Vector2(-636, 239)
+position = Vector2(-318, -31)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("7_78x4y")]
 position = Vector2(97, -17)
@@ -690,6 +692,21 @@ position = Vector2(-639, -198)
 
 [node name="LoopSpawn2" type="Marker2D" parent="." unique_id=84795958]
 position = Vector2(641, -348)
+
+[node name="Scorpion" parent="." unique_id=1115055450 instance=ExtResource("13_78x4y")]
+position = Vector2(402, 50)
+
+[node name="Scorpion2" parent="." unique_id=354956765 instance=ExtResource("13_78x4y")]
+position = Vector2(43, -59)
+
+[node name="Scorpion3" parent="." unique_id=143129422 instance=ExtResource("13_78x4y")]
+position = Vector2(-355, -3)
+
+[node name="Scorpion4" parent="." unique_id=549164773 instance=ExtResource("13_78x4y")]
+position = Vector2(427, -165)
+
+[node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_yys22")]
+position = Vector2(-433, -182)
 
 [connection signal="body_entered" from="loop" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="loop2" to="." method="_on_area_2d_body_entered"]

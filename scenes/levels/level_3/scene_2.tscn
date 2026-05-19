@@ -836,12 +836,15 @@ position = Vector2(6, -21)
 
 [node name="Rat" parent="." unique_id=69780106 instance=ExtResource("13_ocjfo")]
 position = Vector2(-448, 265)
+patrol_radius = 150.0
 
 [node name="Rat2" parent="." unique_id=754293733 instance=ExtResource("13_ocjfo")]
 position = Vector2(374, 105)
+patrol_radius = 150.0
 
 [node name="Rat3" parent="." unique_id=434056283 instance=ExtResource("13_ocjfo")]
 position = Vector2(291, 265)
+patrol_radius = 150.0
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("14_cd48l")]
 position = Vector2(-367, 28)

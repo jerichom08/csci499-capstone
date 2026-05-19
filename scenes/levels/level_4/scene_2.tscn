@@ -695,15 +695,19 @@ position = Vector2(641, -348)
 
 [node name="Scorpion" parent="." unique_id=1115055450 instance=ExtResource("13_78x4y")]
 position = Vector2(402, 50)
+patrol_radius = 100.0
 
 [node name="Scorpion2" parent="." unique_id=354956765 instance=ExtResource("13_78x4y")]
 position = Vector2(43, -59)
+patrol_radius = 150.0
 
 [node name="Scorpion3" parent="." unique_id=143129422 instance=ExtResource("13_78x4y")]
 position = Vector2(-355, -3)
+patrol_radius = 25.0
 
 [node name="Scorpion4" parent="." unique_id=549164773 instance=ExtResource("13_78x4y")]
 position = Vector2(427, -165)
+patrol_radius = 100.0
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_yys22")]
 position = Vector2(-433, -182)

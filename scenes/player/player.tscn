@@ -253,9 +253,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bj30b")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -382,8 +382,11 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"death"
 autoplay = "idle"
+frame = 11
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627055643]
+visible = false
 position = Vector2(-2, -5)
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_smehm")
@@ -392,6 +395,7 @@ shape = SubResource("CapsuleShape2D_smehm")
 position = Vector2(153, -16)
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1044826710]
+visible = false
 collision_mask = 8
 script = ExtResource("7_fjrip")
 metadata/_custom_type_script = "uid://bdex8w352e0k1"

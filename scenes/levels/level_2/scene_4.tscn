@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://co4truixt2nep" path="res://assets/images/food/cookie_6.png" id="26_68o1d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="28_l2ibj"]
-[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="29_ca4uv"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="29_ca4uv"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="30_iyvtx"]
 [ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="31_ca4uv"]
 
@@ -856,17 +856,17 @@ item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=453394811]
 position = Vector2(2.774841, -5.2473717)
-scale = Vector2(0.5090909, 0.481982)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("23_l2ibj")
 region_rect = Rect2(24, 8, 112, 112)
 
 [node name="TestItem2" parent="Items" unique_id=427441340 instance=ExtResource("21_7kjpp")]
-position = Vector2(-347.40002, -191.3)
+position = Vector2(-336, -213)
 item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=723323786]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("24_iyvtx")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -876,7 +876,7 @@ item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1424859298]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_ca4uv")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -886,7 +886,7 @@ item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=974581714]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("26_68o1d")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -904,7 +904,7 @@ stream = ExtResource("26_xglgs")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("28_l2ibj")]
 position = Vector2(-520.10565, -184.01172)
-npc_text = "\"First some chocolate, next a treat, then a cracker, finally a chip\""
+npc_text = "\"First some chocolate, next a treat, then a cracker, finally a chip\" [ E ]"
 character_face = ExtResource("29_ca4uv")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 

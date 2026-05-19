@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://35oise2jki27" path="res://assets/images/food/cookie_8.png" id="27_3id5d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_5c0ee"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="29_x31aq"]
-[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="30_5c0ee"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="30_5c0ee"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="31_qpovd"]
 [ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="32_5c0ee"]
 
@@ -852,10 +852,10 @@ scale = Vector2(10, 2.32)
 position = Vector2(529, 231)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("18_48kkf")]
-position = Vector2(110, 205)
+position = Vector2(110, 209)
 
 [node name="MovingPlatform2" parent="." unique_id=785624952 instance=ExtResource("18_48kkf")]
-position = Vector2(435, 205)
+position = Vector2(435, 209)
 
 [node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("19_i3nm3")]
 position = Vector2(300.00006, -212)
@@ -891,7 +891,7 @@ item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=325077746]
 position = Vector2(2.774841, -5.2473717)
-scale = Vector2(0.5090909, 0.481982)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("24_x31aq")
 region_rect = Rect2(24, 8, 112, 112)
 
@@ -901,7 +901,7 @@ item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1255784303]
 position = Vector2(2, -6)
-scale = Vector2(0.6375, 0.5769231)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_5c0ee")
 region_rect = Rect2(296, 488, 80, 104)
 
@@ -910,8 +910,8 @@ position = Vector2(406.00317, -79.120056)
 item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1291439597]
-position = Vector2(-2, -3.999939)
-scale = Vector2(0.50735164, 0.46528718)
+position = Vector2(8, 6.1035156e-05)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_qpovd")
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
@@ -922,7 +922,7 @@ item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=917709482]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_3id5d")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -939,11 +939,14 @@ position = Vector2(-146, -62)
 stream = ExtResource("27_5c0ee")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_x31aq")]
-position = Vector2(-423.3989, 244.50818)
-npc_text = "\"First a classic, next a man, then some heart, finally some jam\""
+position = Vector2(-480.3989, 246.50818)
+npc_text = "\"First a classic, next a swirl, then comes a heart, and finally the star\" [ E ]"
 dialogue_time = 1.0
 character_face = ExtResource("30_5c0ee")
 dialogue_box_path = NodePath("../RpgStyleTalk")
+
+[node name="InteractionLabel" parent="TurnipNpc" index="0" unique_id=876962569]
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" parent="TurnipNpc" index="1" unique_id=327155034]
 position = Vector2(-60.89435, -13.988282)

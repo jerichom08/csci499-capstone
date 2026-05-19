@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="12_5cqpn"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="12_80vwy"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_6y8wy"]
-[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="16_7ykea"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="16_7ykea"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_83xw0"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="20_6ewla"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="20_g75hv"]
@@ -836,7 +836,7 @@ position = Vector2(-179, 189.99997)
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("20_6ewla")]
 position = Vector2(521.6887, 246.74957)
-npc_text = "\"First a star, next a flower, then some swirl, finally some pie\""
+npc_text = "\"First a star, next a flower, then some swirl, finally some pie\" [ E ]"
 character_face = ExtResource("16_7ykea")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 
@@ -874,7 +874,7 @@ item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=2059858849]
 position = Vector2(2.774841, -5.2473717)
-scale = Vector2(0.5090909, 0.481982)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("21_83xw0")
 region_rect = Rect2(24, 8, 112, 112)
 
@@ -884,7 +884,7 @@ item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1742483822]
 position = Vector2(2, -6)
-scale = Vector2(0.6375, 0.5769231)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("22_6y8wy")
 region_rect = Rect2(296, 488, 80, 104)
 
@@ -894,7 +894,7 @@ item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1296545017]
 position = Vector2(-2, -3.999939)
-scale = Vector2(0.50735164, 0.46528718)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("23_fmsi3")
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
@@ -905,7 +905,7 @@ item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=1527831372]
 position = Vector2(-3.522316, -0.39712524)
-scale = Vector2(0.45322207, 0.45322207)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("24_7ykea")
 region_rect = Rect2(24, 136, 112, 112)
 

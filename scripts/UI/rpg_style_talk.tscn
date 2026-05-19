@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwtwx8kf8338r"]
 
 [ext_resource type="Script" uid="uid://fkehvuvce6lj" path="res://scripts/UI/rpg_style_talk.gd" id="1_6shrq"]
-[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="2_on7qd"]
+[ext_resource type="Texture2D" uid="uid://djt60ouuh61cu" path="res://scripts/UI/TurnipFace.png" id="2_on7qd"]
 [ext_resource type="FontFile" uid="uid://d022t1deah30r" path="res://assets/images/UI/text box/star-crush/Star Crush.otf" id="3_brviy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6shrq"]

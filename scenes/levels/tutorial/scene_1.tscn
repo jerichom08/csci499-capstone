@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://drgo6e3icgmgg"]
 
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_va4an"]
-[ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_8u52i"]
 [ext_resource type="Texture2D" uid="uid://gbk4pj3yu1uf" path="res://assets/images/tilemaps/tilemap3-backgrounds_packed.png" id="2_exam8"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="3_e8ji1"]
+[ext_resource type="Texture2D" uid="uid://bgs7wr7x2p2l0" path="res://assets/images/tilemaps/tilemap4_packed.png" id="3_xp1wc"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="4_aasmi"]
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="5_v3rwh"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="6_xp1wc"]
@@ -119,6 +119,199 @@ texture_region_size = Vector2i(18, 18)
 7:3/0 = 0
 8:3/0 = 0
 9:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxqix"]
+texture = ExtResource("3_xp1wc")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:4/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+4:8/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+5:7/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+19:7/0 = 0
+18:7/0 = 0
+17:7/0 = 0
+16:7/0 = 0
+15:7/0 = 0
+14:7/0 = 0
+13:7/0 = 0
+12:7/0 = 0
+11:7/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+18:6/0 = 0
+17:6/0 = 0
+16:6/0 = 0
+19:6/0 = 0
+18:4/0 = 0
+17:4/0 = 0
+19:4/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+17:2/0 = 0
+16:2/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+19:1/0 = 0
+19:0/0 = 0
+18:1/0 = 0
+18:0/0 = 0
+17:0/0 = 0
+17:1/0 = 0
+16:1/0 = 0
+16:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("1_va4an")
@@ -347,56 +540,12 @@ texture_region_size = Vector2i(18, 18)
 18:8/0 = 0
 19:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15x7e"]
-texture = ExtResource("2_8u52i")
-texture_region_size = Vector2i(18, 18)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_alrbv"]
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_8yd8u")
-sources/3 = SubResource("TileSetAtlasSource_15x7e")
 sources/0 = SubResource("TileSetAtlasSource_udhpj")
+sources/1 = SubResource("TileSetAtlasSource_uxqix")
 
 [node name="Tut" type="Node2D" unique_id=1440666369]
 position = Vector2(188, 108)
@@ -410,9 +559,58 @@ tile_set = SubResource("TileSet_cpv0e")
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("11_cpv0e")]
 position = Vector2(603, -168)
 
+[node name="Area2D" parent="." unique_id=122987432 instance=ExtResource("16_eje0s")]
+position = Vector2(129, 174)
+scale = Vector2(0.5, 0.5)
+
+[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1233834143]
+offset_left = -360.0
+offset_top = -194.0
+offset_right = 375.0
+offset_bottom = -127.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_uxqix")
+theme_override_font_sizes/font_size = 44
+text = "1.5 ) \"Watch Out For the Falling Spikes\""
+
+[node name="ClueSign" parent="." unique_id=604565878 instance=ExtResource("16_eje0s")]
+position = Vector2(-463, 231)
+scale = Vector2(0.5, 0.5)
+
+[node name="InteractionLabel" type="Label" parent="ClueSign" unique_id=236226324]
+offset_left = -352.0
+offset_top = -148.0
+offset_right = 336.0
+offset_bottom = -43.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_uxqix")
+theme_override_font_sizes/font_size = 44
+text = "1.0 ) \"Press ↑ to Jump on Platforms\" 
+"
+
+[node name="sign2" parent="." unique_id=884197283 instance=ExtResource("16_eje0s")]
+position = Vector2(73, -151)
+scale = Vector2(0.5, 0.5)
+
+[node name="InteractionLabel" type="Label" parent="sign2" unique_id=1085273815]
+offset_left = -424.0
+offset_top = -136.0
+offset_right = 407.0
+offset_bottom = -94.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_uxqix")
+theme_override_font_sizes/font_size = 44
+text = "\"press c or draw a triangle on lilith's scroll\""
+
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD0//n/AgACAAYAAFD0//r/AgACAAYAAAD0//v/AgACAAYAAFD0//z/AgACAAYAAFD0//3/AgAEAAUAAAD0//7/AgAFAAEAAAD0////AgACAAYAAAD0/wAAAgACAAYAAFD0/wEAAgACAAYAAAD0/wUAAgACAAEAAAD0/wYAAgACAAYAAED1//n/AgACAAYAAAD1//r/AgADAAYAAAD1//v/AgADAAYAAAD1//z/AgACAAYAAAD1//3/AgADAAYAAAD1//7/AgADAAYAAAD1////AgADAAYAAAD1/wAAAgACAAYAAAD1/wEAAgADAAYAAAD1/wUAAgACAAEAAAD1/wYAAgAEAAUAAAD0/wIAAgACAAcAAAD1/wIAAgADAAcAAAD2/wUAAgACAAEAAAD3/wUAAgACAAEAAAD+/wUAAgACAAEAAAD//wUAAgACAAEAAAAAAAUAAgACAAEAAAABAAUAAgACAAYAAAABAAQAAgABAAEAAAACAAQAAgACAAEAAAADAAQAAgACAAEAAAAEAAQAAgACAAEAAAAFAAQAAgACAAEAAAAGAAQAAgACAAEAAAAHAAQAAgACAAEAAAAIAAQAAgACAAEAAAACAAUAAgACAAYAAAACAAYAAgACAAYAAAADAAUAAgACAAYAAAADAAYAAgABAAEAAAD2/wYAAgACAAYAAED3/wYAAgACAAYAAAD4/wYAAgACAAYAAED5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgAEAAUAAAD9/wYAAgACAAYAAED+/wYAAgACAAYAAAD//wYAAgACAAYAAAAAAAYAAgAEAAUAAAABAAYAAgACAAYAAAAEAAUAAgACAAYAAAAEAAYAAgACAAEAAAAFAAUAAgACAAYAAAAFAAYAAgADAAEAAAAGAAUAAgACAAYAAAAGAAYAAgACAAYAAAAHAAUAAgACAAYAAAAHAAYAAgAEAAUAAAAIAAUAAgACAAYAAAAIAAYAAgACAAYAABALAAYAAgACAAYAAEALAAUAAgACAAYAAEALAAQAAgAEAAUAAAALAAMAAgACAAYAAEALAAIAAgACAAYAAEALAAEAAgACAAYAAEALAAAAAgAEAAUAAAALAP//AgACAAYAAEALAP7/AgACAAEAAAD2/wAAAgACAAAAAAAKAP7/AgACAAEAAAAKAP//AgABAAYAAAAKAAAAAgABAAYAAAAKAAEAAgABAAYAAAAKAAIAAgABAAYAAAAKAAMAAgABAAYAAAAKAAQAAgACAAYAAAAJAAQAAgACAAEAAAAJAAUAAgACAAYAAAAJAAYAAgACAAYAAAAKAAUAAgAEAAUAAAAKAAYAAgAEAAUAAAAJAP7/AgACAAAAAAAIAP7/AgACAAAAAAAHAP7/AgACAAAAAAAGAP7/AgACAAAAAAAFAP7/AgACAAAAAAAEAP7/AgACAAAAAAADAP7/AgACAAAAAAACAP7/AgACAAAAAAABAP7/AgACAAAAAAAAAP7/AgABAAAAAAALAPn/AgACAAYAAAAKAPn/AgACAAYAAAAJAPn/AgACAAYAAAAIAPn/AgACAAYAAAAHAPn/AgACAAYAAAAGAPn/AgACAAYAAAAFAPn/AgACAAYAAAAEAPn/AgACAAYAAAADAPn/AgACAAYAAAACAPn/AgACAAYAAAABAPn/AgACAAYAAAAAAPn/AgACAAYAAAD///n/AgACAAcAAAD+//n/AgACAAcAAAD9//n/AgACAAcAAAD8//n/AgACAAYAAAD7//n/AgACAAcAAAD6//n/AgACAAcAAAD5//n/AgACAAcAAAD4//n/AgACAAcAAAD3//n/AgACAAcAAAD2//n/AgACAAcAAAAIAPr/AgACAAYAAAD2//z/AgACAAAAAAD3//z/AgACAAAAAAD4//z/AgADAAAAAAD2//v/AgAHAAYAAAAEAPr/AgACAAcAAAAFAPr/AgACAAcAAAAGAPr/AgACAAYAAAAHAPr/AgACAAYAAAAJAPr/AgACAAYAAAAKAPr/AgACAAYAAAALAPr/AgACAAYAAAADAPr/AgACAAcAAAACAPr/AgACAAcAAAABAPr/AgACAAcAAAD8//r/AgAAAAYAAAD8//v/AgAAAAcAAAAAAPr/AgABAAcAAAAIAAEAAgARAAQAAAAIAAIAAgARAAUAAAAIAAMAAgARAAYAAAAHAAEAAgARAAIAAAAJAAEAAgATAAIAAAAHAP//AgARAAAAAAAHAAAAAgARAAEAAAAIAP//AgASAAAAAAAIAAAAAgASAAEAAAAJAP//AgATAAAAAAAJAAAAAgATAAEAAAAHAAIAAgASAAQAAAAJAAIAAgATAAQAAADz/wUAAgACAAEAAADz/wIAAgABAAcAAADz/wYAAgACAAYAAEDz/wEAAgABAAYAAADz/wAAAgABAAYAAADz////AgABAAYAAADz//7/AgABAAYAAADz//3/AgABAAYAAADz//z/AgABAAYAAADz//v/AgABAAYAAADz//r/AgABAAYAAADz//n/AgABAAYAAAD4/wUAAgACAAEAAAD3/wAAAgACAAAAAAD4/wAAAgACAAAAAAD5/wAAAgACAAAAAAD6/wAAAgACAAAAAAD7/wAAAgADAAAAAADy/wEAAgABAAYAAADy/wIAAgABAAYAAADy/wMAAgABAAYAAADy/wQAAgABAAYAAADy/wUAAgABAAYAAADy/wYAAgABAAYAAAAKAPv/AgACAAcAAAAJAPv/AgACAAcAAAAIAPv/AgACAAcAAAALAPv/AgACAAcAAAAHAPv/AgACAAcAAAAGAPv/AgABAAcAAAAIAP3/AgAIAAQAAAAGAAMAAgAHAAQAAAD5/wUAAgACAAEAAAD9/wUAAgACAAEAAAA=")
+tile_map_data = PackedByteArray("AAD0//n/AgACAAYAAFD0//r/AgACAAYAAAD0//v/AgACAAYAAFD0//z/AgACAAYAAFD0//3/AgAEAAUAAAD0//7/AgAFAAEAAAD0////AgACAAYAAAD0/wAAAgACAAYAAFD0/wEAAgACAAYAAAD0/wUAAQACAAMAAAD0/wYAAgACAAYAAED1//n/AgACAAYAAAD1//r/AgADAAYAAAD1//v/AgADAAYAAAD1//z/AgACAAYAAAD1//3/AgADAAYAAAD1//7/AgADAAYAAAD1////AgADAAYAAAD1/wAAAgACAAYAAAD1/wEAAgADAAYAAAD1/wUAAQACAAMAAAD1/wYAAgAEAAUAAAD0/wIAAgACAAcAAAD1/wIAAgADAAcAAAD2/wUAAQACAAMAAAD3/wUAAQACAAMAAAD+/wUAAQACAAMAAAD//wUAAQACAAMAAAAAAAUAAQACAAMAAAABAAUAAgACAAYAAAABAAQAAQABAAMAAAACAAQAAQACAAMAAAADAAQAAQACAAMAAAAEAAQAAQACAAMAAAAFAAQAAQACAAMAAAAGAAQAAQACAAMAAAAHAAQAAQACAAMAAAAIAAQAAQACAAMAAAACAAUAAgACAAYAAAACAAYAAgACAAYAAAADAAUAAgACAAYAAAADAAYAAQABAAMAAAD2/wYAAgACAAYAAED3/wYAAgACAAYAAAD4/wYAAgACAAYAAED5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgAEAAUAAAD9/wYAAgACAAYAAED+/wYAAgACAAYAAAD//wYAAgACAAYAAAAAAAYAAgAEAAUAAAABAAYAAgACAAYAAAAEAAUAAgACAAYAAAAEAAYAAQACAAMAAAAFAAUAAgACAAYAAAAFAAYAAQADAAMAAAAGAAUAAgACAAYAAAAGAAYAAgACAAYAAAAHAAUAAgACAAYAAAAHAAYAAgAEAAUAAAAIAAUAAgACAAYAAAAIAAYAAgACAAYAABALAAYAAgACAAYAAEALAAUAAgACAAYAAEALAAQAAgAEAAUAAAALAAMAAgACAAYAAEALAAIAAgACAAYAAEALAAEAAgACAAYAAEALAAAAAgAEAAUAAAALAP//AgACAAYAAEALAP7/AQACAAMAAAD2/wAAAgACAAAAAAAKAP7/AQACAAMAAAAKAP//AgABAAYAAAAKAAAAAgABAAYAAAAKAAEAAgABAAYAAAAKAAIAAgABAAYAAAAKAAMAAgABAAYAAAAKAAQAAgACAAYAAAAJAAQAAQACAAMAAAAJAAUAAgACAAYAAAAJAAYAAgACAAYAAAAKAAUAAgAEAAUAAAAKAAYAAgAEAAUAAAAJAP7/AQACAAIAAAAIAP7/AQACAAIAAAAHAP7/AQACAAIAAAAGAP7/AQACAAIAAAAFAP7/AQACAAIAAAAEAP7/AQACAAIAAAADAP7/AQACAAIAAAACAP7/AQACAAIAAAABAP7/AQACAAIAAAAAAP7/AQABAAIAAAALAPn/AgACAAYAAAAKAPn/AgACAAYAAAAJAPn/AgACAAYAAAAIAPn/AgACAAYAAAAHAPn/AgACAAYAAAAGAPn/AgACAAYAAAAFAPn/AgACAAYAAAAEAPn/AgACAAYAAAADAPn/AgACAAYAAAACAPn/AgACAAYAAAABAPn/AgACAAYAAAAAAPn/AgACAAYAAAD///n/AgACAAcAAAD+//n/AgACAAcAAAD9//n/AgACAAcAAAD8//n/AgACAAYAAAD7//n/AgACAAcAAAD6//n/AgACAAcAAAD5//n/AgACAAcAAAD4//n/AgACAAcAAAD3//n/AgACAAcAAAD2//n/AgACAAcAAAAIAPr/AgACAAYAAAD2//z/AgACAAAAAAD3//z/AgACAAAAAAD4//z/AgADAAAAAAD2//v/AQAHAAYAAAAEAPr/AgACAAcAAAAFAPr/AgACAAcAAAAGAPr/AgACAAYAAAAHAPr/AgACAAYAAAAJAPr/AgACAAYAAAAKAPr/AgACAAYAAAALAPr/AgACAAYAAAADAPr/AgACAAcAAAACAPr/AgACAAcAAAABAPr/AgACAAcAAAD8//r/AgAAAAYAAAD8//v/AgAAAAcAAAAAAPr/AgABAAcAAAAIAAEAAQARAAQAAAAIAAIAAQARAAUAAAAIAAMAAQARAAYAAAAHAAEAAQARAAIAAAAJAAEAAQATAAIAAAAHAP//AQARAAAAAAAHAAAAAQARAAEAAAAIAP//AQASAAAAAAAIAAAAAQASAAEAAAAJAP//AQATAAAAAAAJAAAAAQATAAEAAAAHAAIAAQASAAQAAAAJAAIAAQASAAQAABDz/wUAAQACAAMAAADz/wIAAgABAAcAAADz/wYAAgACAAYAAEDz/wEAAgABAAYAAADz/wAAAgABAAYAAADz////AgABAAYAAADz//7/AgABAAYAAADz//3/AgABAAYAAADz//z/AgABAAYAAADz//v/AgABAAYAAADz//r/AgABAAYAAADz//n/AgABAAYAAAD4/wUAAQACAAMAAAD3/wAAAgACAAAAAAD4/wAAAgACAAAAAAD5/wAAAgACAAAAAAD6/wAAAgACAAAAAAD7/wAAAgADAAAAAADy/wEAAgABAAYAAADy/wIAAgABAAYAAADy/wMAAgABAAYAAADy/wQAAgABAAYAAADy/wUAAgABAAYAAADy/wYAAgABAAYAAAAKAPv/AgACAAcAAAAJAPv/AgACAAcAAAAIAPv/AgACAAcAAAALAPv/AgACAAcAAAAHAPv/AgACAAcAAAAGAPv/AgABAAcAAAAIAP3/AgAIAAQAAAAGAAMAAQAHAAQAAAD5/wUAAQACAAMAAAD9/wUAAQACAAMAAAACAAMAAQAGAAQAAAD3/wQAAQAGAAQAAAABAP3/AQAGAAQAAAAHAAMAAQAEAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="basic tiles2" type="TileMapLayer" parent="." unique_id=766867438]
@@ -456,7 +654,7 @@ position = Vector2(-615, 232)
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD6/wYAAgARAAcAAAD1//7/AgARAAcAAAD0//z/AgARAAcAAAAKAP7/AgARAAcAAAD9/wUAAgARAAcAAAD2/wEAAgAFAAYAACAHAAMAAgAEAAYAAAAFAAUAAgAGAAYAAAAEAAMAAgAQAAMAAAAEAAQAAgARAAUAAAAEAAUAAgARAAYAAAAEAAIAAgAQAAEAAAADAAQAAgASAAQAAAAFAAQAAgASAAQAABAKAAUAAgAEAAAAAAAKAAYAAgAEAAEAAAALAAUAAgAFAAAAAAALAAYAAgAFAAEAAAADAAUAAgAIAAYAAAAAAP3/AgAEAAcAAAAJAAMAAgAJAAYAAAAKAP3/AgAJAAYAAAA=")
+tile_map_data = PackedByteArray("AAD6/wYAAgARAAcAAAD1//7/AgARAAcAAAD0//z/AgARAAcAAAAKAP7/AgARAAcAAAD9/wUAAgARAAcAAAD2/wEAAQAEAAYAACAHAAMAAQAEAAYAAAAFAAUAAQAGAAYAAAAEAAMAAQAQAAMAAAAEAAQAAQARAAUAAAAEAAUAAQARAAYAAAAEAAIAAQAQAAEAAAADAAQAAQASAAQAAAAFAAQAAQASAAQAABAKAAUAAgAEAAAAAAAKAAYAAgAEAAEAAAALAAUAAgAFAAAAAAALAAYAAgAFAAEAAAADAAUAAgAIAAYAAAAAAP3/AgAEAAcAAAAJAAMAAgAJAAYAAAAKAP3/AgAJAAYAAAD+/wQAAQAEAAYAAAD//wQAAQAJAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="FallingSpikes" parent="." unique_id=880855743 groups=["player", "warning_label"] instance=ExtResource("10_aasmi")]
@@ -471,37 +669,6 @@ position = Vector2(-27, -311)
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("13_aasmi")]
 position = Vector2(-32, 2)
 
-[node name="ClueSign" parent="." unique_id=604565878 instance=ExtResource("16_eje0s")]
-position = Vector2(-502, 207)
-
-[node name="InteractionLabel" type="Label" parent="ClueSign" unique_id=236226324]
-offset_left = 54.0
-offset_top = 13.0
-offset_right = 494.0
-offset_bottom = 76.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_uxqix")
-theme_override_font_sizes/font_size = 27
-text = "1.0 ) \"Press ↑ to Jump on Platforms\" 
-"
-
-[node name="Area2D" parent="." unique_id=122987432 instance=ExtResource("16_eje0s")]
-position = Vector2(76, 157)
-
-[node name="InteractionLabel" type="Label" parent="Area2D" unique_id=1233834143]
-offset_left = -119.0
-offset_top = -46.0
-offset_right = 330.0
-offset_bottom = 21.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_uxqix")
-theme_override_font_sizes/font_size = 27
-text = "1.5 ) \"Watch Out For the Falling Spikes\""
-
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_exam8")]
 position = Vector2(48, -6)
 
@@ -514,21 +681,6 @@ scale = Vector2(3, 3)
 
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("4_aasmi")]
 position = Vector2(-353.00006, 274)
-
-[node name="sign2" parent="." unique_id=884197283 instance=ExtResource("16_eje0s")]
-position = Vector2(47, -171)
-
-[node name="InteractionLabel" type="Label" parent="sign2" unique_id=1085273815]
-offset_left = -183.0
-offset_top = -19.0
-offset_right = 308.0
-offset_bottom = 10.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_uxqix")
-theme_override_font_sizes/font_size = 21
-text = "\"press c or draw a triangle on lilith's scroll\""
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

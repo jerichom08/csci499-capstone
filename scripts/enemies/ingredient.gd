@@ -6,6 +6,7 @@ extends Area2D
 @export var collect_time := 0.2
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var success_sfx: AudioStreamPlayer2D = $Success
 
 @export var floor_y := 525
 var landed := false
@@ -44,12 +45,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if not body.is_in_group("player"):
 		return
-
+	
+	
 	collected = true
 	collect(body)
 
 
 func collect(player: Node2D) -> void:
+	success_sfx.play()
 	monitoring = false
 
 	var tween := create_tween()
@@ -76,5 +79,6 @@ func collect(player: Node2D) -> void:
 		0.0,
 		collect_time
 	)
+	
 
 	tween.chain().tween_callback(queue_free)

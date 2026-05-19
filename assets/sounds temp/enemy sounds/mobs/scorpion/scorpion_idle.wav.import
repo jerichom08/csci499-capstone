@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2iieffhn6kmp"
+path="res://.godot/imported/scorpion_idle.wav-c51d9937b5cba94006646b8e12fd0194.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/mobs/scorpion/scorpion_idle.wav"
+dest_files=["res://.godot/imported/scorpion_idle.wav-c51d9937b5cba94006646b8e12fd0194.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

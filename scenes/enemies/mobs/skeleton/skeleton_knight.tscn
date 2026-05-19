@@ -22,7 +22,7 @@
 [sub_resource type="Resource" id="Resource_1jxh7"]
 script = ExtResource("4_usa4o")
 max_health = 5
-move_speed = 100.0
+move_speed = 150.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fbnma"]
@@ -480,7 +480,7 @@ animations = [{
 size = Vector2(19, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubtno"]
-size = Vector2(14, 30)
+size = Vector2(23, 35)
 
 [node name="SkeletonKnight" type="CharacterBody2D" unique_id=178756808 groups=["skeleton_knights"]]
 collision_layer = 256
@@ -516,7 +516,7 @@ apply_knockback = true
 metadata/_custom_type_script = "uid://bfqavi17nvck4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1576633361]
-position = Vector2(-1, 1)
+position = Vector2(1.5, -1.5)
 shape = SubResource("RectangleShape2D_ubtno")
 debug_color = Color(1, 0, 0, 0.41960785)
 

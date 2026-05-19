@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="2_avmw6"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_2tk6r"]
 [ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_avmw6"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="4_5y2x0"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="4_avmw6"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_gxgmc"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="6_rfl18"]
@@ -12,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="8_3n03w"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="9_2tk6r"]
 [ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="14_hqohx"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="14_s2bxe"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_hqohx"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="15_xjb2i"]
 
@@ -799,12 +799,6 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[sub_resource type="Resource" id="Resource_s2bxe"]
-resource_local_to_scene = true
-script = ExtResource("15_xjb2i")
-gravity = 100.0
-metadata/_custom_type_script = "uid://cr8bvh7l7at2"
-
 [sub_resource type="Resource" id="Resource_hqohx"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
@@ -814,10 +808,16 @@ metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 [sub_resource type="Resource" id="Resource_xjb2i"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
-gravity = 10.0
+gravity = 100.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="Resource" id="Resource_jl5l0"]
+resource_local_to_scene = true
+script = ExtResource("15_xjb2i")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_rddbj"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
 gravity = 10.0
@@ -896,10 +896,6 @@ scale = Vector2(0.9, 0.9)
 position = Vector2(-515, 251.00002)
 scale = Vector2(3, 3)
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("4_5y2x0")]
-position = Vector2(-797, 381)
-scale = Vector2(20, 1)
-
 [node name="Spikes" parent="." unique_id=66394676 instance=ExtResource("7_avmw6")]
 position = Vector2(198, -188)
 
@@ -908,19 +904,23 @@ position = Vector2(97, -17)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("14_hqohx")]
 position = Vector2(405, -294)
-stats = SubResource("Resource_s2bxe")
+stats = SubResource("Resource_hqohx")
 
 [node name="spider2" parent="." unique_id=672809836 instance=ExtResource("14_hqohx")]
 position = Vector2(-244, -297)
-stats = SubResource("Resource_hqohx")
+stats = SubResource("Resource_xjb2i")
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_hqohx")]
 position = Vector2(-290, 273)
 
 [node name="spider3" parent="." unique_id=248195814 instance=ExtResource("14_hqohx")]
 position = Vector2(161, -217)
-stats = SubResource("Resource_xjb2i")
+stats = SubResource("Resource_jl5l0")
 
 [node name="spider4" parent="." unique_id=251184799 instance=ExtResource("14_hqohx")]
 position = Vector2(-46, -298)
-stats = SubResource("Resource_jl5l0")
+stats = SubResource("Resource_rddbj")
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("14_s2bxe")]
+position = Vector2(-49, 361)
+scale = Vector2(3, 1)

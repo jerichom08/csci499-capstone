@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cyc0q6e6r8s8h" path="res://assets/images/UI/BG.png" id="2_4acgi"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="3_ya8vd"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_3knc2"]
+[ext_resource type="AudioStream" uid="uid://bmn1n3rrobhnv" path="res://assets/sounds temp/level sounds/click.mp3" id="5_lihvx"]
+[ext_resource type="AudioStream" uid="uid://cy5y7k5nnbj1k" path="res://assets/sounds temp/level sounds/fin.wav" id="5_rgqr6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibarm"]
 texture = ExtResource("2_4acgi")
@@ -119,6 +121,12 @@ theme_override_font_sizes/font_size = 67
 text = "Quit"
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_3knc2")]
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=12072064]
+stream = ExtResource("5_lihvx")
+
+[node name="fin" type="AudioStreamPlayer2D" parent="." unique_id=1097958621]
+stream = ExtResource("5_rgqr6")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Button Manager/return" to="." method="_on_return_pressed"]

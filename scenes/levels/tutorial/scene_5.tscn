@@ -422,7 +422,7 @@ position = Vector2(-141, -310)
 position = Vector2(-249, -310)
 
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("6_i74qv")]
-position = Vector2(-646, 271)
+position = Vector2(-646, 275)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("10_3wil1")]
 position = Vector2(-224, 216)

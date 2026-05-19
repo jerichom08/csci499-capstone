@@ -152,6 +152,7 @@ func play_ingredients_sequence() -> void:
 	$sparkles.visible = false
 	cat_label.visible = true
 	cat_label.text = '" yayy "'
+	$victory.play()
 
 	# Wait 3 seconds, then go to ending scene
 	await get_tree().create_timer(3.0).timeout

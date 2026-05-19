@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chg8pvq011ugw" path="res://assets/images/enemies/mobs/bat/bat_idle_spritesheet.png" id="5_fmuyb"]
 [ext_resource type="Texture2D" uid="uid://b5tt8da50bu4q" path="res://assets/images/enemies/mobs/rat/idling.png" id="6_3p8qn"]
 [ext_resource type="Texture2D" uid="uid://b2r7hy8kr8kma" path="res://assets/images/enemies/mobs/skeleton/3_Head/1_Default/Skeleton_Head_Default_Roll.png" id="7_t7n47"]
+[ext_resource type="AudioStream" uid="uid://bmn1n3rrobhnv" path="res://assets/sounds temp/level sounds/click.mp3" id="8_t7n47"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibarm"]
 texture = ExtResource("1_egmj1")
@@ -347,6 +348,9 @@ position = Vector2(-431, -10)
 scale = Vector2(6.1875, 6.1875)
 sprite_frames = SubResource("SpriteFrames_7t6fj")
 flip_h = true
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=291589207]
+stream = ExtResource("8_t7n47")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Button Manager/lv1" to="." method="_on_lv_1_pressed"]

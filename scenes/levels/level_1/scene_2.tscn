@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b3vnwgub2ibnm" path="res://scenes/levels/level_1/NextScene1.tscn" id="3_pf6wa"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="5_3a08y"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="6_an6qr"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="6_i7ruj"]
 [ext_resource type="PackedScene" uid="uid://dad8n45up7s3i" path="res://scenes/Components/TeleportDoor.tscn" id="6_nbhgw"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="7_an6qr"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="7_oj4i0"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_3n03w"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="16_rir53"]
 [ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="17_58eig"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="18_rir53"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="18_xkhij"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx4rr"]
@@ -806,13 +806,13 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[sub_resource type="Resource" id="Resource_x34mi"]
+[sub_resource type="Resource" id="Resource_58eig"]
 resource_local_to_scene = true
 script = ExtResource("18_xkhij")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_l4t7v"]
+[sub_resource type="Resource" id="Resource_xkhij"]
 resource_local_to_scene = true
 script = ExtResource("18_xkhij")
 gravity = 10.0
@@ -874,11 +874,6 @@ position = Vector2(263, -2)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AADz//v/AAANAAgAACD0//v/AAAOAAgAACD1//v/AAAPAAgAACADAP7/AAANAAgAACAEAP7/AAAOAAgAACAFAP7/AAAPAAgAACA=")
 tile_set = SubResource("TileSet_i7ruj")
-
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("6_i7ruj")]
-position = Vector2(-212.99998, 240.99998)
-scale = Vector2(5, 2.3200002)
-skew = 1.3072513
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=1473122245]
 position = Vector2(818, 1)
@@ -994,10 +989,13 @@ position = Vector2(-317, -165)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("17_58eig")]
 position = Vector2(333, -29)
-stats = SubResource("Resource_x34mi")
+stats = SubResource("Resource_58eig")
 
 [node name="spider2" parent="." unique_id=1627200457 instance=ExtResource("17_58eig")]
 position = Vector2(-398, -30)
-stats = SubResource("Resource_l4t7v")
+stats = SubResource("Resource_xkhij")
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("18_rir53")]
+position = Vector2(-48, 259)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

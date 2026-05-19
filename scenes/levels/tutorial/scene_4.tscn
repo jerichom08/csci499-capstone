@@ -11,12 +11,12 @@
 [ext_resource type="Script" uid="uid://3undegg347nd" path="res://scripts/lvls/ToSpecial.gd" id="9_s555q"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="11_4kj4s"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="12_o36op"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="12_v0pw5"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="13_em7cu"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="14_ta1hr"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="15_0tyny"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="16_tdndc"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="17_47nq5"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="17_tdndc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ta1hr"]
 texture = ExtResource("1_tv21p")
@@ -354,10 +354,6 @@ tile_set = SubResource("TileSet_alrbv")
 position = Vector2(-399, 50)
 scale = Vector2(3, 3)
 
-[node name="lava" parent="." unique_id=1728128468 instance=ExtResource("12_v0pw5")]
-position = Vector2(-229.00002, 361)
-scale = Vector2(6.7, 7)
-
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=552966298]
 position = Vector2(822, 7.0000005)
 scale = Vector2(3, 3)
@@ -431,6 +427,9 @@ theme_override_font_sizes/font_size = 19
 text = "  \"press x or draw a circle on lilith's scroll 
 and control the orb using arrow keys/wasd\""
 metadata/_edit_use_anchors_ = true
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("17_tdndc")]
+position = Vector2(-85, 367)
 
 [connection signal="body_entered" from="ToSpecial" to="ToSpecial" method="_on_body_entered"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

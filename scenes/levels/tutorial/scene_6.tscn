@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="9_dhej2"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="9_vst4a"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="10_3uems"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="10_ahxjw"]
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="10_dhej2"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="10_nro7e"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="11_fs0gx"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_vpfj8"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_6m3w6"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="17_yai30"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="18_yai30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3n01m"]
@@ -395,10 +395,6 @@ tile_map_data = PackedByteArray("AADl/wAAAgARAAAAAADl/wEAAgARAAEAAADl/wIAAgARAAI
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("8_ghafo")
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("10_ahxjw")]
-position = Vector2(-346, 366)
-scale = Vector2(5, 2)
-
 [node name="gate" parent="." unique_id=550434994 instance=ExtResource("9_vst4a")]
 position = Vector2(-575, -161)
 scale = Vector2(3, 3)
@@ -447,6 +443,9 @@ position = Vector2(-104, 228)
 
 [node name="HeartPickup2" parent="." unique_id=502989324 instance=ExtResource("18_yai30")]
 position = Vector2(-521, 212)
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("17_yai30")]
+position = Vector2(-167, 360)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

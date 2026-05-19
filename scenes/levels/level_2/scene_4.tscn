@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="9_xglgs"]
 [ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="10_l2ibj"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="12_ca4uv"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="14_suox1"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="15_sjr6n"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="16_gysk4"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="18_u5736"]
@@ -30,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="28_l2ibj"]
 [ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="29_ca4uv"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="30_iyvtx"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="31_68o1d"]
 [ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="31_ca4uv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -829,10 +829,6 @@ position = Vector2(277, 206)
 [node name="MovingPlatform2" parent="." unique_id=979802330 instance=ExtResource("12_ca4uv")]
 position = Vector2(61, 112)
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("14_suox1")]
-position = Vector2(-237, 342)
-scale = Vector2(10, 2.32)
-
 [node name="gate" parent="." unique_id=550434994 instance=ExtResource("15_sjr6n")]
 position = Vector2(-603, -161)
 scale = Vector2(3, 3)
@@ -933,6 +929,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Skeleton" parent="." unique_id=712153249 instance=ExtResource("31_ca4uv")]
 position = Vector2(-358, 223)
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("31_68o1d")]
+position = Vector2(181, 375)
+scale = Vector2(2, 1)
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 

@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="11_fhh7k"]
 [ext_resource type="PackedScene" uid="uid://b1cw5i2j56dsv" path="res://scenes/lvInterface/FallingSpikes.tscn" id="12_qglet"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="13_1sttk"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="14_1sttk"]
 [ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="19_5l707"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="19_k3kia"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="20_wfvsy"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="21_c1cfn"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="21_wfvsy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxo8g"]
@@ -578,6 +578,12 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 
+[sub_resource type="Resource" id="Resource_wfvsy"]
+resource_local_to_scene = true
+script = ExtResource("20_wfvsy")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
 [sub_resource type="Resource" id="Resource_c1cfn"]
 resource_local_to_scene = true
 script = ExtResource("20_wfvsy")
@@ -585,12 +591,6 @@ gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="Resource" id="Resource_tlx3o"]
-resource_local_to_scene = true
-script = ExtResource("20_wfvsy")
-gravity = 10.0
-metadata/_custom_type_script = "uid://cr8bvh7l7at2"
-
-[sub_resource type="Resource" id="Resource_l6ri2"]
 resource_local_to_scene = true
 script = ExtResource("20_wfvsy")
 gravity = 10.0
@@ -723,23 +723,20 @@ position = Vector2(87, -150)
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("13_1sttk")]
 position = Vector2(471, 4)
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("14_1sttk")]
-position = Vector2(43, 360)
-
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("19_k3kia")]
 position = Vector2(-609, 143)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("19_5l707")]
 position = Vector2(-280, -183)
-stats = SubResource("Resource_c1cfn")
+stats = SubResource("Resource_wfvsy")
 
 [node name="spider3" parent="." unique_id=420706573 instance=ExtResource("19_5l707")]
 position = Vector2(-70, -17)
-stats = SubResource("Resource_tlx3o")
+stats = SubResource("Resource_c1cfn")
 
 [node name="spider4" parent="." unique_id=1760497611 instance=ExtResource("19_5l707")]
 position = Vector2(458, -34)
-stats = SubResource("Resource_l6ri2")
+stats = SubResource("Resource_tlx3o")
 
 [node name="spider2" parent="." unique_id=510250024 instance=ExtResource("19_5l707")]
 position = Vector2(-308, 80)
@@ -747,6 +744,9 @@ stats = SubResource("Resource_jirmk")
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("21_wfvsy")]
 position = Vector2(366, -282)
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("21_c1cfn")]
+position = Vector2(186, 362)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="gate2" method="_on_button_2_button_pressed"]

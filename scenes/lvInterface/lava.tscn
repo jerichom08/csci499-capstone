@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dwdpy34j7cvfv" path="res://assets/images/tilemaps/tilemap1_packed.png" id="1_u1pfj"]
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="2_elgew"]
 [ext_resource type="Script" uid="uid://tdj5k2w4mdqm" path="res://scenes/lvInterface/lava.gd" id="3_elgew"]
+[ext_resource type="Texture2D" uid="uid://cprocn0oq1r5c" path="res://assets/images/tilemaps/lava.png" id="4_8yd8u"]
+[ext_resource type="AudioStream" uid="uid://dy6dsg3c627tq" path="res://assets/sounds temp/level sounds/lava.mp3" id="5_15x7e"]
+[ext_resource type="AudioStream" uid="uid://ttgm8r5faqyk" path="res://assets/sounds temp/level sounds/burnt.mp3" id="6_lv6c1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yd8u"]
 texture = ExtResource("1_u1pfj")
@@ -260,27 +263,120 @@ physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_8yd8u")
 sources/3 = SubResource("TileSetAtlasSource_15x7e")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yd8u"]
+atlas = ExtResource("4_8yd8u")
+region = Rect2(0, 120, 457, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15x7e"]
+atlas = ExtResource("4_8yd8u")
+region = Rect2(914, 120, 457, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv6c1"]
+atlas = ExtResource("4_8yd8u")
+region = Rect2(1828, 120, 457, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8tbm"]
+atlas = ExtResource("4_8yd8u")
+region = Rect2(2742, 120, 457, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07w7r"]
+atlas = ExtResource("4_8yd8u")
+region = Rect2(0, 600, 457, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f830f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yd8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15x7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv6c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8tbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07w7r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv6c1"]
-size = Vector2(89.31035, 17.241379)
+size = Vector2(83.62066, 12.068964)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lv6c1"]
+radius = 124.500404
 
 [node name="lava" type="TileMapLayer" unique_id=319135582]
 scale = Vector2(2.32, 2.32)
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("3_elgew")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1974723056]
+position = Vector2(45.444763, -1.6271571)
+scale = Vector2(0.17798135, 0.17798135)
+sprite_frames = SubResource("SpriteFrames_f830f")
+frame_progress = 0.029948039
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=552370270]
-position = Vector2(46.103443, 6.465517)
-scale = Vector2(2.3148818, 1.0000001)
+visible = false
+position = Vector2(44.81035, 4.5258627)
+scale = Vector2(2.2468245, 1.1363639)
 texture = ExtResource("1_u1pfj")
 region_enabled = true
-region_rect = Rect2(215, 0, 38, 13)
+region_rect = Rect2(215, 2, 38, 11)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1306267862]
+position = Vector2(3.431034, 4.525862)
+scale = Vector2(2.2468245, 1.1363639)
+texture = ExtResource("1_u1pfj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(215, 2, 1, 11)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=649025420]
+position = Vector2(87.05173, 4.525862)
+scale = Vector2(2.2468245, 1.1363639)
+texture = ExtResource("1_u1pfj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(215, 2, 1, 11)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1644882001]
+position = Vector2(44.906532, 9.56113)
+scale = Vector2(1.6382104, 1.2147328)
+texture = ExtResource("1_u1pfj")
+region_enabled = true
+region_rect = Rect2(145, 52, 52, 2)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=870201359]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1207139844]
-position = Vector2(45.000027, 9.482762)
+visible = false
+position = Vector2(45.689674, 4.310346)
 scale = Vector2(1.0000004, 1.0000004)
 shape = SubResource("RectangleShape2D_lv6c1")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="lava" type="AudioStreamPlayer2D" parent="." unique_id=1899868064]
+stream = ExtResource("5_15x7e")
+volume_db = 6.209
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=141051954]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1760898580]
+position = Vector2(42.241383, -15.517242)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("CircleShape2D_lv6c1")
+
+[node name="burnt" type="AudioStreamPlayer2D" parent="." unique_id=898108520]
+stream = ExtResource("6_lv6c1")
+volume_db = 12.935
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_death_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_lava_sound_area_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_lava_sound_area_body_exited"]

@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://dfbpljufpmlsu" path="res://scenes/lvInterface/falling_spikes.gd" id="9_ogj8n"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="10_3uems"]
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="11_dhej2"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="11_vr3g0"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="13_6hne2"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="13_7mqk0"]
 [ext_resource type="PackedScene" uid="uid://c1dqxq5otys68" path="res://scenes/lvInterface/JumpPad.tscn" id="13_jlbhy"]
@@ -18,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_qyiaw"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_08fn7"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="16_08fn7"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="18_516r2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbio4"]
 texture = ExtResource("2_516r2")
@@ -762,10 +762,6 @@ script = ExtResource("9_ogj8n")
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_dqwuc")]
 position = Vector2(592, -221)
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("11_vr3g0")]
-position = Vector2(-678.00006, 362)
-scale = Vector2(15, 2.32)
-
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("9_3uems")]
 position = Vector2(76, -307)
 scale = Vector2(3, 3)
@@ -815,6 +811,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("16_08fn7")]
 position = Vector2(12.9999695, -246.00002)
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("18_516r2")]
+position = Vector2(-88, 370)
+scale = Vector2(3, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

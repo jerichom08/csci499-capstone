@@ -1073,7 +1073,7 @@ position = Vector2(146, 250)
 scale = Vector2(3, 3)
 
 [node name="lava" parent="." unique_id=319135582 instance=ExtResource("11_v4d6u")]
-position = Vector2(-164, 271.00006)
+position = Vector2(-162, 275)
 scale = Vector2(2.55, 2.32)
 tile_set = SubResource("TileSet_n8pg6")
 

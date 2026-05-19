@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2naxc541uueo" path="res://assets/images/enemies/bosses/minotaur/mino_attack_a.png" id="1_5nw6v"]
 [ext_resource type="Texture2D" uid="uid://dh4m3yhnlx7bh" path="res://assets/images/enemies/bosses/minotaur/mino_idle.png" id="1_em423"]
-[ext_resource type="Script" uid="uid://bntcmbmck3byt" path="res://scripts/enemies/bosses/minotaur.gd" id="1_iahlh"]
+[ext_resource type="Script" uid="uid://bntcmbmck3byt" path="res://scripts/enemies/bosses/minotaur/minotaur.gd" id="1_iahlh"]
 [ext_resource type="Texture2D" uid="uid://7am334b5x50g" path="res://assets/images/enemies/bosses/minotaur/mino_attack_b.png" id="2_4604r"]
 [ext_resource type="PackedScene" uid="uid://blm6oqej4wfcp" path="res://scenes/enemies/bosses/minotaur/minotaur_heavy_attack.tscn" id="2_w22xp"]
 [ext_resource type="Texture2D" uid="uid://c7mssjdgrotoq" path="res://assets/images/enemies/bosses/minotaur/mino_defeat.png" id="3_600he"]

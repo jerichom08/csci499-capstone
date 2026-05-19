@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="4_pe41j"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="5_j3x31"]
 [ext_resource type="PackedScene" uid="uid://by0dowubj4e1h" path="res://scenes/enemies/components/player_detection_zone.tscn" id="5_n35br"]
+[ext_resource type="AudioStream" uid="uid://ddp50ndlabw51" path="res://assets/sounds temp/enemy sounds/mobs/spider/spider_hit.wav" id="7_kxsv6"]
 
 [sub_resource type="Resource" id="Resource_pe41j"]
 resource_local_to_scene = true
@@ -343,6 +344,10 @@ collision_mask = 1
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0" unique_id=868536571]
 shape = SubResource("CircleShape2D_kxsv6")
 debug_color = Color(0, 0, 1, 0.08627451)
+
+[node name="SpiderHit" type="AudioStreamPlayer2D" parent="." unique_id=1232922571]
+stream = ExtResource("7_kxsv6")
+volume_db = 8.925
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

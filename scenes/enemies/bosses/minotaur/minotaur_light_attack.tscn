@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4o5nyaxbw6ul"]
 
 [ext_resource type="Texture2D" uid="uid://cul08ixbwdxi" path="res://assets/images/enemies/bosses/minotaur/light_attack.png" id="1_4jy66"]
-[ext_resource type="Script" uid="uid://crychs221urb" path="res://scripts/enemies/bosses/minotaur_light_attack.gd" id="1_tlgfa"]
+[ext_resource type="Script" uid="uid://crychs221urb" path="res://scripts/enemies/bosses/minotaur/minotaur_light_attack.gd" id="1_tlgfa"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_tlgfa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2enh1"]

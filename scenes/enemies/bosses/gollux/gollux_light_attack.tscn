@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2leux2hbwhar"]
 
 [ext_resource type="Texture2D" uid="uid://ct3bfeuutf1pa" path="res://assets/images/enemies/bosses/gollux/gollux_light_attack.png" id="1_3dfka"]
-[ext_resource type="Script" uid="uid://dj2s1pcm3q6w0" path="res://scripts/enemies/bosses/gollux_light_attack.gd" id="1_8ump3"]
+[ext_resource type="Script" uid="uid://dj2s1pcm3q6w0" path="res://scripts/enemies/bosses/gollux/gollux_light_attack.gd" id="1_8ump3"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_8ump3"]
 [ext_resource type="Texture2D" uid="uid://bkeec1ym61wqh" path="res://assets/images/enemies/bosses/gollux/gollux_palette_swap.png" id="2_t2n1p"]
 [ext_resource type="Texture2D" uid="uid://204t7v8kup21" path="res://assets/images/enemies/bosses/gollux/gollux_palette.png" id="3_f44o3"]

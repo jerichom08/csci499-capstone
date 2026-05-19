@@ -2,11 +2,32 @@
 
 [ext_resource type="Texture2D" uid="uid://bqwfqlmtad1gk" path="res://scenes/test_scenes/64x64_textures__108_-removebg-preview.png" id="1_ytpmw"]
 
+[sub_resource type="Gradient" id="Gradient_tqd4g"]
+offsets = PackedFloat32Array(0.075, 0.35625, 0.725)
+colors = PackedColorArray(1, 1, 1, 1, 0.76, 0.76, 0.76, 0.5882353, 0.64, 0.64, 0.64, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vrhkn"]
+gradient = SubResource("Gradient_tqd4g")
+width = 50
+height = 50
+fill = 1
+fill_from = Vector2(0.52136755, 0.5014245)
+fill_to = Vector2(1, 0.0078125)
+repeat = 2
+
 [node name="PlayerLight" type="Node2D" unique_id=119456223]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1508795935]
+visible = false
 position = Vector2(7.6293945e-06, 0.9999981)
 scale = Vector2(4.573974, 4.0117188)
 texture = ExtResource("1_ytpmw")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1677888602]
+position = Vector2(7.6293945e-06, 0.9999981)
+scale = Vector2(5.3, 5.3)
+color = Color(0.6666918, 0.7619265, 0.9366112, 1)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_vrhkn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=338452381]

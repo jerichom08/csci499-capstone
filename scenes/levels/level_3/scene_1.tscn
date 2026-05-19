@@ -835,12 +835,6 @@ tile_set = SubResource("TileSet_5y2x0")
 [node name="NextScene" parent="." unique_id=1836429099 instance=ExtResource("5_bo3qv")]
 position = Vector2(628, -273)
 
-[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_58oey")]
-position = Vector2(571, 237)
-
-[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("8_s2hta")]
-position = Vector2(-4, -14)
-
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("6_jdyoy")]
 position = Vector2(596, 13)
 
@@ -914,10 +908,10 @@ scale = Vector2(3, 3)
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=1195709516 instance=ExtResource("8_s2hta")]
-position = Vector2(-458, -12)
+position = Vector2(-425, 35)
 
 [node name="PlayerLight2" parent="." unique_id=251707333 instance=ExtResource("8_s2hta")]
-position = Vector2(579, 17)
+position = Vector2(579, -32)
 
 [node name="PlayerLight3" parent="." unique_id=1382018392 instance=ExtResource("8_s2hta")]
 position = Vector2(-612, 230)
@@ -930,6 +924,12 @@ position = Vector2(-514, -225)
 
 [node name="PlayerLight6" parent="." unique_id=1804989282 instance=ExtResource("8_s2hta")]
 position = Vector2(74, -112)
+
+[node name="Player" parent="." unique_id=2085610372 instance=ExtResource("5_58oey")]
+position = Vector2(571, 237)
+
+[node name="PlayerLight" parent="Player" unique_id=119456223 instance=ExtResource("8_s2hta")]
+position = Vector2(-4, -14)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=428030324]
 

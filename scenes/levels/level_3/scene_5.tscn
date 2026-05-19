@@ -911,7 +911,6 @@ position = Vector2(391, 266)
 patrol_radius = 150.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=663441545]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=76647200 instance=ExtResource("11_0jlf2")]

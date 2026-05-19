@@ -3,7 +3,7 @@ extends CharacterBody2D
 # HP System Variables
 #---------------------------
 @export var damage_flash_time: float = 0.15
-@export var invincibility_time: float = 1
+@export var invincibility_time: float = 0.5
 
 var is_invincible := false
 var invincibility_timer := 0.0
@@ -115,6 +115,9 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
+	velocity = Vector2.ZERO
+	sprite.play("death")
+	await sprite.animation_finished
 	print("You're dead")
 	reset_room()
 
@@ -147,6 +150,11 @@ func _physics_process(delta: float) -> void:
 		dashCooldownTimer -= delta
 			
 	#--------------------------------------
+	
+	if is_dead:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -310,7 +318,7 @@ func spawn_circle_attack():
 	controlling_projectile = true
 	current_projectile = proj
 	
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2).timeout
 	end_projectile_control()
 	
 	if is_instance_valid(proj):

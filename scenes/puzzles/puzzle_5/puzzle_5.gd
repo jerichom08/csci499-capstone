@@ -4,7 +4,7 @@ signal puzzle_completed
 
 @export var correct_sequence: Array[String] = ["top", "middle", "bottom"]
 
-var current_step: int = 0
+var chosen_sequence: Array[String] = []
 var puzzle_done: bool = false
 
 @onready var spawn_point = $SpawnPoint
@@ -17,17 +17,17 @@ var puzzle_done: bool = false
 }
 
 @onready var path_areas = {
-	$Section1/TopPath: "top",
-	$Section1/MiddlePath: "middle",
-	$Section1/BottomPath: "bottom",
+	$Section1/TopPath: {"section": 0, "path": "top"},
+	$Section1/MiddlePath: {"section": 0, "path": "middle"},
+	$Section1/BottomPath: {"section": 0, "path": "bottom"},
 
-	$Section2/TopPath: "top",
-	$Section2/MiddlePath: "middle",
-	$Section2/BottomPath: "bottom",
+	$Section2/TopPath: {"section": 1, "path": "top"},
+	$Section2/MiddlePath: {"section": 1, "path": "middle"},
+	$Section2/BottomPath: {"section": 1, "path": "bottom"},
 
-	$Section3/TopPath: "top",
-	$Section3/MiddlePath: "middle",
-	$Section3/BottomPath: "bottom"
+	$Section3/TopPath: {"section": 2, "path": "top"},
+	$Section3/MiddlePath: {"section": 2, "path": "middle"},
+	$Section3/BottomPath: {"section": 2, "path": "bottom"}
 }
 
 func _ready() -> void:
@@ -42,40 +42,59 @@ func _ready() -> void:
 			area.monitoring = true
 			area.body_entered.connect(_on_path_body_entered.bind(path_areas[area]))
 		
-func _on_path_body_entered(body: Node2D, path_name: String) -> void:
+func _on_path_body_entered(body: Node2D, path_data: Dictionary) -> void:
 	if puzzle_done:
 		return
 
 	if not body.is_in_group("player"):
 		return
 
-	choose_path(path_name, body)
-
-func choose_path(path_name: String, player: Node2D) -> void:
-	print("choose_path called with:", path_name)
+	choose_path(path_data["section"], path_data["path"], body)
+	
+func choose_path(section_index: int, path_name: String, player: Node2D) -> void:
+	print("Section:", section_index, " Path chosen:", path_name)
 
 	if puzzle_done:
 		return
 
-	if path_name == correct_sequence[current_step]:
-		current_step += 1
-		show_message("Correct path...")
+	chosen_sequence.append(path_name)
 
-		if current_step >= correct_sequence.size():
-			puzzle_done = true
-			show_message("Puzzle complete!")
-			unlock_exit()
-			emit_signal("puzzle_completed")
-		else:
-			move_player_to_section(player, current_step)
+	if section_index < 2:
+		show_message("You continue through the hallway...")
+		return
+
+	if chosen_sequence == correct_sequence:
+		puzzle_done = true
+		show_message("Puzzle complete!")
+		unlock_exit()
+		emit_signal("puzzle_completed")
 	else:
 		show_message("Wrong path... the hallway loops.")
 		reset_puzzle(player)
 
 func reset_puzzle(player: Node2D) -> void:
-	current_step = 0
+	chosen_sequence.clear()
+
 	if player and spawn_point:
+		var camera := player.get_node_or_null("Camera2D")
+
+		var saved_velocity := Vector2.ZERO
+		if "velocity" in player:
+			saved_velocity = player.velocity
+
+		if camera:
+			camera.position_smoothing_enabled = false
+
 		player.global_position = spawn_point.global_position
+
+		if "velocity" in player:
+			player.velocity = saved_velocity
+
+		await get_tree().process_frame
+
+		if camera:
+			camera.force_update_scroll()
+			camera.position_smoothing_enabled = true
 
 func move_player_to_section(player: Node2D, section_index: int) -> void:
 	if player and section_entry_points.has(section_index):

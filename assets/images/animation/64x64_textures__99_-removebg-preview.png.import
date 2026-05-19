@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s1g1wtgvb12x"
-path="res://.godot/imported/TurnipFace.png-2c5f2b3f9e5dbb45d165f85954c93831.ctex"
+uid="uid://bubjgfspwjdbl"
+path="res://.godot/imported/64x64_textures__99_-removebg-preview.png-169aee95be65a2a04f2faa0c4da26d05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/UI/TurnipFace.png"
-dest_files=["res://.godot/imported/TurnipFace.png-2c5f2b3f9e5dbb45d165f85954c93831.ctex"]
+source_file="res://assets/images/animation/64x64_textures__99_-removebg-preview.png"
+dest_files=["res://.godot/imported/64x64_textures__99_-removebg-preview.png-169aee95be65a2a04f2faa0c4da26d05.ctex"]
 
 [params]
 

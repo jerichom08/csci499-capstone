@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="15_sjr6n"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="16_gysk4"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="18_u5736"]
-[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="19_ah41n"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="20_8yxch"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_kitqp"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="21_7kjpp"]
@@ -29,8 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://co4truixt2nep" path="res://assets/images/food/cookie_6.png" id="26_68o1d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="26_xglgs"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="28_l2ibj"]
-[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="29_ca4uv"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="29_ca4uv"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="30_iyvtx"]
+[ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="31_ca4uv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_ah41n")
@@ -804,10 +804,10 @@ tile_map_data = PackedByteArray("AAD7//7/AgARAAcAAAD9////AgARAAcAAADv/wEAAgARAAc
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_q2pai")]
-position = Vector2(505.71204, -195.52005)
+position = Vector2(633, -193)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_aue0u")]
-position = Vector2(-591, 120)
+position = Vector2(-626, -39)
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_lq0co")]
 position = Vector2(97, -17)
@@ -845,31 +845,28 @@ scale = Vector2(3, 3)
 [node name="MovingPlatformH" parent="." unique_id=324725579 instance=ExtResource("21_kitqp")]
 position = Vector2(508, 124)
 
-[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("19_ah41n")]
-position = Vector2(-311, 267)
-
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("20_kitqp")]
 position = Vector2(-479, -133)
 
 [node name="Items" type="Node2D" parent="." unique_id=1385002690]
 
 [node name="TestItem" parent="Items" unique_id=1207001316 instance=ExtResource("21_7kjpp")]
-position = Vector2(-608.10004, -27.399994)
+position = Vector2(-594, 124)
 item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=453394811]
 position = Vector2(2.774841, -5.2473717)
-scale = Vector2(0.5090909, 0.481982)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("23_l2ibj")
 region_rect = Rect2(24, 8, 112, 112)
 
 [node name="TestItem2" parent="Items" unique_id=427441340 instance=ExtResource("21_7kjpp")]
-position = Vector2(-347.40002, -191.3)
+position = Vector2(-336, -213)
 item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=723323786]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("24_iyvtx")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -879,7 +876,7 @@ item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1424859298]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_ca4uv")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -889,7 +886,7 @@ item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=974581714]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("26_68o1d")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -907,8 +904,7 @@ stream = ExtResource("26_xglgs")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("28_l2ibj")]
 position = Vector2(-520.10565, -184.01172)
-npc_text = "\"First some chocolate, next a treat, then a cracker, finally a chip\""
-dialogue_time = 2.5
+npc_text = "\"First some chocolate, next a treat, then a cracker, finally a chip\" [ E ]"
 character_face = ExtResource("29_ca4uv")
 dialogue_box_path = NodePath("../RpgStyleTalk")
 
@@ -920,21 +916,23 @@ flip_h = true
 position = Vector2(4.115326, -19)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=677447281]
-offset_left = -31.89434
-offset_top = -87.98828
-offset_right = 466.1057
-offset_bottom = 83.01172
+offset_left = -139.89435
+offset_top = -62.98829
+offset_right = 358.1057
+offset_bottom = 108.01171
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("18_u5736")
 theme_override_font_sizes/font_size = 27
-text = "Press E to
-interact"
+text = "Press E to interact"
 metadata/_edit_use_anchors_ = true
 
 [node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("30_iyvtx")]
+
+[node name="Skeleton" parent="." unique_id=712153249 instance=ExtResource("31_ca4uv")]
+position = Vector2(-358, 223)
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 

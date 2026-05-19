@@ -17,7 +17,6 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_r0wbf"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="18_48kkf"]
 [ext_resource type="PackedScene" uid="uid://ckguwt8uap5es" path="res://scenes/lvInterface/DisappearingPlatform.tscn" id="19_i3nm3"]
-[ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="19_jl7a6"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="20_24to7"]
 [ext_resource type="PackedScene" uid="uid://cebymkk2gghii" path="res://scenes/lvInterface/HiddenPlatform.tscn" id="20_d8dm4"]
 [ext_resource type="PackedScene" uid="uid://b8omtekml5q2k" path="res://scenes/lvInterface/button.tscn" id="21_lmty0"]
@@ -30,8 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://35oise2jki27" path="res://assets/images/food/cookie_8.png" id="27_3id5d"]
 [ext_resource type="AudioStream" uid="uid://e5xbfukr8s28" path="res://assets/sounds temp/status sounds/Retro PowerUP StereoUP 05.wav" id="27_5c0ee"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="29_x31aq"]
-[ext_resource type="Texture2D" uid="uid://bar45hlkkwf8i" path="res://scripts/UI/turnipFace.png" id="30_5c0ee"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="30_5c0ee"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="31_qpovd"]
+[ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="32_5c0ee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
 texture = ExtResource("1_lhpga")
@@ -813,7 +813,7 @@ tile_map_data = PackedByteArray("AADm/wEAAAAIAAMAAADn/wEAAAAJAAEAAADm/wAAAAAIAAI
 tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_u8b8i")]
-position = Vector2(528.0127, -197.73758)
+position = Vector2(656, -193)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("7_j7k2a")]
 position = Vector2(2, -339)
@@ -848,20 +848,14 @@ texture = ExtResource("10_syd3t")
 position = Vector2(-292, 346)
 scale = Vector2(10, 2.32)
 
-[node name="Rat" parent="." unique_id=69780106 instance=ExtResource("19_jl7a6")]
-position = Vector2(2, -111)
-
-[node name="Rat2" parent="." unique_id=1077858316 instance=ExtResource("19_jl7a6")]
-position = Vector2(-579, -166)
-
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("20_24to7")]
 position = Vector2(529, 231)
 
 [node name="MovingPlatform" parent="." unique_id=1031293233 instance=ExtResource("18_48kkf")]
-position = Vector2(110, 205)
+position = Vector2(110, 209)
 
 [node name="MovingPlatform2" parent="." unique_id=785624952 instance=ExtResource("18_48kkf")]
-position = Vector2(435, 205)
+position = Vector2(435, 209)
 
 [node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("19_i3nm3")]
 position = Vector2(300.00006, -212)
@@ -897,7 +891,7 @@ item_name = "TestItem"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem" unique_id=325077746]
 position = Vector2(2.774841, -5.2473717)
-scale = Vector2(0.5090909, 0.481982)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("24_x31aq")
 region_rect = Rect2(24, 8, 112, 112)
 
@@ -907,7 +901,7 @@ item_name = "TestItem2"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem2" unique_id=1255784303]
 position = Vector2(2, -6)
-scale = Vector2(0.6375, 0.5769231)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_5c0ee")
 region_rect = Rect2(296, 488, 80, 104)
 
@@ -916,8 +910,8 @@ position = Vector2(406.00317, -79.120056)
 item_name = "TestItem3"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem3" unique_id=1291439597]
-position = Vector2(-2, -3.999939)
-scale = Vector2(0.50735164, 0.46528718)
+position = Vector2(8, 6.1035156e-05)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_qpovd")
 region_rect = Rect2(272, -24, 136, 144)
 region_filter_clip_enabled = true
@@ -928,7 +922,7 @@ item_name = "TestItem4"
 
 [node name="Sprite2D" type="Sprite2D" parent="Items/TestItem4" unique_id=917709482]
 position = Vector2(-2.999998, 2)
-scale = Vector2(0.59821427, 0.5089286)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_3id5d")
 region_rect = Rect2(24, 136, 112, 112)
 
@@ -945,11 +939,14 @@ position = Vector2(-146, -62)
 stream = ExtResource("27_5c0ee")
 
 [node name="TurnipNpc" parent="." unique_id=960637076 instance=ExtResource("29_x31aq")]
-position = Vector2(-423.3989, 244.50818)
-npc_text = "\"First a classic, next a man, then some heart, finally some jam\""
+position = Vector2(-480.3989, 246.50818)
+npc_text = "\"First a classic, next a swirl, then comes a heart, and finally the star\" [ E ]"
 dialogue_time = 1.0
 character_face = ExtResource("30_5c0ee")
 dialogue_box_path = NodePath("../RpgStyleTalk")
+
+[node name="InteractionLabel" parent="TurnipNpc" index="0" unique_id=876962569]
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" parent="TurnipNpc" index="1" unique_id=327155034]
 position = Vector2(-60.89435, -13.988282)
@@ -959,10 +956,10 @@ flip_h = true
 position = Vector2(4.115326, -19)
 
 [node name="InteractionLabel2" type="Label" parent="TurnipNpc" unique_id=874316782]
-offset_left = 55.10565
-offset_top = -136.98828
-offset_right = 553.1057
-offset_bottom = 34.01172
+offset_left = -144.60109
+offset_top = -63.508186
+offset_right = 353.399
+offset_bottom = 107.49181
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
@@ -973,6 +970,12 @@ text = "Press E to interact"
 metadata/_edit_use_anchors_ = true
 
 [node name="RpgStyleTalk" parent="." unique_id=333744718 instance=ExtResource("31_qpovd")]
+
+[node name="Skeleton" parent="." unique_id=712153249 instance=ExtResource("32_5c0ee")]
+position = Vector2(-650, -209)
+
+[node name="Skeleton2" parent="." unique_id=90763820 instance=ExtResource("32_5c0ee")]
+position = Vector2(-1, -155)
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]

@@ -19,3 +19,7 @@ func change_scene_to(scene_path: String) -> void:
 func _load_new_scene() -> void:
 	get_tree().paused = false
 	get_tree().call_deferred("change_scene_to_file", scene_to_load) 
+
+var saved_player_y: float = 0.0
+var has_saved_player_y: bool = false
+var target_spawn_name: String = ""

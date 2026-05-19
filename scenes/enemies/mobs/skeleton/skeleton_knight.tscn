@@ -23,7 +23,6 @@
 script = ExtResource("4_usa4o")
 max_health = 5
 move_speed = 100.0
-faces_left = false
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fbnma"]
@@ -534,7 +533,7 @@ stream = ExtResource("11_e0hme")
 stream = ExtResource("18_e0hme")
 
 [node name="VisionRay" type="RayCast2D" parent="." unique_id=1330286595]
-target_position = Vector2(-200, 20)
+target_position = Vector2(-400, 10)
 
 [node name="LightSpawn" type="Marker2D" parent="." unique_id=1317019273]
 

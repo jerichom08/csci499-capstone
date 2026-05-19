@@ -29,6 +29,22 @@ const maxSpeed = 120.0 * WORLD_SCALE
 const jumpVelocity = -170.0 * WORLD_SCALE
 const jumpMultiplier = 0.7
 const gravity = 400.0 * WORLD_SCALE
+var facingDirection = 1
+
+const enemyLayer = 10
+const enemyHurtboxLayer = 4
+var normalCollisionMask = 0
+var normalHurtboxMask = 0
+const dashSpeed = 420 * WORLD_SCALE
+const dashTime = 0.08
+const dashCooldown = 0.4
+const dashInvincibilityTime = 0.2
+
+@export var dashEnabled: bool = false
+var isDashing = false
+var dashTimer = 0.0
+var dashCooldownTimer = 0.0
+var dashDirection = 1
 
 const oneWayPlatformLayer = 5
 const dropThroughTime = 0.2
@@ -61,6 +77,9 @@ func _ready() -> void:
 	
 	if held_item_sprite:
 		held_item_sprite.visible = false
+	
+	normalCollisionMask = collision_mask
+	normalHurtboxMask = $Hurtbox.collision_mask
 		
 func take_damage(amount: int, knockback: Vector2) -> void:
 	#print("player took damage")
@@ -123,10 +142,25 @@ func _physics_process(delta: float) -> void:
 		if invincibility_timer <= 0.0:
 			is_invincible = false
 			
+	# dash timer
+	if dashCooldownTimer > 0:
+		dashCooldownTimer -= delta
+			
 	#--------------------------------------
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	# dash movement
+	if isDashing:
+		dashTimer -= delta
+		velocity.y = 0
+		velocity.x = dashDirection * dashSpeed
+		move_and_slide()
+		
+		if dashTimer <= 0:
+			isDashing = false
+		return
 	
 	if Input.is_action_just_pressed("move_down") and is_on_floor() and !is_attacking:
 		drop_through_platform()
@@ -150,6 +184,13 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
+	
+	if direction != 0:
+		facingDirection = sign(direction)
+		
+	if dashEnabled and Input.is_action_just_pressed("dash") and dashCooldownTimer <= 0 and not is_attacking and not controlling_projectile:
+		start_dash()
+	
 	if controlling_projectile:
 		velocity.x = 0
 	elif not is_attacking:
@@ -181,6 +222,29 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 		
+func start_dash():
+	isDashing = true
+	dashTimer = dashTime
+	dashCooldownTimer = dashCooldown
+	
+	dashDirection = facingDirection
+	if dashDirection == 0:
+		dashDirection = 1
+		
+	is_invincible = true
+	invincibility_timer = dashInvincibilityTime
+	sprite.play("run")
+	
+	collision_mask &= ~(1 << (enemyLayer - 1))
+	collision_layer = 0
+	$Hurtbox.collision_mask &= ~(1 << (enemyHurtboxLayer - 1))
+	await get_tree().create_timer(dashInvincibilityTime).timeout
+	if not is_inside_tree():
+		return
+	collision_mask |= (1 << (enemyLayer - 1))
+	$Hurtbox.collision_mask |= (1 << (enemyHurtboxLayer - 1))
+	collision_layer = 1
+
 func drop_through_platform() -> void:
 	if droppingThrough:
 		return
@@ -272,7 +336,7 @@ func spawn_triangle_attack():
 	triangle_attack_sfx.play()
 
 func perform_attack(type: String):
-	if is_attacking or not is_on_floor():
+	if is_attacking or not is_on_floor() or isDashing:
 		return
 	
 	is_attacking = true

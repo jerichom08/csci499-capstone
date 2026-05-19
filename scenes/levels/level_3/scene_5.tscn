@@ -909,7 +909,6 @@ position = Vector2(-338, -218)
 position = Vector2(391, 266)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=663441545]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerLight" parent="." unique_id=76647200 instance=ExtResource("11_0jlf2")]
@@ -917,6 +916,9 @@ position = Vector2(-438, -113)
 
 [node name="PlayerLight2" parent="." unique_id=678218054 instance=ExtResource("11_0jlf2")]
 position = Vector2(76, -344)
+
+[node name="PlayerLight3" parent="." unique_id=1941010867 instance=ExtResource("11_0jlf2")]
+position = Vector2(124, 77)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047767125]
 

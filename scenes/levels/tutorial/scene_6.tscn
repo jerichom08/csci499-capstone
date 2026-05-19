@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="10_dhej2"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="10_nro7e"]
 [ext_resource type="PackedScene" uid="uid://cidv6r0dqw8o7" path="res://scenes/lvInterface/MovingPlatform.tscn" id="11_fs0gx"]
-[ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="14_nro7e"]
-[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="15_obqkb"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_vpfj8"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="17_6m3w6"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="18_yai30"]
@@ -363,13 +361,13 @@ position = Vector2(-628, -219)
 [node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
 position = Vector2(804.00006, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD8//n/AgACAAYAAAD8//r/AgACAAcAAAD8//3/AgACAAEAAAD7//n/AgACAAYAAAD7//r/AgABAAcAAAD7//3/AgACAAEAAAD6//3/AgACAAEAAAD5//3/AgACAAEAAAD4//3/AgACAAEAAAD3//3/AgACAAEAAAD2//3/AgACAAEAAAD1//3/AgACAAEAAAD5//n/AgABAAcAAAD6//n/AgACAAcAAAD7//z/AgAEAAcAAAD8//v/AgAGAAUAACD6//z/AgAGAAQAAADz//3/AgACAAEAAAD0//3/AgACAAEAAADy//3/AgACAAYAAADy//z/AgADAAEAAADx//z/AgACAAEAAADx//3/AgACAAYAAAD9/wEAAgACAAEAAAD+/wEAAgADAAEAAAD8/wAAAgABAAcAAAD6/wUAAgACAAEAAAD7/wUAAgACAAEAAAD8/wUAAgACAAEAAAD3/wUAAgACAAEAAAD4/wUAAgACAAEAAAD5/wUAAgACAAEAAAD0/wUAAgACAAEAAAD1/wUAAgACAAEAAAD2/wUAAgACAAEAAADz/wUAAgABAAEAAADw//z/AgACAAEAAADw//3/AgACAAYAAADv//z/AgABAAEAAADv//3/AgABAAYAAADs//r/AgADAAYAAADs//v/AgAAAAYAAADs//z/AgAAAAYAAADs//3/AgAAAAYAAADs//7/AgAAAAYAAADs////AgAAAAcAAADz/wYAAgABAAYAAAD0/wYAAgACAAYAAAD1/wYAAgACAAYAAAD2/wYAAgACAAYAAAD3/wYAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgACAAYAAAD8//7/AgACAAYAAAD8////AgACAAYAAAD8/wIAAgARAAQAAAD8/wMAAgARAAUAAAD8/wQAAgARAAYAAAD7/wIAAgARAAIAAAD7/wEAAgARAAAAAAD8/wEAAgASAAAAAAD7/wMAAgATAAYAABD9//3/AgACAAEAAAD+//3/AgADAAEAAADz//7/AgACAAcAAAD0//7/AgACAAYAAAD1//7/AgACAAYAAAD2//7/AgACAAYAAAD3//7/AgACAAYAAAD4//7/AgACAAYAAAD5//7/AgACAAYAAAD6//7/AgACAAYAAAD7//7/AgACAAYAAAD0////AgABAAcAAAD1////AgACAAcAAAD2////AgACAAcAAAD3////AgACAAcAAAD4////AgACAAcAAAD5////AgACAAcAAAD6////AgACAAcAAAD7////AgACAAcAAAD7/wQAAgAJAAYAAAD0/wQAAgAFAAYAAADz/wQAAgAEAAYAAAD1/wQAAgAGAAQAAADo/wUAAgACAAEAABDp/wUAAgACAAEAABDq/wUAAgABAAEAABDl/wUAAgACAAEAABDm/wUAAgACAAEAABDn/wUAAgACAAEAABDk/wUAAgACAAYAAADk/wYAAgACAAYAABDl/wYAAgACAAYAABDm/wYAAgACAAYAABDn/wYAAgACAAYAABDo/wYAAgACAAYAABDp/wYAAgACAAYAABDq/wYAAgABAAYAABDk//n/AgACAAYAAADk//r/AgACAAcAAADk//3/AgACAAEAAADl//n/AgACAAYAAADl//r/AgACAAcAAADl//z/AgAEAAcAAADl//3/AgACAAEAAADm//n/AgACAAYAAADm//r/AgADAAcAAADm//3/AgADAAAAAADn//n/AgACAAcAAADo//n/AgACAAcAAADp//n/AgACAAcAAADq//n/AgACAAcAAADr//n/AgACAAYAAADr//r/AgABAAcAAADs//n/AgADAAYAAADk//7/AgACAAYAAADk////AgADAAYAAADk/wAAAgADAAYAAADk/wEAAgADAAYAAADk/wIAAgADAAYAAADk/wMAAgADAAYAAADk/wQAAgADAAYAAADl//7/AgADAAcAAADn/wQAAgAEAAYAAADq//r/AgAKAAMAAADy//7/AgACAAcAAADx//7/AgACAAcAAADw//7/AgACAAcAAADv//7/AgABAAcAAADw/wEAAgACAAAAAADx/wEAAgADAAAAAADv/wEAAgABAAAAAADx//n/AgARAAIAAADy//n/AgARAAQAAADz//n/AgATAAIAAADx//j/AgARAAAAAADy//j/AgASAAAAAADz//j/AgATAAAAAADx//r/AgASAAQAAADy//r/AgARAAUAAADz//r/AgATAAYAAADy//v/AgARAAYAAADv/wAAAgAHAAQAAAA=")
+tile_map_data = PackedByteArray("AAD8//n/AgACAAYAAAD8//r/AgACAAcAAAD8//3/AgACAAEAAAD7//n/AgACAAYAAAD7//r/AgABAAcAAAD7//3/AgACAAEAAAD6//3/AgACAAEAAAD5//3/AgACAAEAAAD4//3/AgACAAEAAAD3//3/AgACAAEAAAD2//3/AgACAAEAAAD1//3/AgACAAEAAAD5//n/AgABAAcAAAD6//n/AgACAAcAAAD7//z/AgAEAAcAAAD8//v/AgAGAAUAACDz//3/AgACAAEAAAD0//3/AgACAAEAAADy//3/AgACAAYAAADy//z/AgADAAEAAADx//z/AgACAAEAAADx//3/AgACAAYAAAD9/wEAAgAAAAEAAAD8/wAAAgABAAcAAAD6/wUAAgACAAEAAAD7/wUAAgACAAEAAAD8/wUAAgACAAEAAAD3/wUAAgACAAEAAAD4/wUAAgACAAEAAAD5/wUAAgACAAEAAAD0/wUAAgACAAEAAAD1/wUAAgACAAEAAAD2/wUAAgACAAEAAADz/wUAAgABAAEAAADw//z/AgACAAEAAADw//3/AgACAAYAAADv//z/AgABAAEAAADv//3/AgABAAYAAADs//r/AgADAAYAAADs//v/AgAAAAYAAADs//z/AgAAAAYAAADs//3/AgAAAAYAAADs//7/AgAAAAYAAADs////AgAAAAcAAADz/wYAAgABAAYAAAD0/wYAAgACAAYAAAD1/wYAAgACAAYAAAD2/wYAAgACAAYAAAD3/wYAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgACAAYAAAD8//7/AgACAAYAAAD8////AgACAAYAAAD8/wIAAgARAAQAAAD8/wMAAgARAAUAAAD8/wQAAgARAAYAAAD7/wIAAgARAAIAAAD7/wEAAgARAAAAAAD8/wEAAgASAAAAAAD7/wMAAgATAAYAABD9//3/AgAAAAEAAADz//7/AgACAAcAAAD0//7/AgACAAYAAAD1//7/AgACAAYAAAD2//7/AgACAAYAAAD3//7/AgACAAYAAAD4//7/AgACAAYAAAD5//7/AgACAAYAAAD6//7/AgACAAYAAAD7//7/AgACAAYAAAD0////AgABAAcAAAD1////AgACAAcAAAD2////AgACAAcAAAD3////AgACAAcAAAD4////AgACAAcAAAD5////AgACAAcAAAD6////AgACAAcAAAD7////AgACAAcAAAD7/wQAAgAJAAYAAAD0/wQAAgAFAAYAAADz/wQAAgAEAAYAAADo/wUAAgACAAEAABDp/wUAAgACAAEAABDq/wUAAgABAAEAABDl/wUAAgACAAEAABDm/wUAAgACAAEAABDn/wUAAgACAAEAABDk/wUAAgACAAYAAADk/wYAAgACAAYAABDl/wYAAgACAAYAABDm/wYAAgACAAYAABDn/wYAAgACAAYAABDo/wYAAgACAAYAABDp/wYAAgACAAYAABDq/wYAAgABAAYAABDk//n/AgACAAYAAADk//r/AgACAAcAAADk//3/AgACAAEAAADl//n/AgACAAYAAADl//r/AgACAAcAAADl//z/AgAEAAcAAADl//3/AgACAAEAAADm//n/AgACAAYAAADm//r/AgADAAcAAADm//3/AgADAAAAAADn//n/AgACAAcAAADo//n/AgACAAcAAADp//n/AgACAAcAAADq//n/AgACAAcAAADr//n/AgACAAYAAADr//r/AgABAAcAAADs//n/AgADAAYAAADk//7/AgACAAYAAADk////AgADAAYAAADk/wAAAgADAAYAAADk/wEAAgADAAYAAADk/wIAAgADAAYAAADk/wMAAgADAAYAAADk/wQAAgADAAYAAADl//7/AgADAAcAAADn/wQAAgAEAAYAAADq//r/AgAKAAMAAADy//7/AgACAAcAAADx//7/AgACAAcAAADw//7/AgACAAcAAADv//7/AgABAAcAAADw/wEAAgACAAAAAADx/wEAAgADAAAAAADv/wEAAgABAAAAAADx//n/AgARAAIAAADy//n/AgARAAQAAADz//n/AgATAAIAAADx//j/AgARAAAAAADy//j/AgASAAAAAADz//j/AgATAAAAAADx//r/AgASAAQAAADy//r/AgARAAUAAADz//r/AgATAAYAAADy//v/AgARAAYAAADv/wAAAgAHAAQAAAD9/wIAAgAAAAEAAAD9/wMAAgAAAAEAAAD9/wQAAgAAAAEAAAD9/wUAAgAAAAEAAAD9/wYAAgAAAAEAAAD9/wAAAgAAAAEAAAD9////AgAAAAEAAAD9//7/AgAAAAEAAAD9//z/AgAAAAEAAAD9//v/AgAAAAEAAAD9//r/AgAAAAEAAAD9//n/AgAAAAEAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=262893072]
 position = Vector2(804, 4)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD9//3/AgABAAEAAAD+//3/AgABAAEAAAD+//z/AgABAAEAAAD+//v/AgABAAEAAAD+//r/AgABAAEAAAD+//n/AgABAAEAAAD9//n/AgABAAEAAADk/wEAAgARAAAAAADk/wIAAgARAAIAAADl/wAAAgARAAAAAADl/wEAAgATAAEAAADl/wIAAgATAAIAAADl/wMAAgASAAQAAADm/wAAAgASAAAAAADm/wEAAgASAAEAAADm/wIAAgARAAQAAADm/wMAAgARAAUAAADm/wQAAgARAAYAAADn/wAAAgATAAAAAADn/wEAAgARAAAAAADn/wIAAgARAAIAAADn/wMAAgATAAYAAADo/wEAAgATAAAAAADo/wIAAgATAAIAAAD2//j/AgARAAAAAAD2//n/AgARAAEAAAD2//r/AgARAAIAAAD2//v/AgASAAQAAAD3//j/AgASAAAAAAD3//n/AgASAAEAAAD3//r/AgARAAQAAAD3//v/AgARAAUAAAD3//z/AgARAAYAAAD4//j/AgATAAAAAAD4//n/AgATAAEAAAD4//r/AgATAAIAAAD4//v/AgATAAYAAAA=")
+tile_map_data = PackedByteArray("AAD9//3/AgABAAEAAAD9//n/AgABAAEAAADk/wEAAgARAAAAAADk/wIAAgARAAIAAADl/wAAAgARAAAAAADl/wEAAgATAAEAAADl/wIAAgATAAIAAADl/wMAAgASAAQAAADm/wAAAgASAAAAAADm/wEAAgASAAEAAADm/wIAAgARAAQAAADm/wMAAgARAAUAAADm/wQAAgARAAYAAADn/wAAAgATAAAAAADn/wEAAgARAAAAAADn/wIAAgARAAIAAADn/wMAAgATAAYAAADo/wEAAgATAAAAAADo/wIAAgATAAIAAAD2//j/AgARAAAAAAD2//n/AgARAAEAAAD2//r/AgARAAIAAAD2//v/AgASAAQAAAD3//j/AgASAAAAAAD3//n/AgASAAEAAAD3//r/AgARAAQAAAD3//v/AgARAAUAAAD3//z/AgARAAYAAAD4//j/AgATAAAAAAD4//n/AgATAAEAAAD4//r/AgATAAIAAAD4//v/AgATAAYAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("8_ghafo")
 
@@ -438,52 +436,6 @@ flip_v = true
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("16_vpfj8")]
 position = Vector2(84, -5)
 
-[node name="sign1" parent="." unique_id=604565878 instance=ExtResource("14_nro7e")]
-position = Vector2(230, -223)
-
-[node name="InteractionLabel" type="Label" parent="sign1" unique_id=1558879513]
-offset_left = -272.0
-offset_top = 90.0
-offset_right = 270.0
-offset_bottom = 157.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("15_obqkb")
-theme_override_font_sizes/font_size = 19
-text = "4.1) \"press x or draw a circle on lilith's scroll and 
-control the ball using arrow keys/wasd\""
-
-[node name="sign2" parent="." unique_id=43103880 instance=ExtResource("14_nro7e")]
-position = Vector2(489, -222)
-
-[node name="InteractionLabel" type="Label" parent="sign2" unique_id=1060464001]
-offset_left = -312.0
-offset_top = 86.0
-offset_right = 179.0
-offset_bottom = 115.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("15_obqkb")
-theme_override_font_sizes/font_size = 21
-text = "4.0) \"press c or draw a triangle on lilith's scroll\""
-
-[node name="sign3" parent="." unique_id=169349999 instance=ExtResource("14_nro7e")]
-position = Vector2(221, 206)
-
-[node name="InteractionLabel" type="Label" parent="sign3" unique_id=957034915]
-offset_left = -107.0
-offset_top = 92.0
-offset_right = 435.0
-offset_bottom = 159.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 19
-theme_override_fonts/font = ExtResource("15_obqkb")
-theme_override_font_sizes/font_size = 24
-text = "4.2) \"press z or draw a line on lilith's scroll\""
-
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_ygc1o")]
 position = Vector2(609, -200)
 
@@ -492,6 +444,9 @@ position = Vector2(-307.00003, -233.00002)
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("18_yai30")]
 position = Vector2(-104, 228)
+
+[node name="HeartPickup2" parent="." unique_id=502989324 instance=ExtResource("18_yai30")]
+position = Vector2(-521, 212)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]

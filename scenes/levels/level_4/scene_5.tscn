@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="10_6bnmk"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="10_y3oeb"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="11_y3oeb"]
+[ext_resource type="PackedScene" uid="uid://8v3l1d3d0sha" path="res://scenes/enemies/mobs/skeleton/skeleton_knight.tscn" id="13_y3oeb"]
+[ext_resource type="PackedScene" uid="uid://cry1cqpxqni6h" path="res://scenes/enemies/bosses/minotaur/minotaur.tscn" id="14_ub224"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y02w2"]
 texture = ExtResource("2_7hvjw")
@@ -593,6 +595,7 @@ tile_set = SubResource("TileSet_5y2x0")
 
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("7_ub224")]
 position = Vector2(636, 236)
+dashEnabled = true
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_1x0nn")]
 position = Vector2(97, -17)
@@ -622,4 +625,23 @@ position = Vector2(-500, 137)
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("10_y3oeb")]
 
+[node name="SkeletonKnight" parent="." unique_id=178756808 instance=ExtResource("13_y3oeb")]
+position = Vector2(-360, 222)
+
+[node name="SkeletonKnight2" parent="." unique_id=450204596 instance=ExtResource("13_y3oeb")]
+position = Vector2(-235, 134)
+
+[node name="SkeletonKnight3" parent="." unique_id=1558051343 instance=ExtResource("13_y3oeb")]
+position = Vector2(-94, 202)
+
+[node name="minotaur" parent="." unique_id=503455755 instance=ExtResource("14_ub224")]
+position = Vector2(218, -259)
+
+[node name="MinotaurLandingPoint" type="Marker2D" parent="." unique_id=525933875]
+position = Vector2(-50, 211)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="skeleton_defeated" from="SkeletonKnight" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="skeleton_defeated" from="SkeletonKnight2" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="skeleton_defeated" from="SkeletonKnight3" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
+[connection signal="boss_defeated" from="minotaur" to="gate" method="_on_boss_defeated"]

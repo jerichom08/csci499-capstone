@@ -9,6 +9,9 @@ extends EnemyBase
 @onready var landing_marker = $"../MinotaurLandingPoint"
 
 @export var landing_position : Vector2
+
+signal boss_defeated
+
 var active := false
 var skeletons_remaining := 3
 var jumping_in := false
@@ -63,8 +66,8 @@ func chase() -> void:
 func hit(_damage : int) -> void:
 	health = max(0, health - _damage)
 
-func defeat() -> void:
-	pass
+#func defeat() -> void:
+	#pass
 
 func heal(_hp : int) -> void:
 	pass
@@ -80,6 +83,7 @@ func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 	health = max(0, health - _damage)
 
 	if health <= 0:
+		boss_defeated.emit()
 		set_state(State.DEFEAT)
 	else:
 		set_state(State.HIT)
@@ -94,7 +98,6 @@ func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 
 func start_attack() -> void:
 	can_attack = false
-	#attack_executed = false
 	
 	if randi_range(0, 1) == 0:
 		set_attack(AttackType.LIGHT)
@@ -102,7 +105,7 @@ func start_attack() -> void:
 	else:
 		set_attack(AttackType.HEAVY)
 		heavy_attack_sfx.play()
-		await heavy_attack_sfx.finished
+		#await heavy_attack_sfx.finished
 
 	set_state(State.ATTACK)
 

@@ -684,7 +684,7 @@ position = Vector2(-2, 171)
 scale = Vector2(3, 3)
 
 [node name="Button" parent="." unique_id=954241513 instance=ExtResource("13_ttco7")]
-position = Vector2(622, -12)
+position = Vector2(622, -11)
 scale = Vector2(3, 3)
 
 [node name="Coin2" parent="." unique_id=337288697 instance=ExtResource("11_w4dp1")]

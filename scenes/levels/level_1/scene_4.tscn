@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://iwu3wv5dig1y" path="res://scenes/enemies/mobs/spider/spider.tscn" id="17_swsw1"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="18_q0w23"]
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="19_q0w23"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="20_0trp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjb2i"]
 texture = ExtResource("2_avmw6")
@@ -573,13 +574,13 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[sub_resource type="Resource" id="Resource_0trp8"]
+[sub_resource type="Resource" id="Resource_q0w23"]
 resource_local_to_scene = true
 script = ExtResource("18_q0w23")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_6taol"]
+[sub_resource type="Resource" id="Resource_0trp8"]
 resource_local_to_scene = true
 script = ExtResource("18_q0w23")
 gravity = 10.0
@@ -640,12 +641,8 @@ rotation = -3.1415925
 scale = Vector2(3, 3)
 flip_v = true
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("4_5y2x0")]
-position = Vector2(-797, 381)
-scale = Vector2(20, 1)
-
 [node name="lava2" parent="." unique_id=156308085 instance=ExtResource("4_5y2x0")]
-position = Vector2(366, -107)
+position = Vector2(366, -103.00001)
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("7_avmw6")]
 position = Vector2(-73, 298)
@@ -670,13 +667,17 @@ position = Vector2(-560, 3)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("17_swsw1")]
 position = Vector2(-342, 107)
-stats = SubResource("Resource_0trp8")
+stats = SubResource("Resource_q0w23")
 
 [node name="spider2" parent="." unique_id=459392798 instance=ExtResource("17_swsw1")]
 position = Vector2(127, 56)
-stats = SubResource("Resource_6taol")
+stats = SubResource("Resource_0trp8")
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("19_q0w23")]
 position = Vector2(314, -169)
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("20_0trp8")]
+position = Vector2(-199, 358)
+scale = Vector2(3, 1)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]

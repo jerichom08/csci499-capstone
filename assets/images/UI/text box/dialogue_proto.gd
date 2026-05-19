@@ -46,6 +46,7 @@ func animate_label() -> void:
 
 
 func _on_button_pressed() -> void:
+	$click.play()
 	if timer.is_stopped():
 		animate_label()
 	else:

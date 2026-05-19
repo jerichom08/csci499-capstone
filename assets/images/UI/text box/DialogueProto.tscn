@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="2_11dwa"]
 [ext_resource type="Texture2D" uid="uid://bjot3cb5bu58g" path="res://assets/images/UI/text box/UI_grey_buttons_1.png" id="3_yp4bp"]
 [ext_resource type="Texture2D" uid="uid://b4smr642vgqbq" path="res://assets/images/player/B_witch_idle.png" id="4_flyeq"]
+[ext_resource type="AudioStream" uid="uid://bmn1n3rrobhnv" path="res://assets/sounds temp/level sounds/click.mp3" id="5_6n3rb"]
 
 [sub_resource type="Theme" id="Theme_flyeq"]
 
@@ -106,5 +107,8 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_6n3rb")
 format = 2
 layer_0/tile_data = PackedInt32Array(458740, 0, 0, 524276, 0, 1, 458741, 65536, 0, 524277, 65536, 1)
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=198921965]
+stream = ExtResource("5_6n3rb")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

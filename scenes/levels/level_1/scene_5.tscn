@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dvhen6fj86rgw" path="res://scenes/Components/teleportDoor.gd" id="15_tn34t"]
 [ext_resource type="Script" uid="uid://cr8bvh7l7at2" path="res://scripts/enemies/components/stats.gd" id="16_40ace"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="16_j1xhn"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="17_40ace"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iv2x"]
 texture = ExtResource("1_t1nqa")
@@ -873,12 +874,8 @@ scale = Vector2(3, 3)
 position = Vector2(-378, 118)
 scale = Vector2(3, 3)
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("11_5ni64")]
-position = Vector2(-797, 381)
-scale = Vector2(20, 1)
-
 [node name="lava2" parent="." unique_id=636044289 instance=ExtResource("11_5ni64")]
-position = Vector2(-553, 325)
+position = Vector2(-553, 329)
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("6_6taol")]
 position = Vector2(488, 82)
@@ -937,3 +934,7 @@ stats = SubResource("Resource_vando")
 [node name="spider2" parent="." unique_id=355961562 instance=ExtResource("15_pfl32")]
 position = Vector2(-293, 317)
 stats = SubResource("Resource_j3eqt")
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("17_40ace")]
+position = Vector2(66, 360)
+scale = Vector2(2, 1)

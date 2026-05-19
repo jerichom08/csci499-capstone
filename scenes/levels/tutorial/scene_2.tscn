@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dxsqpg7xc7cwr" path="res://assets/images/tilemaps/tilemap1-backgrounds_packed.png" id="3_2se54"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="4_sagyo"]
 [ext_resource type="PackedScene" uid="uid://wrvyahwv456v" path="res://scenes/lvInterface/RegularPlatform.tscn" id="5_utuh5"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="5_vb3gq"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="6_jr5wo"]
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="8_xmhdb"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="9_25ijo"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c5viptoxpy5y4" path="res://scenes/Components/HeartPickup.tscn" id="12_wtkh4"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="13_tslde"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="14_8u6o6"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="14_tslde"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sdtiy"]
 texture = ExtResource("1_6mw50")
@@ -372,10 +372,6 @@ position = Vector2(-81, 333)
 [node name="Spikes6" parent="." unique_id=1939870823 instance=ExtResource("4_sagyo")]
 position = Vector2(-27.000002, 333)
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("5_vb3gq")]
-position = Vector2(105, 364)
-scale = Vector2(2.42, 2.42)
-
 [node name="RegularPlatform" parent="." unique_id=649759663 instance=ExtResource("5_utuh5")]
 position = Vector2(234, 277)
 scale = Vector2(2.5, 2)
@@ -425,6 +421,9 @@ theme_override_fonts/font = ExtResource("14_8u6o6")
 theme_override_font_sizes/font_size = 24
 text = "\"press z or draw a line on lilith's scroll\""
 metadata/_edit_use_anchors_ = true
+
+[node name="Outofbound" parent="." unique_id=388158777 instance=ExtResource("14_tslde")]
+position = Vector2(189, 370)
 
 [connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
 [connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]

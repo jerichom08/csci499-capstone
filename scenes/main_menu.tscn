@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://bbvjk6ma742ot" path="res://scenes/lvInterface/NyarlaIdle.tscn" id="4_rtw2f"]
 [ext_resource type="PackedScene" uid="uid://dq6i2a1c6n38w" path="res://scenes/lvInterface/SceneTransition.tscn" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://bmn1n3rrobhnv" path="res://assets/sounds temp/level sounds/click.mp3" id="7_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
 texture = ExtResource("3_bqqt6")
@@ -209,6 +210,9 @@ theme_override_font_sizes/font_size = 75
 text = "Quit"
 
 [node name="SceneTransition" parent="." unique_id=99968887 instance=ExtResource("4_wu84c")]
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=1814461550]
+stream = ExtResource("7_oa1go")
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Options" to="." method="_on_options_pressed"]

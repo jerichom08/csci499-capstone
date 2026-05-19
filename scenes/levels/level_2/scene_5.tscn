@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="8_sqfee"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="9_ph1vo"]
 [ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="10_syd3t"]
-[ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="12_qpovd"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="13_5c0ee"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="14_3id5d"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="16_r0wbf"]
@@ -31,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="29_x31aq"]
 [ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/TurnipFace.png" id="30_5c0ee"]
 [ext_resource type="PackedScene" uid="uid://cwtwx8kf8338r" path="res://scripts/UI/rpg_style_talk.tscn" id="31_qpovd"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="32_3id5d"]
 [ext_resource type="PackedScene" uid="uid://d20e0iuxw8g78" path="res://scenes/enemies/mobs/skeleton/skeleton.tscn" id="32_5c0ee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfkud"]
@@ -844,10 +844,6 @@ position = Vector2(708, -10)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("10_syd3t")
 
-[node name="lava" parent="." unique_id=319135582 instance=ExtResource("12_qpovd")]
-position = Vector2(-292, 346)
-scale = Vector2(10, 2.32)
-
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("20_24to7")]
 position = Vector2(529, 231)
 
@@ -976,6 +972,10 @@ position = Vector2(-650, -209)
 
 [node name="Skeleton2" parent="." unique_id=90763820 instance=ExtResource("32_5c0ee")]
 position = Vector2(-1, -155)
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("32_3id5d")]
+position = Vector2(-39, 384)
+scale = Vector2(2, 1)
 
 [connection signal="puzzle_completed_signal" from="." to="gate" method="_on_node_2d_puzzle_completed_signal"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]

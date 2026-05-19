@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6plgrbyepev" path="res://scenes/camera.tscn" id="15_4gh6o"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="16_opgjy"]
 [ext_resource type="PackedScene" uid="uid://drvi8m3nwylb7" path="res://scenes/enemies/mobs/bat/bat.tscn" id="18_0k0cc"]
+[ext_resource type="PackedScene" uid="uid://bgnvfv570pkfx" path="res://scenes/lvInterface/outofbound.tscn" id="19_aee01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0k0cc"]
 texture = ExtResource("1_yfatt")
@@ -639,10 +640,6 @@ position = Vector2(119, -161)
 [node name="Player" parent="." unique_id=2085610372 instance=ExtResource("6_jr5wo")]
 position = Vector2(-695, 236)
 
-[node name="lava" parent="." unique_id=1728128468 instance=ExtResource("11_jr5wo")]
-position = Vector2(-537.00006, 366)
-scale = Vector2(7, 7)
-
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
 position = Vector2(16, 1)
 scale = Vector2(3, 3)
@@ -703,6 +700,10 @@ detection_radius = 60.0
 position = Vector2(-241.00002, -142)
 scale = Vector2(3, 3)
 detection_radius = 60.0
+
+[node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("19_aee01")]
+position = Vector2(-333, 375)
+scale = Vector2(2, 2)
 
 [connection signal="visibility_changed" from="gate" to="hiddenplatform" method="_on_gate_visibility_changed"]
 [connection signal="button_pressed" from="Button" to="hiddenplatform" method="_on_button_button_pressed"]

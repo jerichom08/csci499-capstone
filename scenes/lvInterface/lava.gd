@@ -1,17 +1,44 @@
 extends TileMapLayer
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var lava: AudioStreamPlayer2D = $lava
 
-# Called when the node enters the scene tree for the first time.
+var player_inside := false
+var target_volume_db := -20.0  # quiet
+var max_volume_db := 10.0       # loud
+var fade_speed := 2.0
 func _ready() -> void:
-	pass # Replace with function body.
+	animated_sprite_2d.play("default")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _on_lava_sound_area_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		player_inside = true
+		lava.play()
+
+
+func _on_lava_sound_area_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		player_inside = false
+
+		#lava.stop()
+
+
+
+func _on_death_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		$burnt.play()
+		await $burnt.finished
+		body.die()
+
 func _process(delta: float) -> void:
-	pass
+	if player_inside:
+		# increase volume toward max
+		lava.volume_db = lerp(lava.volume_db, max_volume_db, fade_speed * delta)
+	else:
+		# decrease volume toward silence (or very low)
+		lava.volume_db = lerp(lava.volume_db, -80.0, fade_speed * delta)
 
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name != "Player":
-		return
-	body.die()
+		# optional: stop when basically silent
+		if lava.volume_db <= -79.0:
+			lava.stop()

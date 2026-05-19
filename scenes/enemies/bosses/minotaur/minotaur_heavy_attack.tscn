@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blm6oqej4wfcp"]
 
-[ext_resource type="Script" uid="uid://bthw8wjjei8ph" path="res://scripts/enemies/bosses/minotaur_heavy_attack.gd" id="1_jbqyw"]
+[ext_resource type="Script" uid="uid://bthw8wjjei8ph" path="res://scripts/enemies/bosses/minotaur/minotaur_heavy_attack.gd" id="1_jbqyw"]
 [ext_resource type="Texture2D" uid="uid://v0xqssslratg" path="res://assets/images/enemies/bosses/minotaur/heavy_attack.png" id="1_n4ddq"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_jbqyw"]
 

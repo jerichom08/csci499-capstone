@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgiqqm5j0nxtp"]
 
 [ext_resource type="Texture2D" uid="uid://crxmo2tn8iq61" path="res://assets/images/enemies/bosses/gollux/gollux_heavy_attack.png" id="1_hbmrh"]
-[ext_resource type="Script" uid="uid://b3l2b7pqpy27p" path="res://scripts/enemies/bosses/gollux_heavy_attack.gd" id="1_sqrvu"]
+[ext_resource type="Script" uid="uid://b3l2b7pqpy27p" path="res://scripts/enemies/bosses/gollux/gollux_heavy_attack.gd" id="1_sqrvu"]
 [ext_resource type="Script" uid="uid://bfqavi17nvck4" path="res://scripts/enemies/components/hitbox.gd" id="2_sqrvu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eivpt"]

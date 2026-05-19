@@ -13,6 +13,7 @@ signal skeleton_defeated
 var attack_executed: bool = false
 var damage_cooldown: float = 1.2
 var is_taking_damage: bool = false
+
 const WORLD_SCALE = 3.0
 
 func _ready() -> void:
@@ -200,3 +201,26 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 			if sprite.frame == 2:
 				attack_executed = true
 				spawn_heavy_attack()
+
+func face_direction(direction: int) -> void:
+	if direction == 0:
+		return
+	
+	if facing_direction != direction:
+		facing_direction = direction
+		
+		sprite.flip_h = facing_direction < 0  
+	
+	# Update Attack Spawns
+	if light_spawn:
+		light_spawn.position.x = abs(light_spawn.position.x) * facing_direction
+	if heavy_spawn:
+		heavy_spawn.position.x = abs(heavy_spawn.position.x) * facing_direction
+	
+	# Update rays
+	if vision_ray:
+		vision_ray.target_position.x = abs(vision_ray.target_position.x) * -facing_direction
+	if wall_ray:
+		wall_ray.target_position.x = abs(wall_ray.target_position.x) * facing_direction
+	if ledge_ray:
+		ledge_ray.position.x = abs(ledge_ray.position.x) * facing_direction

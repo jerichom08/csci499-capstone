@@ -7,7 +7,9 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	$click.play()
 	await get_tree().create_timer(0.2).timeout
-	$SceneTransition.change_scene_to("res://scenes/levels/tutorial/room.tscn")
+
+	DemoManager.current_index = -1
+	DemoManager.next_scene()
 
 func _on_options_pressed() -> void:
 	$click.play()

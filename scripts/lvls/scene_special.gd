@@ -24,6 +24,8 @@ var choices_done: bool = false
 var current_dialogue: Array
 var choosing: bool = false
 
+var dialogue_completed: bool = false
+
 var dialogue_array: Array = [
 	{"speaker": "Joan", "text": ". L-Lilith? I’ve been searching for you..", "icon": "joan"},
 	{"speaker": "Joan", "text": ". Can you believe that it’s been 15 years since the great war?", "icon": "joan"},
@@ -75,10 +77,13 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interaction"):
+		if dialogue_completed:
+			return
+
 		if not dialogue_started and player_near_joan:
 			start_dialogue()
 		elif dialogue_started and not choice_box.visible:
-			_advance_dialogue()
+			_advance_dialogue() 
 
 
 func start_dialogue() -> void:
@@ -229,6 +234,10 @@ func hide_dialogue() -> void:
 	if player:
 		player.set_physics_process(true)
 	
+	dialogue_completed = true
+	player_near_joan = false
+	interaction_label.visible = false
+	
 	SceneTransition.s = true
 	timer.stop()
 	panel.hide()
@@ -238,17 +247,16 @@ func hide_dialogue() -> void:
 
 
 func _on_dialogue_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and not dialogue_completed:
 		player_near_joan = true
 		interaction_label.visible = true
-		interaction_label.text = "Press [ E ] to interact"
-
 
 func _on_dialogue_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_near_joan = false
 		interaction_label.visible = false
-		
+
 
 func _on_nextscene(body: Node2D) -> void:
 	SceneTransition.change_scene_to("res://scenes/levels/tutorial/scene_4.5.tscn")
+	#SceneTransition.change_scene_to("res://scenes/levels/level_4/scene_6.tscn")

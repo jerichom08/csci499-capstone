@@ -1,5 +1,13 @@
 extends Camera2D
 
+@onready var ingredient_icons = [
+	$Egg,
+	$Flour,
+	$Sugar,
+	$Milk
+]
+
+
 signal line_drawn
 signal circle_drawn
 signal triangle_drawn
@@ -7,6 +15,8 @@ signal triangle_drawn
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_zoom(Vector2(1.0,1.0))
+	IngredientManager.ingredients_changed.connect(update_ingredients)
+	update_ingredients()
 
 
 func _on_canvas_circle_drawn() -> void:
@@ -19,3 +29,13 @@ func _on_canvas_line_drawn() -> void:
 
 func _on_canvas_triangle_drawn() -> void:
 	emit_signal("triangle_drawn")
+
+func update_ingredients() -> void:
+	for i in range(ingredient_icons.size()):
+		if i < IngredientManager.collected_ingredients.size():
+			var ingredient = IngredientManager.collected_ingredients[i]
+			ingredient_icons[i].texture = ingredient["texture"]
+			ingredient_icons[i].scale = ingredient["scale"]
+			ingredient_icons[i].visible = true
+		else:
+			ingredient_icons[i].visible = false

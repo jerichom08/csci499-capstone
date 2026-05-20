@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://baicq30xm1nwm" path="res://assets/sounds temp/player sounds/jump3.wav" id="18_8ydkj"]
 [ext_resource type="AudioStream" uid="uid://87qb4haygegw" path="res://assets/sounds temp/player sounds/float.wav" id="19_3j4b4"]
 [ext_resource type="AudioStream" uid="uid://dmfuk6q453cgm" path="res://assets/sounds temp/player sounds/hurt.wav" id="20_8ydkj"]
+[ext_resource type="AudioStream" uid="uid://baytb822hsmav" path="res://assets/sounds temp/player sounds/dash.wav" id="21_3j4b4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
 atlas = ExtResource("4_5gtgg")
@@ -455,6 +456,9 @@ stream = ExtResource("19_3j4b4")
 
 [node name="HurtSFX" type="AudioStreamPlayer2D" parent="." unique_id=1980733769]
 stream = ExtResource("20_8ydkj")
+
+[node name="DashSFX" type="AudioStreamPlayer2D" parent="." unique_id=1389506016]
+stream = ExtResource("21_3j4b4")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="Hurtbox" to="." method="_on_hurtbox_area_shape_entered"]

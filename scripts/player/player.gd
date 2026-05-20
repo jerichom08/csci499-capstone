@@ -15,10 +15,23 @@ var is_dead := false
 @export var line_attack_scene: PackedScene
 @export var circle_attack_scene: PackedScene
 @export var triangle_attack_scene: PackedScene
+
 @onready var sprite = $AnimatedSprite2D
 @onready var line_attack_sfx = $LineAttackSFX
 @onready var circle_attack_sfx = $CircleAttackSFX
 @onready var triangle_attack_sfx = $TriangleAttackSFX
+@onready var hurt_sfx = $HurtSFX
+@onready var death_sfx = $DeathSFX
+@onready var respawn_sfx = $RespawnSFX
+@onready var jump_sfx_players = [
+	$JumpSFX1,
+	$JumpSFX2,
+	$JumpSFX3
+]
+@onready var walk_sfx = $FloatSFX
+@onready var footstep_timer: Timer = $FootstepTimer
+
+
 const WORLD_SCALE = 3.0
 
 #----------inventory line--------
@@ -74,8 +87,12 @@ var current_item_name: String = ""
 
 func _ready() -> void:
 	PlayerStats.health_changed.emit(PlayerStats.health, PlayerStats.max_health)
+	randomize()
 	
-	spawn_fade_in()
+	if Transition.respawn_from_death:
+		respawn_sfx.play()
+		Transition.respawn_from_death = false
+		spawn_fade_in()
 	
 	if held_item_sprite:
 		held_item_sprite.visible = false
@@ -93,6 +110,7 @@ func take_damage(amount: int, knockback: Vector2) -> void:
 		return
 
 	PlayerStats.take_damage(amount)
+	hurt_sfx.play()
 
 	velocity = knockback
 
@@ -128,14 +146,23 @@ func die():
 	is_dead = true
 	velocity = Vector2.ZERO
 	sprite.play("death")
+	death_sfx.play()
 	await sprite.animation_finished
-	print("You're dead")
+	Transition.respawn_from_death = true
+	await Transition.reload_scene_with_fade()
 	reset_room()
 
 func reset_room():
 	PlayerStats.reset_health()
 	CoinManager.reset_room_coins()
-	get_tree().reload_current_scene()
+	
+	Transition.respawn_from_death = true
+	await Transition.reload_scene_with_fade()
+
+func play_random_sfx(players: Array):
+	var p = players[randi() % players.size()]
+	p.pitch_scale = randf_range(0.95, 1.05)
+	p.play()
 
 #func _input(event):
 	#if Input.is_action_just_pressed("reset_room"):
@@ -200,6 +227,7 @@ func _physics_process(delta: float) -> void:
 		$InputBufferTimer.start()
 	if not $InputBufferTimer.is_stopped() and not $CoyoteTimer.is_stopped() and not is_attacking:
 		velocity.y = jumpVelocity
+		play_random_sfx(jump_sfx_players)
 		$CoyoteTimer.stop()
 		$InputBufferTimer.stop()
 		
@@ -212,6 +240,16 @@ func _physics_process(delta: float) -> void:
 	
 	if direction != 0:
 		facingDirection = sign(direction)
+	
+
+	var walking := direction != 0 and not is_dead and not is_attacking and not controlling_projectile
+
+	if walking:
+		if not walk_sfx.playing:
+			walk_sfx.play()
+	else:
+		if walk_sfx.playing:
+			walk_sfx.stop()
 		
 	if dashEnabled and Input.is_action_just_pressed("dash") and dashCooldownTimer <= 0 and not is_attacking and not controlling_projectile:
 		start_dash()

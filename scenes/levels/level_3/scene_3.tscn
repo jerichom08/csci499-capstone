@@ -950,6 +950,7 @@ scale = Vector2(3, 3)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_rgpl3")]
 position = Vector2(-427, 212)
+coin_id = "lv3_s3_1"
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("18_siy3p")]
 position = Vector2(599, -281)

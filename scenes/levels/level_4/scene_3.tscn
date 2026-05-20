@@ -664,12 +664,15 @@ position = Vector2(-634, 220)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("10_tqn2h")]
 position = Vector2(-27, -322)
+coin_id = "lv4_s3_1"
 
 [node name="Coin2" parent="." unique_id=1517447089 instance=ExtResource("10_tqn2h")]
 position = Vector2(-27, 113)
+coin_id = "lv4_s3_2"
 
 [node name="Coin3" parent="." unique_id=929173198 instance=ExtResource("10_tqn2h")]
 position = Vector2(-27, -102)
+coin_id = "lv4_s3_3"
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("11_abqn0")]
 position = Vector2(192, -221)

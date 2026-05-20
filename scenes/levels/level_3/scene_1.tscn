@@ -837,6 +837,7 @@ position = Vector2(628, -273)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("6_jdyoy")]
 position = Vector2(596, 13)
+coin_id = "lv3_s1_1"
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("7_jordh")]
 visible = false

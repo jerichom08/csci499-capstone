@@ -923,9 +923,11 @@ position = Vector2(-517, -304)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_h6hre")]
 position = Vector2(-73, 113)
+coin_id = "lv1_s5_1"
 
 [node name="Coin2" parent="." unique_id=889865538 instance=ExtResource("15_h6hre")]
 position = Vector2(33, 283)
+coin_id = "lv1_s5_2"
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("15_pfl32")]
 position = Vector2(439, 241)

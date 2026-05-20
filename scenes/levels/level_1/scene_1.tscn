@@ -567,19 +567,19 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
+[sub_resource type="Resource" id="Resource_rpjkf"]
+resource_local_to_scene = true
+script = ExtResource("12_rpjkf")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
+[sub_resource type="Resource" id="Resource_kx4rr"]
+resource_local_to_scene = true
+script = ExtResource("12_rpjkf")
+gravity = 10.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
 [sub_resource type="Resource" id="Resource_q1e3w"]
-resource_local_to_scene = true
-script = ExtResource("12_rpjkf")
-gravity = 10.0
-metadata/_custom_type_script = "uid://cr8bvh7l7at2"
-
-[sub_resource type="Resource" id="Resource_oj4i0"]
-resource_local_to_scene = true
-script = ExtResource("12_rpjkf")
-gravity = 10.0
-metadata/_custom_type_script = "uid://cr8bvh7l7at2"
-
-[sub_resource type="Resource" id="Resource_pxife"]
 resource_local_to_scene = true
 script = ExtResource("12_rpjkf")
 gravity = 10.0
@@ -631,18 +631,19 @@ position = Vector2(140, -39)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("11_kx4rr")]
 position = Vector2(615, 8)
+coin_id = "lv1_s1_1"
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("11_an6qr")]
 position = Vector2(-52, -209)
-stats = SubResource("Resource_q1e3w")
+stats = SubResource("Resource_rpjkf")
 
 [node name="spider2" parent="." unique_id=868318424 instance=ExtResource("11_an6qr")]
 position = Vector2(-589, 133)
-stats = SubResource("Resource_oj4i0")
+stats = SubResource("Resource_kx4rr")
 
 [node name="spider3" parent="." unique_id=1256872457 instance=ExtResource("11_an6qr")]
 position = Vector2(-128, -37)
-stats = SubResource("Resource_pxife")
+stats = SubResource("Resource_q1e3w")
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("13_rpjkf")]
 position = Vector2(112, 70)

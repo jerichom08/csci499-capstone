@@ -912,6 +912,7 @@ stats = SubResource("Resource_hqohx")
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_hqohx")]
 position = Vector2(-290, 273)
+coin_id = "lv1_s3_1"
 
 [node name="spider3" parent="." unique_id=248195814 instance=ExtResource("14_hqohx")]
 position = Vector2(161, -217)

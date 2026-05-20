@@ -664,6 +664,7 @@ position = Vector2(97, -17)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_5d1ty")]
 position = Vector2(-560, 3)
+coin_id = "lv1_s4_1"
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("17_swsw1")]
 position = Vector2(-342, 107)

@@ -791,6 +791,7 @@ dashEnabled = true
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("8_tyd0j")]
 position = Vector2(-458, -216)
+coin_id = "lv2_s6_1"
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("9_1ec7a")]
 position = Vector2(97, -17)

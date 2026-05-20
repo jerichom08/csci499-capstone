@@ -673,6 +673,7 @@ shape = SubResource("CapsuleShape2D_0ls8f")
 
 [node name="Coin" parent="loop2" unique_id=1608490570 instance=ExtResource("9_o4et5")]
 position = Vector2(-436, -99)
+coin_id = "lv4_s2_1"
 
 [node name="DisappearingPlatforn" parent="." unique_id=1325980132 instance=ExtResource("9_hxl4b")]
 position = Vector2(225, 166)

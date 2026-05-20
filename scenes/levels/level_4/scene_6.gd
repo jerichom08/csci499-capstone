@@ -18,13 +18,31 @@ var player_in_cauldron_range := false
 var player_in_cat_range := false
 var cauldron_interacted := false
 
+
+@onready var joan_area: Area2D = $JoanArea2D
+@onready var joan_label: Label = $JoanArea2D/InteractionLabel
+
+var player_in_joan_range := false
+
+
 func _ready() -> void:
+	$Joan/j.hide()
 	if SceneTransition.s:
-		$JoanArea2D.show()
+		$Joan.show()
+		$Joan/j.collision_enabled = true
+		joan_area.show()
+		$Joan.play("default")
 	else:
-		$JoanArea2D.hide()
+		joan_area.hide()
+		$Joan.hide()
+		$Joan/j.collision_enabled = false
 	cauldron_label.visible = false
 	cat_label.visible = false
+	
+	
+	joan_label.visible = false
+
+
 	$sparkles.visible = false
 	$ingredients/egg_sprite.visible = false
 	$ingredients/flour_sprite.visible = false
@@ -45,7 +63,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_cauldron_range and Input.is_action_just_pressed("interaction") and not cauldron_interacted:
 		cauldron_interacted = true
-
 		c.visible = false
 		cauldron_work.visible = true
 		cauldron_work.play("default")
@@ -161,3 +178,18 @@ func play_ingredients_sequence() -> void:
 	# Wait 3 seconds, then go to ending scene
 	await get_tree().create_timer(3.0).timeout
 	SceneTransition.change_scene_to("res://scenes/Fin.tscn")
+
+func _on_joan_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("player_intro"):
+		return
+
+	player_in_joan_range = true
+	joan_label.visible = true
+	joan_label.text = '" welcome back, my love "'
+
+func _on_joan_body_exited(body: Node2D) -> void:
+	if not body.is_in_group("player_intro"):
+		return
+
+	player_in_joan_range = false
+	joan_label.visible = false

@@ -1747,6 +1747,11 @@ bg_color = Color(0.17254902, 0.20784314, 0.3019608, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brv74"]
 bg_color = Color(0.3137255, 0.3529412, 0.56078434, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1ysx"]
 atlas = ExtResource("7_0hqbq")

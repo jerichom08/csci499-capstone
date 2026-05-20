@@ -7,6 +7,7 @@ extends EnemyBase
 @onready var light_attack_sfx: AudioStreamPlayer2D = $MinotaurLightAttack
 @onready var heavy_attack_sfx: AudioStreamPlayer2D = $MinotaurHeavyAttack
 @onready var defeat_sfx: AudioStreamPlayer2D = $Defeat
+@onready var hit_sfx: AudioStreamPlayer2D = $Hit
 
 @onready var landing_marker = $"../MinotaurLandingPoint"
 
@@ -89,6 +90,7 @@ func take_damage(_damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 		defeat_sfx.play()
 		set_state(State.DEFEAT)
 	else:
+		hit_sfx.play()
 		set_state(State.HIT)
 
 	set_collisions_enabled(false)

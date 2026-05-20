@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://csdwbe46yyepm"]
+
+[ext_resource type="Script" uid="uid://b7h6k8pmephk8" path="res://scripts/UI/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="2_myx47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+bg_color = Color(0.15747333, 0.1288, 0.23, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 0.94509804)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.1292127, 0.10409229, 0.18877175, 1)
+border_width_bottom = 10
+border_color = Color(0.10602669, 0.086399995, 0.16, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.12941177, 0.105882354, 0.1882353, 1)
+border_width_top = 10
+border_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_kukqi"]
+Button/styles/hover = SubResource("StyleBoxFlat_oa1go")
+Button/styles/normal = SubResource("StyleBoxFlat_tbmy8")
+Button/styles/pressed = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=308178]
+process_mode = 3
+script = ExtResource("1_n87rw")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=7121095]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.50980395)
+
+[node name="PausePanel" type="Control" parent="." unique_id=628140519]
+process_mode = 3
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PausePanel" unique_id=157601878]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel/MarginContainer" unique_id=1692693242]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="PausePanel/MarginContainer/VBoxContainer" unique_id=1260506228]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.12941177, 0.101960786, 0.1882353, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="PausePanel/MarginContainer/VBoxContainer" unique_id=1035193299]
+layout_mode = 2
+theme = SubResource("Theme_kukqi")
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 40
+text = "Restart
+"
+
+[node name="MainMenu" type="Button" parent="PausePanel/MarginContainer/VBoxContainer" unique_id=1383570419]
+layout_mode = 2
+theme = SubResource("Theme_kukqi")
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 40
+text = "Main Menu
+"

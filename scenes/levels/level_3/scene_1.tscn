@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://nliblc8s58dm" path="res://scenes/enemies/mobs/rat/rat.tscn" id="14_5ulsj"]
 [ext_resource type="PackedScene" uid="uid://cmhra3c1bntj" path="res://scenes/lvInterface/TwoWayPlatform.tscn" id="15_5ulsj"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="15_gmqph"]
-[ext_resource type="PackedScene" path="res://scenes/lvInterface/TwoWayPlatformS.tscn" id="15_l18n5"]
+[ext_resource type="PackedScene" uid="uid://b3tiwnxtbfvlh" path="res://scenes/lvInterface/TwoWayPlatformS.tscn" id="15_l18n5"]
 [ext_resource type="PackedScene" uid="uid://mq7xkryetq7u" path="res://scenes/Components/clue_sign.tscn" id="16_l18n5"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="17_jyyfh"]
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="18_h38k0"]
@@ -939,5 +939,8 @@ position = Vector2(-4, -14)
 [node name="hud" parent="CanvasLayer" unique_id=882388056 instance=ExtResource("7_jordh")]
 position = Vector2(752, 357)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]

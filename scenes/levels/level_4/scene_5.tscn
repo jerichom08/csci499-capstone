@@ -659,6 +659,9 @@ scale = Vector2(3, 3)
 [node name="HeartPickup" parent="." unique_id=730135184 instance=ExtResource("11_y3oeb")]
 position = Vector2(20, -57)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="skeleton_defeated" from="SkeletonKnight" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]
 [connection signal="skeleton_defeated" from="SkeletonKnight2" to="minotaur" method="_on_skeleton_knight_skeleton_defeated"]

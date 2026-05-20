@@ -910,5 +910,8 @@ position = Vector2(-239, -258)
 [node name="hud" parent="CanvasLayer" unique_id=1597315055 instance=ExtResource("8_hwoup")]
 position = Vector2(743, 361)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="button_pressed" from="Button" to="Gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform" method="_on_button_2_button_pressed"]

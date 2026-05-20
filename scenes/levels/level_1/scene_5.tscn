@@ -756,13 +756,13 @@ sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 sources/0 = SubResource("TileSetAtlasSource_t0qep")
 
-[sub_resource type="Resource" id="Resource_vando"]
+[sub_resource type="Resource" id="Resource_40ace"]
 resource_local_to_scene = true
 script = ExtResource("16_40ace")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_j3eqt"]
+[sub_resource type="Resource" id="Resource_vando"]
 resource_local_to_scene = true
 script = ExtResource("16_40ace")
 gravity = 10.0
@@ -929,12 +929,16 @@ position = Vector2(33, 283)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("15_pfl32")]
 position = Vector2(439, 241)
-stats = SubResource("Resource_vando")
+stats = SubResource("Resource_40ace")
 
 [node name="spider2" parent="." unique_id=355961562 instance=ExtResource("15_pfl32")]
 position = Vector2(-293, 317)
-stats = SubResource("Resource_j3eqt")
+stats = SubResource("Resource_vando")
 
 [node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("17_40ace")]
 position = Vector2(66, 360)
 scale = Vector2(2, 1)
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

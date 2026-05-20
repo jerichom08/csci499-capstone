@@ -708,5 +708,8 @@ position = Vector2(427, -165)
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_yys22")]
 position = Vector2(-433, -182)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="body_entered" from="loop" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="loop2" to="." method="_on_area_2d_body_entered"]

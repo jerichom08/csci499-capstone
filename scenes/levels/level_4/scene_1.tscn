@@ -699,3 +699,7 @@ position = Vector2(217, 265)
 
 [node name="Scorpion2" parent="." unique_id=1628138669 instance=ExtResource("15_b1qu2")]
 position = Vector2(-217, 52)
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

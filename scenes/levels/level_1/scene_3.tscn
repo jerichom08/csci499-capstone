@@ -799,6 +799,12 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
+[sub_resource type="Resource" id="Resource_s2bxe"]
+resource_local_to_scene = true
+script = ExtResource("15_xjb2i")
+gravity = 100.0
+metadata/_custom_type_script = "uid://cr8bvh7l7at2"
+
 [sub_resource type="Resource" id="Resource_hqohx"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
@@ -808,16 +814,10 @@ metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 [sub_resource type="Resource" id="Resource_xjb2i"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
-gravity = 100.0
-metadata/_custom_type_script = "uid://cr8bvh7l7at2"
-
-[sub_resource type="Resource" id="Resource_jl5l0"]
-resource_local_to_scene = true
-script = ExtResource("15_xjb2i")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_rddbj"]
+[sub_resource type="Resource" id="Resource_jl5l0"]
 resource_local_to_scene = true
 script = ExtResource("15_xjb2i")
 gravity = 10.0
@@ -904,23 +904,27 @@ position = Vector2(97, -17)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("14_hqohx")]
 position = Vector2(405, -294)
-stats = SubResource("Resource_hqohx")
+stats = SubResource("Resource_s2bxe")
 
 [node name="spider2" parent="." unique_id=672809836 instance=ExtResource("14_hqohx")]
 position = Vector2(-244, -297)
-stats = SubResource("Resource_xjb2i")
+stats = SubResource("Resource_hqohx")
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_hqohx")]
 position = Vector2(-290, 273)
 
 [node name="spider3" parent="." unique_id=248195814 instance=ExtResource("14_hqohx")]
 position = Vector2(161, -217)
-stats = SubResource("Resource_jl5l0")
+stats = SubResource("Resource_xjb2i")
 
 [node name="spider4" parent="." unique_id=251184799 instance=ExtResource("14_hqohx")]
 position = Vector2(-46, -298)
-stats = SubResource("Resource_rddbj")
+stats = SubResource("Resource_jl5l0")
 
 [node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("14_s2bxe")]
 position = Vector2(-49, 361)
 scale = Vector2(3, 1)
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

@@ -703,4 +703,7 @@ position = Vector2(217, 265)
 position = Vector2(-160, 48)
 patrol_radius = 50.0
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]

@@ -321,15 +321,24 @@ func drop_through_platform() -> void:
 	droppingThrough = false
 
 func _on_hud_line_drawn() -> void:
-	print("Signal recieved")
+	print("line signal received")
+	print("is_on_floor: ", is_on_floor())
+	print("is_attacking: ", is_attacking)
+	print("isDashing: ", isDashing)
 	perform_attack("line")
 	
 func _on_hud_circle_drawn() -> void:
-	print("Signal recieved")
+	print("line signal received")
+	print("is_on_floor: ", is_on_floor())
+	print("is_attacking: ", is_attacking)
+	print("isDashing: ", isDashing)
 	perform_attack("circle")
 	
 func _on_hud_triangle_drawn() -> void:
-	print("Signal recieved")
+	print("line signal received")
+	print("is_on_floor: ", is_on_floor())
+	print("is_attacking: ", is_attacking)
+	print("isDashing: ", isDashing)
 	perform_attack("triangle")
 
 func spawn_attack(type: String):

@@ -323,14 +323,6 @@ scale = Vector2(0.17798135, 0.17798135)
 sprite_frames = SubResource("SpriteFrames_f830f")
 frame_progress = 0.029948039
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552370270]
-visible = false
-position = Vector2(44.81035, 4.5258627)
-scale = Vector2(2.2468245, 1.1363639)
-texture = ExtResource("1_u1pfj")
-region_enabled = true
-region_rect = Rect2(215, 2, 38, 11)
-
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1306267862]
 position = Vector2(3.431034, 4.525862)
 scale = Vector2(2.2468245, 1.1363639)
@@ -369,6 +361,7 @@ volume_db = 6.209
 [node name="Area2D2" type="Area2D" parent="." unique_id=141051954]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1760898580]
+visible = false
 position = Vector2(42.241383, -15.517242)
 scale = Vector2(1.0000004, 1.0000004)
 shape = SubResource("CircleShape2D_lv6c1")

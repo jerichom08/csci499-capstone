@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4m0cam7e12l1" path="res://scenes/lvInterface/gate.tscn" id="4_8e2ux"]
 [ext_resource type="PackedScene" uid="uid://pg6ytaryk6y" path="res://scenes/player/player.tscn" id="5_8e2ux"]
 [ext_resource type="Script" uid="uid://cnjxhdq35qg0m" path="res://scenes/lvInterface/gate.gd" id="5_i74qv"]
+[ext_resource type="Texture2D" uid="uid://bgs7wr7x2p2l0" path="res://assets/images/tilemaps/tilemap4_packed.png" id="5_jvhar"]
 [ext_resource type="PackedScene" uid="uid://b2y5y1pl1m0sc" path="res://scenes/lvInterface/lava.tscn" id="6_i74qv"]
 [ext_resource type="PackedScene" uid="uid://coafju6wkmj0e" path="res://scenes/lvInterface/spikes.tscn" id="6_pbgsm"]
 [ext_resource type="FontFile" uid="uid://bue3jssuqmyou" path="res://assets/images/UI/text box/star-crush/Star Crush.ttf" id="7_1nwqk"]
@@ -76,6 +77,198 @@ texture = ExtResource("1_a6gv3")
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gv3wu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbhe4"]
+texture = ExtResource("5_jvhar")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sagyo"]
 texture = ExtResource("2_0fjc0")
@@ -349,6 +542,7 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
+sources/0 = SubResource("TileSetAtlasSource_jbhe4")
 
 [node name="Tut3" type="Node2D" unique_id=1440666369]
 
@@ -366,20 +560,32 @@ position = Vector2(-579.00006, -161.00002)
 scale = Vector2(3, 3)
 script = ExtResource("5_i74qv")
 
-[node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
-position = Vector2(804.00006, 1)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AADl/wUAAgACAAEAAADm/wUAAgACAAEAAADn/wUAAgACAAEAAADo/wUAAgACAAEAAADp/wUAAgACAAEAAADq/wUAAgACAAEAAADr/wUAAgACAAEAAADs/wUAAgACAAEAAADt/wUAAgACAAEAAADu/wUAAgACAAEAAADv/wUAAgACAAEAAADw/wUAAgACAAEAAADx/wUAAgACAAEAAADy/wUAAgACAAEAAADz/wUAAgACAAEAAAD0/wUAAgACAAEAAAD1/wUAAgACAAEAAAD2/wUAAgACAAEAAAD3/wUAAgACAAEAAAD4/wUAAgACAAYAAAD5/wUAAgACAAYAAAD6/wUAAgACAAYAAAD7/wUAAgACAAYAAAD8/wUAAgACAAYAAADl/wYAAgACAAYAAADm/wYAAgACAAYAAADn/wYAAgAEAAUAAADo/wYAAgACAAYAAADp/wYAAgACAAYAAADq/wYAAgACAAYAAADr/wYAAgACAAYAAADs/wYAAgACAAYAAADt/wYAAgAEAAUAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wYAAgACAAYAAADy/wYAAgACAAYAAADz/wYAAgACAAYAAAD0/wYAAgACAAYAAAD1/wYAAgAEAAUAAAD2/wYAAgACAAYAAAD3/wYAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgACAAYAAAD8////AgACAAEAAAD7////AgACAAEAAAD9////AgADAAAAAAD8/wAAAgACAAYAAAD8/wEAAgAEAAUAAAD8/wIAAgACAAYAAAD8/wMAAgACAAYAAAD8/wQAAgACAAYAAAD7/wAAAgABAAYAAAD7/wEAAgABAAYAAAD7/wIAAgACAAYAAAD7/wMAAgAFAAAAAAD7/wQAAgAEAAUAAAD9//7/AgABAAEAAAD9//3/AgABAAEAAAD9//z/AgABAAEAAAD9//v/AgABAAEAAAD9//r/AgABAAEAAAD9//n/AgABAAEAAAD6////AgACAAcAAAD5////AgACAAAAAAD4////AgACAAcAAAD3////AgACAAAAAAD1////AgACAAAAAADz////AgACAAAAAADy////AgACAAAAAADx////AgACAAcAAADw////AgACAAAAAADv////AgACAAcAAADu////AgACAAAAAADt////AgACAAcAAADs////AgACAAAAAADr////AgACAAcAAADq////AgACAAAAAADp////AgABAAAAAAD6//7/AgAAAAEAAAD8//n/AgACAAcAAAD7//n/AgACAAcAAAD6//n/AgACAAYAAAD5//n/AgACAAcAAAD4//n/AgACAAcAAAD3//n/AgACAAcAAAD1//n/AgACAAcAAAD0//n/AgACAAcAAADz//n/AgACAAcAAADq//n/AgACAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADn//n/AgACAAcAAADl//n/AgACAAYAAAD4//7/AgAAAAYAAADr//n/AgACAAYAAADs//n/AgACAAcAAADt//n/AgACAAYAAADu//n/AgACAAcAAADv//n/AgACAAYAAADw//n/AgACAAcAAADx//n/AgACAAYAAADy//n/AgACAAcAAAD0//7/AgAAAAYAAAD0////AgACAAcAAAD2//7/AgAAAAEAAAD2////AgACAAcAAAD4//3/AgAAAAEAAAD0//3/AgAAAAEAAAD6//r/AgAAAAcAAADm//n/AgACAAYAAADr//7/AgAAAAEAAADv//7/AgAAAAEAAADx//3/AgAAAAEAAADx//7/AgAAAAYAAADt//3/AgAAAAEAAADt//7/AgAAAAYAAADr//r/AgAAAAcAAADx//r/AgAAAAcAAAD2//n/AgACAAYAAAD2//r/AgAAAAcAAADt//r/AgAAAAcAAADv//r/AgAAAAcAAAD4/wIAAgABAAEAAAD4/wMAAgABAAYAAAD4/wQAAgABAAYAAADk//3/AgABAAAAAADl//3/AgACAAAAAADm//3/AgADAAAAAAD6/wMAAgAEAAAAAAD6/wQAAgACAAYAAAD5/wIAAgACAAEAAAD6/wIAAgACAAEAAAD5/wQAAgACAAYAAAD5/wMAAgACAAYAAADl//z/AgAEAAcAAAD6/wEAAgAEAAcAAADz/wQAAgAFAAYAAAD8//7/AgAEAAYAAADy/wIAAgASAAYAAADy/wMAAgAQAAQAAADy/wQAAgAQAAYAAADx/wQAAgASAAUAAADz/wIAAgATAAYAAADy//7/AgAJAAYAAADm//r/AgADAAcAAADl//r/AgACAAcAAADk//n/AgACAAYAAADk//r/AgACAAcAAADk/wUAAgACAAEAAADk/wYAAgACAAYAAADj//3/AgABAAYAAADj//7/AgABAAYAAADj////AgABAAYAAADj/wAAAgABAAYAAADj/wEAAgABAAYAAADj/wIAAgABAAYAAADj/wMAAgABAAYAAADj/wQAAgABAAYAAADj/wUAAgABAAYAAADj/wYAAgABAAYAAADm//z/AgAHAAQAAAA=")
-tile_set = SubResource("TileSet_alrbv")
+[node name="Area2D2" parent="." unique_id=932735879 instance=ExtResource("14_1nwqk")]
+position = Vector2(490, -170)
+
+[node name="InteractionLabel" type="Label" parent="Area2D2" unique_id=1303170523]
+offset_left = -131.0
+offset_top = -63.0
+offset_right = 411.0
+offset_bottom = 44.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_1nwqk")
+theme_override_font_sizes/font_size = 25
+text = "  3.0 ) \"Holding [ W ] or 
+( ↑ ) lets you jump higher\"
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." unique_id=604565878 instance=ExtResource("14_1nwqk")]
-position = Vector2(-375, 209)
+position = Vector2(-373, 208)
 
 [node name="InteractionLabel" type="Label" parent="Area2D" unique_id=818326447]
-offset_left = 49.0
-offset_top = 31.0
-offset_right = 591.0
-offset_bottom = 98.0
+offset_left = -217.0
+offset_top = -120.0
+offset_right = 325.0
+offset_bottom = -53.0
 theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
 theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
 theme_override_constants/outline_size = 10
@@ -388,6 +594,12 @@ theme_override_font_sizes/font_size = 27
 text = "3.5 ) \"The Jump Boost Can Be Pretty Fun..\"
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="basic tiles" type="TileMapLayer" parent="." unique_id=1624356173]
+position = Vector2(804.00006, 1)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AADl/wUAAAACAAMAAADm/wUAAgACAAEAAADn/wUAAgACAAEAAADo/wUAAgACAAEAAADp/wUAAAACAAMAAADq/wUAAAACAAMAAADr/wUAAAACAAMAAADs/wUAAAACAAMAAADt/wUAAAACAAMAAADu/wUAAAACAAMAAADv/wUAAAACAAMAAADw/wUAAAACAAMAAADx/wUAAAACAAMAAADy/wUAAAACAAMAAADz/wUAAAACAAMAAAD0/wUAAAACAAMAAAD1/wUAAAACAAMAAAD2/wUAAAACAAMAAAD3/wUAAAACAAMAAAD4/wUAAgACAAYAAAD5/wUAAgACAAYAAAD6/wUAAgACAAYAAAD7/wUAAgACAAYAAAD8/wUAAgACAAYAAADl/wYAAgACAAYAAADm/wYAAgACAAYAAADn/wYAAgAEAAUAAADo/wYAAgACAAYAAADp/wYAAgACAAYAAADq/wYAAgACAAYAAADr/wYAAgACAAYAAADs/wYAAgACAAYAAADt/wYAAgAEAAUAAADu/wYAAgACAAYAAADv/wYAAgACAAYAAADw/wYAAgACAAYAAADx/wYAAgACAAYAAADy/wYAAgACAAYAAADz/wYAAgACAAYAAAD0/wYAAgACAAYAAAD1/wYAAgAEAAUAAAD2/wYAAgACAAYAAAD3/wYAAgACAAYAAAD4/wYAAgACAAYAAAD5/wYAAgACAAYAAAD6/wYAAgACAAYAAAD7/wYAAgACAAYAAAD8/wYAAgACAAYAAAD8////AAACAAMAAAD7////AAACAAMAAAD9////AgADAAAAAAD8/wAAAgACAAYAAAD8/wEAAgAEAAUAAAD8/wIAAgACAAYAAAD8/wMAAgACAAYAAAD8/wQAAgACAAYAAAD7/wAAAgABAAYAAAD7/wEAAgABAAYAAAD7/wIAAgACAAYAAAD7/wMAAgAFAAAAAAD7/wQAAgAEAAUAAAD9//7/AgABAAEAAAD9//3/AgABAAEAAAD9//z/AgABAAEAAAD9//v/AgABAAEAAAD9//r/AgABAAEAAAD9//n/AgABAAEAAAD6////AgACAAcAAAD5////AAACAAIAAAD4////AgACAAcAAAD3////AAACAAIAAAD1////AAACAAIAAADz////AAACAAIAAADy////AAACAAIAAADx////AgACAAcAAADw////AAACAAIAAADv////AgACAAcAAADu////AAACAAIAAADt////AgACAAcAAADs////AAACAAIAAADr////AgACAAcAAADq////AAACAAIAAADp////AAABAAIAAAD6//7/AAAAAAMAAAD8//n/AgACAAcAAAD7//n/AgACAAcAAAD6//n/AgACAAYAAAD5//n/AgACAAcAAAD4//n/AgACAAcAAAD3//n/AgACAAcAAAD1//n/AgACAAcAAAD0//n/AgACAAcAAADz//n/AgACAAcAAADq//n/AgACAAcAAADp//n/AgACAAcAAADo//n/AgACAAcAAADn//n/AgACAAcAAADl//n/AgACAAYAAAD4//7/AgAAAAYAAADr//n/AgACAAYAAADs//n/AgACAAcAAADt//n/AgACAAYAAADu//n/AgACAAcAAADv//n/AgACAAYAAADw//n/AgACAAcAAADx//n/AgACAAYAAADy//n/AgACAAcAAAD0//7/AgAAAAYAAAD0////AgACAAcAAAD2//7/AAAAAAMAAAD2////AgACAAcAAAD4//3/AAAAAAMAAAD0//3/AAAAAAMAAAD6//r/AgAAAAcAAADm//n/AgACAAYAAADr//7/AAAAAAMAAADv//7/AAAAAAMAAADx//3/AAAAAAMAAADx//7/AgAAAAYAAADt//3/AAAAAAMAAADt//7/AgAAAAYAAADr//r/AgAAAAcAAADx//r/AgAAAAcAAAD2//n/AgACAAYAAAD2//r/AgAAAAcAAADt//r/AgAAAAcAAADv//r/AgAAAAcAAAD4/wIAAAABAAMAAAD4/wMAAgABAAYAAAD4/wQAAgABAAYAAADk//3/AgABAAAAAADl//3/AgACAAAAAADm//3/AgADAAAAAAD6/wMAAgAEAAAAAAD6/wQAAgACAAYAAAD5/wIAAAACAAMAAAD6/wIAAAACAAMAAAD5/wQAAgACAAYAAAD5/wMAAgACAAYAAADl//z/AgAEAAcAAAD6/wEAAgAEAAcAAADz/wQAAgAFAAYAAAD8//7/AgAEAAYAAADz/wIAAgATAAYAAADy//7/AgAJAAYAAADm//r/AgADAAcAAADl//r/AgACAAcAAADk//n/AgACAAYAAADk//r/AgACAAcAAADk/wUAAAACAAMAAADk/wYAAgACAAYAAADj//3/AgABAAYAAADj//7/AgABAAYAAADj////AgABAAYAAADj/wAAAgABAAYAAADj/wEAAgABAAYAAADj/wIAAgABAAYAAADj/wMAAgABAAYAAADj/wQAAgABAAYAAADj/wUAAgABAAYAAADj/wYAAgABAAYAAADm//z/AgAHAAQAAADn//r/AAAQAAAAAADp//r/AAAQAAAAAAD6//3/AAAGAAQAAADq/wQAAAAGAAQAAAA=")
+tile_set = SubResource("TileSet_alrbv")
 
 [node name="Spikes" parent="." unique_id=529623262 instance=ExtResource("6_pbgsm")]
 position = Vector2(453.00003, -80)
@@ -399,16 +611,16 @@ position = Vector2(345, -80)
 position = Vector2(237, -80)
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=262893072]
-position = Vector2(804, 4)
+position = Vector2(797, 8)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AADz/wEAAgARAAAAAAD0/wEAAgATAAAAAAD0/wIAAgATAAIAAADz/wIAAgARAAIAAAA=")
+tile_map_data = PackedByteArray("AADs/wQAAAAQAAAAAADu/wMAAAAQAAAAAADw/wQAAAAQAAAAAADx/wIAAAAQAAAAAAD0/wEAAAATAAMAAADz/wEAAAASAAMAAADq//v/AAAQAAAAAAD0//r/AAAQAAAAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("7_8k2iv")
 
 [node name="foliage" type="TileMapLayer" parent="." unique_id=1139968064]
-position = Vector2(804, 4)
+position = Vector2(804, 1)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD6/wQAAgARAAcAAAD7/wEAAgARAAcAAADp/wUAAgARAAcAAADt//n/AgARAAcAAAD6//r/AgARAAcAAADz/wEAAgATAAIAAADx/wEAAgARAAIAAADy/wEAAgASAAIAAADx/wAAAgARAAAAAADz/wAAAgATAAAAAADy/wAAAgASAAAAAAA=")
+tile_map_data = PackedByteArray("AAD6/wQAAgARAAcAAAD7/wEAAgARAAcAAADp/wUAAgARAAcAAADt//n/AgARAAcAAAD6//r/AgARAAcAAADo//v/AAASAAQAAGDo//r/AAATAAQAAGDq//v/AAATAAQAAGDq//r/AAATAAQAAGDq//z/AAASAAQAAGDz//v/AAASAAQAAHDz//r/AAATAAQAAHD4//r/AAASAAQAAGDr/wQAAAATAAQAAFDr/wMAAAASAAQAAFDt/wMAAAATAAQAAFDt/wIAAAASAAQAAFDt/wQAAAATAAQAAFDv/wQAAAASAAQAAFDy/wIAAAARAAQAAADy/wMAAAARAAUAAADy/wQAAAARAAYAAADx/wIAAAARAAIAAADz/wIAAAATAAIAAADx/wEAAAARAAAAAADy/wEAAAASAAAAAADz/wEAAAATAAAAAADz/wMAAAASAAQAABDx/wMAAAASAAUAAAA=")
 tile_set = SubResource("TileSet_alrbv")
 script = ExtResource("7_8k2iv")
 
@@ -445,24 +657,6 @@ position = Vector2(84, -5)
 position = Vector2(74.99997, 45.999985)
 coin_id = "tut_s5_1"
 
-[node name="Area2D2" parent="." unique_id=932735879 instance=ExtResource("14_1nwqk")]
-position = Vector2(484, -169)
-
-[node name="InteractionLabel" type="Label" parent="Area2D2" unique_id=1303170523]
-offset_left = -131.0
-offset_top = -63.0
-offset_right = 411.0
-offset_bottom = 44.0
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
-theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("7_1nwqk")
-theme_override_font_sizes/font_size = 25
-text = "  3.0 ) \"Holding [ W ] or 
-( ↑ ) lets you jump higher\"
-"
-metadata/_edit_use_anchors_ = true
-
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("19_hlo1c")]
 position = Vector2(292, -251)
 scale = Vector2(3, 3)
@@ -474,7 +668,7 @@ scale = Vector2(3, 3)
 detection_radius = 60.0
 
 [node name="bat3" parent="." unique_id=1784510416 instance=ExtResource("19_hlo1c")]
-position = Vector2(102.00001, 148.99997)
+position = Vector2(95, 172.99997)
 scale = Vector2(3, 3)
 detection_radius = 60.0
 

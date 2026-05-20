@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
 [ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="18_kt1ph"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="23_4onw6"]
-[ext_resource type="Texture2D" uid="uid://dxghq3d66amnl" path="res://assets/images/food/cookie_1.png" id="24_uf1yc"]
+[ext_resource type="Texture2D" uid="uid://bm064av7x8nut" path="res://assets/images/food/cookie_1.png" id="24_uf1yc"]
 [ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="25_j7pju"]
 [ext_resource type="AudioStream" uid="uid://cqa6uhfvm72v2" path="res://assets/sounds temp/status sounds/Retro PowerUP 09.wav" id="25_wmega"]
 [ext_resource type="AudioStream" uid="uid://dcaflvwu7jsxg" path="res://assets/sounds temp/status sounds/Retro PowerUP 23.wav" id="26_j7pju"]

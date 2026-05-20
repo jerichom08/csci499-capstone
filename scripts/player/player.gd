@@ -29,7 +29,6 @@ var is_dead := false
 	$JumpSFX3
 ]
 @onready var walk_sfx = $FloatSFX
-@onready var footstep_timer: Timer = $FootstepTimer
 
 
 const WORLD_SCALE = 3.0
@@ -149,7 +148,6 @@ func die():
 	death_sfx.play()
 	await sprite.animation_finished
 	Transition.respawn_from_death = true
-	await Transition.reload_scene_with_fade()
 	reset_room()
 
 func reset_room():
@@ -321,15 +319,24 @@ func drop_through_platform() -> void:
 	droppingThrough = false
 
 func _on_hud_line_drawn() -> void:
-	print("Signal recieved")
+	print("line signal received")
+	print("is_on_floor: ", is_on_floor())
+	print("is_attacking: ", is_attacking)
+	print("isDashing: ", isDashing)
 	perform_attack("line")
 	
 func _on_hud_circle_drawn() -> void:
-	print("Signal recieved")
+	print("line signal received")
+	print("is_on_floor: ", is_on_floor())
+	print("is_attacking: ", is_attacking)
+	print("isDashing: ", isDashing)
 	perform_attack("circle")
 	
 func _on_hud_triangle_drawn() -> void:
-	print("Signal recieved")
+	print("line signal received")
+	print("is_on_floor: ", is_on_floor())
+	print("is_attacking: ", is_attacking)
+	print("isDashing: ", isDashing)
 	perform_attack("triangle")
 
 func spawn_attack(type: String):

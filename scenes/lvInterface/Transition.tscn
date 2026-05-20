@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cpyo7hjxo0vtp"]
+[gd_scene format=3 uid="uid://ynmomjby0124"]
 
-[ext_resource type="Script" uid="uid://bv6w211tpp5yd" path="res://scenes/lvInterface/transition.gd" id="1_tbojv"]
+[ext_resource type="Script" path="res://scenes/lvInterface/transition.gd" id="1_tbojv"]
 
 [node name="Transition" type="CanvasLayer" unique_id=1185438730]
 script = ExtResource("1_tbojv")
@@ -12,4 +12,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)

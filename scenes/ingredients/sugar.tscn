@@ -9,6 +9,7 @@ size = Vector2(552, 574)
 
 [node name="Sugar" type="Area2D" unique_id=2138392906]
 script = ExtResource("1_c3w25")
+hud_scale = Vector2(0.1, 0.1)
 floor_y = 575
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=614814215]

@@ -7,6 +7,7 @@ extends Camera2D
 	$Milk
 ]
 
+
 signal line_drawn
 signal circle_drawn
 signal triangle_drawn
@@ -32,7 +33,9 @@ func _on_canvas_triangle_drawn() -> void:
 func update_ingredients() -> void:
 	for i in range(ingredient_icons.size()):
 		if i < IngredientManager.collected_ingredients.size():
-			ingredient_icons[i].texture = IngredientManager.collected_ingredients[i]
+			var ingredient = IngredientManager.collected_ingredients[i]
+			ingredient_icons[i].texture = ingredient["texture"]
+			ingredient_icons[i].scale = ingredient["scale"]
 			ingredient_icons[i].visible = true
 		else:
 			ingredient_icons[i].visible = false

@@ -29,6 +29,7 @@ var is_dead := false
 	$JumpSFX3
 ]
 @onready var walk_sfx = $FloatSFX
+@onready var dash_sfx = $DashSFX
 
 
 const WORLD_SCALE = 3.0
@@ -200,6 +201,7 @@ func _physics_process(delta: float) -> void:
 		dashTimer -= delta
 		velocity.y = 0
 		velocity.x = dashDirection * dashSpeed
+		dash_sfx.play()
 		move_and_slide()
 		
 		if dashTimer <= 0:

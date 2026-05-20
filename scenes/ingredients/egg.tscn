@@ -10,6 +10,7 @@ height = 56.0
 
 [node name="Egg" type="Area2D" unique_id=1002910103]
 script = ExtResource("1_f0cn5")
+hud_scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=142318654]
 texture = ExtResource("1_6hgkf")

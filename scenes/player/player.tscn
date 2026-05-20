@@ -10,9 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://bie1jr6lmkku6" path="res://assets/images/player/B_witch_charge.png" id="4_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://b7vk25fjpy5ax" path="res://assets/images/player/witch_death.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://bdex8w352e0k1" path="res://scripts/enemies/components/hurtbox.gd" id="7_fjrip"]
-[ext_resource type="AudioStream" uid="uid://dl4lifc70hsg2" path="res://assets/sounds temp/level sounds/snd_laz.wav" id="11_je7p5"]
-[ext_resource type="AudioStream" uid="uid://ba5fclnfsu0q0" path="res://assets/sounds temp/level sounds/snd_damage.wav" id="12_fm80t"]
-[ext_resource type="AudioStream" uid="uid://cj4lxovhc0hq" path="res://assets/sounds temp/level sounds/mus_sfx_spellcast.wav" id="12_gx1jg"]
+[ext_resource type="AudioStream" uid="uid://c05pxu8080sx5" path="res://assets/sounds temp/player sounds/line_attack.wav" id="11_fcs02"]
+[ext_resource type="AudioStream" uid="uid://dsdnas54cjydq" path="res://assets/sounds temp/player sounds/circle_attack.wav" id="12_myrg7"]
+[ext_resource type="AudioStream" uid="uid://cllilux5isfpo" path="res://assets/sounds temp/player sounds/triangle_attack.wav" id="13_kvlxm"]
+[ext_resource type="AudioStream" uid="uid://b8p7hrk4gmukl" path="res://assets/sounds temp/player sounds/respawn.wav" id="14_ugbui"]
+[ext_resource type="AudioStream" uid="uid://bbi25i4adfqcc" path="res://assets/sounds temp/player sounds/death.wav" id="15_uf5tr"]
+[ext_resource type="AudioStream" uid="uid://bdi2hxkkiq847" path="res://assets/sounds temp/player sounds/jump1.wav" id="16_uf5tr"]
+[ext_resource type="AudioStream" uid="uid://b77w5nw4507uu" path="res://assets/sounds temp/player sounds/jump2.wav" id="17_lgqa7"]
+[ext_resource type="AudioStream" uid="uid://baicq30xm1nwm" path="res://assets/sounds temp/player sounds/jump3.wav" id="18_8ydkj"]
+[ext_resource type="AudioStream" uid="uid://87qb4haygegw" path="res://assets/sounds temp/player sounds/float.wav" id="19_3j4b4"]
+[ext_resource type="AudioStream" uid="uid://dmfuk6q453cgm" path="res://assets/sounds temp/player sounds/hurt.wav" id="20_8ydkj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
 atlas = ExtResource("4_5gtgg")
@@ -420,13 +427,34 @@ scale = Vector2(20, 20)
 [node name="HeldItemSprite" type="Sprite2D" parent="ItemHolder" unique_id=1604656247]
 
 [node name="LineAttackSFX" type="AudioStreamPlayer2D" parent="." unique_id=498467217]
-stream = ExtResource("11_je7p5")
+stream = ExtResource("11_fcs02")
 
 [node name="CircleAttackSFX" type="AudioStreamPlayer2D" parent="." unique_id=1852821923]
-stream = ExtResource("12_gx1jg")
+stream = ExtResource("12_myrg7")
 
 [node name="TriangleAttackSFX" type="AudioStreamPlayer2D" parent="." unique_id=2017562627]
-stream = ExtResource("12_fm80t")
+stream = ExtResource("13_kvlxm")
+
+[node name="RespawnSFX" type="AudioStreamPlayer2D" parent="." unique_id=1144530869]
+stream = ExtResource("14_ugbui")
+
+[node name="DeathSFX" type="AudioStreamPlayer2D" parent="." unique_id=1408348057]
+stream = ExtResource("15_uf5tr")
+
+[node name="JumpSFX1" type="AudioStreamPlayer2D" parent="." unique_id=1616273582]
+stream = ExtResource("16_uf5tr")
+
+[node name="JumpSFX2" type="AudioStreamPlayer2D" parent="." unique_id=844072293]
+stream = ExtResource("17_lgqa7")
+
+[node name="JumpSFX3" type="AudioStreamPlayer2D" parent="." unique_id=1764135400]
+stream = ExtResource("18_8ydkj")
+
+[node name="FloatSFX" type="AudioStreamPlayer2D" parent="." unique_id=2088000658]
+stream = ExtResource("19_3j4b4")
+
+[node name="HurtSFX" type="AudioStreamPlayer2D" parent="." unique_id=1980733769]
+stream = ExtResource("20_8ydkj")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="Hurtbox" to="." method="_on_hurtbox_area_shape_entered"]

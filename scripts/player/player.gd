@@ -75,6 +75,8 @@ var current_item_name: String = ""
 func _ready() -> void:
 	PlayerStats.health_changed.emit(PlayerStats.health, PlayerStats.max_health)
 	
+	spawn_fade_in()
+	
 	if held_item_sprite:
 		held_item_sprite.visible = false
 	
@@ -110,6 +112,15 @@ func heal(amount: int = 2):
 		return
 	
 	PlayerStats.heal(amount)
+
+func spawn_fade_in():
+	is_invincible = true
+	invincibility_timer = 0.6
+	
+	sprite.modulate.a = 0.0
+	var t = create_tween()
+	t.tween_property(sprite, "modulate:a", 1.0, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	await t.finished
 
 func die():
 	if is_dead:

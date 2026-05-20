@@ -29,7 +29,6 @@ var is_dead := false
 	$JumpSFX3
 ]
 @onready var walk_sfx = $FloatSFX
-@onready var footstep_timer: Timer = $FootstepTimer
 
 
 const WORLD_SCALE = 3.0
@@ -149,7 +148,6 @@ func die():
 	death_sfx.play()
 	await sprite.animation_finished
 	Transition.respawn_from_death = true
-	await Transition.reload_scene_with_fade()
 	reset_room()
 
 func reset_room():

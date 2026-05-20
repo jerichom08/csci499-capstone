@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://caj360ofm8f67" path="res://assets/sounds temp/level sounds/victory.wav" id="27_32syn"]
 [ext_resource type="AudioStream" uid="uid://3yl8jvrw1fac" path="res://assets/sounds temp/level sounds/success.mp3" id="27_63kjs"]
 [ext_resource type="Texture2D" uid="uid://behug43027gdu" path="res://assets/images/bedroom/cake2.png" id="27_imre7"]
+[ext_resource type="Texture2D" uid="uid://cnj6ykhwyupj7" path="res://assets/images/bedroom/Joan.png" id="28_imre7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k23yp"]
 texture = ExtResource("1_onmtf")
@@ -902,6 +903,60 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ysx"]
+atlas = ExtResource("28_imre7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byuw4"]
+atlas = ExtResource("28_imre7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogghk"]
+atlas = ExtResource("28_imre7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgffh"]
+atlas = ExtResource("28_imre7")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grxxe"]
+atlas = ExtResource("28_imre7")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg8tp"]
+atlas = ExtResource("28_imre7")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32syn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1ysx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byuw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogghk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgffh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grxxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg8tp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ds2md"]
+radius = 20.75
+height = 52.0
+
 [node name="Bedroom" type="Node2D" unique_id=439811219]
 script = ExtResource("1_txmux")
 
@@ -1051,7 +1106,33 @@ sprite_frames = SubResource("SpriteFrames_2m4yt")
 [node name="success" type="AudioStreamPlayer2D" parent="." unique_id=726289112]
 stream = ExtResource("27_63kjs")
 
-[node name="SceneTransition2" parent="." unique_id=1804105453 instance=ExtResource("16_hrr0t")]
+[node name="JoanArea2D" type="Area2D" parent="." unique_id=1241850948]
+position = Vector2(-1101, -248)
+scale = Vector2(2, 2)
+
+[node name="Joan" type="AnimatedSprite2D" parent="JoanArea2D" unique_id=206007447]
+position = Vector2(467.00003, 110)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_32syn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JoanArea2D" unique_id=586177075]
+position = Vector2(466, 118.5)
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_ds2md")
+
+[node name="InteractionLabel" type="Label" parent="JoanArea2D" unique_id=2133107983]
+offset_left = -499.99997
+offset_top = -44.00001
+offset_right = -149.99997
+offset_bottom = -7.0000114
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 0)
+theme_override_colors/font_outline_color = Color(0.16078432, 0.3137255, 0.52156866, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("14_txmux")
+theme_override_font_sizes/font_size = 38
+text = "\" meow \""
+metadata/_edit_use_anchors_ = true
 
 [node name="victory" type="AudioStreamPlayer2D" parent="." unique_id=1097682135]
 stream = ExtResource("27_32syn")
@@ -1059,3 +1140,5 @@ stream = ExtResource("27_32syn")
 [connection signal="ready" from="cauldron_work" to="." method="_on_cauldron_ready"]
 [connection signal="area_entered" from="player" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="player" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="JoanArea2D" to="." method="_on_joan_body_entered"]
+[connection signal="body_exited" from="JoanArea2D" to="." method="_on_joan_body_exited"]

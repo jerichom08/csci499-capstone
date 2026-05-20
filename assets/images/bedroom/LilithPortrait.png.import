@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djt60ouuh61cu"
-path="res://.godot/imported/TurnipFace.png-2c5f2b3f9e5dbb45d165f85954c93831.ctex"
+uid="uid://bcuuxm0ia4bc5"
+path="res://.godot/imported/LilithPortrait.png-d7d58d54a77a92ba2eadeffd396bc5aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/UI/TurnipFace.png"
-dest_files=["res://.godot/imported/TurnipFace.png-2c5f2b3f9e5dbb45d165f85954c93831.ctex"]
+source_file="res://assets/images/bedroom/LilithPortrait.png"
+dest_files=["res://.godot/imported/LilithPortrait.png-d7d58d54a77a92ba2eadeffd396bc5aa.ctex"]
 
 [params]
 

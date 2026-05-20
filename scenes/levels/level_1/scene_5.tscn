@@ -839,6 +839,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("14_djex2")
 theme_override_font_sizes/font_size = 38
 text = "A candle"
+metadata/_edit_use_anchors_ = true
 
 [node name="foliage2" type="TileMapLayer" parent="." unique_id=1473122245]
 position = Vector2(804.00006, 25.000002)

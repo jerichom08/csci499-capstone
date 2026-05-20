@@ -23,3 +23,5 @@ func _load_new_scene() -> void:
 var saved_player_y: float = 0.0
 var has_saved_player_y: bool = false
 var target_spawn_name: String = ""
+
+var s = false

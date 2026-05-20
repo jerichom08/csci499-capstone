@@ -933,3 +933,6 @@ position = Vector2(753, 363)
 [connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="button_pressed" from="Button" to="Gate2" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="Gate" method="_on_button_2_button_pressed"]
+[connection signal="circle_drawn" from="CanvasLayer/hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="CanvasLayer/hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="CanvasLayer/hud" to="Player" method="_on_hud_triangle_drawn"]

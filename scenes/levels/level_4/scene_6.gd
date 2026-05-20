@@ -19,6 +19,10 @@ var player_in_cat_range := false
 var cauldron_interacted := false
 
 func _ready() -> void:
+	if SceneTransition.s:
+		$JoanArea2D.show()
+	else:
+		$JoanArea2D.hide()
 	cauldron_label.visible = false
 	cat_label.visible = false
 	$sparkles.visible = false

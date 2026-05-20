@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://do0lx4676qnn6"
+path="res://.godot/imported/walk2.wav-4ec9a6a93ee3f1b42bb7b5741618671b.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/player sounds/walk2.wav"
+dest_files=["res://.godot/imported/walk2.wav-4ec9a6a93ee3f1b42bb7b5741618671b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

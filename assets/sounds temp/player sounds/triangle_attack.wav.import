@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cllilux5isfpo"
+path="res://.godot/imported/triangle_attack.wav-8db259f462f275ac7d7972a2279c8381.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/player sounds/triangle_attack.wav"
+dest_files=["res://.godot/imported/triangle_attack.wav-8db259f462f275ac7d7972a2279c8381.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

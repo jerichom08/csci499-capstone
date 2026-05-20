@@ -16,6 +16,8 @@ extends EnemyBase
 
 @export var damage_cooldown : float = 0.8
 
+@onready var defeat_sfx: AudioStreamPlayer2D = $Defeat
+
 @onready var telegraph_sfx = $HandTelegraph
 @onready var attack_sfx = $HandAttack
 @onready var idle_sfx = $HandIdle
@@ -183,6 +185,7 @@ func hit(damage: int) -> void:
 	health -= damage
 
 	if health <= 0:
+		defeat_sfx.play()
 		defeat()
 		return
 

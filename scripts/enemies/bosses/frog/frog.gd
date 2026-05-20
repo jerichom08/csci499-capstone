@@ -14,6 +14,8 @@ extends EnemyBase
 @onready var slime_sfx: AudioStreamPlayer2D = $SlimeSound
 @onready var hit_sfx: AudioStreamPlayer2D = $HitSound
 @onready var heal_sfx: AudioStreamPlayer2D = $HealSound
+@onready var defeat_sfx: AudioStreamPlayer2D = $Defeat
+
 
 
 
@@ -116,6 +118,7 @@ func hit(damage: int) -> void:
 		defeat()
 
 func defeat() -> void:
+	defeat_sfx.play()
 	hitbox.monitoring = false
 	defeat_count += 1
 	is_invincible = true

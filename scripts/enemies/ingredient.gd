@@ -52,6 +52,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func collect(player: Node2D) -> void:
+	IngredientManager.add_ingredient(sprite.texture)
+	
 	success_sfx.play()
 	monitoring = false
 

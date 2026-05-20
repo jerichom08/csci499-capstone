@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://dvaul16o8ld00" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c38.png" id="8_ty1so"]
 [ext_resource type="Texture2D" uid="uid://l2mjcjtlt4k4" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c39.png" id="9_goe4s"]
 [ext_resource type="Texture2D" uid="uid://dhxdna2cric7a" path="res://assets/images/UI/UI Pack/Sprite sheets/sprite_r7_c40.png" id="10_6v23c"]
+[ext_resource type="Texture2D" uid="uid://bnjgqthgdqwjx" path="res://assets/images/ingredients/egg.png" id="14_6v23c"]
+[ext_resource type="Texture2D" uid="uid://d24g2e3bju64o" path="res://assets/images/ingredients/flour.png" id="15_6dpim"]
+[ext_resource type="Texture2D" uid="uid://kifv6hwcyeag" path="res://assets/images/ingredients/sugar.png" id="16_u3nwo"]
+[ext_resource type="Texture2D" uid="uid://cgnajnbu4w3ha" path="res://assets/images/ingredients/milk.png" id="17_yuspk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b05li"]
 texture = ExtResource("2_tmlye")
@@ -1052,6 +1056,34 @@ offset_left = 597.0
 offset_top = 190.0
 offset_right = 597.0
 offset_bottom = 190.0
+
+[node name="Egg" type="Sprite2D" parent="." unique_id=1678489096]
+visible = false
+z_index = 13
+position = Vector2(620, 19)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("14_6v23c")
+
+[node name="Flour" type="Sprite2D" parent="." unique_id=1505067215]
+visible = false
+z_index = 13
+position = Vector2(696.99994, 16)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_6dpim")
+
+[node name="Sugar" type="Sprite2D" parent="." unique_id=1273153321]
+visible = false
+z_index = 13
+position = Vector2(621, 115.00001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("16_u3nwo")
+
+[node name="Milk" type="Sprite2D" parent="." unique_id=153843337]
+visible = false
+z_index = 13
+position = Vector2(696, 115.00001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_yuspk")
 
 [connection signal="circle_drawn" from="Canvas" to="." method="_on_canvas_circle_drawn"]
 [connection signal="line_drawn" from="Canvas" to="." method="_on_canvas_line_drawn"]

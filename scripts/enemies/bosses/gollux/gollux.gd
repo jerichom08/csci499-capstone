@@ -9,6 +9,7 @@ extends EnemyBase
 @onready var light_attack_sfx : AudioStreamPlayer2D = $GolluxLightAttack
 @onready var heavy_attack_sfx : AudioStreamPlayer2D = $GolluxHeavyAttack
 @onready var defeat_sfx: AudioStreamPlayer2D = $Defeat
+@onready var hit_sfx: AudioStreamPlayer2D = $Hit
 
 
 signal boss_defeated
@@ -74,7 +75,8 @@ func take_damage(damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 		return
 
 	can_take_damage = false
-
+	
+	hit_sfx.play()
 	hit(damage)
 
 	await get_tree().create_timer(damage_cooldown).timeout

@@ -17,6 +17,8 @@ extends EnemyBase
 @export var damage_cooldown : float = 0.8
 
 @onready var defeat_sfx: AudioStreamPlayer2D = $Defeat
+@onready var hit_sfx: AudioStreamPlayer2D = $Hit
+
 
 @onready var telegraph_sfx = $HandTelegraph
 @onready var attack_sfx = $HandAttack
@@ -213,7 +215,8 @@ func take_damage(damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:
 		return
 
 	can_take_damage = false
-
+	
+	hit_sfx.play()
 	hit(damage)
 
 	await get_tree().create_timer(damage_cooldown).timeout

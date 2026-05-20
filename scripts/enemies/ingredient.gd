@@ -4,6 +4,7 @@ extends Area2D
 @export var hover_height := 8.0
 @export var hover_speed := 2.0
 @export var collect_time := 0.2
+@export var hud_scale := Vector2(0.5, 0.5)
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var success_sfx: AudioStreamPlayer2D = $Success
@@ -55,6 +56,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func collect(player: Node2D) -> void:
+	IngredientManager.add_ingredient(sprite.texture, hud_scale)
+	
 	success_sfx.play()
 	monitoring = false
 

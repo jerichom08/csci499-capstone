@@ -24,6 +24,7 @@ CoinManager="*uid://bo1g3nyxyjgcx"
 PlayerStats="*uid://d2oaxovfk5r1d"
 Transition="*uid://ynmomjby0124"
 PauseMenu="*uid://csdwbe46yyepm"
+IngredientManager="*uid://cosyctrnuuv2f"
 
 [display]
 

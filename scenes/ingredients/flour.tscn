@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://de3jnp0uqmmde" path="res://scripts/enemies/ingredient.gd" id="1_wny8e"]
 [ext_resource type="Texture2D" uid="uid://d24g2e3bju64o" path="res://assets/images/ingredients/flour.png" id="2_iuwqw"]
 [ext_resource type="AudioStream" uid="uid://3yl8jvrw1fac" path="res://assets/sounds temp/level sounds/success.mp3" id="3_iuwqw"]
+[ext_resource type="AudioStream" uid="uid://1jr5wkxfmt30" path="res://assets/sounds temp/enemy sounds/ingredient_drop.wav" id="4_7o7ah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7o7ah"]
 size = Vector2(556, 554)
@@ -20,3 +21,7 @@ shape = SubResource("RectangleShape2D_7o7ah")
 
 [node name="Success" type="AudioStreamPlayer2D" parent="." unique_id=329588066]
 stream = ExtResource("3_iuwqw")
+
+[node name="Drop" type="AudioStreamPlayer2D" parent="." unique_id=322819312]
+stream = ExtResource("4_7o7ah")
+volume_db = 10.0

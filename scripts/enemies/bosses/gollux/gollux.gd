@@ -8,6 +8,8 @@ extends EnemyBase
 
 @onready var light_attack_sfx : AudioStreamPlayer2D = $GolluxLightAttack
 @onready var heavy_attack_sfx : AudioStreamPlayer2D = $GolluxHeavyAttack
+@onready var defeat_sfx: AudioStreamPlayer2D = $Defeat
+
 
 signal boss_defeated
 
@@ -64,6 +66,7 @@ func hit(damage: int) -> void:
 	set_state(State.HIT)
 	health = max(0, health - damage)
 	if health == 0:
+		defeat_sfx.play()
 		set_state(State.DEFEAT)
 
 func take_damage(damage: int, _knockback: Vector2 = Vector2.ZERO) -> void:

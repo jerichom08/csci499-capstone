@@ -7,6 +7,8 @@ extends Area2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var success_sfx: AudioStreamPlayer2D = $Success
+@onready var drop_sfx: AudioStreamPlayer2D = $Drop
+
 
 @export var floor_y := 525
 var landed := false
@@ -16,6 +18,7 @@ var collected := false
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	drop_sfx.play()
 
 
 func _process(delta: float) -> void:

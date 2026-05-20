@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://diwi7nltpecm8"
+path="res://.godot/imported/boss_defeat.wav-343e3cafd4ee9536884cff8a4341ce42.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/bosses/boss_defeat.wav"
+dest_files=["res://.godot/imported/boss_defeat.wav-343e3cafd4ee9536884cff8a4341ce42.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

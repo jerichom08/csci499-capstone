@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1jr5wkxfmt30"
+path="res://.godot/imported/ingredient_drop.wav-56a7b07a596e7334ee2d3f7a3077fa3d.sample"
+
+[deps]
+
+source_file="res://assets/sounds temp/enemy sounds/ingredient_drop.wav"
+dest_files=["res://.godot/imported/ingredient_drop.wav-56a7b07a596e7334ee2d3f7a3077fa3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

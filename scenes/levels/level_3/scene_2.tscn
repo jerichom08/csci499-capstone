@@ -865,9 +865,11 @@ scale = Vector2(3, 3)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("13_xve8j")]
 position = Vector2(-577, 163)
+coin_id = "lv3_s2_1"
 
 [node name="Coin2" parent="." unique_id=1697906903 instance=ExtResource("13_xve8j")]
 position = Vector2(-304, -279)
+coin_id = "lv3_s2_2"
 
 [node name="Button" parent="." unique_id=954241513 instance=ExtResource("14_w740s")]
 position = Vector2(516, -227)
@@ -910,5 +912,8 @@ position = Vector2(-239, -258)
 [node name="hud" parent="CanvasLayer" unique_id=1597315055 instance=ExtResource("8_hwoup")]
 position = Vector2(743, 361)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="button_pressed" from="Button" to="Gate" method="_on_button_button_pressed"]
 [connection signal="button_pressed" from="Button2" to="HiddenPlatform" method="_on_button_2_button_pressed"]

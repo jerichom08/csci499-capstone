@@ -664,12 +664,15 @@ position = Vector2(-634, 220)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("10_tqn2h")]
 position = Vector2(-27, -322)
+coin_id = "lv4_s3_1"
 
 [node name="Coin2" parent="." unique_id=1517447089 instance=ExtResource("10_tqn2h")]
 position = Vector2(-27, 113)
+coin_id = "lv4_s3_2"
 
 [node name="Coin3" parent="." unique_id=929173198 instance=ExtResource("10_tqn2h")]
 position = Vector2(-27, -102)
+coin_id = "lv4_s3_3"
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("11_abqn0")]
 position = Vector2(192, -221)
@@ -688,6 +691,9 @@ patrol_radius = 100.0
 [node name="Scorpion3" parent="." unique_id=340339693 instance=ExtResource("12_3xl58")]
 position = Vector2(257, 263)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="body_entered" from="loop" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="s2" to="." method="_on_s_2_body_entered"]
 [connection signal="body_entered" from="loop2" to="." method="_on_area_2d_body_entered"]

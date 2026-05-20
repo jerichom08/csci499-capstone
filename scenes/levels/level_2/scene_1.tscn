@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bevijo67l4rn0" path="res://scenes/lvInterface/MovingPlatformH.tscn" id="14_m3ou3"]
 [ext_resource type="PackedScene" uid="uid://1rawgbuqlynm" path="res://scenes/Components/Coin.tscn" id="15_n8pg6"]
 [ext_resource type="PackedScene" uid="uid://dlckg22mobjbq" path="res://scenes/mobs/turnipNPC.tscn" id="17_imlax"]
-[ext_resource type="Texture2D" uid="uid://djt60ouuh61cu" path="res://scripts/UI/TurnipFace.png" id="18_kt1ph"]
+[ext_resource type="Texture2D" uid="uid://s1g1wtgvb12x" path="res://scripts/UI/turnipFace.png" id="18_kt1ph"]
 [ext_resource type="PackedScene" uid="uid://bwilndgwo5sff" path="res://scenes/puzzles/puzzle_5/TestItem.tscn" id="23_4onw6"]
 [ext_resource type="Texture2D" uid="uid://bm064av7x8nut" path="res://assets/images/food/cookie_1.png" id="24_uf1yc"]
 [ext_resource type="Texture2D" uid="uid://dhxp54k607lk3" path="res://assets/images/food/cookie_15.png" id="25_j7pju"]
@@ -1089,6 +1089,7 @@ position = Vector2(221, -118)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("15_n8pg6")]
 position = Vector2(551, 220)
+coin_id = "lv2_s1_1"
 
 [node name="hud" parent="." unique_id=2086834432 instance=ExtResource("8_fi2td")]
 position = Vector2(97, -17)
@@ -1212,5 +1213,8 @@ position = Vector2(447, -156)
 position = Vector2(487, 225.99997)
 
 [connection signal="puzzle_completed_signal" from="." to="Gate" method="_on_node_2d_puzzle_completed_signal"]
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 
 [editable path="TurnipNpc"]

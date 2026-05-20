@@ -1204,6 +1204,9 @@ patrol_radius = 150.0
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_yfuf1")]
 position = Vector2(-432, 16)
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="body_entered" from="s2r" to="." method="_on_s_2r_body_entered"]
 [connection signal="body_entered" from="s1r" to="." method="_on_s_1r_body_entered"]
 [connection signal="button_pressed" from="Button" to="HiddenPlatform" method="_on_button_button_pressed"]

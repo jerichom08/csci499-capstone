@@ -674,6 +674,7 @@ position = Vector2(48, -6)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_exam8")]
 position = Vector2(-133.00003, -265)
+coin_id = "tut_s1_1"
 
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("19_uxqix")]
 position = Vector2(436, -197)

@@ -634,6 +634,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("16_08fn7")]
 position = Vector2(12.9999695, -246.00002)
+coin_id = "tut_s7_1"
 
 [node name="Outofbound" parent="." unique_id=283698812 instance=ExtResource("18_516r2")]
 position = Vector2(-88, 370)

@@ -679,6 +679,7 @@ scale = Vector2(3, 3)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("11_w4dp1")]
 position = Vector2(-458, -352)
+coin_id = "lv4_s1_1"
 
 [node name="HiddenPlatform" parent="." unique_id=2031595041 instance=ExtResource("12_i1wum")]
 position = Vector2(-2, 171)
@@ -690,6 +691,7 @@ scale = Vector2(3, 3)
 
 [node name="Coin2" parent="." unique_id=337288697 instance=ExtResource("11_w4dp1")]
 position = Vector2(-164, -7)
+coin_id = "lv4_s1_2"
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("14_ttco7")]
 position = Vector2(162, -7)

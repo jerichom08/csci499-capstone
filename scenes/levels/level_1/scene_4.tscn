@@ -574,13 +574,13 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_sagyo")
 sources/3 = SubResource("TileSetAtlasSource_utuh5")
 
-[sub_resource type="Resource" id="Resource_q0w23"]
+[sub_resource type="Resource" id="Resource_0trp8"]
 resource_local_to_scene = true
 script = ExtResource("18_q0w23")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_0trp8"]
+[sub_resource type="Resource" id="Resource_6taol"]
 resource_local_to_scene = true
 script = ExtResource("18_q0w23")
 gravity = 10.0
@@ -664,14 +664,15 @@ position = Vector2(97, -17)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("17_5d1ty")]
 position = Vector2(-560, 3)
+coin_id = "lv1_s4_1"
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("17_swsw1")]
 position = Vector2(-342, 107)
-stats = SubResource("Resource_q0w23")
+stats = SubResource("Resource_0trp8")
 
 [node name="spider2" parent="." unique_id=459392798 instance=ExtResource("17_swsw1")]
 position = Vector2(127, 56)
-stats = SubResource("Resource_0trp8")
+stats = SubResource("Resource_6taol")
 
 [node name="HeartPickup" parent="." unique_id=526582475 instance=ExtResource("19_q0w23")]
 position = Vector2(314, -169)
@@ -681,3 +682,6 @@ position = Vector2(-199, 358)
 scale = Vector2(3, 1)
 
 [connection signal="button_pressed" from="Button" to="gate" method="_on_button_button_pressed"]
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

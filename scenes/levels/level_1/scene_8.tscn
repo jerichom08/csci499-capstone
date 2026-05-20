@@ -642,6 +642,7 @@ scale = Vector2(3, 3)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("11_eqtf8")]
 position = Vector2(190, -202)
+coin_id = "lv1_s8_1"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1120107661]
 
@@ -675,6 +676,9 @@ position = Vector2(569, 185)
 position = Vector2(-564, -137)
 
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="boss_defeated" from="frog" to="." method="_on_frog_boss_defeated"]
 [connection signal="boss_defeated" from="frog" to="gate" method="_on_boss_defeated"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -920,5 +920,8 @@ shape = SubResource("CapsuleShape2D_1lwkt")
 position = Vector2(-165, 78)
 collision_layer = 512
 
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="boss_defeated" from="gollux" to="." method="_on_gollux_boss_defeated"]

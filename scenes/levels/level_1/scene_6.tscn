@@ -586,19 +586,19 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_avmw6")
 sources/3 = SubResource("TileSetAtlasSource_2tk6r")
 
-[sub_resource type="Resource" id="Resource_1ydgn"]
+[sub_resource type="Resource" id="Resource_rfnpt"]
 resource_local_to_scene = true
 script = ExtResource("15_difsh")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_6w5mp"]
+[sub_resource type="Resource" id="Resource_0d3g6"]
 resource_local_to_scene = true
 script = ExtResource("15_difsh")
 gravity = 10.0
 metadata/_custom_type_script = "uid://cr8bvh7l7at2"
 
-[sub_resource type="Resource" id="Resource_6wih5"]
+[sub_resource type="Resource" id="Resource_difsh"]
 resource_local_to_scene = true
 script = ExtResource("15_difsh")
 gravity = 10.0
@@ -732,18 +732,23 @@ position = Vector2(97, -17)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("12_scqn4")]
 position = Vector2(-486, -158)
+coin_id = "lv1_s6_1"
 
 [node name="spawnPoint" type="Marker2D" parent="." unique_id=1248179490]
 position = Vector2(581, 185)
 
 [node name="spider" parent="." unique_id=264598264 instance=ExtResource("14_0d3g6")]
 position = Vector2(259, 215)
-stats = SubResource("Resource_1ydgn")
+stats = SubResource("Resource_rfnpt")
 
 [node name="spider2" parent="." unique_id=493524350 instance=ExtResource("14_0d3g6")]
 position = Vector2(85, 45)
-stats = SubResource("Resource_6w5mp")
+stats = SubResource("Resource_0d3g6")
 
 [node name="spider3" parent="." unique_id=1930721768 instance=ExtResource("14_0d3g6")]
 position = Vector2(-156, -159)
-stats = SubResource("Resource_6wih5")
+stats = SubResource("Resource_difsh")
+
+[connection signal="circle_drawn" from="hud" to="Player" method="_on_hud_circle_drawn"]
+[connection signal="line_drawn" from="hud" to="Player" method="_on_hud_line_drawn"]
+[connection signal="triangle_drawn" from="hud" to="Player" method="_on_hud_triangle_drawn"]

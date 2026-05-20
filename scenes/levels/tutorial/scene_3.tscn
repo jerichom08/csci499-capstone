@@ -1105,9 +1105,11 @@ position = Vector2(48, 1)
 
 [node name="Coin" parent="." unique_id=1608490570 instance=ExtResource("16_opgjy")]
 position = Vector2(-368.00003, -85.000015)
+coin_id = "tut_s3_1"
 
 [node name="Coin2" parent="." unique_id=896722567 instance=ExtResource("16_opgjy")]
 position = Vector2(578, -243.00002)
+coin_id = "tut_s3_2"
 
 [node name="bat" parent="." unique_id=789512219 instance=ExtResource("18_0k0cc")]
 position = Vector2(507, -257)
